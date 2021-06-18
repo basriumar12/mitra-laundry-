@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "1020283631918",
+    "project_id": "win-laundry-mitra",
+    "storage_bucket": "win-laundry-mitra.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1020283631918:android:3f893635d93735f4d7e2bf",
+        "android_client_info": {
+          "package_name": "com.windigitalkhatulistiwa.laundrymitra"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1020283631918-aaoktqtb6uq04te34d3mdn5cv4bo2e51.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.windigitalkhatulistiwa.laundrymitra",
+            "certificate_hash": "1f8e86cb175a8e83ab3e99f55df842003ff16055"
+          }
+        },
+        {
+          "client_id": "1020283631918-enbdsiv45aiup72idnaknjd1tq314gnp.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB857xAK83F851ND4wjKVMOrLbOSxyRgFc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1020283631918-enbdsiv45aiup72idnaknjd1tq314gnp.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

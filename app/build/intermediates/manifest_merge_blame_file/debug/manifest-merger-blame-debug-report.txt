@@ -1,0 +1,828 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="com.windigitalkhatulistiwa.laundrymitra"
+4    android:versionCode="1"
+5    android:versionName="0.0.1" >
+6
+7    <uses-sdk
+8        android:minSdkVersion="23"
+8-->/Users/macbook/Desktop/frelance/tokoweb/winlaundry-mitra-mobile/app/src/main/AndroidManifest.xml
+9        android:targetSdkVersion="30" />
+9-->/Users/macbook/Desktop/frelance/tokoweb/winlaundry-mitra-mobile/app/src/main/AndroidManifest.xml
+10
+11    <uses-permission android:name="android.permission.WAKE_LOCK" />
+11-->/Users/macbook/Desktop/frelance/tokoweb/winlaundry-mitra-mobile/app/src/main/AndroidManifest.xml:6:5-68
+11-->/Users/macbook/Desktop/frelance/tokoweb/winlaundry-mitra-mobile/app/src/main/AndroidManifest.xml:6:22-65
+12    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+12-->/Users/macbook/Desktop/frelance/tokoweb/winlaundry-mitra-mobile/app/src/main/AndroidManifest.xml:7:5-79
+12-->/Users/macbook/Desktop/frelance/tokoweb/winlaundry-mitra-mobile/app/src/main/AndroidManifest.xml:7:22-76
+13    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+13-->/Users/macbook/Desktop/frelance/tokoweb/winlaundry-mitra-mobile/app/src/main/AndroidManifest.xml:8:5-79
+13-->/Users/macbook/Desktop/frelance/tokoweb/winlaundry-mitra-mobile/app/src/main/AndroidManifest.xml:8:22-76
+14    <uses-permission android:name="android.permission.CALL_PHONE" />
+14-->/Users/macbook/Desktop/frelance/tokoweb/winlaundry-mitra-mobile/app/src/main/AndroidManifest.xml:9:5-69
+14-->/Users/macbook/Desktop/frelance/tokoweb/winlaundry-mitra-mobile/app/src/main/AndroidManifest.xml:9:22-66
+15    <uses-permission android:name="android.permission.CAMERA" />
+15-->/Users/macbook/Desktop/frelance/tokoweb/winlaundry-mitra-mobile/app/src/main/AndroidManifest.xml:10:5-65
+15-->/Users/macbook/Desktop/frelance/tokoweb/winlaundry-mitra-mobile/app/src/main/AndroidManifest.xml:10:22-62
+16    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+16-->/Users/macbook/Desktop/frelance/tokoweb/winlaundry-mitra-mobile/app/src/main/AndroidManifest.xml:11:5-81
+16-->/Users/macbook/Desktop/frelance/tokoweb/winlaundry-mitra-mobile/app/src/main/AndroidManifest.xml:11:22-78
+17    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+17-->/Users/macbook/Desktop/frelance/tokoweb/winlaundry-mitra-mobile/app/src/main/AndroidManifest.xml:12:5-80
+17-->/Users/macbook/Desktop/frelance/tokoweb/winlaundry-mitra-mobile/app/src/main/AndroidManifest.xml:12:22-77
+18    <uses-permission android:name="android.permission.INTERNET" />
+18-->[net.gotev:uploadservice:2.1] /Users/macbook/.gradle/caches/transforms-2/files-2.1/52c373cd6f9dee0e439956545c098a83/jetified-uploadservice-2.1/AndroidManifest.xml:11:5-67
+18-->[net.gotev:uploadservice:2.1] /Users/macbook/.gradle/caches/transforms-2/files-2.1/52c373cd6f9dee0e439956545c098a83/jetified-uploadservice-2.1/AndroidManifest.xml:11:22-64
+19    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+19-->[com.schibstedspain.android:leku:6.4.0] /Users/macbook/.gradle/caches/transforms-2/files-2.1/7946e9a5e6eb86d6609678ea7e17e19a/jetified-leku-6.4.0/AndroidManifest.xml:26:5-81
+19-->[com.schibstedspain.android:leku:6.4.0] /Users/macbook/.gradle/caches/transforms-2/files-2.1/7946e9a5e6eb86d6609678ea7e17e19a/jetified-leku-6.4.0/AndroidManifest.xml:26:22-78
+20    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+20-->[com.google.android.libraries.places:places-compat:2.4.0] /Users/macbook/.gradle/caches/transforms-2/files-2.1/4552d46a893db1f0c95523c58d6002bf/jetified-places-compat-2.4.0/AndroidManifest.xml:10:5-76
+20-->[com.google.android.libraries.places:places-compat:2.4.0] /Users/macbook/.gradle/caches/transforms-2/files-2.1/4552d46a893db1f0c95523c58d6002bf/jetified-places-compat-2.4.0/AndroidManifest.xml:10:22-73
+21
+22    <uses-feature
+22-->[com.google.android.gms:play-services-maps:17.0.0] /Users/macbook/.gradle/caches/transforms-2/files-2.1/fcf596c7e860f1af6145204aa15f46d6/jetified-play-services-maps-17.0.0/AndroidManifest.xml:26:5-28:35
+23        android:glEsVersion="0x00020000"
+23-->[com.google.android.gms:play-services-maps:17.0.0] /Users/macbook/.gradle/caches/transforms-2/files-2.1/fcf596c7e860f1af6145204aa15f46d6/jetified-play-services-maps-17.0.0/AndroidManifest.xml:27:9-41
+24        android:required="true" />
+24-->[com.google.android.gms:play-services-maps:17.0.0] /Users/macbook/.gradle/caches/transforms-2/files-2.1/fcf596c7e860f1af6145204aa15f46d6/jetified-play-services-maps-17.0.0/AndroidManifest.xml:28:9-32
+25
+26    <uses-permission android:name="com.google.android.finsky.permission.BIND_GET_INSTALL_REFERRER_SERVICE" /> <!-- Required by older versions of Google Play services to create IID tokens -->
+26-->[com.google.android.gms:play-services-measurement:18.0.0] /Users/macbook/.gradle/caches/transforms-2/files-2.1/d3d25ac4edcf793410bc25b2aac5bddc/jetified-play-services-measurement-18.0.0/AndroidManifest.xml:26:5-110
+26-->[com.google.android.gms:play-services-measurement:18.0.0] /Users/macbook/.gradle/caches/transforms-2/files-2.1/d3d25ac4edcf793410bc25b2aac5bddc/jetified-play-services-measurement-18.0.0/AndroidManifest.xml:26:22-107
+27    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
+27-->[com.google.firebase:firebase-iid:21.0.1] /Users/macbook/.gradle/caches/transforms-2/files-2.1/5061134fc69d3085e5629a314fe6cc5b/jetified-firebase-iid-21.0.1/AndroidManifest.xml:26:5-82
+27-->[com.google.firebase:firebase-iid:21.0.1] /Users/macbook/.gradle/caches/transforms-2/files-2.1/5061134fc69d3085e5629a314fe6cc5b/jetified-firebase-iid-21.0.1/AndroidManifest.xml:26:22-79
+28
+29    <application
+29-->/Users/macbook/Desktop/frelance/tokoweb/winlaundry-mitra-mobile/app/src/main/AndroidManifest.xml:14:5-204:19
+30        android:name="com.samyotech.laundrymitra.GlobalState"
+30-->/Users/macbook/Desktop/frelance/tokoweb/winlaundry-mitra-mobile/app/src/main/AndroidManifest.xml:15:9-36
+31        android:allowBackup="true"
+31-->/Users/macbook/Desktop/frelance/tokoweb/winlaundry-mitra-mobile/app/src/main/AndroidManifest.xml:16:9-35
+32        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+32-->[androidx.core:core:1.3.1] /Users/macbook/.gradle/caches/transforms-2/files-2.1/98cc420b5f51babe6cde2779da21fa33/core-1.3.1/AndroidManifest.xml:24:18-86
+33        android:debuggable="true"
+34        android:extractNativeLibs="false"
+35        android:icon="@mipmap/ic_launcher"
+35-->/Users/macbook/Desktop/frelance/tokoweb/winlaundry-mitra-mobile/app/src/main/AndroidManifest.xml:17:9-43
+36        android:label="@string/app_name"
+36-->/Users/macbook/Desktop/frelance/tokoweb/winlaundry-mitra-mobile/app/src/main/AndroidManifest.xml:18:9-41
+37        android:largeHeap="true"
+37-->/Users/macbook/Desktop/frelance/tokoweb/winlaundry-mitra-mobile/app/src/main/AndroidManifest.xml:19:9-33
+38        android:requestLegacyExternalStorage="true"
+38-->/Users/macbook/Desktop/frelance/tokoweb/winlaundry-mitra-mobile/app/src/main/AndroidManifest.xml:20:9-52
+39        android:roundIcon="@mipmap/ic_launcher_round"
+39-->/Users/macbook/Desktop/frelance/tokoweb/winlaundry-mitra-mobile/app/src/main/AndroidManifest.xml:21:9-54
+40        android:supportsRtl="true"
+40-->/Users/macbook/Desktop/frelance/tokoweb/winlaundry-mitra-mobile/app/src/main/AndroidManifest.xml:22:9-35
+41        android:testOnly="true"
+42        android:theme="@style/AppTheme"
+42-->/Users/macbook/Desktop/frelance/tokoweb/winlaundry-mitra-mobile/app/src/main/AndroidManifest.xml:23:9-40
+43        android:usesCleartextTraffic="true" >
+43-->/Users/macbook/Desktop/frelance/tokoweb/winlaundry-mitra-mobile/app/src/main/AndroidManifest.xml:24:9-44
+44        <activity android:name="com.samyotech.laundrymitra.ui.activity.register.RegisterMitraActivity" />
+44-->/Users/macbook/Desktop/frelance/tokoweb/winlaundry-mitra-mobile/app/src/main/AndroidManifest.xml:26:9-89
+44-->/Users/macbook/Desktop/frelance/tokoweb/winlaundry-mitra-mobile/app/src/main/AndroidManifest.xml:26:19-77
+45        <activity android:name="com.samyotech.laundrymitra.ui.activity.register.UploadKtpActivity" />
+45-->/Users/macbook/Desktop/frelance/tokoweb/winlaundry-mitra-mobile/app/src/main/AndroidManifest.xml:27:9-76
+45-->/Users/macbook/Desktop/frelance/tokoweb/winlaundry-mitra-mobile/app/src/main/AndroidManifest.xml:27:19-73
+46        <activity
+46-->/Users/macbook/Desktop/frelance/tokoweb/winlaundry-mitra-mobile/app/src/main/AndroidManifest.xml:28:9-32:64
+47            android:name="com.samyotech.laundrymitra.ui.activity.register.OtpActivity"
+47-->/Users/macbook/Desktop/frelance/tokoweb/winlaundry-mitra-mobile/app/src/main/AndroidManifest.xml:29:13-61
+48            android:launchMode="singleTop"
+48-->/Users/macbook/Desktop/frelance/tokoweb/winlaundry-mitra-mobile/app/src/main/AndroidManifest.xml:30:13-43
+49            android:screenOrientation="portrait"
+49-->/Users/macbook/Desktop/frelance/tokoweb/winlaundry-mitra-mobile/app/src/main/AndroidManifest.xml:31:13-49
+50            android:windowSoftInputMode="stateAlwaysVisible" />
+50-->/Users/macbook/Desktop/frelance/tokoweb/winlaundry-mitra-mobile/app/src/main/AndroidManifest.xml:32:13-61
+51        <activity android:name="com.samyotech.laundrymitra.ui.activity.SuksesRegisterActivity" />
+51-->/Users/macbook/Desktop/frelance/tokoweb/winlaundry-mitra-mobile/app/src/main/AndroidManifest.xml:33:9-72
+51-->/Users/macbook/Desktop/frelance/tokoweb/winlaundry-mitra-mobile/app/src/main/AndroidManifest.xml:33:19-69
+52        <activity
+52-->/Users/macbook/Desktop/frelance/tokoweb/winlaundry-mitra-mobile/app/src/main/AndroidManifest.xml:34:9-36:60
+53            android:name="com.samyotech.laundrymitra.ui.activity.About"
+53-->/Users/macbook/Desktop/frelance/tokoweb/winlaundry-mitra-mobile/app/src/main/AndroidManifest.xml:35:13-46
+54            android:label="@string/title_activity_about" />
+54-->/Users/macbook/Desktop/frelance/tokoweb/winlaundry-mitra-mobile/app/src/main/AndroidManifest.xml:36:13-57
+55        <activity android:name="com.samyotech.laundrymitra.ui.activity.AllServices" />
+55-->/Users/macbook/Desktop/frelance/tokoweb/winlaundry-mitra-mobile/app/src/main/AndroidManifest.xml:37:9-61
+55-->/Users/macbook/Desktop/frelance/tokoweb/winlaundry-mitra-mobile/app/src/main/AndroidManifest.xml:37:19-58
+56        <activity
+56-->/Users/macbook/Desktop/frelance/tokoweb/winlaundry-mitra-mobile/app/src/main/AndroidManifest.xml:38:9-40:46
+57            android:name="com.samyotech.laundrymitra.ui.activity.NotificationActivity"
+57-->/Users/macbook/Desktop/frelance/tokoweb/winlaundry-mitra-mobile/app/src/main/AndroidManifest.xml:39:13-61
+58            android:launchMode="singleTop" />
+58-->/Users/macbook/Desktop/frelance/tokoweb/winlaundry-mitra-mobile/app/src/main/AndroidManifest.xml:40:13-43
+59        <activity
+59-->/Users/macbook/Desktop/frelance/tokoweb/winlaundry-mitra-mobile/app/src/main/AndroidManifest.xml:41:9-43:46
+60            android:name="com.samyotech.laundrymitra.ui.activity.SearchActivity"
+60-->/Users/macbook/Desktop/frelance/tokoweb/winlaundry-mitra-mobile/app/src/main/AndroidManifest.xml:42:13-55
+61            android:launchMode="singleTop" />
+61-->/Users/macbook/Desktop/frelance/tokoweb/winlaundry-mitra-mobile/app/src/main/AndroidManifest.xml:43:13-43
+62        <activity
+62-->/Users/macbook/Desktop/frelance/tokoweb/winlaundry-mitra-mobile/app/src/main/AndroidManifest.xml:44:9-46:46
+63            android:name="com.samyotech.laundrymitra.ui.activity.OrderDetails"
+63-->/Users/macbook/Desktop/frelance/tokoweb/winlaundry-mitra-mobile/app/src/main/AndroidManifest.xml:45:13-53
+64            android:launchMode="singleTop" />
+64-->/Users/macbook/Desktop/frelance/tokoweb/winlaundry-mitra-mobile/app/src/main/AndroidManifest.xml:46:13-43
+65        <activity android:name="com.samyotech.laundrymitra.ui.activity.BookingConfirmActivity" />
+65-->/Users/macbook/Desktop/frelance/tokoweb/winlaundry-mitra-mobile/app/src/main/AndroidManifest.xml:47:9-72
+65-->/Users/macbook/Desktop/frelance/tokoweb/winlaundry-mitra-mobile/app/src/main/AndroidManifest.xml:47:19-69
+66        <activity android:name="com.samyotech.laundrymitra.ui.activity.BookingPaymentActivity" />
+66-->/Users/macbook/Desktop/frelance/tokoweb/winlaundry-mitra-mobile/app/src/main/AndroidManifest.xml:48:9-72
+66-->/Users/macbook/Desktop/frelance/tokoweb/winlaundry-mitra-mobile/app/src/main/AndroidManifest.xml:48:19-69
+67        <activity android:name="com.samyotech.laundrymitra.ui.activity.BookingPickDateTimeActivity" />
+67-->/Users/macbook/Desktop/frelance/tokoweb/winlaundry-mitra-mobile/app/src/main/AndroidManifest.xml:49:9-77
+67-->/Users/macbook/Desktop/frelance/tokoweb/winlaundry-mitra-mobile/app/src/main/AndroidManifest.xml:49:19-74
+68        <activity android:name="com.samyotech.laundrymitra.ui.activity.BookingPickAddressActivity" />
+68-->/Users/macbook/Desktop/frelance/tokoweb/winlaundry-mitra-mobile/app/src/main/AndroidManifest.xml:50:9-76
+68-->/Users/macbook/Desktop/frelance/tokoweb/winlaundry-mitra-mobile/app/src/main/AndroidManifest.xml:50:19-73
+69        <activity android:name="com.samyotech.laundrymitra.ui.activity.PreviewOrderActivity" />
+69-->/Users/macbook/Desktop/frelance/tokoweb/winlaundry-mitra-mobile/app/src/main/AndroidManifest.xml:51:9-70
+69-->/Users/macbook/Desktop/frelance/tokoweb/winlaundry-mitra-mobile/app/src/main/AndroidManifest.xml:51:19-67
+70        <activity android:name="com.samyotech.laundrymitra.ui.activity.Schedule_Activity" />
+70-->/Users/macbook/Desktop/frelance/tokoweb/winlaundry-mitra-mobile/app/src/main/AndroidManifest.xml:52:9-67
+70-->/Users/macbook/Desktop/frelance/tokoweb/winlaundry-mitra-mobile/app/src/main/AndroidManifest.xml:52:19-64
+71        <activity
+71-->/Users/macbook/Desktop/frelance/tokoweb/winlaundry-mitra-mobile/app/src/main/AndroidManifest.xml:53:9-55:46
+72            android:name="com.samyotech.laundrymitra.ui.activity.ShopAcitivity"
+72-->/Users/macbook/Desktop/frelance/tokoweb/winlaundry-mitra-mobile/app/src/main/AndroidManifest.xml:54:13-54
+73            android:launchMode="singleTop" />
+73-->/Users/macbook/Desktop/frelance/tokoweb/winlaundry-mitra-mobile/app/src/main/AndroidManifest.xml:55:13-43
+74
+75        <meta-data
+75-->/Users/macbook/Desktop/frelance/tokoweb/winlaundry-mitra-mobile/app/src/main/AndroidManifest.xml:57:9-59:71
+76            android:name="com.google.android.geo.API_KEY"
+76-->/Users/macbook/Desktop/frelance/tokoweb/winlaundry-mitra-mobile/app/src/main/AndroidManifest.xml:58:13-58
+77            android:value="AIzaSyBjwJISIDoiwfMcS9ue6RwZ-GsvLhp2seg" />
+77-->/Users/macbook/Desktop/frelance/tokoweb/winlaundry-mitra-mobile/app/src/main/AndroidManifest.xml:59:13-68
+78
+79        <activity
+79-->/Users/macbook/Desktop/frelance/tokoweb/winlaundry-mitra-mobile/app/src/main/AndroidManifest.xml:61:9-66:63
+80            android:name="com.samyotech.laundrymitra.ui.activity.WelcomeScreens"
+80-->/Users/macbook/Desktop/frelance/tokoweb/winlaundry-mitra-mobile/app/src/main/AndroidManifest.xml:62:13-55
+81            android:exported="true"
+81-->/Users/macbook/Desktop/frelance/tokoweb/winlaundry-mitra-mobile/app/src/main/AndroidManifest.xml:63:13-36
+82            android:launchMode="singleTop"
+82-->/Users/macbook/Desktop/frelance/tokoweb/winlaundry-mitra-mobile/app/src/main/AndroidManifest.xml:64:13-43
+83            android:screenOrientation="portrait"
+83-->/Users/macbook/Desktop/frelance/tokoweb/winlaundry-mitra-mobile/app/src/main/AndroidManifest.xml:65:13-49
+84            android:windowSoftInputMode="stateAlwaysHidden" />
+84-->/Users/macbook/Desktop/frelance/tokoweb/winlaundry-mitra-mobile/app/src/main/AndroidManifest.xml:66:13-60
+85        <activity
+85-->/Users/macbook/Desktop/frelance/tokoweb/winlaundry-mitra-mobile/app/src/main/AndroidManifest.xml:67:9-71:63
+86            android:name="com.samyotech.laundrymitra.ui.activity.ManageProfile"
+86-->/Users/macbook/Desktop/frelance/tokoweb/winlaundry-mitra-mobile/app/src/main/AndroidManifest.xml:68:13-54
+87            android:launchMode="singleTop"
+87-->/Users/macbook/Desktop/frelance/tokoweb/winlaundry-mitra-mobile/app/src/main/AndroidManifest.xml:69:13-43
+88            android:screenOrientation="portrait"
+88-->/Users/macbook/Desktop/frelance/tokoweb/winlaundry-mitra-mobile/app/src/main/AndroidManifest.xml:70:13-49
+89            android:windowSoftInputMode="stateAlwaysHidden" />
+89-->/Users/macbook/Desktop/frelance/tokoweb/winlaundry-mitra-mobile/app/src/main/AndroidManifest.xml:71:13-60
+90        <activity
+90-->/Users/macbook/Desktop/frelance/tokoweb/winlaundry-mitra-mobile/app/src/main/AndroidManifest.xml:72:9-76:63
+91            android:name="com.samyotech.laundrymitra.ui.activity.TicketChatActivity"
+91-->/Users/macbook/Desktop/frelance/tokoweb/winlaundry-mitra-mobile/app/src/main/AndroidManifest.xml:73:13-59
+92            android:launchMode="singleTop"
+92-->/Users/macbook/Desktop/frelance/tokoweb/winlaundry-mitra-mobile/app/src/main/AndroidManifest.xml:74:13-43
+93            android:screenOrientation="portrait"
+93-->/Users/macbook/Desktop/frelance/tokoweb/winlaundry-mitra-mobile/app/src/main/AndroidManifest.xml:75:13-49
+94            android:windowSoftInputMode="stateAlwaysHidden" />
+94-->/Users/macbook/Desktop/frelance/tokoweb/winlaundry-mitra-mobile/app/src/main/AndroidManifest.xml:76:13-60
+95        <activity
+95-->/Users/macbook/Desktop/frelance/tokoweb/winlaundry-mitra-mobile/app/src/main/AndroidManifest.xml:77:9-79:52
+96            android:name="com.samyotech.laundrymitra.ui.activity.Dashboard"
+96-->/Users/macbook/Desktop/frelance/tokoweb/winlaundry-mitra-mobile/app/src/main/AndroidManifest.xml:78:13-50
+97            android:screenOrientation="portrait" />
+97-->/Users/macbook/Desktop/frelance/tokoweb/winlaundry-mitra-mobile/app/src/main/AndroidManifest.xml:79:13-49
+98        <activity
+98-->/Users/macbook/Desktop/frelance/tokoweb/winlaundry-mitra-mobile/app/src/main/AndroidManifest.xml:80:9-83:52
+99            android:name="com.samyotech.laundrymitra.ui.activity.ForgotPassword"
+99-->/Users/macbook/Desktop/frelance/tokoweb/winlaundry-mitra-mobile/app/src/main/AndroidManifest.xml:81:13-55
+100            android:launchMode="singleTop"
+100-->/Users/macbook/Desktop/frelance/tokoweb/winlaundry-mitra-mobile/app/src/main/AndroidManifest.xml:82:13-43
+101            android:screenOrientation="portrait" />
+101-->/Users/macbook/Desktop/frelance/tokoweb/winlaundry-mitra-mobile/app/src/main/AndroidManifest.xml:83:13-49
+102        <activity
+102-->/Users/macbook/Desktop/frelance/tokoweb/winlaundry-mitra-mobile/app/src/main/AndroidManifest.xml:84:9-87:52
+103            android:name="com.samyotech.laundrymitra.ui.activity.login.Login"
+103-->/Users/macbook/Desktop/frelance/tokoweb/winlaundry-mitra-mobile/app/src/main/AndroidManifest.xml:85:13-52
+104            android:launchMode="singleTop"
+104-->/Users/macbook/Desktop/frelance/tokoweb/winlaundry-mitra-mobile/app/src/main/AndroidManifest.xml:86:13-43
+105            android:screenOrientation="portrait" />
+105-->/Users/macbook/Desktop/frelance/tokoweb/winlaundry-mitra-mobile/app/src/main/AndroidManifest.xml:87:13-49
+106        <activity
+106-->/Users/macbook/Desktop/frelance/tokoweb/winlaundry-mitra-mobile/app/src/main/AndroidManifest.xml:88:9-91:52
+107            android:name="com.samyotech.laundrymitra.ui.activity.TopServices"
+107-->/Users/macbook/Desktop/frelance/tokoweb/winlaundry-mitra-mobile/app/src/main/AndroidManifest.xml:89:13-52
+108            android:launchMode="singleTop"
+108-->/Users/macbook/Desktop/frelance/tokoweb/winlaundry-mitra-mobile/app/src/main/AndroidManifest.xml:90:13-43
+109            android:screenOrientation="portrait" />
+109-->/Users/macbook/Desktop/frelance/tokoweb/winlaundry-mitra-mobile/app/src/main/AndroidManifest.xml:91:13-49
+110        <activity
+110-->/Users/macbook/Desktop/frelance/tokoweb/winlaundry-mitra-mobile/app/src/main/AndroidManifest.xml:92:9-95:52
+111            android:name="com.samyotech.laundrymitra.ui.activity.register.Register"
+111-->/Users/macbook/Desktop/frelance/tokoweb/winlaundry-mitra-mobile/app/src/main/AndroidManifest.xml:93:13-58
+112            android:launchMode="singleTop"
+112-->/Users/macbook/Desktop/frelance/tokoweb/winlaundry-mitra-mobile/app/src/main/AndroidManifest.xml:94:13-43
+113            android:screenOrientation="portrait" />
+113-->/Users/macbook/Desktop/frelance/tokoweb/winlaundry-mitra-mobile/app/src/main/AndroidManifest.xml:95:13-49
+114        <activity
+114-->/Users/macbook/Desktop/frelance/tokoweb/winlaundry-mitra-mobile/app/src/main/AndroidManifest.xml:96:9-99:52
+115            android:name="com.samyotech.laundrymitra.ui.activity.ChatActivity"
+115-->/Users/macbook/Desktop/frelance/tokoweb/winlaundry-mitra-mobile/app/src/main/AndroidManifest.xml:97:13-53
+116            android:launchMode="singleTop"
+116-->/Users/macbook/Desktop/frelance/tokoweb/winlaundry-mitra-mobile/app/src/main/AndroidManifest.xml:98:13-43
+117            android:screenOrientation="portrait" />
+117-->/Users/macbook/Desktop/frelance/tokoweb/winlaundry-mitra-mobile/app/src/main/AndroidManifest.xml:99:13-49
+118        <activity
+118-->/Users/macbook/Desktop/frelance/tokoweb/winlaundry-mitra-mobile/app/src/main/AndroidManifest.xml:100:9-103:52
+119            android:name="com.samyotech.laundrymitra.ui.activity.TicketsActivity"
+119-->/Users/macbook/Desktop/frelance/tokoweb/winlaundry-mitra-mobile/app/src/main/AndroidManifest.xml:101:13-56
+120            android:launchMode="singleTop"
+120-->/Users/macbook/Desktop/frelance/tokoweb/winlaundry-mitra-mobile/app/src/main/AndroidManifest.xml:102:13-43
+121            android:screenOrientation="portrait" />
+121-->/Users/macbook/Desktop/frelance/tokoweb/winlaundry-mitra-mobile/app/src/main/AndroidManifest.xml:103:13-49
+122        <activity
+122-->/Users/macbook/Desktop/frelance/tokoweb/winlaundry-mitra-mobile/app/src/main/AndroidManifest.xml:104:9-107:52
+123            android:name="com.samyotech.laundrymitra.ui.activity.ChangPassword"
+123-->/Users/macbook/Desktop/frelance/tokoweb/winlaundry-mitra-mobile/app/src/main/AndroidManifest.xml:105:13-54
+124            android:launchMode="singleTop"
+124-->/Users/macbook/Desktop/frelance/tokoweb/winlaundry-mitra-mobile/app/src/main/AndroidManifest.xml:106:13-43
+125            android:screenOrientation="portrait" />
+125-->/Users/macbook/Desktop/frelance/tokoweb/winlaundry-mitra-mobile/app/src/main/AndroidManifest.xml:107:13-49
+126        <activity
+126-->/Users/macbook/Desktop/frelance/tokoweb/winlaundry-mitra-mobile/app/src/main/AndroidManifest.xml:108:9-111:52
+127            android:name="com.samyotech.laundrymitra.ui.activity.ChatList"
+127-->/Users/macbook/Desktop/frelance/tokoweb/winlaundry-mitra-mobile/app/src/main/AndroidManifest.xml:109:13-49
+128            android:launchMode="singleTop"
+128-->/Users/macbook/Desktop/frelance/tokoweb/winlaundry-mitra-mobile/app/src/main/AndroidManifest.xml:110:13-43
+129            android:screenOrientation="portrait" />
+129-->/Users/macbook/Desktop/frelance/tokoweb/winlaundry-mitra-mobile/app/src/main/AndroidManifest.xml:111:13-49
+130        <activity
+130-->/Users/macbook/Desktop/frelance/tokoweb/winlaundry-mitra-mobile/app/src/main/AndroidManifest.xml:112:9-115:63
+131            android:name="com.samyotech.laundrymitra.utils.MainFragment"
+131-->/Users/macbook/Desktop/frelance/tokoweb/winlaundry-mitra-mobile/app/src/main/AndroidManifest.xml:113:13-47
+132            android:screenOrientation="portrait"
+132-->/Users/macbook/Desktop/frelance/tokoweb/winlaundry-mitra-mobile/app/src/main/AndroidManifest.xml:114:13-49
+133            android:windowSoftInputMode="stateAlwaysHidden" />
+133-->/Users/macbook/Desktop/frelance/tokoweb/winlaundry-mitra-mobile/app/src/main/AndroidManifest.xml:115:13-60
+134        <activity
+134-->/Users/macbook/Desktop/frelance/tokoweb/winlaundry-mitra-mobile/app/src/main/AndroidManifest.xml:116:9-119:63
+135            android:name="com.samyotech.laundrymitra.ui.activity.IpayMuPayment"
+135-->/Users/macbook/Desktop/frelance/tokoweb/winlaundry-mitra-mobile/app/src/main/AndroidManifest.xml:117:13-54
+136            android:screenOrientation="portrait"
+136-->/Users/macbook/Desktop/frelance/tokoweb/winlaundry-mitra-mobile/app/src/main/AndroidManifest.xml:118:13-49
+137            android:windowSoftInputMode="stateAlwaysHidden" />
+137-->/Users/macbook/Desktop/frelance/tokoweb/winlaundry-mitra-mobile/app/src/main/AndroidManifest.xml:119:13-60
+138        <activity
+138-->/Users/macbook/Desktop/frelance/tokoweb/winlaundry-mitra-mobile/app/src/main/AndroidManifest.xml:120:9-151:20
+139            android:name="com.samyotech.laundrymitra.MainActivity"
+139-->/Users/macbook/Desktop/frelance/tokoweb/winlaundry-mitra-mobile/app/src/main/AndroidManifest.xml:121:13-41
+140            android:screenOrientation="portrait" >
+140-->/Users/macbook/Desktop/frelance/tokoweb/winlaundry-mitra-mobile/app/src/main/AndroidManifest.xml:122:13-49
+141            <intent-filter>
+141-->/Users/macbook/Desktop/frelance/tokoweb/winlaundry-mitra-mobile/app/src/main/AndroidManifest.xml:123:13-127:29
+142                <action android:name="android.intent.action.MAIN" />
+142-->/Users/macbook/Desktop/frelance/tokoweb/winlaundry-mitra-mobile/app/src/main/AndroidManifest.xml:124:17-69
+142-->/Users/macbook/Desktop/frelance/tokoweb/winlaundry-mitra-mobile/app/src/main/AndroidManifest.xml:124:25-66
+143
+144                <category android:name="android.intent.category.LAUNCHER" />
+144-->/Users/macbook/Desktop/frelance/tokoweb/winlaundry-mitra-mobile/app/src/main/AndroidManifest.xml:126:17-77
+144-->/Users/macbook/Desktop/frelance/tokoweb/winlaundry-mitra-mobile/app/src/main/AndroidManifest.xml:126:27-74
+145            </intent-filter>
+146            <intent-filter android:label="WinLaundry" >
+146-->/Users/macbook/Desktop/frelance/tokoweb/winlaundry-mitra-mobile/app/src/main/AndroidManifest.xml:128:13-139:29
+146-->/Users/macbook/Desktop/frelance/tokoweb/winlaundry-mitra-mobile/app/src/main/AndroidManifest.xml:128:28-54
+147                <action android:name="android.intent.action.VIEW" />
+147-->/Users/macbook/Desktop/frelance/tokoweb/winlaundry-mitra-mobile/app/src/main/AndroidManifest.xml:129:17-69
+147-->/Users/macbook/Desktop/frelance/tokoweb/winlaundry-mitra-mobile/app/src/main/AndroidManifest.xml:129:25-66
+148
+149                <category android:name="android.intent.category.DEFAULT" />
+149-->/Users/macbook/Desktop/frelance/tokoweb/winlaundry-mitra-mobile/app/src/main/AndroidManifest.xml:131:17-76
+149-->/Users/macbook/Desktop/frelance/tokoweb/winlaundry-mitra-mobile/app/src/main/AndroidManifest.xml:131:27-73
+150                <category android:name="android.intent.category.BROWSABLE" />
+150-->/Users/macbook/Desktop/frelance/tokoweb/winlaundry-mitra-mobile/app/src/main/AndroidManifest.xml:132:17-78
+150-->/Users/macbook/Desktop/frelance/tokoweb/winlaundry-mitra-mobile/app/src/main/AndroidManifest.xml:132:27-75
+151
+152                <data
+152-->/Users/macbook/Desktop/frelance/tokoweb/winlaundry-mitra-mobile/app/src/main/AndroidManifest.xml:134:17-137:45
+153                    android:host="laundryapp.windigitalkhatulistiwa.com"
+153-->/Users/macbook/Desktop/frelance/tokoweb/winlaundry-mitra-mobile/app/src/main/AndroidManifest.xml:135:21-73
+154                    android:pathPrefix="/app"
+154-->/Users/macbook/Desktop/frelance/tokoweb/winlaundry-mitra-mobile/app/src/main/AndroidManifest.xml:136:21-46
+155                    android:scheme="http" />
+155-->/Users/macbook/Desktop/frelance/tokoweb/winlaundry-mitra-mobile/app/src/main/AndroidManifest.xml:137:21-42
+156                <!-- note that the leading "/" is required for pathPrefix -->
+157            </intent-filter>
+158            <intent-filter android:label="WinLaundry" >
+158-->/Users/macbook/Desktop/frelance/tokoweb/winlaundry-mitra-mobile/app/src/main/AndroidManifest.xml:140:13-150:29
+158-->/Users/macbook/Desktop/frelance/tokoweb/winlaundry-mitra-mobile/app/src/main/AndroidManifest.xml:140:28-54
+159                <action android:name="android.intent.action.VIEW" />
+159-->/Users/macbook/Desktop/frelance/tokoweb/winlaundry-mitra-mobile/app/src/main/AndroidManifest.xml:129:17-69
+159-->/Users/macbook/Desktop/frelance/tokoweb/winlaundry-mitra-mobile/app/src/main/AndroidManifest.xml:129:25-66
+160
+161                <category android:name="android.intent.category.DEFAULT" />
+161-->/Users/macbook/Desktop/frelance/tokoweb/winlaundry-mitra-mobile/app/src/main/AndroidManifest.xml:131:17-76
+161-->/Users/macbook/Desktop/frelance/tokoweb/winlaundry-mitra-mobile/app/src/main/AndroidManifest.xml:131:27-73
+162                <category android:name="android.intent.category.BROWSABLE" />
+162-->/Users/macbook/Desktop/frelance/tokoweb/winlaundry-mitra-mobile/app/src/main/AndroidManifest.xml:132:17-78
+162-->/Users/macbook/Desktop/frelance/tokoweb/winlaundry-mitra-mobile/app/src/main/AndroidManifest.xml:132:27-75
+163
+164                <data
+164-->/Users/macbook/Desktop/frelance/tokoweb/winlaundry-mitra-mobile/app/src/main/AndroidManifest.xml:134:17-137:45
+165                    android:host="winlaundry"
+165-->/Users/macbook/Desktop/frelance/tokoweb/winlaundry-mitra-mobile/app/src/main/AndroidManifest.xml:135:21-73
+166                    android:scheme="app" />
+166-->/Users/macbook/Desktop/frelance/tokoweb/winlaundry-mitra-mobile/app/src/main/AndroidManifest.xml:137:21-42
+167                <!-- note that the leading "/" is required for pathPrefix -->
+168            </intent-filter>
+169        </activity>
+170        <activity
+170-->/Users/macbook/Desktop/frelance/tokoweb/winlaundry-mitra-mobile/app/src/main/AndroidManifest.xml:152:9-174:20
+171            android:name="com.schibstedspain.leku.LocationPickerActivity"
+171-->/Users/macbook/Desktop/frelance/tokoweb/winlaundry-mitra-mobile/app/src/main/AndroidManifest.xml:153:13-74
+172            android:label="@string/leku_title_activity_location_picker"
+172-->/Users/macbook/Desktop/frelance/tokoweb/winlaundry-mitra-mobile/app/src/main/AndroidManifest.xml:154:13-72
+173            android:parentActivityName="com.samyotech.laundrymitra.ui.activity.Dashboard"
+173-->/Users/macbook/Desktop/frelance/tokoweb/winlaundry-mitra-mobile/app/src/main/AndroidManifest.xml:155:13-64
+174            android:theme="@style/AppTheme.Map"
+174-->/Users/macbook/Desktop/frelance/tokoweb/winlaundry-mitra-mobile/app/src/main/AndroidManifest.xml:156:13-48
+175            android:windowSoftInputMode="adjustPan" >
+175-->/Users/macbook/Desktop/frelance/tokoweb/winlaundry-mitra-mobile/app/src/main/AndroidManifest.xml:157:13-52
+176            <intent-filter>
+176-->/Users/macbook/Desktop/frelance/tokoweb/winlaundry-mitra-mobile/app/src/main/AndroidManifest.xml:158:13-160:29
+177                <action android:name="android.intent.action.SEARCH" />
+177-->/Users/macbook/Desktop/frelance/tokoweb/winlaundry-mitra-mobile/app/src/main/AndroidManifest.xml:159:17-71
+177-->/Users/macbook/Desktop/frelance/tokoweb/winlaundry-mitra-mobile/app/src/main/AndroidManifest.xml:159:25-68
+178            </intent-filter>
+179
+180            <meta-data
+180-->/Users/macbook/Desktop/frelance/tokoweb/winlaundry-mitra-mobile/app/src/main/AndroidManifest.xml:162:13-164:59
+181                android:name="android.app.searchable"
+181-->/Users/macbook/Desktop/frelance/tokoweb/winlaundry-mitra-mobile/app/src/main/AndroidManifest.xml:163:17-54
+182                android:resource="@xml/leku_searchable" />
+182-->/Users/macbook/Desktop/frelance/tokoweb/winlaundry-mitra-mobile/app/src/main/AndroidManifest.xml:164:17-56
+183            <meta-data
+183-->/Users/macbook/Desktop/frelance/tokoweb/winlaundry-mitra-mobile/app/src/main/AndroidManifest.xml:165:13-167:84
+184                android:name="android.support.PARENT_ACTIVITY"
+184-->/Users/macbook/Desktop/frelance/tokoweb/winlaundry-mitra-mobile/app/src/main/AndroidManifest.xml:166:17-63
+185                android:value="com.samyotech.laundrymitra.ui.activity.Dashboard" />
+185-->/Users/macbook/Desktop/frelance/tokoweb/winlaundry-mitra-mobile/app/src/main/AndroidManifest.xml:167:17-81
+186            <meta-data
+186-->/Users/macbook/Desktop/frelance/tokoweb/winlaundry-mitra-mobile/app/src/main/AndroidManifest.xml:168:13-170:64
+187                android:name="com.google.firebase.messaging.default_notification_icon"
+187-->/Users/macbook/Desktop/frelance/tokoweb/winlaundry-mitra-mobile/app/src/main/AndroidManifest.xml:169:17-87
+188                android:resource="@mipmap/ic_launcher_round" />
+188-->/Users/macbook/Desktop/frelance/tokoweb/winlaundry-mitra-mobile/app/src/main/AndroidManifest.xml:170:17-61
+189            <meta-data
+189-->/Users/macbook/Desktop/frelance/tokoweb/winlaundry-mitra-mobile/app/src/main/AndroidManifest.xml:171:13-173:73
+190                android:name="com.google.android.gms.version"
+190-->/Users/macbook/Desktop/frelance/tokoweb/winlaundry-mitra-mobile/app/src/main/AndroidManifest.xml:172:17-62
+191                android:value="@integer/google_play_services_version" />
+191-->/Users/macbook/Desktop/frelance/tokoweb/winlaundry-mitra-mobile/app/src/main/AndroidManifest.xml:173:17-70
+192        </activity>
+193        <activity android:name="com.samyotech.laundrymitra.ui.activity.ServiceActivity" />
+193-->/Users/macbook/Desktop/frelance/tokoweb/winlaundry-mitra-mobile/app/src/main/AndroidManifest.xml:175:9-65
+193-->/Users/macbook/Desktop/frelance/tokoweb/winlaundry-mitra-mobile/app/src/main/AndroidManifest.xml:175:19-62
+194
+195        <service
+195-->/Users/macbook/Desktop/frelance/tokoweb/winlaundry-mitra-mobile/app/src/main/AndroidManifest.xml:177:9-184:19
+196            android:name="com.samyotech.laundrymitra.MyFirebaseMessagingService"
+196-->/Users/macbook/Desktop/frelance/tokoweb/winlaundry-mitra-mobile/app/src/main/AndroidManifest.xml:178:13-55
+197            android:exported="false" >
+197-->/Users/macbook/Desktop/frelance/tokoweb/winlaundry-mitra-mobile/app/src/main/AndroidManifest.xml:179:13-37
+198            <intent-filter>
+198-->/Users/macbook/Desktop/frelance/tokoweb/winlaundry-mitra-mobile/app/src/main/AndroidManifest.xml:180:13-183:29
+199                <action android:name="com.google.firebase.INSTANCE_ID_EVENT" />
+199-->/Users/macbook/Desktop/frelance/tokoweb/winlaundry-mitra-mobile/app/src/main/AndroidManifest.xml:181:17-80
+199-->/Users/macbook/Desktop/frelance/tokoweb/winlaundry-mitra-mobile/app/src/main/AndroidManifest.xml:181:25-77
+200                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+200-->/Users/macbook/Desktop/frelance/tokoweb/winlaundry-mitra-mobile/app/src/main/AndroidManifest.xml:182:17-78
+200-->/Users/macbook/Desktop/frelance/tokoweb/winlaundry-mitra-mobile/app/src/main/AndroidManifest.xml:182:25-75
+201            </intent-filter>
+202        </service>
+203
+204        <provider
+204-->/Users/macbook/Desktop/frelance/tokoweb/winlaundry-mitra-mobile/app/src/main/AndroidManifest.xml:186:9-194:20
+205            android:name="androidx.core.content.FileProvider"
+205-->/Users/macbook/Desktop/frelance/tokoweb/winlaundry-mitra-mobile/app/src/main/AndroidManifest.xml:187:13-62
+206            android:authorities="com.samyotech.laundrymitra.fileprovider"
+206-->/Users/macbook/Desktop/frelance/tokoweb/winlaundry-mitra-mobile/app/src/main/AndroidManifest.xml:188:13-74
+207            android:exported="false"
+207-->/Users/macbook/Desktop/frelance/tokoweb/winlaundry-mitra-mobile/app/src/main/AndroidManifest.xml:189:13-37
+208            android:grantUriPermissions="true" >
+208-->/Users/macbook/Desktop/frelance/tokoweb/winlaundry-mitra-mobile/app/src/main/AndroidManifest.xml:190:13-47
+209            <meta-data
+209-->/Users/macbook/Desktop/frelance/tokoweb/winlaundry-mitra-mobile/app/src/main/AndroidManifest.xml:191:13-193:53
+210                android:name="android.support.FILE_PROVIDER_PATHS"
+210-->/Users/macbook/Desktop/frelance/tokoweb/winlaundry-mitra-mobile/app/src/main/AndroidManifest.xml:192:17-67
+211                android:resource="@xml/filepaths" />
+211-->/Users/macbook/Desktop/frelance/tokoweb/winlaundry-mitra-mobile/app/src/main/AndroidManifest.xml:193:17-50
+212        </provider> <!-- android:permission="com.google.android.gms.auth.api.phone.permission.SEND" -->
+213        <!--  -->
+214        <receiver
+214-->/Users/macbook/Desktop/frelance/tokoweb/winlaundry-mitra-mobile/app/src/main/AndroidManifest.xml:196:9-203:20
+215            android:name="com.samyotech.laundrymitra.widget.SmsBroadcastReceiver"
+215-->/Users/macbook/Desktop/frelance/tokoweb/winlaundry-mitra-mobile/app/src/main/AndroidManifest.xml:197:13-56
+216            android:exported="true"
+216-->/Users/macbook/Desktop/frelance/tokoweb/winlaundry-mitra-mobile/app/src/main/AndroidManifest.xml:198:13-36
+217            android:permission="com.google.android.gms.auth.api.phone.permission.SEND" >
+217-->/Users/macbook/Desktop/frelance/tokoweb/winlaundry-mitra-mobile/app/src/main/AndroidManifest.xml:199:13-87
+218            <intent-filter>
+218-->/Users/macbook/Desktop/frelance/tokoweb/winlaundry-mitra-mobile/app/src/main/AndroidManifest.xml:200:13-202:29
+219                <action android:name="com.google.android.gms.auth.api.phone.SMS_RETRIEVED" />
+219-->/Users/macbook/Desktop/frelance/tokoweb/winlaundry-mitra-mobile/app/src/main/AndroidManifest.xml:201:17-94
+219-->/Users/macbook/Desktop/frelance/tokoweb/winlaundry-mitra-mobile/app/src/main/AndroidManifest.xml:201:25-91
+220            </intent-filter>
+221        </receiver>
+222
+223        <service
+223-->[net.gotev:uploadservice:2.1] /Users/macbook/.gradle/caches/transforms-2/files-2.1/52c373cd6f9dee0e439956545c098a83/jetified-uploadservice-2.1/AndroidManifest.xml:16:9-20:19
+224            android:name="net.gotev.uploadservice.UploadService"
+224-->[net.gotev:uploadservice:2.1] /Users/macbook/.gradle/caches/transforms-2/files-2.1/52c373cd6f9dee0e439956545c098a83/jetified-uploadservice-2.1/AndroidManifest.xml:17:13-65
+225            android:enabled="true"
+225-->[net.gotev:uploadservice:2.1] /Users/macbook/.gradle/caches/transforms-2/files-2.1/52c373cd6f9dee0e439956545c098a83/jetified-uploadservice-2.1/AndroidManifest.xml:18:13-35
+226            android:exported="true" >
+226-->[net.gotev:uploadservice:2.1] /Users/macbook/.gradle/caches/transforms-2/files-2.1/52c373cd6f9dee0e439956545c098a83/jetified-uploadservice-2.1/AndroidManifest.xml:19:13-36
+227        </service> <!-- Autocomplete -->
+228        <activity
+228-->[com.google.android.libraries.places:places-compat:2.4.0] /Users/macbook/.gradle/caches/transforms-2/files-2.1/4552d46a893db1f0c95523c58d6002bf/jetified-places-compat-2.4.0/AndroidManifest.xml:16:9-23:20
+229            android:name="com.google.android.libraries.places.widget.AutocompleteActivity"
+229-->[com.google.android.libraries.places:places-compat:2.4.0] /Users/macbook/.gradle/caches/transforms-2/files-2.1/4552d46a893db1f0c95523c58d6002bf/jetified-places-compat-2.4.0/AndroidManifest.xml:17:13-91
+230            android:exported="false"
+230-->[com.google.android.libraries.places:places-compat:2.4.0] /Users/macbook/.gradle/caches/transforms-2/files-2.1/4552d46a893db1f0c95523c58d6002bf/jetified-places-compat-2.4.0/AndroidManifest.xml:18:13-37
+231            android:hardwareAccelerated="true"
+231-->[com.google.android.libraries.places:places-compat:2.4.0] /Users/macbook/.gradle/caches/transforms-2/files-2.1/4552d46a893db1f0c95523c58d6002bf/jetified-places-compat-2.4.0/AndroidManifest.xml:19:13-47
+232            android:label="@string/places_autocomplete_label"
+232-->[com.google.android.libraries.places:places-compat:2.4.0] /Users/macbook/.gradle/caches/transforms-2/files-2.1/4552d46a893db1f0c95523c58d6002bf/jetified-places-compat-2.4.0/AndroidManifest.xml:20:13-62
+233            android:theme="@style/PlacesAutocompleteOverlay"
+233-->[com.google.android.libraries.places:places-compat:2.4.0] /Users/macbook/.gradle/caches/transforms-2/files-2.1/4552d46a893db1f0c95523c58d6002bf/jetified-places-compat-2.4.0/AndroidManifest.xml:21:13-61
+234            android:windowSoftInputMode="stateAlwaysVisible|adjustPan" >
+234-->[com.google.android.libraries.places:places-compat:2.4.0] /Users/macbook/.gradle/caches/transforms-2/files-2.1/4552d46a893db1f0c95523c58d6002bf/jetified-places-compat-2.4.0/AndroidManifest.xml:22:13-71
+235        </activity>
+236        <activity
+236-->[com.github.dhaval2404:imagepicker:1.7.5] /Users/macbook/.gradle/caches/transforms-2/files-2.1/07876fb2acb20bfa1b75d9348a5350e2/jetified-imagepicker-1.7.5/AndroidManifest.xml:15:9-18:68
+237            android:name="com.github.dhaval2404.imagepicker.ImagePickerActivity"
+237-->[com.github.dhaval2404:imagepicker:1.7.5] /Users/macbook/.gradle/caches/transforms-2/files-2.1/07876fb2acb20bfa1b75d9348a5350e2/jetified-imagepicker-1.7.5/AndroidManifest.xml:16:13-81
+238            android:screenOrientation="unspecified"
+238-->[com.github.dhaval2404:imagepicker:1.7.5] /Users/macbook/.gradle/caches/transforms-2/files-2.1/07876fb2acb20bfa1b75d9348a5350e2/jetified-imagepicker-1.7.5/AndroidManifest.xml:17:13-52
+239            android:theme="@style/Theme.Transparent.ImagePicker" />
+239-->[com.github.dhaval2404:imagepicker:1.7.5] /Users/macbook/.gradle/caches/transforms-2/files-2.1/07876fb2acb20bfa1b75d9348a5350e2/jetified-imagepicker-1.7.5/AndroidManifest.xml:18:13-65
+240        <activity
+240-->[com.github.dhaval2404:imagepicker:1.7.5] /Users/macbook/.gradle/caches/transforms-2/files-2.1/07876fb2acb20bfa1b75d9348a5350e2/jetified-imagepicker-1.7.5/AndroidManifest.xml:19:9-22:72
+241            android:name="com.yalantis.ucrop.UCropActivity"
+241-->[com.github.dhaval2404:imagepicker:1.7.5] /Users/macbook/.gradle/caches/transforms-2/files-2.1/07876fb2acb20bfa1b75d9348a5350e2/jetified-imagepicker-1.7.5/AndroidManifest.xml:20:13-60
+242            android:screenOrientation="portrait"
+242-->[com.github.dhaval2404:imagepicker:1.7.5] /Users/macbook/.gradle/caches/transforms-2/files-2.1/07876fb2acb20bfa1b75d9348a5350e2/jetified-imagepicker-1.7.5/AndroidManifest.xml:21:13-49
+243            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+243-->[com.github.dhaval2404:imagepicker:1.7.5] /Users/macbook/.gradle/caches/transforms-2/files-2.1/07876fb2acb20bfa1b75d9348a5350e2/jetified-imagepicker-1.7.5/AndroidManifest.xml:22:13-69
+244
+245        <provider
+245-->[com.github.dhaval2404:imagepicker:1.7.5] /Users/macbook/.gradle/caches/transforms-2/files-2.1/07876fb2acb20bfa1b75d9348a5350e2/jetified-imagepicker-1.7.5/AndroidManifest.xml:24:9-32:20
+246            android:name="com.github.dhaval2404.imagepicker.ImagePickerFileProvider"
+246-->[com.github.dhaval2404:imagepicker:1.7.5] /Users/macbook/.gradle/caches/transforms-2/files-2.1/07876fb2acb20bfa1b75d9348a5350e2/jetified-imagepicker-1.7.5/AndroidManifest.xml:25:13-85
+247            android:authorities="com.windigitalkhatulistiwa.laundrymitra.imagepicker.provider"
+247-->[com.github.dhaval2404:imagepicker:1.7.5] /Users/macbook/.gradle/caches/transforms-2/files-2.1/07876fb2acb20bfa1b75d9348a5350e2/jetified-imagepicker-1.7.5/AndroidManifest.xml:26:13-72
+248            android:exported="false"
+248-->[com.github.dhaval2404:imagepicker:1.7.5] /Users/macbook/.gradle/caches/transforms-2/files-2.1/07876fb2acb20bfa1b75d9348a5350e2/jetified-imagepicker-1.7.5/AndroidManifest.xml:27:13-37
+249            android:grantUriPermissions="true" >
+249-->[com.github.dhaval2404:imagepicker:1.7.5] /Users/macbook/.gradle/caches/transforms-2/files-2.1/07876fb2acb20bfa1b75d9348a5350e2/jetified-imagepicker-1.7.5/AndroidManifest.xml:28:13-47
+250            <meta-data
+250-->/Users/macbook/Desktop/frelance/tokoweb/winlaundry-mitra-mobile/app/src/main/AndroidManifest.xml:191:13-193:53
+251                android:name="android.support.FILE_PROVIDER_PATHS"
+251-->/Users/macbook/Desktop/frelance/tokoweb/winlaundry-mitra-mobile/app/src/main/AndroidManifest.xml:192:17-67
+252                android:resource="@xml/image_picker_provider_paths" />
+252-->/Users/macbook/Desktop/frelance/tokoweb/winlaundry-mitra-mobile/app/src/main/AndroidManifest.xml:193:17-50
+253        </provider>
+254
+255        <service
+255-->[com.google.firebase:firebase-crashlytics:17.3.0] /Users/macbook/.gradle/caches/transforms-2/files-2.1/b7dd6a7bd74c475b7f2b28ff3b120677/jetified-firebase-crashlytics-17.3.0/AndroidManifest.xml:15:9-21:19
+256            android:name="com.google.firebase.components.ComponentDiscoveryService"
+256-->[com.google.firebase:firebase-crashlytics:17.3.0] /Users/macbook/.gradle/caches/transforms-2/files-2.1/b7dd6a7bd74c475b7f2b28ff3b120677/jetified-firebase-crashlytics-17.3.0/AndroidManifest.xml:16:13-84
+257            android:directBootAware="true"
+257-->[com.google.firebase:firebase-common:19.5.0] /Users/macbook/.gradle/caches/transforms-2/files-2.1/f26729848af0a284fe9cbfac5f61f119/jetified-firebase-common-19.5.0/AndroidManifest.xml:35:13-43
+258            android:exported="false" >
+258-->[com.google.firebase:firebase-crashlytics:17.3.0] /Users/macbook/.gradle/caches/transforms-2/files-2.1/b7dd6a7bd74c475b7f2b28ff3b120677/jetified-firebase-crashlytics-17.3.0/AndroidManifest.xml:17:13-37
+259            <meta-data
+259-->[com.google.firebase:firebase-crashlytics:17.3.0] /Users/macbook/.gradle/caches/transforms-2/files-2.1/b7dd6a7bd74c475b7f2b28ff3b120677/jetified-firebase-crashlytics-17.3.0/AndroidManifest.xml:18:13-20:85
+260                android:name="com.google.firebase.components:com.google.firebase.crashlytics.CrashlyticsRegistrar"
+260-->[com.google.firebase:firebase-crashlytics:17.3.0] /Users/macbook/.gradle/caches/transforms-2/files-2.1/b7dd6a7bd74c475b7f2b28ff3b120677/jetified-firebase-crashlytics-17.3.0/AndroidManifest.xml:19:17-115
+261                android:value="com.google.firebase.components.ComponentRegistrar" />
+261-->[com.google.firebase:firebase-crashlytics:17.3.0] /Users/macbook/.gradle/caches/transforms-2/files-2.1/b7dd6a7bd74c475b7f2b28ff3b120677/jetified-firebase-crashlytics-17.3.0/AndroidManifest.xml:20:17-82
+262            <meta-data
+262-->[com.google.firebase:firebase-messaging:21.0.1] /Users/macbook/.gradle/caches/transforms-2/files-2.1/9dd5a099c797cdf3f16ead6c63f719c4/jetified-firebase-messaging-21.0.1/AndroidManifest.xml:39:13-41:85
+263                android:name="com.google.firebase.components:com.google.firebase.messaging.FirebaseMessagingRegistrar"
+263-->[com.google.firebase:firebase-messaging:21.0.1] /Users/macbook/.gradle/caches/transforms-2/files-2.1/9dd5a099c797cdf3f16ead6c63f719c4/jetified-firebase-messaging-21.0.1/AndroidManifest.xml:40:17-119
+264                android:value="com.google.firebase.components.ComponentRegistrar" />
+264-->[com.google.firebase:firebase-messaging:21.0.1] /Users/macbook/.gradle/caches/transforms-2/files-2.1/9dd5a099c797cdf3f16ead6c63f719c4/jetified-firebase-messaging-21.0.1/AndroidManifest.xml:41:17-82
+265            <meta-data
+265-->[com.google.firebase:firebase-auth:20.0.1] /Users/macbook/.gradle/caches/transforms-2/files-2.1/04bd8e86bdcc272814c102c7d09bb247/jetified-firebase-auth-20.0.1/AndroidManifest.xml:77:13-79:85
+266                android:name="com.google.firebase.components:com.google.firebase.auth.FirebaseAuthRegistrar"
+266-->[com.google.firebase:firebase-auth:20.0.1] /Users/macbook/.gradle/caches/transforms-2/files-2.1/04bd8e86bdcc272814c102c7d09bb247/jetified-firebase-auth-20.0.1/AndroidManifest.xml:78:17-109
+267                android:value="com.google.firebase.components.ComponentRegistrar" />
+267-->[com.google.firebase:firebase-auth:20.0.1] /Users/macbook/.gradle/caches/transforms-2/files-2.1/04bd8e86bdcc272814c102c7d09bb247/jetified-firebase-auth-20.0.1/AndroidManifest.xml:79:17-82
+268            <meta-data
+268-->[com.google.firebase:firebase-iid:21.0.1] /Users/macbook/.gradle/caches/transforms-2/files-2.1/5061134fc69d3085e5629a314fe6cc5b/jetified-firebase-iid-21.0.1/AndroidManifest.xml:32:13-34:85
+269                android:name="com.google.firebase.components:com.google.firebase.iid.Registrar"
+269-->[com.google.firebase:firebase-iid:21.0.1] /Users/macbook/.gradle/caches/transforms-2/files-2.1/5061134fc69d3085e5629a314fe6cc5b/jetified-firebase-iid-21.0.1/AndroidManifest.xml:33:17-96
+270                android:value="com.google.firebase.components.ComponentRegistrar" />
+270-->[com.google.firebase:firebase-iid:21.0.1] /Users/macbook/.gradle/caches/transforms-2/files-2.1/5061134fc69d3085e5629a314fe6cc5b/jetified-firebase-iid-21.0.1/AndroidManifest.xml:34:17-82
+271            <meta-data
+271-->[com.google.android.gms:play-services-measurement-api:18.0.0] /Users/macbook/.gradle/caches/transforms-2/files-2.1/b51f023d5c701d94be9cc59069a4482a/jetified-play-services-measurement-api-18.0.0/AndroidManifest.xml:30:13-32:85
+272                android:name="com.google.firebase.components:com.google.firebase.analytics.connector.internal.AnalyticsConnectorRegistrar"
+272-->[com.google.android.gms:play-services-measurement-api:18.0.0] /Users/macbook/.gradle/caches/transforms-2/files-2.1/b51f023d5c701d94be9cc59069a4482a/jetified-play-services-measurement-api-18.0.0/AndroidManifest.xml:31:17-139
+273                android:value="com.google.firebase.components.ComponentRegistrar" />
+273-->[com.google.android.gms:play-services-measurement-api:18.0.0] /Users/macbook/.gradle/caches/transforms-2/files-2.1/b51f023d5c701d94be9cc59069a4482a/jetified-play-services-measurement-api-18.0.0/AndroidManifest.xml:32:17-82
+274            <meta-data
+274-->[com.google.firebase:firebase-installations:16.3.5] /Users/macbook/.gradle/caches/transforms-2/files-2.1/8d9a8086ee7c29851fe69442a8b7e4ea/jetified-firebase-installations-16.3.5/AndroidManifest.xml:18:13-20:85
+275                android:name="com.google.firebase.components:com.google.firebase.installations.FirebaseInstallationsRegistrar"
+275-->[com.google.firebase:firebase-installations:16.3.5] /Users/macbook/.gradle/caches/transforms-2/files-2.1/8d9a8086ee7c29851fe69442a8b7e4ea/jetified-firebase-installations-16.3.5/AndroidManifest.xml:19:17-127
+276                android:value="com.google.firebase.components.ComponentRegistrar" />
+276-->[com.google.firebase:firebase-installations:16.3.5] /Users/macbook/.gradle/caches/transforms-2/files-2.1/8d9a8086ee7c29851fe69442a8b7e4ea/jetified-firebase-installations-16.3.5/AndroidManifest.xml:20:17-82
+277            <meta-data
+277-->[com.google.firebase:firebase-datatransport:17.0.10] /Users/macbook/.gradle/caches/transforms-2/files-2.1/b75b5b59891d561d3a59972d9b548d03/jetified-firebase-datatransport-17.0.10/AndroidManifest.xml:28:13-30:85
+278                android:name="com.google.firebase.components:com.google.firebase.datatransport.TransportRegistrar"
+278-->[com.google.firebase:firebase-datatransport:17.0.10] /Users/macbook/.gradle/caches/transforms-2/files-2.1/b75b5b59891d561d3a59972d9b548d03/jetified-firebase-datatransport-17.0.10/AndroidManifest.xml:29:17-115
+279                android:value="com.google.firebase.components.ComponentRegistrar" />
+279-->[com.google.firebase:firebase-datatransport:17.0.10] /Users/macbook/.gradle/caches/transforms-2/files-2.1/b75b5b59891d561d3a59972d9b548d03/jetified-firebase-datatransport-17.0.10/AndroidManifest.xml:30:17-82
+280            <!--
+281                This registrar is not defined in the dynamic-module-support sdk itself to allow non-firebase
+282                clients to use it as well, by defining this registrar in their own core/common library.
+283            -->
+284            <meta-data
+284-->[com.google.firebase:firebase-common:19.5.0] /Users/macbook/.gradle/caches/transforms-2/files-2.1/f26729848af0a284fe9cbfac5f61f119/jetified-firebase-common-19.5.0/AndroidManifest.xml:43:13-45:85
+285                android:name="com.google.firebase.components:com.google.firebase.dynamicloading.DynamicLoadingRegistrar"
+285-->[com.google.firebase:firebase-common:19.5.0] /Users/macbook/.gradle/caches/transforms-2/files-2.1/f26729848af0a284fe9cbfac5f61f119/jetified-firebase-common-19.5.0/AndroidManifest.xml:44:17-121
+286                android:value="com.google.firebase.components.ComponentRegistrar" />
+286-->[com.google.firebase:firebase-common:19.5.0] /Users/macbook/.gradle/caches/transforms-2/files-2.1/f26729848af0a284fe9cbfac5f61f119/jetified-firebase-common-19.5.0/AndroidManifest.xml:45:17-82
+287        </service> <!-- Needs to be explicitly declared on P+ -->
+288        <uses-library
+288-->[com.google.android.gms:play-services-maps:17.0.0] /Users/macbook/.gradle/caches/transforms-2/files-2.1/fcf596c7e860f1af6145204aa15f46d6/jetified-play-services-maps-17.0.0/AndroidManifest.xml:33:9-35:40
+289            android:name="org.apache.http.legacy"
+289-->[com.google.android.gms:play-services-maps:17.0.0] /Users/macbook/.gradle/caches/transforms-2/files-2.1/fcf596c7e860f1af6145204aa15f46d6/jetified-play-services-maps-17.0.0/AndroidManifest.xml:34:13-50
+290            android:required="false" />
+290-->[com.google.android.gms:play-services-maps:17.0.0] /Users/macbook/.gradle/caches/transforms-2/files-2.1/fcf596c7e860f1af6145204aa15f46d6/jetified-play-services-maps-17.0.0/AndroidManifest.xml:35:13-37
+291        <!--
+292             FirebaseMessagingService performs security checks at runtime,
+293             but set to not exported to explicitly avoid allowing another app to call it.
+294        -->
+295        <service
+295-->[com.google.firebase:firebase-messaging:21.0.1] /Users/macbook/.gradle/caches/transforms-2/files-2.1/9dd5a099c797cdf3f16ead6c63f719c4/jetified-firebase-messaging-21.0.1/AndroidManifest.xml:28:9-35:19
+296            android:name="com.google.firebase.messaging.FirebaseMessagingService"
+296-->[com.google.firebase:firebase-messaging:21.0.1] /Users/macbook/.gradle/caches/transforms-2/files-2.1/9dd5a099c797cdf3f16ead6c63f719c4/jetified-firebase-messaging-21.0.1/AndroidManifest.xml:29:13-82
+297            android:directBootAware="true"
+297-->[com.google.firebase:firebase-messaging:21.0.1] /Users/macbook/.gradle/caches/transforms-2/files-2.1/9dd5a099c797cdf3f16ead6c63f719c4/jetified-firebase-messaging-21.0.1/AndroidManifest.xml:30:13-43
+298            android:exported="false" >
+298-->[com.google.firebase:firebase-messaging:21.0.1] /Users/macbook/.gradle/caches/transforms-2/files-2.1/9dd5a099c797cdf3f16ead6c63f719c4/jetified-firebase-messaging-21.0.1/AndroidManifest.xml:31:13-37
+299            <intent-filter android:priority="-500" >
+299-->[com.google.firebase:firebase-messaging:21.0.1] /Users/macbook/.gradle/caches/transforms-2/files-2.1/9dd5a099c797cdf3f16ead6c63f719c4/jetified-firebase-messaging-21.0.1/AndroidManifest.xml:32:13-34:29
+299-->[com.google.firebase:firebase-messaging:21.0.1] /Users/macbook/.gradle/caches/transforms-2/files-2.1/9dd5a099c797cdf3f16ead6c63f719c4/jetified-firebase-messaging-21.0.1/AndroidManifest.xml:32:28-51
+300                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+300-->/Users/macbook/Desktop/frelance/tokoweb/winlaundry-mitra-mobile/app/src/main/AndroidManifest.xml:182:17-78
+300-->/Users/macbook/Desktop/frelance/tokoweb/winlaundry-mitra-mobile/app/src/main/AndroidManifest.xml:182:25-75
+301            </intent-filter>
+302        </service>
+303        <service
+303-->[androidx.room:room-runtime:2.2.6] /Users/macbook/.gradle/caches/transforms-2/files-2.1/63d1a583aa33c44f7c3c3d3729ec4935/room-runtime-2.2.6/AndroidManifest.xml:25:9-28:40
+304            android:name="androidx.room.MultiInstanceInvalidationService"
+304-->[androidx.room:room-runtime:2.2.6] /Users/macbook/.gradle/caches/transforms-2/files-2.1/63d1a583aa33c44f7c3c3d3729ec4935/room-runtime-2.2.6/AndroidManifest.xml:26:13-74
+305            android:directBootAware="true"
+305-->[androidx.room:room-runtime:2.2.6] /Users/macbook/.gradle/caches/transforms-2/files-2.1/63d1a583aa33c44f7c3c3d3729ec4935/room-runtime-2.2.6/AndroidManifest.xml:27:13-43
+306            android:exported="false" />
+306-->[androidx.room:room-runtime:2.2.6] /Users/macbook/.gradle/caches/transforms-2/files-2.1/63d1a583aa33c44f7c3c3d3729ec4935/room-runtime-2.2.6/AndroidManifest.xml:28:13-37
+307
+308        <activity
+308-->[com.google.android.gms:play-services-auth:19.0.0] /Users/macbook/.gradle/caches/transforms-2/files-2.1/767c60632d9a9a5fe21b2e21682d6fc2/jetified-play-services-auth-19.0.0/AndroidManifest.xml:23:9-27:75
+309            android:name="com.google.android.gms.auth.api.signin.internal.SignInHubActivity"
+309-->[com.google.android.gms:play-services-auth:19.0.0] /Users/macbook/.gradle/caches/transforms-2/files-2.1/767c60632d9a9a5fe21b2e21682d6fc2/jetified-play-services-auth-19.0.0/AndroidManifest.xml:24:13-93
+310            android:excludeFromRecents="true"
+310-->[com.google.android.gms:play-services-auth:19.0.0] /Users/macbook/.gradle/caches/transforms-2/files-2.1/767c60632d9a9a5fe21b2e21682d6fc2/jetified-play-services-auth-19.0.0/AndroidManifest.xml:25:13-46
+311            android:exported="false"
+311-->[com.google.android.gms:play-services-auth:19.0.0] /Users/macbook/.gradle/caches/transforms-2/files-2.1/767c60632d9a9a5fe21b2e21682d6fc2/jetified-play-services-auth-19.0.0/AndroidManifest.xml:26:13-37
+312            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+312-->[com.google.android.gms:play-services-auth:19.0.0] /Users/macbook/.gradle/caches/transforms-2/files-2.1/767c60632d9a9a5fe21b2e21682d6fc2/jetified-play-services-auth-19.0.0/AndroidManifest.xml:27:13-72
+313        <!--
+314            Service handling Google Sign-In user revocation. For apps that do not integrate with
+315            Google Sign-In, this service will never be started.
+316        -->
+317        <service
+317-->[com.google.android.gms:play-services-auth:19.0.0] /Users/macbook/.gradle/caches/transforms-2/files-2.1/767c60632d9a9a5fe21b2e21682d6fc2/jetified-play-services-auth-19.0.0/AndroidManifest.xml:33:9-37:51
+318            android:name="com.google.android.gms.auth.api.signin.RevocationBoundService"
+318-->[com.google.android.gms:play-services-auth:19.0.0] /Users/macbook/.gradle/caches/transforms-2/files-2.1/767c60632d9a9a5fe21b2e21682d6fc2/jetified-play-services-auth-19.0.0/AndroidManifest.xml:34:13-89
+319            android:exported="true"
+319-->[com.google.android.gms:play-services-auth:19.0.0] /Users/macbook/.gradle/caches/transforms-2/files-2.1/767c60632d9a9a5fe21b2e21682d6fc2/jetified-play-services-auth-19.0.0/AndroidManifest.xml:35:13-36
+320            android:permission="com.google.android.gms.auth.api.signin.permission.REVOCATION_NOTIFICATION"
+320-->[com.google.android.gms:play-services-auth:19.0.0] /Users/macbook/.gradle/caches/transforms-2/files-2.1/767c60632d9a9a5fe21b2e21682d6fc2/jetified-play-services-auth-19.0.0/AndroidManifest.xml:36:13-107
+321            android:visibleToInstantApps="true" />
+321-->[com.google.android.gms:play-services-auth:19.0.0] /Users/macbook/.gradle/caches/transforms-2/files-2.1/767c60632d9a9a5fe21b2e21682d6fc2/jetified-play-services-auth-19.0.0/AndroidManifest.xml:37:13-48
+322
+323        <activity
+323-->[com.google.firebase:firebase-auth:20.0.1] /Users/macbook/.gradle/caches/transforms-2/files-2.1/04bd8e86bdcc272814c102c7d09bb247/jetified-firebase-auth-20.0.1/AndroidManifest.xml:27:9-44:20
+324            android:name="com.google.firebase.auth.internal.GenericIdpActivity"
+324-->[com.google.firebase:firebase-auth:20.0.1] /Users/macbook/.gradle/caches/transforms-2/files-2.1/04bd8e86bdcc272814c102c7d09bb247/jetified-firebase-auth-20.0.1/AndroidManifest.xml:28:13-80
+325            android:excludeFromRecents="true"
+325-->[com.google.firebase:firebase-auth:20.0.1] /Users/macbook/.gradle/caches/transforms-2/files-2.1/04bd8e86bdcc272814c102c7d09bb247/jetified-firebase-auth-20.0.1/AndroidManifest.xml:29:13-46
+326            android:exported="true"
+326-->[com.google.firebase:firebase-auth:20.0.1] /Users/macbook/.gradle/caches/transforms-2/files-2.1/04bd8e86bdcc272814c102c7d09bb247/jetified-firebase-auth-20.0.1/AndroidManifest.xml:30:13-36
+327            android:launchMode="singleTask"
+327-->[com.google.firebase:firebase-auth:20.0.1] /Users/macbook/.gradle/caches/transforms-2/files-2.1/04bd8e86bdcc272814c102c7d09bb247/jetified-firebase-auth-20.0.1/AndroidManifest.xml:31:13-44
+328            android:theme="@android:style/Theme.Translucent.NoTitleBar" >
+328-->[com.google.firebase:firebase-auth:20.0.1] /Users/macbook/.gradle/caches/transforms-2/files-2.1/04bd8e86bdcc272814c102c7d09bb247/jetified-firebase-auth-20.0.1/AndroidManifest.xml:32:13-72
+329            <intent-filter>
+329-->[com.google.firebase:firebase-auth:20.0.1] /Users/macbook/.gradle/caches/transforms-2/files-2.1/04bd8e86bdcc272814c102c7d09bb247/jetified-firebase-auth-20.0.1/AndroidManifest.xml:33:13-43:29
+330                <action android:name="android.intent.action.VIEW" />
+330-->/Users/macbook/Desktop/frelance/tokoweb/winlaundry-mitra-mobile/app/src/main/AndroidManifest.xml:129:17-69
+330-->/Users/macbook/Desktop/frelance/tokoweb/winlaundry-mitra-mobile/app/src/main/AndroidManifest.xml:129:25-66
+331
+332                <category android:name="android.intent.category.DEFAULT" />
+332-->/Users/macbook/Desktop/frelance/tokoweb/winlaundry-mitra-mobile/app/src/main/AndroidManifest.xml:131:17-76
+332-->/Users/macbook/Desktop/frelance/tokoweb/winlaundry-mitra-mobile/app/src/main/AndroidManifest.xml:131:27-73
+333                <category android:name="android.intent.category.BROWSABLE" />
+333-->/Users/macbook/Desktop/frelance/tokoweb/winlaundry-mitra-mobile/app/src/main/AndroidManifest.xml:132:17-78
+333-->/Users/macbook/Desktop/frelance/tokoweb/winlaundry-mitra-mobile/app/src/main/AndroidManifest.xml:132:27-75
+334
+335                <data
+335-->/Users/macbook/Desktop/frelance/tokoweb/winlaundry-mitra-mobile/app/src/main/AndroidManifest.xml:134:17-137:45
+336                    android:host="firebase.auth"
+336-->/Users/macbook/Desktop/frelance/tokoweb/winlaundry-mitra-mobile/app/src/main/AndroidManifest.xml:135:21-73
+337                    android:path="/"
+338                    android:scheme="genericidp" />
+338-->/Users/macbook/Desktop/frelance/tokoweb/winlaundry-mitra-mobile/app/src/main/AndroidManifest.xml:137:21-42
+339            </intent-filter>
+340        </activity>
+341        <activity
+341-->[com.google.firebase:firebase-auth:20.0.1] /Users/macbook/.gradle/caches/transforms-2/files-2.1/04bd8e86bdcc272814c102c7d09bb247/jetified-firebase-auth-20.0.1/AndroidManifest.xml:45:9-62:20
+342            android:name="com.google.firebase.auth.internal.RecaptchaActivity"
+342-->[com.google.firebase:firebase-auth:20.0.1] /Users/macbook/.gradle/caches/transforms-2/files-2.1/04bd8e86bdcc272814c102c7d09bb247/jetified-firebase-auth-20.0.1/AndroidManifest.xml:46:13-79
+343            android:excludeFromRecents="true"
+343-->[com.google.firebase:firebase-auth:20.0.1] /Users/macbook/.gradle/caches/transforms-2/files-2.1/04bd8e86bdcc272814c102c7d09bb247/jetified-firebase-auth-20.0.1/AndroidManifest.xml:47:13-46
+344            android:exported="true"
+344-->[com.google.firebase:firebase-auth:20.0.1] /Users/macbook/.gradle/caches/transforms-2/files-2.1/04bd8e86bdcc272814c102c7d09bb247/jetified-firebase-auth-20.0.1/AndroidManifest.xml:48:13-36
+345            android:launchMode="singleTask"
+345-->[com.google.firebase:firebase-auth:20.0.1] /Users/macbook/.gradle/caches/transforms-2/files-2.1/04bd8e86bdcc272814c102c7d09bb247/jetified-firebase-auth-20.0.1/AndroidManifest.xml:49:13-44
+346            android:theme="@android:style/Theme.Translucent.NoTitleBar" >
+346-->[com.google.firebase:firebase-auth:20.0.1] /Users/macbook/.gradle/caches/transforms-2/files-2.1/04bd8e86bdcc272814c102c7d09bb247/jetified-firebase-auth-20.0.1/AndroidManifest.xml:50:13-72
+347            <intent-filter>
+347-->[com.google.firebase:firebase-auth:20.0.1] /Users/macbook/.gradle/caches/transforms-2/files-2.1/04bd8e86bdcc272814c102c7d09bb247/jetified-firebase-auth-20.0.1/AndroidManifest.xml:51:13-61:29
+348                <action android:name="android.intent.action.VIEW" />
+348-->/Users/macbook/Desktop/frelance/tokoweb/winlaundry-mitra-mobile/app/src/main/AndroidManifest.xml:129:17-69
+348-->/Users/macbook/Desktop/frelance/tokoweb/winlaundry-mitra-mobile/app/src/main/AndroidManifest.xml:129:25-66
+349
+350                <category android:name="android.intent.category.DEFAULT" />
+350-->/Users/macbook/Desktop/frelance/tokoweb/winlaundry-mitra-mobile/app/src/main/AndroidManifest.xml:131:17-76
+350-->/Users/macbook/Desktop/frelance/tokoweb/winlaundry-mitra-mobile/app/src/main/AndroidManifest.xml:131:27-73
+351                <category android:name="android.intent.category.BROWSABLE" />
+351-->/Users/macbook/Desktop/frelance/tokoweb/winlaundry-mitra-mobile/app/src/main/AndroidManifest.xml:132:17-78
+351-->/Users/macbook/Desktop/frelance/tokoweb/winlaundry-mitra-mobile/app/src/main/AndroidManifest.xml:132:27-75
+352
+353                <data
+353-->/Users/macbook/Desktop/frelance/tokoweb/winlaundry-mitra-mobile/app/src/main/AndroidManifest.xml:134:17-137:45
+354                    android:host="firebase.auth"
+354-->/Users/macbook/Desktop/frelance/tokoweb/winlaundry-mitra-mobile/app/src/main/AndroidManifest.xml:135:21-73
+355                    android:path="/"
+356                    android:scheme="recaptcha" />
+356-->/Users/macbook/Desktop/frelance/tokoweb/winlaundry-mitra-mobile/app/src/main/AndroidManifest.xml:137:21-42
+357            </intent-filter>
+358        </activity>
+359
+360        <service
+360-->[com.google.firebase:firebase-auth:20.0.1] /Users/macbook/.gradle/caches/transforms-2/files-2.1/04bd8e86bdcc272814c102c7d09bb247/jetified-firebase-auth-20.0.1/AndroidManifest.xml:64:9-73:19
+361            android:name="com.google.firebase.auth.api.fallback.service.FirebaseAuthFallbackService"
+361-->[com.google.firebase:firebase-auth:20.0.1] /Users/macbook/.gradle/caches/transforms-2/files-2.1/04bd8e86bdcc272814c102c7d09bb247/jetified-firebase-auth-20.0.1/AndroidManifest.xml:65:13-101
+362            android:enabled="true"
+362-->[com.google.firebase:firebase-auth:20.0.1] /Users/macbook/.gradle/caches/transforms-2/files-2.1/04bd8e86bdcc272814c102c7d09bb247/jetified-firebase-auth-20.0.1/AndroidManifest.xml:66:13-35
+363            android:exported="false" >
+363-->[com.google.firebase:firebase-auth:20.0.1] /Users/macbook/.gradle/caches/transforms-2/files-2.1/04bd8e86bdcc272814c102c7d09bb247/jetified-firebase-auth-20.0.1/AndroidManifest.xml:67:13-37
+364            <intent-filter>
+364-->[com.google.firebase:firebase-auth:20.0.1] /Users/macbook/.gradle/caches/transforms-2/files-2.1/04bd8e86bdcc272814c102c7d09bb247/jetified-firebase-auth-20.0.1/AndroidManifest.xml:68:13-72:29
+365                <action android:name="com.google.firebase.auth.api.gms.service.START" />
+365-->[com.google.firebase:firebase-auth:20.0.1] /Users/macbook/.gradle/caches/transforms-2/files-2.1/04bd8e86bdcc272814c102c7d09bb247/jetified-firebase-auth-20.0.1/AndroidManifest.xml:69:17-89
+365-->[com.google.firebase:firebase-auth:20.0.1] /Users/macbook/.gradle/caches/transforms-2/files-2.1/04bd8e86bdcc272814c102c7d09bb247/jetified-firebase-auth-20.0.1/AndroidManifest.xml:69:25-86
+366
+367                <category android:name="android.intent.category.DEFAULT" />
+367-->/Users/macbook/Desktop/frelance/tokoweb/winlaundry-mitra-mobile/app/src/main/AndroidManifest.xml:131:17-76
+367-->/Users/macbook/Desktop/frelance/tokoweb/winlaundry-mitra-mobile/app/src/main/AndroidManifest.xml:131:27-73
+368            </intent-filter>
+369        </service>
+370
+371        <receiver
+371-->[com.google.android.gms:play-services-measurement:18.0.0] /Users/macbook/.gradle/caches/transforms-2/files-2.1/d3d25ac4edcf793410bc25b2aac5bddc/jetified-play-services-measurement-18.0.0/AndroidManifest.xml:29:9-33:20
+372            android:name="com.google.android.gms.measurement.AppMeasurementReceiver"
+372-->[com.google.android.gms:play-services-measurement:18.0.0] /Users/macbook/.gradle/caches/transforms-2/files-2.1/d3d25ac4edcf793410bc25b2aac5bddc/jetified-play-services-measurement-18.0.0/AndroidManifest.xml:30:13-85
+373            android:enabled="true"
+373-->[com.google.android.gms:play-services-measurement:18.0.0] /Users/macbook/.gradle/caches/transforms-2/files-2.1/d3d25ac4edcf793410bc25b2aac5bddc/jetified-play-services-measurement-18.0.0/AndroidManifest.xml:31:13-35
+374            android:exported="false" >
+374-->[com.google.android.gms:play-services-measurement:18.0.0] /Users/macbook/.gradle/caches/transforms-2/files-2.1/d3d25ac4edcf793410bc25b2aac5bddc/jetified-play-services-measurement-18.0.0/AndroidManifest.xml:32:13-37
+375        </receiver>
+376
+377        <service
+377-->[com.google.android.gms:play-services-measurement:18.0.0] /Users/macbook/.gradle/caches/transforms-2/files-2.1/d3d25ac4edcf793410bc25b2aac5bddc/jetified-play-services-measurement-18.0.0/AndroidManifest.xml:35:9-38:40
+378            android:name="com.google.android.gms.measurement.AppMeasurementService"
+378-->[com.google.android.gms:play-services-measurement:18.0.0] /Users/macbook/.gradle/caches/transforms-2/files-2.1/d3d25ac4edcf793410bc25b2aac5bddc/jetified-play-services-measurement-18.0.0/AndroidManifest.xml:36:13-84
+379            android:enabled="true"
+379-->[com.google.android.gms:play-services-measurement:18.0.0] /Users/macbook/.gradle/caches/transforms-2/files-2.1/d3d25ac4edcf793410bc25b2aac5bddc/jetified-play-services-measurement-18.0.0/AndroidManifest.xml:37:13-35
+380            android:exported="false" />
+380-->[com.google.android.gms:play-services-measurement:18.0.0] /Users/macbook/.gradle/caches/transforms-2/files-2.1/d3d25ac4edcf793410bc25b2aac5bddc/jetified-play-services-measurement-18.0.0/AndroidManifest.xml:38:13-37
+381        <service
+381-->[com.google.android.gms:play-services-measurement:18.0.0] /Users/macbook/.gradle/caches/transforms-2/files-2.1/d3d25ac4edcf793410bc25b2aac5bddc/jetified-play-services-measurement-18.0.0/AndroidManifest.xml:39:9-43:72
+382            android:name="com.google.android.gms.measurement.AppMeasurementJobService"
+382-->[com.google.android.gms:play-services-measurement:18.0.0] /Users/macbook/.gradle/caches/transforms-2/files-2.1/d3d25ac4edcf793410bc25b2aac5bddc/jetified-play-services-measurement-18.0.0/AndroidManifest.xml:40:13-87
+383            android:enabled="true"
+383-->[com.google.android.gms:play-services-measurement:18.0.0] /Users/macbook/.gradle/caches/transforms-2/files-2.1/d3d25ac4edcf793410bc25b2aac5bddc/jetified-play-services-measurement-18.0.0/AndroidManifest.xml:41:13-35
+384            android:exported="false"
+384-->[com.google.android.gms:play-services-measurement:18.0.0] /Users/macbook/.gradle/caches/transforms-2/files-2.1/d3d25ac4edcf793410bc25b2aac5bddc/jetified-play-services-measurement-18.0.0/AndroidManifest.xml:42:13-37
+385            android:permission="android.permission.BIND_JOB_SERVICE" />
+385-->[com.google.android.gms:play-services-measurement:18.0.0] /Users/macbook/.gradle/caches/transforms-2/files-2.1/d3d25ac4edcf793410bc25b2aac5bddc/jetified-play-services-measurement-18.0.0/AndroidManifest.xml:43:13-69
+386
+387        <receiver
+387-->[com.google.firebase:firebase-iid:21.0.1] /Users/macbook/.gradle/caches/transforms-2/files-2.1/5061134fc69d3085e5629a314fe6cc5b/jetified-firebase-iid-21.0.1/AndroidManifest.xml:37:9-44:20
+388            android:name="com.google.firebase.iid.FirebaseInstanceIdReceiver"
+388-->[com.google.firebase:firebase-iid:21.0.1] /Users/macbook/.gradle/caches/transforms-2/files-2.1/5061134fc69d3085e5629a314fe6cc5b/jetified-firebase-iid-21.0.1/AndroidManifest.xml:38:13-78
+389            android:exported="true"
+389-->[com.google.firebase:firebase-iid:21.0.1] /Users/macbook/.gradle/caches/transforms-2/files-2.1/5061134fc69d3085e5629a314fe6cc5b/jetified-firebase-iid-21.0.1/AndroidManifest.xml:39:13-36
+390            android:permission="com.google.android.c2dm.permission.SEND" >
+390-->[com.google.firebase:firebase-iid:21.0.1] /Users/macbook/.gradle/caches/transforms-2/files-2.1/5061134fc69d3085e5629a314fe6cc5b/jetified-firebase-iid-21.0.1/AndroidManifest.xml:40:13-73
+391            <intent-filter>
+391-->[com.google.firebase:firebase-iid:21.0.1] /Users/macbook/.gradle/caches/transforms-2/files-2.1/5061134fc69d3085e5629a314fe6cc5b/jetified-firebase-iid-21.0.1/AndroidManifest.xml:41:13-43:29
+392                <action android:name="com.google.android.c2dm.intent.RECEIVE" />
+392-->[com.google.firebase:firebase-iid:21.0.1] /Users/macbook/.gradle/caches/transforms-2/files-2.1/5061134fc69d3085e5629a314fe6cc5b/jetified-firebase-iid-21.0.1/AndroidManifest.xml:42:17-81
+392-->[com.google.firebase:firebase-iid:21.0.1] /Users/macbook/.gradle/caches/transforms-2/files-2.1/5061134fc69d3085e5629a314fe6cc5b/jetified-firebase-iid-21.0.1/AndroidManifest.xml:42:25-78
+393            </intent-filter>
+394        </receiver>
+395
+396        <activity
+396-->[com.google.android.gms:play-services-base:17.3.0] /Users/macbook/.gradle/caches/transforms-2/files-2.1/ae2adf0044a72482cefbedc240e01f78/jetified-play-services-base-17.3.0/AndroidManifest.xml:23:9-26:75
+397            android:name="com.google.android.gms.common.api.GoogleApiActivity"
+397-->[com.google.android.gms:play-services-base:17.3.0] /Users/macbook/.gradle/caches/transforms-2/files-2.1/ae2adf0044a72482cefbedc240e01f78/jetified-play-services-base-17.3.0/AndroidManifest.xml:24:13-79
+398            android:exported="false"
+398-->[com.google.android.gms:play-services-base:17.3.0] /Users/macbook/.gradle/caches/transforms-2/files-2.1/ae2adf0044a72482cefbedc240e01f78/jetified-play-services-base-17.3.0/AndroidManifest.xml:25:13-37
+399            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+399-->[com.google.android.gms:play-services-base:17.3.0] /Users/macbook/.gradle/caches/transforms-2/files-2.1/ae2adf0044a72482cefbedc240e01f78/jetified-play-services-base-17.3.0/AndroidManifest.xml:26:13-72
+400
+401        <provider
+401-->[com.google.firebase:firebase-common:19.5.0] /Users/macbook/.gradle/caches/transforms-2/files-2.1/f26729848af0a284fe9cbfac5f61f119/jetified-firebase-common-19.5.0/AndroidManifest.xml:26:9-31:39
+402            android:name="com.google.firebase.provider.FirebaseInitProvider"
+402-->[com.google.firebase:firebase-common:19.5.0] /Users/macbook/.gradle/caches/transforms-2/files-2.1/f26729848af0a284fe9cbfac5f61f119/jetified-firebase-common-19.5.0/AndroidManifest.xml:27:13-77
+403            android:authorities="com.windigitalkhatulistiwa.laundrymitra.firebaseinitprovider"
+403-->[com.google.firebase:firebase-common:19.5.0] /Users/macbook/.gradle/caches/transforms-2/files-2.1/f26729848af0a284fe9cbfac5f61f119/jetified-firebase-common-19.5.0/AndroidManifest.xml:28:13-72
+404            android:directBootAware="true"
+404-->[com.google.firebase:firebase-common:19.5.0] /Users/macbook/.gradle/caches/transforms-2/files-2.1/f26729848af0a284fe9cbfac5f61f119/jetified-firebase-common-19.5.0/AndroidManifest.xml:29:13-43
+405            android:exported="false"
+405-->[com.google.firebase:firebase-common:19.5.0] /Users/macbook/.gradle/caches/transforms-2/files-2.1/f26729848af0a284fe9cbfac5f61f119/jetified-firebase-common-19.5.0/AndroidManifest.xml:30:13-37
+406            android:initOrder="100" />
+406-->[com.google.firebase:firebase-common:19.5.0] /Users/macbook/.gradle/caches/transforms-2/files-2.1/f26729848af0a284fe9cbfac5f61f119/jetified-firebase-common-19.5.0/AndroidManifest.xml:31:13-36
+407
+408        <meta-data
+408-->/Users/macbook/Desktop/frelance/tokoweb/winlaundry-mitra-mobile/app/src/main/AndroidManifest.xml:171:13-173:73
+409            android:name="com.google.android.gms.version"
+409-->/Users/macbook/Desktop/frelance/tokoweb/winlaundry-mitra-mobile/app/src/main/AndroidManifest.xml:172:17-62
+410            android:value="@integer/google_play_services_version" />
+410-->/Users/macbook/Desktop/frelance/tokoweb/winlaundry-mitra-mobile/app/src/main/AndroidManifest.xml:173:17-70
+411
+412        <provider
+412-->[androidx.lifecycle:lifecycle-process:2.2.0] /Users/macbook/.gradle/caches/transforms-2/files-2.1/a87b95da88b81ac46412fed91093201c/jetified-lifecycle-process-2.2.0/AndroidManifest.xml:25:9-29:43
+413            android:name="androidx.lifecycle.ProcessLifecycleOwnerInitializer"
+413-->[androidx.lifecycle:lifecycle-process:2.2.0] /Users/macbook/.gradle/caches/transforms-2/files-2.1/a87b95da88b81ac46412fed91093201c/jetified-lifecycle-process-2.2.0/AndroidManifest.xml:26:13-79
+414            android:authorities="com.windigitalkhatulistiwa.laundrymitra.lifecycle-process"
+414-->[androidx.lifecycle:lifecycle-process:2.2.0] /Users/macbook/.gradle/caches/transforms-2/files-2.1/a87b95da88b81ac46412fed91093201c/jetified-lifecycle-process-2.2.0/AndroidManifest.xml:27:13-69
+415            android:exported="false"
+415-->[androidx.lifecycle:lifecycle-process:2.2.0] /Users/macbook/.gradle/caches/transforms-2/files-2.1/a87b95da88b81ac46412fed91093201c/jetified-lifecycle-process-2.2.0/AndroidManifest.xml:28:13-37
+416            android:multiprocess="true" />
+416-->[androidx.lifecycle:lifecycle-process:2.2.0] /Users/macbook/.gradle/caches/transforms-2/files-2.1/a87b95da88b81ac46412fed91093201c/jetified-lifecycle-process-2.2.0/AndroidManifest.xml:29:13-40
+417
+418        <service
+418-->[com.google.android.datatransport:transport-backend-cct:2.3.3] /Users/macbook/.gradle/caches/transforms-2/files-2.1/e988415be9d0fb3c9bfe0f078887b85d/jetified-transport-backend-cct-2.3.3/AndroidManifest.xml:29:9-35:19
+419            android:name="com.google.android.datatransport.runtime.backends.TransportBackendDiscovery"
+419-->[com.google.android.datatransport:transport-backend-cct:2.3.3] /Users/macbook/.gradle/caches/transforms-2/files-2.1/e988415be9d0fb3c9bfe0f078887b85d/jetified-transport-backend-cct-2.3.3/AndroidManifest.xml:30:13-103
+420            android:exported="false" >
+420-->[com.google.android.datatransport:transport-backend-cct:2.3.3] /Users/macbook/.gradle/caches/transforms-2/files-2.1/e988415be9d0fb3c9bfe0f078887b85d/jetified-transport-backend-cct-2.3.3/AndroidManifest.xml:31:13-37
+421            <meta-data
+421-->[com.google.android.datatransport:transport-backend-cct:2.3.3] /Users/macbook/.gradle/caches/transforms-2/files-2.1/e988415be9d0fb3c9bfe0f078887b85d/jetified-transport-backend-cct-2.3.3/AndroidManifest.xml:32:13-34:39
+422                android:name="backend:com.google.android.datatransport.cct.CctBackendFactory"
+422-->[com.google.android.datatransport:transport-backend-cct:2.3.3] /Users/macbook/.gradle/caches/transforms-2/files-2.1/e988415be9d0fb3c9bfe0f078887b85d/jetified-transport-backend-cct-2.3.3/AndroidManifest.xml:33:17-94
+423                android:value="cct" />
+423-->[com.google.android.datatransport:transport-backend-cct:2.3.3] /Users/macbook/.gradle/caches/transforms-2/files-2.1/e988415be9d0fb3c9bfe0f078887b85d/jetified-transport-backend-cct-2.3.3/AndroidManifest.xml:34:17-36
+424        </service>
+425        <service
+425-->[com.google.android.datatransport:transport-runtime:2.2.5] /Users/macbook/.gradle/caches/transforms-2/files-2.1/06c73e9ea516c6670cae6b3471b0ba66/jetified-transport-runtime-2.2.5/AndroidManifest.xml:26:9-30:19
+426            android:name="com.google.android.datatransport.runtime.scheduling.jobscheduling.JobInfoSchedulerService"
+426-->[com.google.android.datatransport:transport-runtime:2.2.5] /Users/macbook/.gradle/caches/transforms-2/files-2.1/06c73e9ea516c6670cae6b3471b0ba66/jetified-transport-runtime-2.2.5/AndroidManifest.xml:27:13-117
+427            android:exported="false"
+427-->[com.google.android.datatransport:transport-runtime:2.2.5] /Users/macbook/.gradle/caches/transforms-2/files-2.1/06c73e9ea516c6670cae6b3471b0ba66/jetified-transport-runtime-2.2.5/AndroidManifest.xml:28:13-37
+428            android:permission="android.permission.BIND_JOB_SERVICE" >
+428-->[com.google.android.datatransport:transport-runtime:2.2.5] /Users/macbook/.gradle/caches/transforms-2/files-2.1/06c73e9ea516c6670cae6b3471b0ba66/jetified-transport-runtime-2.2.5/AndroidManifest.xml:29:13-69
+429        </service>
+430
+431        <receiver
+431-->[com.google.android.datatransport:transport-runtime:2.2.5] /Users/macbook/.gradle/caches/transforms-2/files-2.1/06c73e9ea516c6670cae6b3471b0ba66/jetified-transport-runtime-2.2.5/AndroidManifest.xml:32:9-34:40
+432            android:name="com.google.android.datatransport.runtime.scheduling.jobscheduling.AlarmManagerSchedulerBroadcastReceiver"
+432-->[com.google.android.datatransport:transport-runtime:2.2.5] /Users/macbook/.gradle/caches/transforms-2/files-2.1/06c73e9ea516c6670cae6b3471b0ba66/jetified-transport-runtime-2.2.5/AndroidManifest.xml:33:13-132
+433            android:exported="false" />
+433-->[com.google.android.datatransport:transport-runtime:2.2.5] /Users/macbook/.gradle/caches/transforms-2/files-2.1/06c73e9ea516c6670cae6b3471b0ba66/jetified-transport-runtime-2.2.5/AndroidManifest.xml:34:13-37
+434    </application>
+435
+436</manifest>
