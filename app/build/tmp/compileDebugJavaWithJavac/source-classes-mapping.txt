@@ -264,10 +264,6 @@ com/samyotech/laundrymitra/GlobalState.java
  com.samyotech.laundrymitra.GlobalState
 com/samyotech/laundrymitra/MyFirebaseMessagingService.java
  com.samyotech.laundrymitra.MyFirebaseMessagingService
-com/samyotech/laundrymitra/ui/adapter/LaundriesNearAdapter.java
- com.samyotech.laundrymitra.ui.adapter.LaundriesNearAdapter
- com.samyotech.laundrymitra.ui.adapter.LaundriesNearAdapter$1
- com.samyotech.laundrymitra.ui.adapter.LaundriesNearAdapter$MyViewHolder
 com/samyotech/laundrymitra/ui/activity/register/UploadKtpActivity.java
  com.samyotech.laundrymitra.ui.activity.register.UploadKtpActivity
  com.samyotech.laundrymitra.ui.activity.register.UploadKtpActivity$1
@@ -276,6 +272,10 @@ com/samyotech/laundrymitra/ui/activity/register/UploadKtpActivity.java
  com.samyotech.laundrymitra.ui.activity.register.UploadKtpActivity$3$1
 com/samyotech/laundrymitra/ui/adapter/TabsAdapter.java
  com.samyotech.laundrymitra.ui.adapter.TabsAdapter
+com/samyotech/laundrymitra/ui/adapter/LaundriesNearAdapter.java
+ com.samyotech.laundrymitra.ui.adapter.LaundriesNearAdapter
+ com.samyotech.laundrymitra.ui.adapter.LaundriesNearAdapter$1
+ com.samyotech.laundrymitra.ui.adapter.LaundriesNearAdapter$MyViewHolder
 com/samyotech/laundrymitra/MainActivity.java
  com.samyotech.laundrymitra.MainActivity
  com.samyotech.laundrymitra.MainActivity$1
@@ -306,12 +306,12 @@ com/samyotech/laundrymitra/databinding/ActivityRegisterMitraBinding.java
  com.samyotech.laundrymitra.databinding.ActivityRegisterMitraBinding
 com/samyotech/laundrymitra/databinding/FragmentServicesBinding.java
  com.samyotech.laundrymitra.databinding.FragmentServicesBinding
-com/samyotech/laundrymitra/databinding/AdapterNearBinding.java
- com.samyotech.laundrymitra.databinding.AdapterNearBinding
 com/samyotech/laundrymitra/ui/activity/IpayMuPayment.java
  com.samyotech.laundrymitra.ui.activity.IpayMuPayment
  com.samyotech.laundrymitra.ui.activity.IpayMuPayment$1
  com.samyotech.laundrymitra.ui.activity.IpayMuPayment$VideoWebViewClient
+com/samyotech/laundrymitra/databinding/AdapterNearBinding.java
+ com.samyotech.laundrymitra.databinding.AdapterNearBinding
 com/samyotech/laundrymitra/ui/fragment/OffersFragment.java
  com.samyotech.laundrymitra.ui.fragment.OffersFragment
  com.samyotech.laundrymitra.ui.fragment.OffersFragment$1

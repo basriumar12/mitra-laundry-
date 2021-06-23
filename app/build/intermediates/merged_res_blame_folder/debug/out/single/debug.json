@@ -92,12 +92,12 @@
         "source": "/Users/macbook/Desktop/frelance/tokoweb/winlaundry-mitra-mobile/app/src/main/res/layout/services_adapter.xml"
     },
     {
-        "merged": "/Users/macbook/Desktop/frelance/tokoweb/winlaundry-mitra-mobile/app/build/intermediates/res/merged/debug/drawable_ic_loc.xml.flat",
-        "source": "/Users/macbook/Desktop/frelance/tokoweb/winlaundry-mitra-mobile/app/src/main/res/drawable/ic_loc.xml"
-    },
-    {
         "merged": "/Users/macbook/Desktop/frelance/tokoweb/winlaundry-mitra-mobile/app/build/intermediates/res/merged/debug/drawable_auth_bg.jpg.flat",
         "source": "/Users/macbook/Desktop/frelance/tokoweb/winlaundry-mitra-mobile/app/src/main/res/drawable/auth_bg.jpg"
+    },
+    {
+        "merged": "/Users/macbook/Desktop/frelance/tokoweb/winlaundry-mitra-mobile/app/build/intermediates/res/merged/debug/drawable_ic_loc.xml.flat",
+        "source": "/Users/macbook/Desktop/frelance/tokoweb/winlaundry-mitra-mobile/app/src/main/res/drawable/ic_loc.xml"
     },
     {
         "merged": "/Users/macbook/Desktop/frelance/tokoweb/winlaundry-mitra-mobile/app/build/intermediates/res/merged/debug/drawable_register.png.flat",
@@ -568,6 +568,10 @@
         "source": "/Users/macbook/Desktop/frelance/tokoweb/winlaundry-mitra-mobile/app/src/main/res/drawable/shape_for_rectangleblueround.xml"
     },
     {
+        "merged": "/Users/macbook/Desktop/frelance/tokoweb/winlaundry-mitra-mobile/app/build/intermediates/res/merged/debug/drawable_wsatu.jpg.flat",
+        "source": "/Users/macbook/Desktop/frelance/tokoweb/winlaundry-mitra-mobile/app/src/main/res/drawable/wsatu.jpg"
+    },
+    {
         "merged": "/Users/macbook/Desktop/frelance/tokoweb/winlaundry-mitra-mobile/app/build/intermediates/res/merged/debug/layout_activity_ticket_chat.xml.flat",
         "source": "/Users/macbook/Desktop/frelance/tokoweb/winlaundry-mitra-mobile/app/src/main/res/layout/activity_ticket_chat.xml"
     },
@@ -798,6 +802,10 @@
     {
         "merged": "/Users/macbook/Desktop/frelance/tokoweb/winlaundry-mitra-mobile/app/build/intermediates/res/merged/debug/drawable_button_pressed_1.xml.flat",
         "source": "/Users/macbook/Desktop/frelance/tokoweb/winlaundry-mitra-mobile/app/src/main/res/drawable/button_pressed_1.xml"
+    },
+    {
+        "merged": "/Users/macbook/Desktop/frelance/tokoweb/winlaundry-mitra-mobile/app/build/intermediates/res/merged/debug/drawable_wdua.jpg.flat",
+        "source": "/Users/macbook/Desktop/frelance/tokoweb/winlaundry-mitra-mobile/app/src/main/res/drawable/wdua.jpg"
     },
     {
         "merged": "/Users/macbook/Desktop/frelance/tokoweb/winlaundry-mitra-mobile/app/build/intermediates/res/merged/debug/drawable_popup_background.xml.flat",
@@ -1218,6 +1226,10 @@
     {
         "merged": "/Users/macbook/Desktop/frelance/tokoweb/winlaundry-mitra-mobile/app/build/intermediates/res/merged/debug/drawable_ic_pesanan.xml.flat",
         "source": "/Users/macbook/Desktop/frelance/tokoweb/winlaundry-mitra-mobile/app/src/main/res/drawable/ic_pesanan.xml"
+    },
+    {
+        "merged": "/Users/macbook/Desktop/frelance/tokoweb/winlaundry-mitra-mobile/app/build/intermediates/res/merged/debug/drawable_wtiga.jpg.flat",
+        "source": "/Users/macbook/Desktop/frelance/tokoweb/winlaundry-mitra-mobile/app/src/main/res/drawable/wtiga.jpg"
     },
     {
         "merged": "/Users/macbook/Desktop/frelance/tokoweb/winlaundry-mitra-mobile/app/build/intermediates/res/merged/debug/drawable_icon_location_selected.xml.flat",

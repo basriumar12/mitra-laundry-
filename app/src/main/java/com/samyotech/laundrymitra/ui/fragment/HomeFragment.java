@@ -6,14 +6,12 @@ import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.location.Address;
 import android.location.Geocoder;
-import android.location.Location;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -21,26 +19,16 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.core.app.ActivityCompat;
 import androidx.databinding.DataBindingUtil;
 import androidx.fragment.app.Fragment;
-import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.android.gms.location.FusedLocationProviderClient;
 import com.google.android.gms.location.LocationServices;
-import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.gson.Gson;
 import com.samyotech.laundrymitra.R;
 import com.samyotech.laundrymitra.databinding.HomeFragmentBinding;
 import com.samyotech.laundrymitra.https.HttpsRequest;
 import com.samyotech.laundrymitra.interfaces.Consts;
 import com.samyotech.laundrymitra.interfaces.Helper;
-import com.samyotech.laundrymitra.model.BookingDTO;
-import com.samyotech.laundrymitra.model.GetBannerDTO;
-import com.samyotech.laundrymitra.model.HomeDTO;
-import com.samyotech.laundrymitra.model.NearBYDTO;
-import com.samyotech.laundrymitra.model.PopLaundryDTO;
-import com.samyotech.laundrymitra.model.ServicesDTO;
-import com.samyotech.laundrymitra.model.SpecialOfferPkgDTO;
 import com.samyotech.laundrymitra.model.UserDTO;
 import com.samyotech.laundrymitra.model.home.PentingHariIniDto;
 import com.samyotech.laundrymitra.model.home.TerlarisHariIniDto;
@@ -49,13 +37,6 @@ import com.samyotech.laundrymitra.ui.activity.Dashboard;
 import com.samyotech.laundrymitra.ui.activity.NotificationActivity;
 import com.samyotech.laundrymitra.ui.activity.SearchActivity;
 import com.samyotech.laundrymitra.ui.activity.TopServices;
-import com.samyotech.laundrymitra.ui.activity.register.UploadKtpActivity;
-import com.samyotech.laundrymitra.ui.adapter.BookingAdapter;
-import com.samyotech.laundrymitra.ui.adapter.ImageAdapter;
-import com.samyotech.laundrymitra.ui.adapter.LaundriesNearAdapter;
-import com.samyotech.laundrymitra.ui.adapter.PopularLaundriesAdapter;
-import com.samyotech.laundrymitra.ui.adapter.SpecialOffersAdapter;
-import com.samyotech.laundrymitra.ui.adapter.TopServiceAdapter;
 import com.samyotech.laundrymitra.ui.adapter.home.TerlarisAdapter;
 import com.samyotech.laundrymitra.utils.ProjectUtils;
 import com.schibstedspain.leku.LocationPickerActivity;
@@ -63,11 +44,9 @@ import com.schibstedspain.leku.LocationPickerActivity;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Locale;
-import java.util.Timer;
 
 import mehdi.sakout.fancybuttons.FancyButton;
 
@@ -75,35 +54,17 @@ import static android.app.Activity.RESULT_OK;
 
 
 public class HomeFragment extends Fragment implements View.OnClickListener {
-    final long DELAY_MS = 500;
-    final long PERIOD_MS = 3000;
+
     HomeFragmentBinding binding;
     View view;
-    ArrayList<GetBannerDTO> imageDTOArrayList;
-    int currentPage = 0;
-    Timer timer;
     LinearLayoutManager linearLayoutManager;
     TerlarisHariIniDto terlarisHariIniDto;
     Dashboard dashBoard;
     TerlarisAdapter terlarisAdapter;
     String TAG = HomeFragment.class.getSimpleName();
-    TopServiceAdapter topServiceAdapter;
-    ArrayList<ServicesDTO> servicesDTOArrayList;
-    GridLayoutManager layoutManagerServ;
-    PopularLaundriesAdapter popularLaundriesAdapter;
-    ArrayList<PopLaundryDTO> popLaundryDTOArrayList;
-    RecyclerView.LayoutManager layoutManagerPop;
-    SpecialOffersAdapter specialOffersAdapter;
-    ArrayList<SpecialOfferPkgDTO> specialOffersAdapterArrayList;
-    RecyclerView.LayoutManager layoutManagerOffer;
-    LaundriesNearAdapter laundriesNearAdapter;
-    ArrayList<NearBYDTO> nearBYDTOArrayList;
-    RecyclerView.LayoutManager layoutManagerNear;
     HashMap<String, String> params = new HashMap<>();
-    HomeDTO homeDTO;
     PentingHariIniDto dataDto = new PentingHariIniDto();
     UserDTO userDTO;
-    private ImageAdapter imageAdapter;
     private SharedPrefrence prefrence;
     private FusedLocationProviderClient fusedLocationClient;
 
@@ -213,7 +174,7 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
             if (resultCode == RESULT_OK) {
                 try {
                     getAddress(data.getDoubleExtra(Consts.LATITUDE, 0.0), data.getDoubleExtra(Consts.LONGITUDE, 0.0));
-                    updateProfile();
+                    //updateProfile();
 
                 } catch (Exception e) {
                     e.printStackTrace();
@@ -256,7 +217,7 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
     }
 
     public void getPentingHariIni() {
-        ProjectUtils.showProgressDialog(requireActivity(), true, getResources().getString(R.string.please_wait));
+       // ProjectUtils.showProgressDialog(requireActivity(), true, getResources().getString(R.string.please_wait));
 
         new HttpsRequest(Consts.HOME_PENTING, getActivity(), userDTO.getUser_id().toString(), "").stringResendOTP("TAG", new Helper() {
             @Override
@@ -282,10 +243,15 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
 
                     } catch (Exception e) {
                         e.getMessage();
+                        ProjectUtils.cancelDialog();
+                        ProjectUtils.pauseProgressDialog();
+
                     }
 
 
                 } else {
+                    ProjectUtils.cancelDialog();
+                    ProjectUtils.pauseProgressDialog();
                 }
             }
         });
@@ -303,7 +269,6 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
                 if (flag) {
                     try {
 
-                        ProjectUtils.showProgressDialog(requireActivity(), true, getResources().getString(R.string.please_wait)).dismiss();
 
                         Log.e(TAG, "backResponse: " + response.toString());
                         //   ProjectUtils.showToast(requireContext(), msg);
@@ -367,23 +332,27 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
     }
 
     public void getAllTerlaris() {
-        ProjectUtils.getProgressDialog(getActivity());
+        //ProjectUtils.getProgressDialog(getActivity());
         params.put(Consts.USER_ID, userDTO.getUser_id());
-        new HttpsRequest(Consts.GET_TERLARIS+"?user_id="+userDTO.getUser_id()+"&shop_id=YZ65d0", params, getActivity()).stringPost(TAG, new Helper() {
+        new HttpsRequest(Consts.GET_TERLARIS+"?user_id="+userDTO.getUser_id()+"&shop_id=YZ65d0", params, getActivity()).stringOTP(TAG, new Helper() {
             @Override
             public void backResponse(boolean flag, String msg, JSONObject response) throws JSONException {
                 ProjectUtils.pauseProgressDialog();
                 if (flag) {
+                    Log.e("TAG","data terlaris "+flag +" "+new Gson().toJson(response));
                     try {
-
                         terlarisHariIniDto = new Gson().fromJson(response.getJSONObject("data").toString(), TerlarisHariIniDto.class);
-
+                        Log.e("TAG","data terlaris "+new Gson().toJson(terlarisHariIniDto));
                         setData();
                     } catch (Exception e) {
-                        e.printStackTrace();
-                    }
+                        terlarisHariIniDto = new Gson().fromJson(response.getJSONObject("data").toString(), TerlarisHariIniDto.class);
 
-                } else {
+                        ProjectUtils.pauseProgressDialog();
+                        e.printStackTrace();
+                        Log.e("TAG","error data terlaris "+e.getMessage());
+                        terlarisHariIniDto = new Gson().fromJson(response.getJSONObject("data").toString(), TerlarisHariIniDto.class);
+
+                    }
 
                 }
             }
@@ -394,6 +363,7 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
 
     private void setData() {
 
+        Log.e("TAG","set data terlaris "+terlarisHariIniDto);
         linearLayoutManager = new LinearLayoutManager(getActivity(), LinearLayoutManager.VERTICAL, false);
         binding.rvTerlaris.setLayoutManager(linearLayoutManager);
         terlarisAdapter = new TerlarisAdapter(getActivity(), terlarisHariIniDto.getOrder_list());

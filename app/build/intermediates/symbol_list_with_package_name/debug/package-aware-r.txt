@@ -5142,6 +5142,7 @@ drawable ucrop_vector_loader
 drawable ucrop_vector_loader_animated
 drawable ucrop_wrapper_controls_shape
 drawable wash_iron
+drawable wdua
 drawable welcome1
 drawable welcome2
 drawable welcome3
@@ -5150,6 +5151,8 @@ drawable welcome6
 drawable white_icon
 drawable worm_dot_background
 drawable worm_dot_stroke_background
+drawable wsatu
+drawable wtiga
 id AFRIKAANS
 id ALT
 id ARABIC

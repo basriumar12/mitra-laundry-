@@ -28,7 +28,7 @@ import java.util.Locale;
 public class MainActivity extends AppCompatActivity {
 
     private static final int REQUEST_CODE_ASK_MULTIPLE_PERMISSIONS = 1003;
-    private static final int SPLASH_TIME_OUT = 3000;
+    private static final int SPLASH_TIME_OUT = 7000;
     private final String[] permissions = new String[]{Manifest.permission.CAMERA
             , Manifest.permission.WRITE_EXTERNAL_STORAGE
             , Manifest.permission.ACCESS_NETWORK_STATE,
