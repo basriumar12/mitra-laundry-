@@ -153,12 +153,12 @@ public class RegisterMitraActivity extends AppCompatActivity {
                     if (flagd) {
                         try {
                             Log.e(TAG, "backResponse: " + response.toString());
-                            ProjectUtils.showToast(mContext, msg);
+                            ProjectUtils.showToast(mContext, "Masih gagal daftar");
 
 
 
                             Intent in = new Intent(mContext, Login.class);
-                             startActivity(in);
+                            startActivity(in);
                             prefrence.setIntValue("DAFTAR-", 3);
                             overridePendingTransition(R.anim.anim_slide_in_left,
                                     R.anim.anim_slide_out_left);

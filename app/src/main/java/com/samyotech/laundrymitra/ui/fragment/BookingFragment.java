@@ -133,8 +133,6 @@ public class BookingFragment extends Fragment {
                         e.printStackTrace();
                     }
 
-                } else {
-
                 }
             }
         });
