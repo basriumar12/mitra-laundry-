@@ -41,6 +41,7 @@
                 android:text="Laundary Shop" />
 
             <mehdi.sakout.fancybuttons.FancyButton
+                android:layout_marginBottom="@dimen/_10sdp"
                 android:id="@+id/promosi"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

@@ -10,36 +10,19 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.databinding.DataBindingUtil;
-import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.bumptech.glide.Glide;
 import com.samyotech.laundrymitra.R;
-import com.samyotech.laundrymitra.databinding.AdapterBookingBinding;
 import com.samyotech.laundrymitra.databinding.AdapterPenjualanBinding;
-import com.samyotech.laundrymitra.databinding.AdapterPentingBinding;
-import com.samyotech.laundrymitra.https.HttpsRequest;
 import com.samyotech.laundrymitra.interfaces.Consts;
-import com.samyotech.laundrymitra.interfaces.Helper;
-import com.samyotech.laundrymitra.model.CurrencyDTO;
-import com.samyotech.laundrymitra.model.OrderListDTO;
-import com.samyotech.laundrymitra.model.home.TerlarisHariIniListDto;
 import com.samyotech.laundrymitra.model.penjualan.DataItemPenjulan;
 import com.samyotech.laundrymitra.model.penjualan.PenjualanListDto;
 import com.samyotech.laundrymitra.network.ApiInterface;
 import com.samyotech.laundrymitra.network.ServiceGenerator;
-import com.samyotech.laundrymitra.ui.activity.OrderDetails;
 import com.samyotech.laundrymitra.ui.activity.penjualan.DetailPenjualanActivity;
-import com.samyotech.laundrymitra.ui.adapter.home.TerlarisAdapter;
-import com.samyotech.laundrymitra.ui.fragment.BookingFragment;
 import com.samyotech.laundrymitra.ui.fragment.penjualan.PenjualanFragment;
-import com.samyotech.laundrymitra.utils.ProjectUtils;
-
-import org.json.JSONException;
-import org.json.JSONObject;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 
 import mehdi.sakout.fancybuttons.FancyButton;
 import retrofit2.Call;

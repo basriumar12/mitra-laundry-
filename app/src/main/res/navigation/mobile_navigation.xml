@@ -14,7 +14,7 @@
         android:label="LayananFragment" />
     <fragment
         android:id="@+id/navigation_pesanan"
-        android:name="com.samyotech.laundrymitra.ui.fragment.BookingFragment"
+        android:name="com.samyotech.laundrymitra.ui.fragment.chat.BookingFragment"
         android:label="BookingFragment" />
     <fragment
         android:id="@+id/navigation_promo"

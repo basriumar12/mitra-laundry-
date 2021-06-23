@@ -14,15 +14,16 @@ import com.samyotech.laundrymitra.databinding.AdapterPentingBinding;
 import com.samyotech.laundrymitra.model.home.TerlarisHariIniListDto;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class TerlarisAdapter extends RecyclerView.Adapter<TerlarisAdapter.MyViewHolder> {
 
     LayoutInflater layoutInflater;
     AdapterPentingBinding binding;
     Context kContext;
-    ArrayList<TerlarisHariIniListDto> popLaundryDTOArrayList;
+    List<TerlarisHariIniListDto> popLaundryDTOArrayList;
 
-    public TerlarisAdapter(Context kContext, ArrayList<TerlarisHariIniListDto> popLaundryDTOArrayList) {
+    public TerlarisAdapter(Context kContext, List<TerlarisHariIniListDto> popLaundryDTOArrayList) {
         this.kContext = kContext;
         this.popLaundryDTOArrayList = popLaundryDTOArrayList;
     }
@@ -44,7 +45,10 @@ public class TerlarisAdapter extends RecyclerView.Adapter<TerlarisAdapter.MyView
         holder.binding.title.setText(popLaundryDTOArrayList.get(position).getServiceName());
 
         Glide.with(kContext)
+
                 .load(popLaundryDTOArrayList.get(position).getUrlImage())
+                .placeholder(R.drawable.laundryshop)
+                .error(R.drawable.laundryshop)
                 .into(holder.binding.imgTerlaris);
     }
 
