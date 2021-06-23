@@ -27,6 +27,7 @@ public class UserDTO implements Serializable {
     String shop_id = "";
 
 
+
     public String getPremium() {
         return premium;
     }

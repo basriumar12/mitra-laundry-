@@ -12,7 +12,6 @@ import com.samyotech.laundrymitra.interfaces.Consts;
 import com.samyotech.laundrymitra.interfaces.Helper;
 import com.samyotech.laundrymitra.jsonparser.JSONParser;
 import com.samyotech.laundrymitra.utils.ProjectUtils;
-import com.samyotech.laundrymitra.utils.UnsafeOkHttpClient;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -317,7 +316,6 @@ HttpsRequest {
                 .setPriority(Priority.HIGH)
                 .build();
         ProjectUtils.showLog(TAG, " url --->" + request.getUrl());
-
         request
                 .getAsJSONObject(new JSONObjectRequestListener() {
                     @Override
