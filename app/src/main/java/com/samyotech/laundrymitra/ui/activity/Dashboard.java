@@ -18,7 +18,7 @@ import com.samyotech.laundrymitra.databinding.ActivityDashboardBinding;
 import com.samyotech.laundrymitra.interfaces.Consts;
 import com.samyotech.laundrymitra.model.CurrencyDTO;
 import com.samyotech.laundrymitra.preferences.SharedPrefrence;
-import com.samyotech.laundrymitra.ui.fragment.BookingFragment;
+import com.samyotech.laundrymitra.ui.fragment.chat.BookingFragment;
 import com.samyotech.laundrymitra.ui.fragment.HomeFragment;
 import com.samyotech.laundrymitra.ui.fragment.NearByFragment;
 import com.samyotech.laundrymitra.ui.fragment.OffersFragment;

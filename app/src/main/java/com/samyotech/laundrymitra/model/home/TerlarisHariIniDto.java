@@ -2,19 +2,44 @@ package com.samyotech.laundrymitra.model.home;
 
 import com.google.gson.annotations.SerializedName;
 import com.samyotech.laundrymitra.model.OrderListDTO;
+import com.samyotech.laundrymitra.model.layanan.ItemLayananListDto;
 
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.List;
 
 public class TerlarisHariIniDto implements Serializable {
 
-	ArrayList<TerlarisHariIniListDto> order_list = new ArrayList<>();
+	@SerializedName("data")
+	private List<TerlarisHariIniListDto> data;
 
-	public ArrayList<TerlarisHariIniListDto> getOrder_list() {
-		return order_list;
+	@SerializedName("message")
+	private String message;
+
+	@SerializedName("status")
+	private boolean status;
+
+	public List<TerlarisHariIniListDto> getData() {
+		return data;
 	}
 
-	public void setOrder_list(ArrayList<TerlarisHariIniListDto> order_list) {
-		this.order_list = order_list;
+	public void setData(List<TerlarisHariIniListDto> data) {
+		this.data = data;
+	}
+
+	public String getMessage() {
+		return message;
+	}
+
+	public void setMessage(String message) {
+		this.message = message;
+	}
+
+	public boolean isStatus() {
+		return status;
+	}
+
+	public void setStatus(boolean status) {
+		this.status = status;
 	}
 }

@@ -2755,6 +2755,7 @@ dimen design_tab_text_size_2line
 dimen design_textinput_caption_translate_y
 dimen disabled_alpha_material_dark
 dimen disabled_alpha_material_light
+dimen fab_margin
 dimen fastscroll__bubble_corner
 dimen fastscroll__bubble_size
 dimen fastscroll__handle_clickable_width
@@ -5304,6 +5305,8 @@ id add
 id address
 id addressOther
 id addressWork
+id address_antar
+id address_jemput
 id adjust_height
 id adjust_width
 id alamat
@@ -5495,6 +5498,8 @@ id cvWork
 id dark
 id dataBinding
 id date_picker_actions
+id date_time_antar
+id date_time_jemput
 id daysPicker
 id decelerate
 id decelerateAndComplete
@@ -5521,6 +5526,7 @@ id disableHome
 id disablePostScroll
 id disableScroll
 id discount
+id diskon
 id dot
 id dragDown
 id dragEnd
@@ -5561,6 +5567,7 @@ id etReason
 id exitUntilCollapsed
 id expand_activities_button
 id expanded_menu
+id fab
 id fade
 id fastscroll
 id fill
@@ -5597,6 +5604,7 @@ id graph_wrap
 id group_divider
 id grouping
 id groups
+id gvServiceMenu
 id harga
 id hari_buka
 id header
@@ -5643,6 +5651,7 @@ id ivBanner
 id ivCondirm
 id ivConfirmPass
 id ivImage
+id ivImageService
 id ivItem
 id ivMinus
 id ivNewPass
@@ -5650,6 +5659,7 @@ id ivNotification
 id ivOldPass
 id ivPLus
 id ivSearch
+id ivServiceItem
 id ivShopName
 id jam_buka
 id judul
@@ -5666,7 +5676,6 @@ id laundryName
 id laundryType
 id laundryTypeContainer
 id layanan
-id layanan_kami_recyclerview
 id layout
 id layout_aspect_ratio
 id layout_root
@@ -5746,8 +5755,13 @@ id mtrl_picker_title_text
 id multiply
 id mvAddress
 id nama
+id nama_item
 id nama_jasa
 id nama_lengkap
+id nama_pemesan
+id nama_penjualan
+id nama_pesanan
+id nama_service
 id nama_toko
 id namatoko
 id nav_controller_view_tag
@@ -5768,6 +5782,7 @@ id navigation_terdekat
 id never
 id next_btn
 id noScroll
+id no_order
 id nomor_hp
 id nonExistent
 id none
@@ -5787,6 +5802,7 @@ id otp
 id outline
 id packed
 id pager
+id pajak
 id parallax
 id parent
 id parentPanel
@@ -5838,6 +5854,7 @@ id postLayout
 id preferenceDivider
 id presentase
 id preview_img
+id priceTotal
 id primary
 id produk
 id progress
@@ -5846,6 +5863,8 @@ id progress_horizontal
 id progress_image
 id promo_btn
 id promosi
+id quantity
+id quantityTotal
 id radio
 id rate_now_btn
 id rating
@@ -5887,13 +5906,18 @@ id rounded
 id row
 id row_index_key
 id row_reverse
-id rvBooking
 id rvChatList
+id rvDetailPenjualan
 id rvDetails
 id rvLaundry
 id rvLaundrytab
+id rvLayanan
 id rvNotification
+id rvOtherService
+id rvPenjualan
 id rvServices
+id rv_chat
+id rv_khusus_untukmu
 id rv_terlaris
 id rvoffer
 id satellite
@@ -6052,6 +6076,8 @@ id toolbar_title
 id top
 id topPanel
 id total
+id totalPembayaran
+id total_pcs
 id touch_outside
 id transitionToEnd
 id transitionToStart
@@ -6067,11 +6093,17 @@ id tvDate
 id tvMsg
 id tvName
 id tvNo
+id tvServiceName
 id tvTitle
 id tv_camera
 id tv_chat_belum_dibaca
+id tv_date
 id tv_galery
 id tv_kirim_ulang
+id tv_kosong_chat
+id tv_kosong_khusus
+id tv_kosong_terlaris
+id tv_last_chat
 id tv_name_home
 id tv_pendapatan_bersih_baru
 id tv_pesan_baru
@@ -6189,6 +6221,7 @@ layout activity_chang_password
 layout activity_chat
 layout activity_chat_list
 layout activity_dashboard
+layout activity_detail_penjualan
 layout activity_forgot_password
 layout activity_intro
 layout activity_ipaymu
@@ -6204,6 +6237,8 @@ layout activity_register_mitra
 layout activity_schedule
 layout activity_search
 layout activity_service_acitivity
+layout activity_service_menu
+layout activity_service_penjualan
 layout activity_shop_acitivity
 layout activity_spash
 layout activity_sukses_register
@@ -6215,14 +6250,20 @@ layout activity_welcome_screens
 layout adapter_address
 layout adapter_allservices
 layout adapter_booking
+layout adapter_chat
 layout adapter_chat_list
+layout adapter_detail_penjualan
 layout adapter_item
+layout adapter_khusus
 layout adapter_near
 layout adapter_notification
 layout adapter_offers
+layout adapter_pelayanan
+layout adapter_penjualan
 layout adapter_penting
 layout adapter_popular_laundries
 layout adapter_preview
+layout adapter_service_menu
 layout adapter_services
 layout adapter_ticket
 layout adapter_topservices
@@ -6241,6 +6282,7 @@ layout bs_grid_entry
 layout bs_header
 layout bs_list_divider
 layout bs_list_entry
+layout content_service_menu
 layout custom_dialog
 layout custom_maker_layout
 layout dailog_add_ticket
@@ -6262,6 +6304,7 @@ layout design_navigation_menu_item
 layout design_text_input_end_icon
 layout design_text_input_start_icon
 layout dialog_batal_booking
+layout dialog_batal_penjualan
 layout dialog_buat_tiket
 layout dialog_choose_app
 layout dialog_date_picker
@@ -6282,6 +6325,7 @@ layout fragment_main
 layout fragment_near_by
 layout fragment_offer_shop
 layout fragment_offers
+layout fragment_penjualan
 layout fragment_profile
 layout fragment_progress_dialog
 layout fragment_services
@@ -6836,7 +6880,10 @@ style Animation_MaterialComponents_BottomSheetDialog
 style AppBottomSheetDialogTheme
 style AppModalStyle
 style AppTheme
+style AppTheme_AppBarOverlay
 style AppTheme_Map
+style AppTheme_NoActionBar
+style AppTheme_PopupOverlay
 style Base_AlertDialog_AppCompat
 style Base_AlertDialog_AppCompat_Light
 style Base_Animation_AppCompat_Dialog

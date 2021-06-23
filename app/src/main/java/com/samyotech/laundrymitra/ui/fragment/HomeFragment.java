@@ -30,13 +30,19 @@ import com.samyotech.laundrymitra.https.HttpsRequest;
 import com.samyotech.laundrymitra.interfaces.Consts;
 import com.samyotech.laundrymitra.interfaces.Helper;
 import com.samyotech.laundrymitra.model.UserDTO;
+import com.samyotech.laundrymitra.model.home.KhususUntukmuDto;
+import com.samyotech.laundrymitra.model.home.KhususUntukmuListDto;
 import com.samyotech.laundrymitra.model.home.PentingHariIniDto;
 import com.samyotech.laundrymitra.model.home.TerlarisHariIniDto;
+import com.samyotech.laundrymitra.model.home.TerlarisHariIniListDto;
+import com.samyotech.laundrymitra.network.ApiInterface;
+import com.samyotech.laundrymitra.network.ServiceGenerator;
 import com.samyotech.laundrymitra.preferences.SharedPrefrence;
 import com.samyotech.laundrymitra.ui.activity.Dashboard;
 import com.samyotech.laundrymitra.ui.activity.NotificationActivity;
 import com.samyotech.laundrymitra.ui.activity.SearchActivity;
 import com.samyotech.laundrymitra.ui.activity.TopServices;
+import com.samyotech.laundrymitra.ui.adapter.home.KhususUntukmuAdapter;
 import com.samyotech.laundrymitra.ui.adapter.home.TerlarisAdapter;
 import com.samyotech.laundrymitra.utils.ProjectUtils;
 import com.schibstedspain.leku.LocationPickerActivity;
@@ -49,6 +55,9 @@ import java.util.List;
 import java.util.Locale;
 
 import mehdi.sakout.fancybuttons.FancyButton;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 import static android.app.Activity.RESULT_OK;
 
@@ -61,6 +70,7 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
     TerlarisHariIniDto terlarisHariIniDto;
     Dashboard dashBoard;
     TerlarisAdapter terlarisAdapter;
+    KhususUntukmuAdapter khususUntukmuAdapter;
     String TAG = HomeFragment.class.getSimpleName();
     HashMap<String, String> params = new HashMap<>();
     PentingHariIniDto dataDto = new PentingHariIniDto();
@@ -76,14 +86,15 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
         view = binding.getRoot();
         prefrence = SharedPrefrence.getInstance(getActivity());
         userDTO = prefrence.getParentUser(Consts.USER_DTO);
-        if (userDTO.getImage_ktp().isEmpty() || userDTO.getImage_ktp().equals(null)){
-          //  startActivity(new Intent(getActivity(), UploadKtpActivity.class));
+        if (userDTO.getImage_ktp().isEmpty() || userDTO.getImage_ktp().equals(null)) {
+            //  startActivity(new Intent(getActivity(), UploadKtpActivity.class));
             //getActivity().finish();
         }
 
 
         getPentingHariIni();
         getAllTerlaris();
+        getKhususUntukmu();
 
         fusedLocationClient = LocationServices.getFusedLocationProviderClient(getContext());
         if (ActivityCompat.checkSelfPermission(getContext(), Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(getContext(), Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
@@ -129,32 +140,27 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
 
         binding.tvPesanBaru.setText("tee");
 
-        if (dataDto != null){
-            Log.e("TAG",new Gson().toJson(dataDto)+" "+dataDto.getPendapatan_bersih_baru()+" "+dataDto.getChatBelumDibaca());
+        if (dataDto != null) {
+            Log.e("TAG", new Gson().toJson(dataDto) + " " + dataDto.getPendapatan_bersih_baru() + " " + dataDto.getChatBelumDibaca());
 
-            binding.tvPesanBaru.setText(""+dataDto.getPesananBaru());
-            binding.tvChatBelumDibaca.setText(""+dataDto.getChatBelumDibaca());
-            binding.tvPendapatanBersihBaru.setText(""+dataDto.getPendapatan_bersih_baru());
-            binding.tvUlasanBaru.setText(""+dataDto.getUlasanSelesai());
-            binding.tvPesananKomplain.setText(""+dataDto.getPesananKomplain());
-            binding.tvPesananSelesai.setText(""+dataDto.getPesananSelesai());
-        }else {
+            binding.tvPesanBaru.setText("" + dataDto.getPesananBaru());
+            binding.tvChatBelumDibaca.setText("" + dataDto.getChatBelumDibaca());
+            binding.tvPendapatanBersihBaru.setText("" + dataDto.getPendapatan_bersih_baru());
+            binding.tvUlasanBaru.setText("" + dataDto.getUlasanSelesai());
+            binding.tvPesananKomplain.setText("" + dataDto.getPesananKomplain());
+            binding.tvPesananSelesai.setText("" + dataDto.getPesananSelesai());
+        } else {
             getPentingHariIni();
-            binding.tvPesanBaru.setText(""+dataDto.getPesananBaru());
-            binding.tvChatBelumDibaca.setText(""+dataDto.getChatBelumDibaca());
-            binding.tvPendapatanBersihBaru.setText(""+dataDto.getPendapatan_bersih_baru());
-            binding.tvUlasanBaru.setText(""+dataDto.getUlasanSelesai());
-            binding.tvPesananKomplain.setText(""+dataDto.getPesananKomplain());
-            binding.tvPesananSelesai.setText(""+dataDto.getPesananSelesai());
+            binding.tvPesanBaru.setText("" + dataDto.getPesananBaru());
+            binding.tvChatBelumDibaca.setText("" + dataDto.getChatBelumDibaca());
+            binding.tvPendapatanBersihBaru.setText("" + dataDto.getPendapatan_bersih_baru());
+            binding.tvUlasanBaru.setText("" + dataDto.getUlasanSelesai());
+            binding.tvPesananKomplain.setText("" + dataDto.getPesananKomplain());
+            binding.tvPesananSelesai.setText("" + dataDto.getPesananSelesai());
         }
 
 
-
     }
-
-
-
-
 
 
     private void findPlace() {
@@ -217,7 +223,7 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
     }
 
     public void getPentingHariIni() {
-       // ProjectUtils.showProgressDialog(requireActivity(), true, getResources().getString(R.string.please_wait));
+        // ProjectUtils.showProgressDialog(requireActivity(), true, getResources().getString(R.string.please_wait));
 
         new HttpsRequest(Consts.HOME_PENTING, getActivity(), userDTO.getUser_id().toString(), "").stringResendOTP("TAG", new Helper() {
             @Override
@@ -228,12 +234,12 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
                 if (flag) {
 
                     try {
-                             dataDto = new Gson().fromJson(response.getJSONObject("data").toString(), PentingHariIniDto.class);
-                        Log.e("TAG",new Gson().toJson(dataDto)+" "+dataDto.getPendapatan_bersih_baru()+" "+dataDto.getChatBelumDibaca());
+                        dataDto = new Gson().fromJson(response.getJSONObject("data").toString(), PentingHariIniDto.class);
+                        Log.e("TAG", new Gson().toJson(dataDto) + " " + dataDto.getPendapatan_bersih_baru() + " " + dataDto.getChatBelumDibaca());
 
 
                         binding.tvPesanBaru.setText(dataDto.getPesananBaru());
-                        binding.tvChatBelumDibaca.setText(dataDto.getChatBelumDibaca()+" aaa"+dataDto.getPendapatan_bersih_baru());
+                        binding.tvChatBelumDibaca.setText(dataDto.getChatBelumDibaca() + " aaa" + dataDto.getPendapatan_bersih_baru());
                         binding.tvPendapatanBersihBaru.setText(dataDto.getPendapatan_bersih_baru());
                         binding.tvUlasanBaru.setText(dataDto.getUlasanSelesai());
                         binding.tvPesananKomplain.setText(dataDto.getPesananKomplain());
@@ -332,43 +338,90 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
     }
 
     public void getAllTerlaris() {
-        //ProjectUtils.getProgressDialog(getActivity());
-        params.put(Consts.USER_ID, userDTO.getUser_id());
-        new HttpsRequest(Consts.GET_TERLARIS+"?user_id="+userDTO.getUser_id()+"&shop_id=YZ65d0", params, getActivity()).stringOTP(TAG, new Helper() {
-            @Override
-            public void backResponse(boolean flag, String msg, JSONObject response) throws JSONException {
-                ProjectUtils.pauseProgressDialog();
-                if (flag) {
-                    Log.e("TAG","data terlaris "+flag +" "+new Gson().toJson(response));
-                    try {
-                        terlarisHariIniDto = new Gson().fromJson(response.getJSONObject("data").toString(), TerlarisHariIniDto.class);
-                        Log.e("TAG","data terlaris "+new Gson().toJson(terlarisHariIniDto));
-                        setData();
-                    } catch (Exception e) {
-                        terlarisHariIniDto = new Gson().fromJson(response.getJSONObject("data").toString(), TerlarisHariIniDto.class);
 
-                        ProjectUtils.pauseProgressDialog();
-                        e.printStackTrace();
-                        Log.e("TAG","error data terlaris "+e.getMessage());
-                        terlarisHariIniDto = new Gson().fromJson(response.getJSONObject("data").toString(), TerlarisHariIniDto.class);
+        ProjectUtils.showProgressDialog(requireActivity(), true, getResources().getString(R.string.please_wait));
+
+
+        ApiInterface api = ServiceGenerator.createService(
+                ApiInterface.class,
+                Consts.username,
+                Consts.pass
+        );
+
+        api.getTerlaris(userDTO.getUser_id(), userDTO.getShop_id()).enqueue(new Callback<TerlarisHariIniDto>() {
+            @Override
+            public void onResponse(Call<TerlarisHariIniDto> call, Response<TerlarisHariIniDto> response) {
+                ProjectUtils.cancelDialog();
+                ProjectUtils.pauseProgressDialog();
+                if (response.isSuccessful()) {
+                    if (response.body().isStatus()) {
+                        List<TerlarisHariIniListDto> data = response.body().getData();
+                        linearLayoutManager = new LinearLayoutManager(getActivity(), LinearLayoutManager.HORIZONTAL, false);
+                        binding.rvTerlaris.setLayoutManager(linearLayoutManager);
+                        terlarisAdapter = new TerlarisAdapter(getActivity(), data);
+                        binding.rvTerlaris.setAdapter(terlarisAdapter);
+                        binding.tvKosongTerlaris.setVisibility(View.GONE);
+                    } else {
+                        binding.tvKosongTerlaris.setVisibility(View.VISIBLE);
 
                     }
-
                 }
+
+            }
+
+            @Override
+            public void onFailure(Call<TerlarisHariIniDto> call, Throwable t) {
+                binding.tvKosongTerlaris.setVisibility(View.VISIBLE);
+                ProjectUtils.cancelDialog();
+                ProjectUtils.pauseProgressDialog();
             }
         });
 
 
     }
 
-    private void setData() {
+    public void getKhususUntukmu() {
 
-        Log.e("TAG","set data terlaris "+terlarisHariIniDto);
-        linearLayoutManager = new LinearLayoutManager(getActivity(), LinearLayoutManager.VERTICAL, false);
-        binding.rvTerlaris.setLayoutManager(linearLayoutManager);
-        terlarisAdapter = new TerlarisAdapter(getActivity(), terlarisHariIniDto.getOrder_list());
-        binding.rvTerlaris.setAdapter(terlarisAdapter);
+        
+        ApiInterface api = ServiceGenerator.createService(
+                ApiInterface.class,
+                Consts.username,
+                Consts.pass
+        );
+
+        api.getArtikel().enqueue(new Callback<KhususUntukmuDto>() {
+            @Override
+            public void onResponse(Call<KhususUntukmuDto> call, Response<KhususUntukmuDto> response) {
+                ProjectUtils.cancelDialog();
+                ProjectUtils.pauseProgressDialog();
+                if (response.isSuccessful()) {
+                    if (response.body().isStatus()) {
+                        List<KhususUntukmuListDto> data = response.body().getData();
+                        linearLayoutManager = new LinearLayoutManager(getActivity(), LinearLayoutManager.VERTICAL, false);
+                        binding.rvKhususUntukmu.setLayoutManager(linearLayoutManager);
+                        khususUntukmuAdapter = new KhususUntukmuAdapter(getActivity(), data);
+                        binding.rvKhususUntukmu.setAdapter(khususUntukmuAdapter);
+                        binding.tvKosongKhusus.setVisibility(View.GONE);
+                    } else {
+                        binding.tvKosongKhusus.setVisibility(View.VISIBLE);
+
+                    }
+                }
+
+            }
+
+            @Override
+            public void onFailure(Call<KhususUntukmuDto> call, Throwable t) {
+                ProjectUtils.cancelDialog();
+                ProjectUtils.pauseProgressDialog();
+                binding.tvKosongKhusus.setVisibility(View.VISIBLE);
+            }
+        });
+
     }
+
+
+
 
 
 }

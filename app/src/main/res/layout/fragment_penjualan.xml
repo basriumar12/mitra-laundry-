@@ -5,7 +5,8 @@
 
     <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        tools:context="com.samyotech.laundrymitra.ui.fragment.chat.BookingFragment">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
@@ -16,6 +17,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="?actionBarSize"
                 app:layout_constraintTop_toTopOf="parent">
+
 
                 <EditText
                     android:id="@+id/cetSearch"
@@ -32,7 +34,7 @@
                     android:layout_height="match_parent"
                     android:gravity="left|center"
                     android:layout_marginLeft="@dimen/_6sdp"
-                    android:text="Penjualan"
+                    android:text="Pesan"
                     android:textColor="@color/colorPrimary"
                     android:textStyle="bold" />
 
@@ -64,28 +66,30 @@
 
 
             <LinearLayout
+                android:orientation="vertical"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:layout_constraintTop_toBottomOf="@id/relayTop">
+                <TextView
+                    android:layout_marginTop="@dimen/_50sdp"
+                    android:id="@+id/tv_kosong_chat"
+                    style="@style/TextAppearance.AppCompat.Body1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:layout_marginLeft="@dimen/_6sdp"
+                    android:text="Data Kosong"
+                    android:textColor="@color/black"
+                    android:textStyle="bold" />
 
                 <androidx.recyclerview.widget.RecyclerView
-                    android:id="@+id/rvPenjualan"
+                    android:id="@+id/rv_chat"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
+                    android:layout_height="@dimen/_500sdp"
                     android:paddingBottom="@dimen/_7sdp" />
 
 
             </LinearLayout>
         </androidx.constraintlayout.widget.ConstraintLayout>
-
-        <com.google.android.material.floatingactionbutton.FloatingActionButton
-            android:id="@+id/fab"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="end|bottom"
-            android:src="@drawable/ic_add"
-            android:contentDescription="@string/submit"
-            android:layout_margin="16dp" />
-
     </FrameLayout>
 </layout>

@@ -21,7 +21,7 @@ import com.samyotech.laundrymitra.interfaces.Helper;
 import com.samyotech.laundrymitra.model.CurrencyDTO;
 import com.samyotech.laundrymitra.model.OrderListDTO;
 import com.samyotech.laundrymitra.ui.activity.OrderDetails;
-import com.samyotech.laundrymitra.ui.fragment.BookingFragment;
+import com.samyotech.laundrymitra.ui.fragment.chat.BookingFragment;
 import com.samyotech.laundrymitra.utils.AppFormat;
 import com.samyotech.laundrymitra.utils.ProjectUtils;
 
@@ -137,13 +137,7 @@ public class BookingAdapter extends RecyclerView.Adapter<BookingAdapter.MyViewHo
         new HttpsRequest(Consts.ORDERCANCEL, params, kContext).stringPost(TAG, new Helper() {
             @Override
             public void backResponse(boolean flag, String msg, JSONObject response) throws JSONException {
-                if (flag) {
-                    bookingFragment.getAllBookings();
-                    notifyDataSetChanged();
-                    bookingFragment.getAllBookings();
-                } else {
-                    ProjectUtils.showToast(kContext, msg);
-                }
+
             }
         });
     }

@@ -15,15 +15,14 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.samyotech.laundrymitra.R;
 import com.samyotech.laundrymitra.databinding.AdapterPenjualanBinding;
 import com.samyotech.laundrymitra.interfaces.Consts;
-import com.samyotech.laundrymitra.model.base.BaseResponse;
-import com.samyotech.laundrymitra.model.penjualan.PenjualanItemDto;
+import com.samyotech.laundrymitra.model.penjualan.DataItemPenjulan;
+import com.samyotech.laundrymitra.model.penjualan.PenjualanListDto;
 import com.samyotech.laundrymitra.network.ApiInterface;
 import com.samyotech.laundrymitra.network.ServiceGenerator;
 import com.samyotech.laundrymitra.ui.activity.penjualan.DetailPenjualanActivity;
 import com.samyotech.laundrymitra.ui.fragment.penjualan.PenjualanFragment;
 
 import java.util.ArrayList;
-import java.util.List;
 
 import mehdi.sakout.fancybuttons.FancyButton;
 import retrofit2.Call;
@@ -36,10 +35,10 @@ public class PenjualanAdapter extends RecyclerView.Adapter<PenjualanAdapter.MyVi
     AdapterPenjualanBinding binding;
     Context kContext;
     PenjualanFragment penjualanFragment;
-    ArrayList<PenjualanItemDto> penjualanDTOArrayList;
+    ArrayList<DataItemPenjulan> penjualanDTOArrayList;
 
 
-    public PenjualanAdapter(Context kContext, ArrayList<PenjualanItemDto> penjualanDTOArrayList, PenjualanFragment penjualanFragment) {
+    public PenjualanAdapter(Context kContext, ArrayList<DataItemPenjulan> penjualanDTOArrayList, PenjualanFragment penjualanFragment) {
         this.kContext = kContext;
         this.penjualanFragment = penjualanFragment;
         this.penjualanDTOArrayList =penjualanDTOArrayList;
@@ -57,6 +56,7 @@ public class PenjualanAdapter extends RecyclerView.Adapter<PenjualanAdapter.MyVi
 
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, final int position) {
+        System.out.println("KEPANGGIL");
         holder.binding.namaPenjualan.setText(penjualanDTOArrayList.get(position).getNamaService());
         holder.binding.totalPcs.setText(penjualanDTOArrayList.get(position).getTotalPcs() + "Kg");
         holder.binding.harga.setText(penjualanDTOArrayList.get(position).getTotalHarga());
@@ -122,10 +122,10 @@ public class PenjualanAdapter extends RecyclerView.Adapter<PenjualanAdapter.MyVi
         );
 
 
-        api.getBatalPenjualan("zAd1d3").enqueue(new Callback<BaseResponse<List<PenjualanItemDto>>>() {
+        api.getBatalPenjualan("zAd1d3").enqueue(new Callback<PenjualanListDto>() {
 
             @Override
-            public void onResponse(Call<BaseResponse<List<PenjualanItemDto>>> call, Response<BaseResponse<List<PenjualanItemDto>>> response) {
+            public void onResponse(Call<PenjualanListDto> call, Response<PenjualanListDto> response) {
                 if (response.isSuccessful()) {
                     if (response.body().isStatus()) {
                         penjualanFragment.getPenjualanData();
@@ -137,7 +137,7 @@ public class PenjualanAdapter extends RecyclerView.Adapter<PenjualanAdapter.MyVi
             }
 
             @Override
-            public void onFailure(Call<BaseResponse<List<PenjualanItemDto>>> call, Throwable t) {
+            public void onFailure(Call<PenjualanListDto> call, Throwable t) {
                 Log.e("TAG", "gagal upload " + t.getMessage());
             }
         });
