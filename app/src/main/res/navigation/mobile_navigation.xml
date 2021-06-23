@@ -10,7 +10,7 @@
         android:label="HomeFragment" />
     <fragment
         android:id="@+id/navigation_terdekat"
-        android:name="com.samyotech.laundrymitra.ui.fragment.LayananFragment"
+        android:name="com.samyotech.laundrymitra.ui.fragment.layanan.LayananFragment"
         android:label="LayananFragment" />
     <fragment
         android:id="@+id/navigation_pesanan"
@@ -18,7 +18,7 @@
         android:label="BookingFragment" />
     <fragment
         android:id="@+id/navigation_promo"
-        android:name="com.samyotech.laundrymitra.ui.fragment.OffersFragment"
+        android:name="com.samyotech.laundrymitra.ui.fragment.penjualan.PenjualanFragment"
         android:label="OffersFragment" />
     <fragment
         android:id="@+id/navigation_akunku"

@@ -18,7 +18,6 @@
                 android:layout_height="?actionBarSize"
                 app:layout_constraintTop_toTopOf="parent">
 
-
                 <EditText
                     android:id="@+id/cetSearch"
                     android:layout_width="@dimen/_240sdp"

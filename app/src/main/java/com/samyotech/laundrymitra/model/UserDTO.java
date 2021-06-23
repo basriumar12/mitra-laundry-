@@ -24,6 +24,7 @@ public class UserDTO implements Serializable {
     String created_at = "";
     String premium = "";
     String image_ktp = "";
+    String shop_id = "";
 
     public String getPremium() {
         return premium;
@@ -177,6 +178,14 @@ public class UserDTO implements Serializable {
         this.created_at = created_at;
     }
 
+    public String getShop_id() {
+        return shop_id;
+    }
+
+    public void setShop_id(String shop_id) {
+        this.shop_id = shop_id;
+    }
+
     @Override
     public String toString() {
         return "UserDTO{" +
@@ -197,6 +206,7 @@ public class UserDTO implements Serializable {
                 ", device_token='" + device_token + '\'' +
                 ", email_token='" + email_token + '\'' +
                 ", created_at='" + created_at + '\'' +
+                ", shop_id='" + shop_id + '\'' +
                 '}';
     }
 }

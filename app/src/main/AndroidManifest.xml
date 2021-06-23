@@ -23,7 +23,10 @@
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true"
         tools:replace="android:allowBackup,android:supportsRtl">
-        <activity android:name=".ui.activity.register.RegisterMitraActivity"></activity>
+        <activity android:name=".ui.activity.penjualan.ServicePenjualanActivity"></activity>
+        <activity android:name=".ui.activity.penjualan.ServiceMenuActivity" />
+        <activity android:name=".ui.activity.penjualan.DetailPenjualanActivity" />
+        <activity android:name=".ui.activity.register.RegisterMitraActivity" />
         <activity android:name=".ui.activity.register.UploadKtpActivity" />
         <activity
             android:name=".ui.activity.register.OtpActivity"
@@ -172,7 +175,7 @@
                 android:name="com.google.android.gms.version"
                 android:value="@integer/google_play_services_version" />
         </activity>
-        <activity android:name=".ui.activity.ServiceActivity" />
+        <activity android:name=".ui.activity.layanan.ServiceActivity" />
 
         <service
             android:name=".MyFirebaseMessagingService"

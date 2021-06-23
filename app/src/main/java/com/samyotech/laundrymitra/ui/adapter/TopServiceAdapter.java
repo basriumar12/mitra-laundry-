@@ -15,7 +15,7 @@ import com.samyotech.laundrymitra.R;
 import com.samyotech.laundrymitra.databinding.AdapterServicesBinding;
 import com.samyotech.laundrymitra.interfaces.Consts;
 import com.samyotech.laundrymitra.model.ServicesDTO;
-import com.samyotech.laundrymitra.ui.activity.ServiceActivity;
+import com.samyotech.laundrymitra.ui.activity.layanan.ServiceActivity;
 
 import java.util.ArrayList;
 
