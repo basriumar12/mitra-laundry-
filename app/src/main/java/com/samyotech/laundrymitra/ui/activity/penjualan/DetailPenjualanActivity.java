@@ -4,8 +4,6 @@ import android.app.ProgressDialog;
 import android.content.Context;
 import android.os.Bundle;
 import android.util.Log;
-import android.view.View;
-import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
@@ -14,21 +12,12 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import com.samyotech.laundrymitra.R;
 import com.samyotech.laundrymitra.databinding.ActivityDetailPenjualanBinding;
 import com.samyotech.laundrymitra.interfaces.Consts;
-import com.samyotech.laundrymitra.model.UserDTO;
-import com.samyotech.laundrymitra.model.penjualan.DataItemPenjulan;
-import com.samyotech.laundrymitra.model.penjualan.DetailPenjualan;
+import com.samyotech.laundrymitra.model.base.BaseResponse;
+import com.samyotech.laundrymitra.model.penjualan.DetailPenjualanDto;
 import com.samyotech.laundrymitra.model.penjualan.DetailPenjualanList;
-import com.samyotech.laundrymitra.model.penjualan.PenjualanDetailDto;
-import com.samyotech.laundrymitra.model.penjualan.PenjualanListDto;
 import com.samyotech.laundrymitra.network.ApiInterface;
 import com.samyotech.laundrymitra.network.ServiceGenerator;
-import com.samyotech.laundrymitra.preferences.SharedPrefrence;
-import com.samyotech.laundrymitra.ui.activity.BookingConfirmActivity;
-import com.samyotech.laundrymitra.ui.activity.register.UploadKtpActivity;
 import com.samyotech.laundrymitra.ui.adapter.penjualan.DetailPenjualanAdapter;
-import com.samyotech.laundrymitra.ui.adapter.penjualan.PenjualanAdapter;
-import com.samyotech.laundrymitra.ui.fragment.penjualan.PenjualanFragment;
-import com.samyotech.laundrymitra.utils.ProjectUtils;
 
 import java.util.ArrayList;
 
@@ -63,27 +52,27 @@ public class DetailPenjualanActivity extends AppCompatActivity {
                 Consts.username,
                 Consts.pass
         );
-        api.getDetailPenjualan("9221048015").enqueue(new Callback<PenjualanDetailDto>() {
+        api.getDetailPenjualan("9221048015").enqueue(new Callback<BaseResponse<DetailPenjualanDto>>() {
 
             @Override
-            public void onResponse(Call<PenjualanDetailDto> call, Response<PenjualanDetailDto> response) {
+            public void onResponse(Call<BaseResponse<DetailPenjualanDto>> call, Response<BaseResponse<DetailPenjualanDto>> response) {
                 if (response.isSuccessful()) {
                     progressDialog.dismiss();
                     if (response.body().isStatus()) {
                         binding.namaPesanan.setText("PEsanan");
-                        binding.noOrder.setText(response.body().getDetailPenjualan().getOrderId());
-                        binding.namaPemesan.setText(response.body().getDetailPenjualan().getLandmark());
-                        binding.dateTimeJemput.setText(response.body().getDetailPenjualan().getPickupDate() + "•" + response.body().getDetailPenjualan().getPickupTime());
-                        binding.dateTimeAntar.setText(response.body().getDetailPenjualan().getDeliveryDate() + "•" + response.body().getDetailPenjualan().getDeliveryTime());
-                        binding.addressJemput.setText(response.body().getDetailPenjualan().getShippingAddress());
-                        binding.addressAntar.setText(response.body().getDetailPenjualan().getShippingAddress());
-                        binding.subtotal.setText(response.body().getDetailPenjualan().getCurrencyCode()+" "+response.body().getDetailPenjualan().getPrice());
-                        binding.diskon.setText(response.body().getDetailPenjualan().getCurrencyCode()+" "+response.body().getDetailPenjualan().getDiscount());
-                        binding.totalPembayaran.setText(response.body().getDetailPenjualan().getCurrencyCode()+" "+response.body().getDetailPenjualan().getFinalPrice());
-                        binding.pajak.setText(response.body().getDetailPenjualan().getCurrencyCode()+" "+response.body().getDetailPenjualan().getDiscount());
+                        binding.noOrder.setText(response.body().getData().getOrderId());
+                        binding.namaPemesan.setText(response.body().getData().getLandmark());
+                        binding.dateTimeJemput.setText(response.body().getData().getPickupDate() + "•" + response.body().getData().getPickupTime());
+                        binding.dateTimeAntar.setText(response.body().getData().getDeliveryDate() + "•" + response.body().getData().getDeliveryTime());
+                        binding.addressJemput.setText(response.body().getData().getShippingAddress());
+                        binding.addressAntar.setText(response.body().getData().getShippingAddress());
+                        binding.subtotal.setText(response.body().getData().getCurrencyCode()+" "+response.body().getData().getPrice());
+                        binding.diskon.setText(response.body().getData().getCurrencyCode()+" "+response.body().getData().getDiscount());
+                        binding.totalPembayaran.setText(response.body().getData().getCurrencyCode()+" "+response.body().getData().getFinalPrice());
+                        binding.pajak.setText(response.body().getData().getCurrencyCode()+" "+response.body().getData().getDiscount());
                         linearLayoutManager = new LinearLayoutManager(mContext, LinearLayoutManager.VERTICAL, false);
                         binding.rvDetailPenjualan.setLayoutManager(linearLayoutManager);
-                        detailPenjualanAdapter = new DetailPenjualanAdapter(mContext, (ArrayList<DetailPenjualanList>) response.body().getDetailPenjualan().getItemDetails(), DetailPenjualanActivity.this);
+                        detailPenjualanAdapter = new DetailPenjualanAdapter(mContext, (ArrayList<DetailPenjualanList>) response.body().getData().getItemDetails(), DetailPenjualanActivity.this);
                         binding.rvDetailPenjualan.setAdapter(detailPenjualanAdapter);
                     } else {
 
@@ -92,7 +81,7 @@ public class DetailPenjualanActivity extends AppCompatActivity {
             }
 
             @Override
-            public void onFailure(Call<PenjualanDetailDto> call, Throwable t) {
+            public void onFailure(Call<BaseResponse<DetailPenjualanDto>> call, Throwable t) {
                 Log.e("TAG", "gagal upload " + t.getMessage());
                 progressDialog.dismiss();
             }

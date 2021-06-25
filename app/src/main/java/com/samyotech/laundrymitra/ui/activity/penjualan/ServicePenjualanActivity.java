@@ -2,7 +2,6 @@ package com.samyotech.laundrymitra.ui.activity.penjualan;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
-import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 
 import android.app.ProgressDialog;
@@ -12,21 +11,19 @@ import android.util.Log;
 
 import com.bumptech.glide.Glide;
 import com.samyotech.laundrymitra.R;
-import com.samyotech.laundrymitra.databinding.ActivityDetailPenjualanBinding;
 import com.samyotech.laundrymitra.databinding.ActivityServicePenjualanBinding;
 import com.samyotech.laundrymitra.interfaces.Consts;
 import com.samyotech.laundrymitra.model.UserDTO;
-import com.samyotech.laundrymitra.model.layanan.ItemLayananDto;
-import com.samyotech.laundrymitra.model.layanan.LayananDto;
-import com.samyotech.laundrymitra.model.layanan.LayananListDto;
+import com.samyotech.laundrymitra.model.base.BaseResponse;
+import com.samyotech.laundrymitra.model.layanan.LayananItemDto;
+import com.samyotech.laundrymitra.model.layanan.ServiceItemDto;
 import com.samyotech.laundrymitra.network.ApiInterface;
 import com.samyotech.laundrymitra.network.ServiceGenerator;
 import com.samyotech.laundrymitra.preferences.SharedPrefrence;
-import com.samyotech.laundrymitra.ui.adapter.penjualan.DetailPenjualanAdapter;
 import com.samyotech.laundrymitra.ui.adapter.penjualan.OtherServicePenjualanAdapter;
-import com.samyotech.laundrymitra.ui.adapter.penjualan.ServiceMenuAdapter;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -39,8 +36,8 @@ public class ServicePenjualanActivity extends AppCompatActivity {
     OtherServicePenjualanAdapter otherServicePenjualanAdapter;
     SharedPrefrence prefrence;
     UserDTO userDTO;
-    LayananListDto otherServiceData;
-    ArrayList<LayananListDto> otherServiceListData;
+    ServiceItemDto otherServiceData;
+    ArrayList<ServiceItemDto> otherServiceListData;
 
 
     @Override
@@ -74,16 +71,16 @@ public class ServicePenjualanActivity extends AppCompatActivity {
                 Consts.username,
                 Consts.pass
         );
-        api.getListLayanan(userDTO.getUser_id(),"YZ65d0").enqueue(new Callback<LayananDto>() {
+        api.getListLayanan(userDTO.getUser_id(),"YZ65d0").enqueue(new Callback<BaseResponse<List<ServiceItemDto>>>() {
 
             @Override
-            public void onResponse(Call<LayananDto> call, Response<LayananDto> response) {
+            public void onResponse(Call<BaseResponse<List<ServiceItemDto>>> call, Response<BaseResponse<List<ServiceItemDto>>> response) {
                 if (response.isSuccessful()) {
                     progressDialog.dismiss();
                     if (response.body().isStatus()) {
                         linearLayoutManager = new LinearLayoutManager(mContext,LinearLayoutManager.HORIZONTAL,false);
                         binding.rvOtherService.setLayoutManager(linearLayoutManager);
-                        otherServiceListData = (ArrayList<LayananListDto>) response.body().getData();
+                        otherServiceListData = (ArrayList<ServiceItemDto>) response.body().getData();
 //                        for (LayananListDto data : otherServiceListData) {
 //                            if (data.getServiceId().equals(otherServiceData.getServiceId())) {
 //                                otherServiceListData.remove(data);
@@ -99,7 +96,7 @@ public class ServicePenjualanActivity extends AppCompatActivity {
             }
 
             @Override
-            public void onFailure(Call<LayananDto> call, Throwable t) {
+            public void onFailure(Call<BaseResponse<List<ServiceItemDto>>> call, Throwable t) {
                 Log.e("TAG", "gagal upload " + t.getMessage());
                 progressDialog.dismiss();
             }
@@ -118,10 +115,10 @@ public class ServicePenjualanActivity extends AppCompatActivity {
                 Consts.username,
                 Consts.pass
         );
-        api.getLayanan(otherServiceData.getServiceId()).enqueue(new Callback<ItemLayananDto>() {
+        api.getLayanan(otherServiceData.getServiceId()).enqueue(new Callback<BaseResponse<List<LayananItemDto>>>() {
 
             @Override
-            public void onResponse(Call<ItemLayananDto> call, Response<ItemLayananDto> response) {
+            public void onResponse(Call<BaseResponse<List<LayananItemDto>>> call, Response<BaseResponse<List<LayananItemDto>>> response) {
                 if (response.isSuccessful()) {
                     progressDialog.dismiss();
                     if (response.body().isStatus()) {
@@ -142,7 +139,7 @@ public class ServicePenjualanActivity extends AppCompatActivity {
             }
 
             @Override
-            public void onFailure(Call<ItemLayananDto> call, Throwable t) {
+            public void onFailure(Call<BaseResponse<List<LayananItemDto>>> call, Throwable t) {
                 Log.e("TAG", "gagal upload " + t.getMessage());
                 progressDialog.dismiss();
             }

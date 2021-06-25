@@ -16,8 +16,8 @@ import com.samyotech.laundrymitra.R;
 import com.samyotech.laundrymitra.databinding.FragmentPenjualanBinding;
 import com.samyotech.laundrymitra.interfaces.Consts;
 import com.samyotech.laundrymitra.model.UserDTO;
-import com.samyotech.laundrymitra.model.penjualan.DataItemPenjulan;
-import com.samyotech.laundrymitra.model.penjualan.PenjualanListDto;
+import com.samyotech.laundrymitra.model.base.BaseResponse;
+import com.samyotech.laundrymitra.model.penjualan.PenjualanItemDto;
 import com.samyotech.laundrymitra.network.ApiInterface;
 import com.samyotech.laundrymitra.network.ServiceGenerator;
 import com.samyotech.laundrymitra.preferences.SharedPrefrence;
@@ -26,6 +26,7 @@ import com.samyotech.laundrymitra.ui.adapter.penjualan.PenjualanAdapter;
 import com.samyotech.laundrymitra.utils.ProjectUtils;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -76,15 +77,15 @@ public class PenjualanFragment extends Fragment {
         );
 
 
-        api.getPenjualanData("zAd1d3").enqueue(new Callback<PenjualanListDto>() {
+        api.getPenjualanData("zAd1d3").enqueue(new Callback<BaseResponse<List<PenjualanItemDto>>>() {
 
             @Override
-            public void onResponse(Call<PenjualanListDto> call, Response<PenjualanListDto> response) {
+            public void onResponse(Call<BaseResponse<List<PenjualanItemDto>>> call, Response<BaseResponse<List<PenjualanItemDto>>> response) {
                 if (response.isSuccessful()) {
                     if (response.body().isStatus()) {
                         linearLayoutManager = new LinearLayoutManager(getActivity(), LinearLayoutManager.VERTICAL, false);
                         binding.rvPenjualan.setLayoutManager(linearLayoutManager);
-                        penjualanAdapter = new PenjualanAdapter(getActivity(), (ArrayList<DataItemPenjulan>) response.body().getData(),PenjualanFragment.this);
+                        penjualanAdapter = new PenjualanAdapter(getActivity(), (ArrayList<PenjualanItemDto>) response.body().getData(),PenjualanFragment.this);
                         binding.rvPenjualan.setAdapter(penjualanAdapter);
                         ProjectUtils.cancelDialog();
                         ProjectUtils.pauseProgressDialog();
@@ -96,7 +97,7 @@ public class PenjualanFragment extends Fragment {
             }
 
             @Override
-            public void onFailure(Call<PenjualanListDto> call, Throwable t) {
+            public void onFailure(Call<BaseResponse<List<PenjualanItemDto>>> call, Throwable t) {
                 Log.e("TAG", "gagal upload " + t.getMessage());
                 ProjectUtils.cancelDialog();
                 ProjectUtils.pauseProgressDialog();

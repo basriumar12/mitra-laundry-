@@ -10,36 +10,20 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.databinding.DataBindingUtil;
-import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.bumptech.glide.Glide;
 import com.samyotech.laundrymitra.R;
-import com.samyotech.laundrymitra.databinding.AdapterBookingBinding;
 import com.samyotech.laundrymitra.databinding.AdapterPenjualanBinding;
-import com.samyotech.laundrymitra.databinding.AdapterPentingBinding;
-import com.samyotech.laundrymitra.https.HttpsRequest;
 import com.samyotech.laundrymitra.interfaces.Consts;
-import com.samyotech.laundrymitra.interfaces.Helper;
-import com.samyotech.laundrymitra.model.CurrencyDTO;
-import com.samyotech.laundrymitra.model.OrderListDTO;
-import com.samyotech.laundrymitra.model.home.TerlarisHariIniListDto;
-import com.samyotech.laundrymitra.model.penjualan.DataItemPenjulan;
-import com.samyotech.laundrymitra.model.penjualan.PenjualanListDto;
+import com.samyotech.laundrymitra.model.base.BaseResponse;
+import com.samyotech.laundrymitra.model.penjualan.PenjualanItemDto;
 import com.samyotech.laundrymitra.network.ApiInterface;
 import com.samyotech.laundrymitra.network.ServiceGenerator;
-import com.samyotech.laundrymitra.ui.activity.OrderDetails;
 import com.samyotech.laundrymitra.ui.activity.penjualan.DetailPenjualanActivity;
-import com.samyotech.laundrymitra.ui.adapter.home.TerlarisAdapter;
-import com.samyotech.laundrymitra.ui.fragment.BookingFragment;
 import com.samyotech.laundrymitra.ui.fragment.penjualan.PenjualanFragment;
-import com.samyotech.laundrymitra.utils.ProjectUtils;
-
-import org.json.JSONException;
-import org.json.JSONObject;
 
 import java.util.ArrayList;
-import java.util.HashMap;
+import java.util.List;
 
 import mehdi.sakout.fancybuttons.FancyButton;
 import retrofit2.Call;
@@ -52,10 +36,10 @@ public class PenjualanAdapter extends RecyclerView.Adapter<PenjualanAdapter.MyVi
     AdapterPenjualanBinding binding;
     Context kContext;
     PenjualanFragment penjualanFragment;
-    ArrayList<DataItemPenjulan> penjualanDTOArrayList;
+    ArrayList<PenjualanItemDto> penjualanDTOArrayList;
 
 
-    public PenjualanAdapter(Context kContext, ArrayList<DataItemPenjulan> penjualanDTOArrayList, PenjualanFragment penjualanFragment) {
+    public PenjualanAdapter(Context kContext, ArrayList<PenjualanItemDto> penjualanDTOArrayList, PenjualanFragment penjualanFragment) {
         this.kContext = kContext;
         this.penjualanFragment = penjualanFragment;
         this.penjualanDTOArrayList =penjualanDTOArrayList;
@@ -73,7 +57,6 @@ public class PenjualanAdapter extends RecyclerView.Adapter<PenjualanAdapter.MyVi
 
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, final int position) {
-        System.out.println("KEPANGGIL");
         holder.binding.namaPenjualan.setText(penjualanDTOArrayList.get(position).getNamaService());
         holder.binding.totalPcs.setText(penjualanDTOArrayList.get(position).getTotalPcs() + "Kg");
         holder.binding.harga.setText(penjualanDTOArrayList.get(position).getTotalHarga());
@@ -139,10 +122,10 @@ public class PenjualanAdapter extends RecyclerView.Adapter<PenjualanAdapter.MyVi
         );
 
 
-        api.getBatalPenjualan("zAd1d3").enqueue(new Callback<PenjualanListDto>() {
+        api.getBatalPenjualan("zAd1d3").enqueue(new Callback<BaseResponse<List<PenjualanItemDto>>>() {
 
             @Override
-            public void onResponse(Call<PenjualanListDto> call, Response<PenjualanListDto> response) {
+            public void onResponse(Call<BaseResponse<List<PenjualanItemDto>>> call, Response<BaseResponse<List<PenjualanItemDto>>> response) {
                 if (response.isSuccessful()) {
                     if (response.body().isStatus()) {
                         penjualanFragment.getPenjualanData();
@@ -154,7 +137,7 @@ public class PenjualanAdapter extends RecyclerView.Adapter<PenjualanAdapter.MyVi
             }
 
             @Override
-            public void onFailure(Call<PenjualanListDto> call, Throwable t) {
+            public void onFailure(Call<BaseResponse<List<PenjualanItemDto>>> call, Throwable t) {
                 Log.e("TAG", "gagal upload " + t.getMessage());
             }
         });

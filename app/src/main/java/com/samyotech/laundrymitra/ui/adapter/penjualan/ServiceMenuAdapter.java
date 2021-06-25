@@ -12,13 +12,8 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.samyotech.laundrymitra.R;
-import com.samyotech.laundrymitra.databinding.AdapterDetailPenjualanBinding;
-import com.samyotech.laundrymitra.databinding.AdapterPenjualanBinding;
 import com.samyotech.laundrymitra.databinding.AdapterServiceMenuBinding;
-import com.samyotech.laundrymitra.databinding.AdapterServicesBinding;
-import com.samyotech.laundrymitra.model.layanan.LayananListDto;
-import com.samyotech.laundrymitra.model.penjualan.DetailPenjualanList;
-import com.samyotech.laundrymitra.ui.activity.penjualan.DetailPenjualanActivity;
+import com.samyotech.laundrymitra.model.layanan.ServiceItemDto;
 import com.samyotech.laundrymitra.ui.activity.penjualan.ServiceMenuActivity;
 import com.samyotech.laundrymitra.ui.activity.penjualan.ServicePenjualanActivity;
 
@@ -30,13 +25,13 @@ public class ServiceMenuAdapter extends RecyclerView.Adapter<ServiceMenuAdapter.
     AdapterServiceMenuBinding binding;
     Context kContext;
     ServiceMenuActivity serviceMenuActivity;
-    ArrayList<LayananListDto> layananListDtos;
+    ArrayList<ServiceItemDto> serviceItemDtos;
 
 
-    public ServiceMenuAdapter(Context kContext, ArrayList<LayananListDto> layananListDtos, ServiceMenuActivity serviceMenuActivity) {
+    public ServiceMenuAdapter(Context kContext, ArrayList<ServiceItemDto> serviceItemDtos, ServiceMenuActivity serviceMenuActivity) {
         this.kContext = kContext;
         this.serviceMenuActivity = serviceMenuActivity;
-        this.layananListDtos = layananListDtos;
+        this.serviceItemDtos = serviceItemDtos;
     }
     @NonNull
     @Override
@@ -51,14 +46,14 @@ public class ServiceMenuAdapter extends RecyclerView.Adapter<ServiceMenuAdapter.
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, final int position) {
         Glide.with(kContext)
-                .load(layananListDtos.get(position).getUrlImage())
+                .load(serviceItemDtos.get(position).getUrlImage())
                 .into(holder.binding.ivImageService);
-        binding.namaService.setText(layananListDtos.get(position).getServiceName());
+        binding.namaService.setText(serviceItemDtos.get(position).getServiceName());
         binding.ivImageService.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(kContext, ServicePenjualanActivity.class);
-                intent.putExtra("ServiceData",layananListDtos.get(position));
+                intent.putExtra("ServiceData", serviceItemDtos.get(position));
                 kContext.startActivity(intent);
             }
         });
@@ -66,7 +61,7 @@ public class ServiceMenuAdapter extends RecyclerView.Adapter<ServiceMenuAdapter.
 
     @Override
     public int getItemCount() {
-        return layananListDtos.size();
+        return serviceItemDtos.size();
     }
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
