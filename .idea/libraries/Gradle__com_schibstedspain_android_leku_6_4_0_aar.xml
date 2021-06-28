@@ -2,8 +2,8 @@
   <library name="Gradle: com.schibstedspain.android:leku:6.4.0@aar">
     <CLASSES>
       <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/7946e9a5e6eb86d6609678ea7e17e19a/jetified-leku-6.4.0/jars/classes.jar!/" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/7946e9a5e6eb86d6609678ea7e17e19a/jetified-leku-6.4.0/AndroidManifest.xml" />
       <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/7946e9a5e6eb86d6609678ea7e17e19a/jetified-leku-6.4.0/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/7946e9a5e6eb86d6609678ea7e17e19a/jetified-leku-6.4.0/AndroidManifest.xml" />
     </CLASSES>
     <JAVADOC>
       <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.schibstedspain.android/leku/6.4.0/3adc7f1f93d3e19b46637a4a26794e3f8485f72d/leku-6.4.0-javadoc.jar!/" />
