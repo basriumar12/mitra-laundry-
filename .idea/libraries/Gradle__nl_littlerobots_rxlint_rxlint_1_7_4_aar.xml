@@ -1,8 +1,9 @@
 <component name="libraryTable">
   <library name="Gradle: nl.littlerobots.rxlint:rxlint:1.7.4@aar">
     <CLASSES>
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/8898e483b2e4f2201401967df4484031/jetified-rxlint-1.7.4/jars/classes.jar!/" />
       <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/8898e483b2e4f2201401967df4484031/jetified-rxlint-1.7.4/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/f06e35aef2488c3b3e1ec5c0814c2275/jetified-rxlint-1.7.4/res" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/8898e483b2e4f2201401967df4484031/jetified-rxlint-1.7.4/jars/classes.jar!/" />
       <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/8898e483b2e4f2201401967df4484031/jetified-rxlint-1.7.4/AndroidManifest.xml" />
     </CLASSES>
     <JAVADOC>

@@ -1,12 +1,9 @@
 <component name="libraryTable">
   <library name="Gradle: com.miguelcatalan:materialsearchview:1.4.0@aar">
     <CLASSES>
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/c53a523dd695f7dbaa53b9af59d7c1c5/jetified-materialsearchview-1.4.0/jars/classes.jar!/" />
       <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/c53a523dd695f7dbaa53b9af59d7c1c5/jetified-materialsearchview-1.4.0/res" />
       <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/c53a523dd695f7dbaa53b9af59d7c1c5/jetified-materialsearchview-1.4.0/AndroidManifest.xml" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/35d7b794f79b25ee229ad08e843b7543/jetified-materialsearchview-1.4.0/res" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/35d7b794f79b25ee229ad08e843b7543/jetified-materialsearchview-1.4.0/AndroidManifest.xml" />
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/35d7b794f79b25ee229ad08e843b7543/jetified-materialsearchview-1.4.0/jars/classes.jar!/" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/c53a523dd695f7dbaa53b9af59d7c1c5/jetified-materialsearchview-1.4.0/jars/classes.jar!/" />
     </CLASSES>
     <JAVADOC>
       <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.miguelcatalan/materialsearchview/1.4.0/5c5fc650f148e263a439aba7cdff200437b89890/materialsearchview-1.4.0-javadoc.jar!/" />
