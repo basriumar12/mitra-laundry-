@@ -29,6 +29,16 @@ public interface ApiInterface {
     Call<ResponseOther> uploadKtp(@Part("user_id") RequestBody user_id, @Part MultipartBody.Part file
     );
 
+    @Multipart
+    @POST("lainnya/edit_foto_profile")
+    Call<ResponseOther> uploadFotoProfile(@Part("user_id") RequestBody user_id, @Part MultipartBody.Part file
+    );
+
+    @Multipart
+    @POST("lainnya/edit_foto_background")
+    Call<ResponseOther> uploadFotoBackground(@Part("user_id") RequestBody user_id, @Part MultipartBody.Part file
+    );
+
     @GET("penjualan")
     Call<PenjualanListDto> getPenjualanData(@Query("shop_id") String shop_id);
 
@@ -46,6 +56,12 @@ public interface ApiInterface {
 
     @GET("chatt")
     Call<ChatDto> getChat(@Query("user_id") String userId);
+
+    @GET("chatt/detail_pesan")
+    Call<ChatDto> getDetailChat(
+
+            @Query("message_head_id") String messageId,
+            @Query("user_id") String userId);
 
     @GET("home/terlaris")
     Call<TerlarisHariIniDto> getTerlaris(@Query("user_id") String user_id, @Query("shop_id") String shop_id);

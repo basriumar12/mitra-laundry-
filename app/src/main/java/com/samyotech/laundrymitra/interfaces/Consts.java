@@ -12,6 +12,7 @@ public interface Consts {
 
 
     /*-----Apis-----*/
+    String lainya ="lainnya";
     String username = "dunialaundry";
     String pass ="laundry123";
     String FORGOTPASSWORD = "forgotPassword";

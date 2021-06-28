@@ -159,6 +159,7 @@ public class RegisterMitraActivity extends AppCompatActivity {
 
                             Intent in = new Intent(mContext, Login.class);
                             startActivity(in);
+                            finish();
                             prefrence.setIntValue("DAFTAR-", 3);
                             overridePendingTransition(R.anim.anim_slide_in_left,
                                     R.anim.anim_slide_out_left);

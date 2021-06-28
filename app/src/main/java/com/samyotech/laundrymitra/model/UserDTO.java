@@ -25,8 +25,25 @@ public class UserDTO implements Serializable {
     String premium = "";
     String image_ktp = "";
     String shop_id = "";
+    String url_image = "";
+    String url_background = "";
 
 
+    public String getUrl_image() {
+        return url_image;
+    }
+
+    public void setUrl_image(String url_image) {
+        this.url_image = url_image;
+    }
+
+    public String getUrl_background() {
+        return url_background;
+    }
+
+    public void setUrl_background(String url_background) {
+        this.url_background = url_background;
+    }
 
     public String getPremium() {
         return premium;

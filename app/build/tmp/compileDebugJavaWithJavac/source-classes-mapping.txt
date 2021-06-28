@@ -14,6 +14,7 @@ com/samyotech/laundrymitra/databinding/AdapterOffersBinding.java
 com/samyotech/laundrymitra/ui/fragment/ProfileFragment.java
  com.samyotech.laundrymitra.ui.fragment.ProfileFragment
  com.samyotech.laundrymitra.ui.fragment.ProfileFragment$1
+ com.samyotech.laundrymitra.ui.fragment.ProfileFragment$10
  com.samyotech.laundrymitra.ui.fragment.ProfileFragment$2
  com.samyotech.laundrymitra.ui.fragment.ProfileFragment$3
  com.samyotech.laundrymitra.ui.fragment.ProfileFragment$4
@@ -21,6 +22,7 @@ com/samyotech/laundrymitra/ui/fragment/ProfileFragment.java
  com.samyotech.laundrymitra.ui.fragment.ProfileFragment$6
  com.samyotech.laundrymitra.ui.fragment.ProfileFragment$7
  com.samyotech.laundrymitra.ui.fragment.ProfileFragment$8
+ com.samyotech.laundrymitra.ui.fragment.ProfileFragment$9
 com/samyotech/laundrymitra/ui/fragment/DynamicFragment.java
  com.samyotech.laundrymitra.ui.fragment.DynamicFragment
 com/samyotech/laundrymitra/databinding/AdapterAddressBinding.java

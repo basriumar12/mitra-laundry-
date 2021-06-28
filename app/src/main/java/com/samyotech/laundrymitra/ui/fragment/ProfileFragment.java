@@ -16,16 +16,25 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.databinding.DataBindingUtil;
 import androidx.fragment.app.Fragment;
 
+import com.androidnetworking.AndroidNetworking;
+import com.androidnetworking.common.ANRequest;
+import com.androidnetworking.common.Priority;
+import com.androidnetworking.error.ANError;
+import com.androidnetworking.interfaces.JSONObjectRequestListener;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.github.dhaval2404.imagepicker.ImagePicker;
 import com.google.gson.Gson;
+import com.google.gson.JsonIOException;
 import com.samyotech.laundrymitra.R;
 import com.samyotech.laundrymitra.databinding.FragmentProfileBinding;
 import com.samyotech.laundrymitra.https.HttpsRequest;
 import com.samyotech.laundrymitra.interfaces.Consts;
 import com.samyotech.laundrymitra.interfaces.Helper;
 import com.samyotech.laundrymitra.model.UserDTO;
+import com.samyotech.laundrymitra.network.ApiInterface;
+import com.samyotech.laundrymitra.network.ResponseOther;
+import com.samyotech.laundrymitra.network.ServiceGenerator;
 import com.samyotech.laundrymitra.preferences.SharedPrefrence;
 import com.samyotech.laundrymitra.ui.activity.About;
 import com.samyotech.laundrymitra.ui.activity.ChangPassword;
@@ -35,49 +44,127 @@ import com.samyotech.laundrymitra.ui.activity.login.Login;
 import com.samyotech.laundrymitra.ui.activity.ManageProfile;
 import com.samyotech.laundrymitra.ui.activity.NotificationActivity;
 import com.samyotech.laundrymitra.ui.activity.TicketsActivity;
+import com.samyotech.laundrymitra.ui.activity.register.RegisterMitraActivity;
 import com.samyotech.laundrymitra.utils.ProjectUtils;
 
 import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.File;
+import java.io.IOException;
 import java.util.HashMap;
 
 import mehdi.sakout.fancybuttons.FancyButton;
+import okhttp3.Authenticator;
+import okhttp3.Credentials;
+import okhttp3.MediaType;
+import okhttp3.MultipartBody;
+import okhttp3.OkHttpClient;
+import okhttp3.Request;
+import okhttp3.RequestBody;
+import okhttp3.Response;
+import okhttp3.Route;
+import retrofit2.Call;
+import retrofit2.Callback;
 
 public class ProfileFragment extends Fragment implements View.OnClickListener {
     private static final int RESULT_OK = -1;
     private final String TAG = ProfileFragment.class.getSimpleName();
     FragmentProfileBinding binding;
     Dashboard dashboard;
-    SharedPrefrence sharedPrefrence;
+    SharedPrefrence prefrence;
     UserDTO userDTO;
     HashMap<String, File> fileHashMap = new HashMap<>();
     HashMap<String, String> hashMap = new HashMap<>();
     private BottomSheetFragment bottomSheetFragment;
     private String type;
 
+    File fileImage;
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_profile, container, false);
-        sharedPrefrence = SharedPrefrence.getInstance(getActivity());
-        userDTO = sharedPrefrence.getParentUser(Consts.USER_DTO);
+        prefrence = SharedPrefrence.getInstance(getActivity());
+        userDTO = prefrence.getParentUser(Consts.USER_DTO);
+        getUpdateProfile();
         hashMap.put(Consts.USER_ID, userDTO.getUser_id());
         setUIAction();
         return binding.getRoot();
     }
 
-    private void setUIAction() {
+    private void getUpdateProfile() {
+        OkHttpClient okHttpClient = new OkHttpClient.Builder()
+                .authenticator(new Authenticator() {
+                    @Override
+                    public Request authenticate(Route route, Response response) throws IOException {
+                        return response.request().newBuilder()
+                                .header("Authorization", Credentials.basic(Consts.username, Consts.pass))
+                                .build();
+                    }
+                })
+                .build();
+        final ANRequest request =
+                AndroidNetworking.get(Consts.API_URL + Consts.lainya + "?user_id=" + userDTO.getUser_id() + "&" + "shop_id=" + userDTO.getShop_id())
+                        .setOkHttpClient(okHttpClient)
+                        .setTag("test")
+//                        .addQueryParameter("id_user", userid)
+//                        .addQueryParameter("otp", otpSms)
+                        .setPriority(Priority.HIGH)
+                        .build();
+        ProjectUtils.showLog("TAG", " url data --->" + request.getUrl());
 
+        request.getAsJSONObject(new JSONObjectRequestListener() {
+            @Override
+            public void onResponse(JSONObject response) {
+
+
+                try {
+                    boolean flag = response.getBoolean("status");
+                    String msg = response.getString("message");
+
+                    //ProjectUtils.showToast(getContext(), msg);
+
+                    if (flag) {
+                        userDTO = new Gson().fromJson(response.getJSONObject("data").toString(), UserDTO.class);
+                        prefrence.setParentUser(userDTO, Consts.USER_DTO);
+                        Glide.with(requireActivity())
+                                .load(userDTO.getUrl_image())
+                                .error(R.drawable.profile)
+                                .diskCacheStrategy(DiskCacheStrategy.ALL)
+                                .into(binding.ivAvtaimg);
+                        Glide.with(requireActivity())
+                                .load(userDTO.getUrl_background())
+                                .error(R.drawable.cover)
+                                .diskCacheStrategy(DiskCacheStrategy.ALL)
+                                .into(binding.ivBanner);
+
+                    }
+
+
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+
+
+            }
+
+            @Override
+            public void onError(ANError anError) {
+            }
+        });
+
+    }
+
+    private void setUIAction() {
         Glide.with(requireActivity())
-                .load(Consts.BASE_URL + "assets/images/user/" + userDTO.getImage())
+                .load(userDTO.getUrl_image())
                 .error(R.drawable.profile)
                 .diskCacheStrategy(DiskCacheStrategy.ALL)
                 .into(binding.ivAvtaimg);
         Glide.with(requireActivity())
-                .load(Consts.BASE_URL + "assets/images/user/background/" + userDTO.getBackground())
+                .load(userDTO.getUrl_background())
                 .error(R.drawable.cover)
                 .diskCacheStrategy(DiskCacheStrategy.ALL)
                 .into(binding.ivBanner);
@@ -145,7 +232,7 @@ public class ProfileFragment extends Fragment implements View.OnClickListener {
 
 
     public void logout() {
-        sharedPrefrence.clearAllPreferences();
+        prefrence.clearAllPreferences();
         Intent i = new Intent(dashboard, Login.class);
         i.putExtra("finish", true);
         i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
@@ -154,30 +241,6 @@ public class ProfileFragment extends Fragment implements View.OnClickListener {
         startActivity(i);
         dashboard.finish();
 
-//        ProjectUtils.showProgressDialog(getActivity(), true, getResources().getString(R.string.please_wait));
-//        new HttpsRequest(Consts.LOGOUT, hashMap, getActivity()).stringPost(TAG, new Helper() {
-//            @Override
-//            public void backResponse(boolean flag, String msg, JSONObject response) {
-//                ProjectUtils.pauseProgressDialog();
-//                if (flag) {
-//                    try {
-//                        sharedPrefrence.clearAllPreferences();
-//                        Intent i = new Intent(dashboard, Login.class);
-//                        i.putExtra("finish", true);
-//                        i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-//                        i.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
-//                        i.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-//                        startActivity(i);
-//                        dashboard.finish();
-//                    } catch (Exception e) {
-//                        e.printStackTrace();
-//                    }
-//
-//                } else {
-//                    ProjectUtils.showToast(getActivity(), msg);
-//                }
-//            }
-//        });
     }
 
     public void alertDialogLogout() {
@@ -221,7 +284,7 @@ public class ProfileFragment extends Fragment implements View.OnClickListener {
                 ProjectUtils.pauseProgressDialog();
                 if (flag) {
                     try {
-                        sharedPrefrence.clearAllPreferences();
+                        prefrence.clearAllPreferences();
                         dashboard.finish();
                         Intent i = new Intent(dashboard, Login.class);
                         i.putExtra("finish", true);
@@ -272,6 +335,7 @@ public class ProfileFragment extends Fragment implements View.OnClickListener {
             public void onClick(int which) {
                 switch (which) {
                     case R.id.camera:
+
                         ImagePicker.Companion.with(ProfileFragment.this)
                                 .cameraOnly()
                                 .crop()
@@ -295,11 +359,12 @@ public class ProfileFragment extends Fragment implements View.OnClickListener {
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        Log.e("TAG", "type " + type);
-        type = "image";
+        File file = ImagePicker.Companion.getFile(data);
+        fileImage = ImagePicker.Companion.getFile(data);
+
         if (resultCode == RESULT_OK) {
             if (type.equals("image")) {
-                File file = ImagePicker.Companion.getFile(data);
+
                 fileHashMap.put(Consts.IMAGE, file);
                 hashMap.put(Consts.IMAGE, file.getPath());
                 if (bottomSheetFragment != null) {
@@ -307,7 +372,7 @@ public class ProfileFragment extends Fragment implements View.OnClickListener {
                 }
                 updateProfile();
             } else if (type.equals("background")) {
-                File file = ImagePicker.Companion.getFile(data);
+
                 fileHashMap.put(Consts.IMAGE, file);
                 hashMap.put(Consts.IMAGE, file.getPath());
                 if (bottomSheetFragment != null) {
@@ -319,74 +384,99 @@ public class ProfileFragment extends Fragment implements View.OnClickListener {
     }
 
     private void updateProfile() {
-        final ProgressDialog progressDialog = new ProgressDialog(requireActivity(), R.style.CustomAlertDialog);
+        final ProgressDialog progressDialog = new ProgressDialog(getActivity(), R.style.CustomAlertDialog);
         progressDialog.setMessage("loading");
         progressDialog.show();
-        new HttpsRequest(Consts.USERUPDATE_FOTO_PROFILE, hashMap, fileHashMap, getActivity())
-                .imagePost(TAG, new Helper() {
-                    @Override
-                    public void backResponse(boolean flag, String msg, JSONObject response) throws JSONException {
-                        progressDialog.dismiss();
-                        if (flag) {
 
-                            userDTO = new Gson().fromJson(response.getJSONObject("data").toString(), UserDTO.class);
-                            sharedPrefrence.setParentUser(userDTO, Consts.USER_DTO);
+        ApiInterface api = ServiceGenerator.createService(
+                ApiInterface.class,
+                Consts.username,
+                Consts.pass
+        );
+        if (bottomSheetFragment != null) {
+            bottomSheetFragment.dismiss();
+        }
+        MultipartBody.Part filePart = MultipartBody.Part.createFormData("image",
+                fileImage.getName(), RequestBody.create(MediaType.parse("image/*"), fileImage));
 
-                            sharedPrefrence.setBooleanValue(Consts.IS_REGISTERED, true);
 
-                            Glide.with(requireActivity())
-                                    .load(Consts.BASE_URL + "assets/images/user/" + userDTO.getImage())
-                                    .error(R.drawable.ic_avatar)
-                                    .diskCacheStrategy(DiskCacheStrategy.ALL)
-                                    .into(binding.ivAvtaimg);
-                            Glide.with(requireActivity())
-                                    .load(Consts.BASE_URL + "assets/images/user/background/" + userDTO.getBackground())
-                                    .error(R.drawable.banner_img)
-                                    .diskCacheStrategy(DiskCacheStrategy.ALL)
-                                    .into(binding.ivBanner);
+        RequestBody name = RequestBody.create(MediaType.parse("text/plain"),
+                userDTO.getUser_id());
+        api.uploadFotoProfile(name, filePart).enqueue(new Callback<ResponseOther>() {
+            @Override
+            public void onResponse(Call<ResponseOther> call, retrofit2.Response<ResponseOther> response) {
 
-                        } else {
-                            ProjectUtils.showToast(getActivity(), msg);
-                        }
+                progressDialog.dismiss();
+                if (response.isSuccessful()) {
+                    if (response.body().isStatus()) {
+                        ProjectUtils.showToast(getContext(), "Berhasil Upload Fotp Profile");
+                        getUpdateProfile();
+                        getActivity().overridePendingTransition(R.anim.anim_slide_in_left,
+                                R.anim.anim_slide_out_left);
+                    } else {
+                        ProjectUtils.showToast(getContext(), "Gagal Upload, pilih foto yang lain");
                     }
-                });
+                }
+            }
+
+            @Override
+            public void onFailure(Call<ResponseOther> call, Throwable t) {
+                Log.e("TAG", "gagal upload " + t.getMessage());
+                progressDialog.dismiss();
+                ProjectUtils.showToast(getContext(), "Gagal Upload, pilih foto yang lain");
+            }
+        });
 
 
     }
 
     private void updateProfileBackground() {
-        final ProgressDialog progressDialog = new ProgressDialog(requireActivity(), R.style.CustomAlertDialog);
+        final ProgressDialog progressDialog = new ProgressDialog(getActivity(), R.style.CustomAlertDialog);
         progressDialog.setMessage("loading");
         progressDialog.show();
-        new HttpsRequest(Consts.USERUPDATE_FOTO_BACKGROUND, hashMap, fileHashMap, getActivity())
-                .imagePost(TAG, new Helper() {
-                    @Override
-                    public void backResponse(boolean flag, String msg, JSONObject response) throws JSONException {
-                        progressDialog.dismiss();
-                        if (flag) {
+        if (bottomSheetFragment != null) {
+            bottomSheetFragment.dismiss();
+        }
+        ApiInterface api = ServiceGenerator.createService(
+                ApiInterface.class,
+                Consts.username,
+                Consts.pass
+        );
 
-                            userDTO = new Gson().fromJson(response.getJSONObject("data").toString(), UserDTO.class);
-                            sharedPrefrence.setParentUser(userDTO, Consts.USER_DTO);
+        MultipartBody.Part filePart = MultipartBody.Part.createFormData("image",
+                fileImage.getName(), RequestBody.create(MediaType.parse("image/*"), fileImage));
 
-                            sharedPrefrence.setBooleanValue(Consts.IS_REGISTERED, true);
 
-                            Glide.with(requireActivity())
-                                    .load(Consts.BASE_URL + "assets/images/user/" + userDTO.getImage())
-                                    .error(R.drawable.ic_avatar)
-                                    .diskCacheStrategy(DiskCacheStrategy.ALL)
-                                    .into(binding.ivAvtaimg);
-                            Glide.with(requireActivity())
-                                    .load(Consts.BASE_URL + "assets/images/user/background/" + userDTO.getBackground())
-                                    .error(R.drawable.banner_img)
-                                    .diskCacheStrategy(DiskCacheStrategy.ALL)
-                                    .into(binding.ivBanner);
+        RequestBody name = RequestBody.create(MediaType.parse("text/plain"),
+                userDTO.getUser_id());
+        api.uploadFotoBackground(name, filePart).enqueue(new Callback<ResponseOther>() {
+            @Override
+            public void onResponse(Call<ResponseOther> call, retrofit2.Response<ResponseOther> response) {
 
-                        } else {
-                            ProjectUtils.showToast(getActivity(), msg);
-                        }
+                progressDialog.dismiss();
+                if (response.isSuccessful()) {
+                    if (response.body().isStatus()) {
+                        ProjectUtils.showToast(getContext(), "Berhasil Upload Foto Background");
+                        getUpdateProfile();
+                        getActivity().overridePendingTransition(R.anim.anim_slide_in_left,
+                                R.anim.anim_slide_out_left);
+                    } else {
+                        ProjectUtils.showToast(getContext(), "Gagal Upload, pilih foto yang lain");
                     }
-                });
+                }
+            }
 
+
+
+
+
+            @Override
+            public void onFailure(Call<ResponseOther> call, Throwable t) {
+                Log.e("TAG", "gagal upload " + t.getMessage());
+                progressDialog.dismiss();
+                ProjectUtils.showToast(getContext(), "Gagal Upload, pilih foto yang lain");
+            }
+        });
 
     }
 }
