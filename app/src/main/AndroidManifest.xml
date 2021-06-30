@@ -23,7 +23,11 @@
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true"
         tools:replace="android:allowBackup,android:supportsRtl">
-        <activity android:name=".ui.activity.layanan.EditServiceActivity"></activity>
+        <activity android:name=".ui.activity.penjualan.SuccessPenjualanActivity"></activity>
+        <activity android:name=".ui.activity.penjualan.PaymentActivity" />
+        <activity android:name=".ui.activity.penjualan.DateTimeActivity" />
+        <activity android:name=".ui.activity.penjualan.PickupActivity" />
+        <activity android:name=".ui.activity.layanan.EditServiceActivity" />
         <activity android:name=".ui.activity.penjualan.ServicePenjualanActivity" />
         <activity android:name=".ui.activity.penjualan.ServiceMenuActivity" />
         <activity android:name=".ui.activity.penjualan.DetailPenjualanActivity" />

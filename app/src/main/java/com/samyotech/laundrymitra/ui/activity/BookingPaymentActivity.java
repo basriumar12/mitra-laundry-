@@ -234,12 +234,14 @@ public class BookingPaymentActivity extends AppCompatActivity implements View.On
 
 
     private void confirmorder() {
-        parmsSubmit.put(Consts.ORDER_ID, otpGenrate);
-        parmsSubmit.put(Consts.USER_ID, userDTO.getUser_id());
+
+        HashMap<String,Object> body;
+        parmsSubmit.put(Consts.USER_ID, userDTO.getUser_id());//
+        parmsSubmit.put(Consts.ORDER_ID, otpGenrate);//
         try {
-            parmsSubmit.put(Consts.SHOP_ID, popLaundryDTO.getShop_id());
+            parmsSubmit.put(Consts.SHOP_ID, popLaundryDTO.getShop_id());//
         } catch (Exception ex) {
-            parmsSubmit.put(Consts.SHOP_ID, "YZ65d0");
+            parmsSubmit.put(Consts.SHOP_ID, "YZ65d0");//
         }
 
         parmsSubmit.put(Consts.PRICE, totalPriceBef);
@@ -249,19 +251,21 @@ public class BookingPaymentActivity extends AppCompatActivity implements View.On
         parmsSubmit.put(Consts.ITEM_DETAILS, String.valueOf(jsonArray));
         globalState.setCost(binding.total.getText().toString().trim());
 
-        new HttpsRequest(Consts.ORDERSUBMIT, parmsSubmit, mContext).stringPost(TAG, new Helper() {
-            @Override
-            public void backResponse(boolean flag, String msg, JSONObject response) throws JSONException {
-                if (flag) {
+        System.out.println(parmsSubmit);
 
-                    Intent in = new Intent(mContext, BookingConfirmActivity.class);
-                    in.putExtra("map", parmsSubmit);
-                    startActivity(in);
-                    finish();
-                } else {
-                    ProjectUtils.showToast(mContext, msg);
-                }
-            }
-        });
+//        new HttpsRequest(Consts.ORDERSUBMIT, parmsSubmit, mContext).stringPost(TAG, new Helper() {
+//            @Override
+//            public void backResponse(boolean flag, String msg, JSONObject response) throws JSONException {
+//                if (flag) {
+//
+//                    Intent in = new Intent(mContext, BookingConfirmActivity.class);
+//                    in.putExtra("map", parmsSubmit);
+//                    startActivity(in);
+//                    finish();
+//                } else {
+//                    ProjectUtils.showToast(mContext, msg);
+//                }
+//            }
+//        });
     }
 }

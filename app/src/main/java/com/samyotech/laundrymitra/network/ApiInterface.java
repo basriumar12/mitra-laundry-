@@ -9,6 +9,7 @@ import com.samyotech.laundrymitra.model.penjualan.PenjualanItemDto;
 
 import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import okhttp3.MultipartBody;
 import okhttp3.RequestBody;
@@ -48,5 +49,8 @@ public interface ApiInterface {
 
     @POST("layanan/update_layanan")
     Call<BaseResponse<ServiceItemDto>> postDataLayanan(@Body HashMap<String, String> body);
+
+    @POST("penjualan/tambah")
+    Call<BaseResponse> postTambahPenjualan(@Body Map<String, String> body);
 
 }
