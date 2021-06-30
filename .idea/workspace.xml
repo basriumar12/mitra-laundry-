@@ -1,0 +1,451 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AndroidLayouts">
+    <shared>
+      <config />
+    </shared>
+  </component>
+  <component name="AndroidLogFilters">
+    <option name="TOOL_WINDOW_CUSTOM_FILTER" value="data terlaris" />
+    <option name="TOOL_WINDOW_LOG_LEVEL" value="verbose" />
+    <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Show only selected application" />
+  </component>
+  <component name="BranchesTreeState">
+    <expand />
+    <select />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="fbff9040-f5a9-479e-8e62-a1f1396c1921" name="Default Changelist" comment="git init">
+      <change beforePath="$PROJECT_DIR$/.gradle/6.5/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/executionHistory/executionHistory.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.5/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/checksums/checksums.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/checksums/checksums.lock" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$">
+      <ProjectState />
+    </projectState>
+  </component>
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <task path="$PROJECT_DIR$">
+          <activation />
+        </task>
+        <projects_view>
+          <tree_state>
+            <expand>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="Laundry" type="f1a62948:ProjectNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="Laundry" type="f1a62948:ProjectNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="Laundry" type="f1a62948:ProjectNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+                <item name="android" type="c8890929:TasksNode$1" />
+              </path>
+            </expand>
+            <select />
+          </tree_state>
+        </projects_view>
+      </state>
+    </system>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="resourceFile" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="GenerateSignedApkSettings">
+    <option name="EXPORT_PRIVATE_KEY" value="false" />
+    <option name="KEY_STORE_PATH" value="$USER_HOME$/Downloads/winlaundry.jks" />
+    <option name="KEY_ALIAS" value="winlaundry" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="fitur-penjualan" />
+        <entry key="$PROJECT_DIR$/app" value="development" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="1nyHXH0zYUNQBaJVsGF0oYldJdr" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="ApkExportedModule" value="Laundry.app" />
+    <property name="BundleExportedModule" value="Laundry.app" />
+    <property name="DeviceAndSnapshotComboBoxAction.selectedDevice" value="8e6497310804" />
+    <property name="DeviceAndSnapshotComboBoxAction.selectionTime" value="2021-06-17T16:07:32.174Z" />
+    <property name="ExportApk.ApkPath" value="$PROJECT_DIR$/app" />
+    <property name="ExportApk.BuildVariants" value="release" />
+    <property name="ExportApk.SignV1" value="true" />
+    <property name="ExportApk.SignV2" value="true" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="android-custom-view/Users/macbook/Desktop/frelance/tokoweb/winlaundry-mitra-mobile/app/src/main/java/com/samyotech/laundrymitra/widget/PinEntryEditText.java_SELECTED" value="PinEntryEditText" />
+    <property name="android-custom-view/Users/macbook/Desktop/frelance/tokoweb/winlaundry-mobile/app/src/main/java/com/samyotech/laundry/widget/PinEntryEditText.java_SELECTED" value="PinEntryEditText" />
+    <property name="dart.analysis.tool.window.visible" value="false" />
+    <property name="last_directory_selection" value="$PROJECT_DIR$/app/src/main/res/drawable" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/app/src/main/res/drawable" />
+    <property name="multi-representation-preview/Users/macbook/Desktop/frelance/tokoweb/winlaundry-mitra-mobile/app/src/main/java/com/samyotech/laundrymitra/widget/PinEntryEditText.java_selected" value="Custom views" />
+    <property name="multi-representation-preview/Users/macbook/Desktop/frelance/tokoweb/winlaundry-mobile/app/src/main/java/com/samyotech/laundry/widget/PinEntryEditText.java_selected" value="Custom views" />
+    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.project.gradle" />
+    <property name="show.migrate.to.gradle.popup" value="false" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/app/src/main/res/drawable" />
+      <recent name="$PROJECT_DIR$/app/src/main/java/com/samyotech/laundrymitra/network" />
+      <recent name="$PROJECT_DIR$/app/src/main/res/drawable-mdpi" />
+      <recent name="$PROJECT_DIR$/app/src/main/res/layout" />
+      <recent name="$PROJECT_DIR$/app" />
+    </key>
+    <key name="android.template.-1256696697">
+      <recent name="com.samyotech.laundry.ui.activity" />
+    </key>
+    <key name="android.template.-71036437">
+      <recent name="com.samyotech.laundrymitra.ui.activity.register" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.samyotech.laundrymitra.network" />
+      <recent name="com.samyotech.laundrymitra.model.home" />
+      <recent name="com.samyotech.laundrymitra.ui.adapter.home" />
+    </key>
+    <key name="android.template.-1706498287">
+      <recent name="com.samyotech.laundry.ui.activity" />
+    </key>
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="com.samyotech.laundrymitra.network" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Android App.app">
+    <configuration default="true" type="AndroidJUnit" factoryName="Android JUnit">
+      <option name="TEST_OBJECT" value="class" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <method v="2">
+        <option name="Android.Gradle.BeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="app" type="AndroidRunConfigurationType" factoryName="Android App" activateToolWindowBeforeRun="false">
+      <module name="Laundry.app" />
+      <option name="DEPLOY" value="true" />
+      <option name="DEPLOY_APK_FROM_BUNDLE" value="false" />
+      <option name="DEPLOY_AS_INSTANT" value="false" />
+      <option name="ARTIFACT_NAME" value="" />
+      <option name="PM_INSTALL_OPTIONS" value="-r -t" />
+      <option name="ALL_USERS" value="true" />
+      <option name="DYNAMIC_FEATURES_DISABLED_LIST" value="" />
+      <option name="ACTIVITY_EXTRA_FLAGS" value="" />
+      <option name="MODE" value="default_activity" />
+      <option name="CLEAR_LOGCAT" value="false" />
+      <option name="SHOW_LOGCAT_AUTOMATICALLY" value="false" />
+      <option name="SKIP_NOOP_APK_INSTALLATIONS" value="true" />
+      <option name="FORCE_STOP_RUNNING_APP" value="true" />
+      <option name="TARGET_SELECTION_MODE" value="DEVICE_AND_SNAPSHOT_COMBO_BOX" />
+      <option name="SELECTED_CLOUD_MATRIX_CONFIGURATION_ID" value="-1" />
+      <option name="SELECTED_CLOUD_MATRIX_PROJECT_ID" value="" />
+      <option name="DEBUGGER_TYPE" value="Auto" />
+      <Auto>
+        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
+        <option name="SHOW_STATIC_VARS" value="true" />
+        <option name="WORKING_DIR" value="" />
+        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
+        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
+      </Auto>
+      <Hybrid>
+        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
+        <option name="SHOW_STATIC_VARS" value="true" />
+        <option name="WORKING_DIR" value="" />
+        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
+        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
+      </Hybrid>
+      <Java />
+      <Native>
+        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
+        <option name="SHOW_STATIC_VARS" value="true" />
+        <option name="WORKING_DIR" value="" />
+        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
+        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
+      </Native>
+      <Profilers>
+        <option name="ADVANCED_PROFILING_ENABLED" value="false" />
+        <option name="STARTUP_PROFILING_ENABLED" value="false" />
+        <option name="STARTUP_CPU_PROFILING_ENABLED" value="false" />
+        <option name="STARTUP_CPU_PROFILING_CONFIGURATION_NAME" value="Sample Java Methods" />
+        <option name="STARTUP_NATIVE_MEMORY_PROFILING_ENABLED" value="false" />
+        <option name="NATIVE_MEMORY_SAMPLE_RATE_BYTES" value="2048" />
+      </Profilers>
+      <option name="DEEP_LINK" value="" />
+      <option name="ACTIVITY_CLASS" value="" />
+      <option name="SEARCH_ACTIVITY_IN_GLOBAL_SCOPE" value="false" />
+      <option name="SKIP_ACTIVITY_VALIDATION" value="false" />
+      <method v="2">
+        <option name="Android.Gradle.BeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="winlaundry-mobile [signingReport]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="signingReport" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <GradleScriptDebugEnabled>true</GradleScriptDebugEnabled>
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="Android App.app" />
+      <item itemvalue="Gradle.winlaundry-mobile [signingReport]" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Gradle.winlaundry-mobile [signingReport]" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="fbff9040-f5a9-479e-8e62-a1f1396c1921" name="Default Changelist" comment="" />
+      <created>1612355447683</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1612355447683</updated>
+    </task>
+    <task id="LOCAL-00001" summary="upda otp">
+      <created>1613643711400</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1613643711401</updated>
+    </task>
+    <task id="LOCAL-00002" summary="upda otp">
+      <created>1613644249422</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1613644249423</updated>
+    </task>
+    <task id="LOCAL-00003" summary="update dunia laundry">
+      <created>1615843388685</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1615843388685</updated>
+    </task>
+    <task id="LOCAL-00004" summary="update dunia laundry">
+      <created>1621526747238</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1621526747246</updated>
+    </task>
+    <task id="LOCAL-00005" summary="update dunia laundry">
+      <created>1623917543759</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1623917543760</updated>
+    </task>
+    <task id="LOCAL-00006" summary="update dunia laundry">
+      <created>1623917567304</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1623917567304</updated>
+    </task>
+    <task id="LOCAL-00007" summary="update dunia laundry">
+      <created>1623944597121</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1623944597121</updated>
+    </task>
+    <task id="LOCAL-00008" summary="update dunia laundry">
+      <created>1623981238259</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1623981238259</updated>
+    </task>
+    <task id="LOCAL-00009" summary="developemnt">
+      <created>1623981313443</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1623981313443</updated>
+    </task>
+    <task id="LOCAL-00010" summary="git init">
+      <created>1624436996106</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1624436996106</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="upda otp" />
+    <MESSAGE value="update dunia laundry" />
+    <MESSAGE value="developemnt" />
+    <MESSAGE value="git init" />
+    <option name="LAST_COMMIT_MESSAGE" value="git init" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="518" y="257" key="#Notifications" timestamp="1624437297503">
+      <screen x="0" y="23" width="1280" height="729" />
+    </state>
+    <state x="518" y="257" key="#Notifications/0.23.1280.729@0.23.1280.729" timestamp="1624437297503" />
+    <state x="104" y="49" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1621841041653">
+      <screen x="0" y="23" width="1280" height="729" />
+    </state>
+    <state x="104" y="49" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.23.1280.729@0.23.1280.729" timestamp="1621841041653" />
+    <state x="453" y="78" key="#com.intellij.ide.util.MemberChooser" timestamp="1623120627948">
+      <screen x="0" y="23" width="1280" height="729" />
+    </state>
+    <state x="453" y="78" key="#com.intellij.ide.util.MemberChooser/0.23.1280.729@0.23.1280.729" timestamp="1623120627948" />
+    <state x="378" y="141" key="#com.intellij.refactoring.typeMigration.ui.FailedConversionsDialog" timestamp="1623033478039">
+      <screen x="0" y="23" width="1280" height="729" />
+    </state>
+    <state x="378" y="141" key="#com.intellij.refactoring.typeMigration.ui.FailedConversionsDialog/0.23.1280.729@0.23.1280.729" timestamp="1623033478039" />
+    <state x="228" y="149" key="AndroidCreateResourceFileDialog" timestamp="1623227950471">
+      <screen x="0" y="23" width="1280" height="729" />
+    </state>
+    <state x="228" y="149" key="AndroidCreateResourceFileDialog/0.23.1280.729@0.23.1280.729" timestamp="1623227950471" />
+    <state x="100" y="114" width="1080" height="547" key="DiffContextDialog" timestamp="1623945506358">
+      <screen x="0" y="23" width="1280" height="729" />
+    </state>
+    <state x="100" y="100" width="1080" height="600" key="DiffContextDialog/0.0.1280.800@0.0.1280.800" timestamp="1623944853846" />
+    <state x="100" y="114" width="1080" height="547" key="DiffContextDialog/0.23.1280.729@0.23.1280.729" timestamp="1623945506358" />
+    <state width="1236" height="469" key="GridCell.Tab.0.bottom" timestamp="1624429118959">
+      <screen x="0" y="23" width="1280" height="729" />
+    </state>
+    <state width="1236" height="397" key="GridCell.Tab.0.bottom/0.0.1280.800@0.0.1280.800" timestamp="1624428494794" />
+    <state width="1236" height="469" key="GridCell.Tab.0.bottom/0.23.1280.729@0.23.1280.729" timestamp="1624429118959" />
+    <state width="1236" height="301" key="GridCell.Tab.0.bottom/0.23.1280.730@0.23.1280.730" timestamp="1624339959729" />
+    <state width="1236" height="469" key="GridCell.Tab.0.center" timestamp="1624429118958">
+      <screen x="0" y="23" width="1280" height="729" />
+    </state>
+    <state width="1236" height="397" key="GridCell.Tab.0.center/0.0.1280.800@0.0.1280.800" timestamp="1624428494793" />
+    <state width="1236" height="469" key="GridCell.Tab.0.center/0.23.1280.729@0.23.1280.729" timestamp="1624429118958" />
+    <state width="1236" height="301" key="GridCell.Tab.0.center/0.23.1280.730@0.23.1280.730" timestamp="1624339959727" />
+    <state width="1236" height="469" key="GridCell.Tab.0.left" timestamp="1624429118957">
+      <screen x="0" y="23" width="1280" height="729" />
+    </state>
+    <state width="1236" height="397" key="GridCell.Tab.0.left/0.0.1280.800@0.0.1280.800" timestamp="1624428494793" />
+    <state width="1236" height="469" key="GridCell.Tab.0.left/0.23.1280.729@0.23.1280.729" timestamp="1624429118957" />
+    <state width="1236" height="301" key="GridCell.Tab.0.left/0.23.1280.730@0.23.1280.730" timestamp="1624339959725" />
+    <state width="1236" height="469" key="GridCell.Tab.0.right" timestamp="1624429118959">
+      <screen x="0" y="23" width="1280" height="729" />
+    </state>
+    <state width="1236" height="397" key="GridCell.Tab.0.right/0.0.1280.800@0.0.1280.800" timestamp="1624428494794" />
+    <state width="1236" height="469" key="GridCell.Tab.0.right/0.23.1280.729@0.23.1280.729" timestamp="1624429118959" />
+    <state width="1236" height="301" key="GridCell.Tab.0.right/0.23.1280.730@0.23.1280.730" timestamp="1624339959728" />
+    <state x="141" y="26" key="SettingsEditor" timestamp="1624437694971">
+      <screen x="0" y="23" width="1280" height="729" />
+    </state>
+    <state x="141" y="26" key="SettingsEditor/0.23.1280.729@0.23.1280.729" timestamp="1624437694971" />
+    <state x="240" y="114" key="Vcs.Push.Dialog.v2" timestamp="1623981315167">
+      <screen x="0" y="23" width="1280" height="729" />
+    </state>
+    <state x="240" y="99" key="Vcs.Push.Dialog.v2/0.0.1280.800@0.0.1280.800" timestamp="1623944599723" />
+    <state x="240" y="114" key="Vcs.Push.Dialog.v2/0.23.1280.729@0.23.1280.729" timestamp="1623981315167" />
+    <state x="240" y="114" key="Vcs.Push.Dialog.v2/0.23.1280.732@0.23.1280.732" timestamp="1623917568948" />
+    <state x="417" y="172" key="chooseDestDirectoryDialog" timestamp="1624429583058">
+      <screen x="0" y="23" width="1280" height="729" />
+    </state>
+    <state x="417" y="172" key="chooseDestDirectoryDialog/0.23.1280.729@0.23.1280.729" timestamp="1624429583058" />
+    <state x="423" y="308" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1623987017222">
+      <screen x="0" y="23" width="1280" height="729" />
+    </state>
+    <state x="423" y="308" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.23.1280.729@0.23.1280.729" timestamp="1623987017222" />
+    <state x="300" y="183" key="git4idea.merge.GitPullDialog" timestamp="1624437283642">
+      <screen x="0" y="23" width="1280" height="729" />
+    </state>
+    <state x="300" y="183" key="git4idea.merge.GitPullDialog/0.23.1280.729@0.23.1280.729" timestamp="1624437283642" />
+    <state x="370" y="283" key="git4idea.remote.GitConfigureRemotesDialog" timestamp="1623987087462">
+      <screen x="0" y="23" width="1280" height="729" />
+    </state>
+    <state x="370" y="283" key="git4idea.remote.GitConfigureRemotesDialog/0.23.1280.729@0.23.1280.729" timestamp="1623987087462" />
+    <state x="305" y="77" width="670" height="676" key="search.everywhere.popup" timestamp="1624437147358">
+      <screen x="0" y="23" width="1280" height="729" />
+    </state>
+    <state x="305" y="77" width="670" height="676" key="search.everywhere.popup/0.0.1280.800@0.0.1280.800" timestamp="1621651173903" />
+    <state x="305" y="77" width="670" height="676" key="search.everywhere.popup/0.23.1280.729@0.23.1280.729" timestamp="1624437147358" />
+    <state x="305" y="77" width="670" height="677" key="search.everywhere.popup/0.23.1280.730@0.23.1280.730" timestamp="1623224313681" />
+    <state x="305" y="77" width="670" height="679" key="search.everywhere.popup/0.23.1280.732@0.23.1280.732" timestamp="1623819477688" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/com/samyotech/laundrymitra/widget/SmsBroadcastReceiver.java</url>
+          <line>26</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/com/samyotech/laundrymitra/widget/SmsBroadcastReceiver.java</url>
+          <line>21</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/com/samyotech/laundrymitra/widget/SmsBroadcastReceiver.java</url>
+          <line>22</line>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/com/samyotech/laundrymitra/widget/SmsBroadcastReceiver.java</url>
+          <line>20</line>
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>

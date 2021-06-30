@@ -63,9 +63,9 @@ public class WelcomeScreens extends AppCompatActivity {
 
     private void setUpViewpager() {
         imageDTOArrayList = new ArrayList<>();
-        imageDTOArrayList.add(new WelcomeDTO(R.drawable.welcome1, getResources().getString(R.string.Choose), getResources().getString(R.string.dummuydata)));
-        imageDTOArrayList.add(new WelcomeDTO(R.drawable.welcome2, getResources().getString(R.string.wash), getResources().getString(R.string.dummuydata2)));
-        imageDTOArrayList.add(new WelcomeDTO(R.drawable.welcome3, getResources().getString(R.string.delivery), getResources().getString(R.string.dummuydata3)));
+        imageDTOArrayList.add(new WelcomeDTO(R.drawable.wsatu, getResources().getString(R.string.Choose), getResources().getString(R.string.dummuydata)));
+        imageDTOArrayList.add(new WelcomeDTO(R.drawable.wdua, getResources().getString(R.string.wash), getResources().getString(R.string.dummuydata2)));
+        imageDTOArrayList.add(new WelcomeDTO(R.drawable.wtiga, getResources().getString(R.string.delivery), getResources().getString(R.string.dummuydata3)));
 
         imageAdapter = new WelcomeImageAdapter(imageDTOArrayList, kContext, new WelcomeImageAdapter.ClickListener() {
             @Override

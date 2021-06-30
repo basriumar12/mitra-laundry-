@@ -11,21 +11,39 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <RelativeLayout
+
+        <ImageView
+            android:id="@+id/logo"
+            android:layout_width="@dimen/_150sdp"
+            android:layout_height="@dimen/_150sdp"
+            android:layout_centerInParent="true"
+
+            android:src="@drawable/logonew" />
+
+        <TextView
+            android:layout_margin="@dimen/_10sdp"
+            android:id="@+id/title"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentBottom="true">
+            android:layout_below="@+id/logo"
+            android:gravity="center"
+            android:text="Aplikasi Mitra &amp; Agen Dunia Laundry"
+            android:textColor="@color/black"
+            android:textSize="22sp"
+            android:textStyle="bold" />
 
-            <ImageView
-                android:layout_centerInParent="true"
-                android:id="@+id/logo"
-                android:layout_width="@dimen/_150sdp"
-                android:layout_height="@dimen/_150sdp"
+        <TextView
+            android:layout_marginEnd="@dimen/_10sdp"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:layout_marginTop="@dimen/_4sdp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/title"
+            android:gravity="center"
+            android:text="Mari bergabung bersama kami dalam memberikan layanan laundry terbaik bagi masyarakat di seluruh Nusantara."
+            android:textColor="@color/black" />
 
-                android:src="@drawable/logonew" />
 
-        </RelativeLayout>
     </RelativeLayout>
 
 

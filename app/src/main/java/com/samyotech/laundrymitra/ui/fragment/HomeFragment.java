@@ -6,14 +6,12 @@ import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.location.Address;
 import android.location.Geocoder;
-import android.location.Location;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -21,41 +19,30 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.core.app.ActivityCompat;
 import androidx.databinding.DataBindingUtil;
 import androidx.fragment.app.Fragment;
-import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.android.gms.location.FusedLocationProviderClient;
 import com.google.android.gms.location.LocationServices;
-import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.gson.Gson;
 import com.samyotech.laundrymitra.R;
 import com.samyotech.laundrymitra.databinding.HomeFragmentBinding;
 import com.samyotech.laundrymitra.https.HttpsRequest;
 import com.samyotech.laundrymitra.interfaces.Consts;
 import com.samyotech.laundrymitra.interfaces.Helper;
-import com.samyotech.laundrymitra.model.BookingDTO;
-import com.samyotech.laundrymitra.model.GetBannerDTO;
-import com.samyotech.laundrymitra.model.HomeDTO;
-import com.samyotech.laundrymitra.model.NearBYDTO;
-import com.samyotech.laundrymitra.model.PopLaundryDTO;
-import com.samyotech.laundrymitra.model.ServicesDTO;
-import com.samyotech.laundrymitra.model.SpecialOfferPkgDTO;
 import com.samyotech.laundrymitra.model.UserDTO;
+import com.samyotech.laundrymitra.model.home.KhususUntukmuDto;
+import com.samyotech.laundrymitra.model.home.KhususUntukmuListDto;
 import com.samyotech.laundrymitra.model.home.PentingHariIniDto;
 import com.samyotech.laundrymitra.model.home.TerlarisHariIniDto;
+import com.samyotech.laundrymitra.model.home.TerlarisHariIniListDto;
+import com.samyotech.laundrymitra.network.ApiInterface;
+import com.samyotech.laundrymitra.network.ServiceGenerator;
 import com.samyotech.laundrymitra.preferences.SharedPrefrence;
 import com.samyotech.laundrymitra.ui.activity.Dashboard;
 import com.samyotech.laundrymitra.ui.activity.NotificationActivity;
 import com.samyotech.laundrymitra.ui.activity.SearchActivity;
 import com.samyotech.laundrymitra.ui.activity.TopServices;
-import com.samyotech.laundrymitra.ui.activity.register.UploadKtpActivity;
-import com.samyotech.laundrymitra.ui.adapter.BookingAdapter;
-import com.samyotech.laundrymitra.ui.adapter.ImageAdapter;
-import com.samyotech.laundrymitra.ui.adapter.LaundriesNearAdapter;
-import com.samyotech.laundrymitra.ui.adapter.PopularLaundriesAdapter;
-import com.samyotech.laundrymitra.ui.adapter.SpecialOffersAdapter;
-import com.samyotech.laundrymitra.ui.adapter.TopServiceAdapter;
+import com.samyotech.laundrymitra.ui.adapter.home.KhususUntukmuAdapter;
 import com.samyotech.laundrymitra.ui.adapter.home.TerlarisAdapter;
 import com.samyotech.laundrymitra.utils.ProjectUtils;
 import com.schibstedspain.leku.LocationPickerActivity;
@@ -63,47 +50,31 @@ import com.schibstedspain.leku.LocationPickerActivity;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Locale;
-import java.util.Timer;
 
 import mehdi.sakout.fancybuttons.FancyButton;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 import static android.app.Activity.RESULT_OK;
 
 
 public class HomeFragment extends Fragment implements View.OnClickListener {
-    final long DELAY_MS = 500;
-    final long PERIOD_MS = 3000;
+
     HomeFragmentBinding binding;
     View view;
-    ArrayList<GetBannerDTO> imageDTOArrayList;
-    int currentPage = 0;
-    Timer timer;
     LinearLayoutManager linearLayoutManager;
     TerlarisHariIniDto terlarisHariIniDto;
     Dashboard dashBoard;
     TerlarisAdapter terlarisAdapter;
+    KhususUntukmuAdapter khususUntukmuAdapter;
     String TAG = HomeFragment.class.getSimpleName();
-    TopServiceAdapter topServiceAdapter;
-    ArrayList<ServicesDTO> servicesDTOArrayList;
-    GridLayoutManager layoutManagerServ;
-    PopularLaundriesAdapter popularLaundriesAdapter;
-    ArrayList<PopLaundryDTO> popLaundryDTOArrayList;
-    RecyclerView.LayoutManager layoutManagerPop;
-    SpecialOffersAdapter specialOffersAdapter;
-    ArrayList<SpecialOfferPkgDTO> specialOffersAdapterArrayList;
-    RecyclerView.LayoutManager layoutManagerOffer;
-    LaundriesNearAdapter laundriesNearAdapter;
-    ArrayList<NearBYDTO> nearBYDTOArrayList;
-    RecyclerView.LayoutManager layoutManagerNear;
     HashMap<String, String> params = new HashMap<>();
-    HomeDTO homeDTO;
     PentingHariIniDto dataDto = new PentingHariIniDto();
     UserDTO userDTO;
-    private ImageAdapter imageAdapter;
     private SharedPrefrence prefrence;
     private FusedLocationProviderClient fusedLocationClient;
 
@@ -115,14 +86,15 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
         view = binding.getRoot();
         prefrence = SharedPrefrence.getInstance(getActivity());
         userDTO = prefrence.getParentUser(Consts.USER_DTO);
-        if (userDTO.getImage_ktp().isEmpty() || userDTO.getImage_ktp().equals(null)){
-          //  startActivity(new Intent(getActivity(), UploadKtpActivity.class));
+        if (userDTO.getImage_ktp().isEmpty() || userDTO.getImage_ktp().equals(null)) {
+            //  startActivity(new Intent(getActivity(), UploadKtpActivity.class));
             //getActivity().finish();
         }
 
 
         getPentingHariIni();
         getAllTerlaris();
+        getKhususUntukmu();
 
         fusedLocationClient = LocationServices.getFusedLocationProviderClient(getContext());
         if (ActivityCompat.checkSelfPermission(getContext(), Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(getContext(), Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
@@ -168,32 +140,27 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
 
         binding.tvPesanBaru.setText("tee");
 
-        if (dataDto != null){
-            Log.e("TAG",new Gson().toJson(dataDto)+" "+dataDto.getPendapatan_bersih_baru()+" "+dataDto.getChatBelumDibaca());
+        if (dataDto != null) {
+            Log.e("TAG", new Gson().toJson(dataDto) + " " + dataDto.getPendapatan_bersih_baru() + " " + dataDto.getChatBelumDibaca());
 
-            binding.tvPesanBaru.setText(""+dataDto.getPesananBaru());
-            binding.tvChatBelumDibaca.setText(""+dataDto.getChatBelumDibaca());
-            binding.tvPendapatanBersihBaru.setText(""+dataDto.getPendapatan_bersih_baru());
-            binding.tvUlasanBaru.setText(""+dataDto.getUlasanSelesai());
-            binding.tvPesananKomplain.setText(""+dataDto.getPesananKomplain());
-            binding.tvPesananSelesai.setText(""+dataDto.getPesananSelesai());
-        }else {
+            binding.tvPesanBaru.setText("" + dataDto.getPesananBaru());
+            binding.tvChatBelumDibaca.setText("" + dataDto.getChatBelumDibaca());
+            binding.tvPendapatanBersihBaru.setText("" + dataDto.getPendapatan_bersih_baru());
+            binding.tvUlasanBaru.setText("" + dataDto.getUlasanSelesai());
+            binding.tvPesananKomplain.setText("" + dataDto.getPesananKomplain());
+            binding.tvPesananSelesai.setText("" + dataDto.getPesananSelesai());
+        } else {
             getPentingHariIni();
-            binding.tvPesanBaru.setText(""+dataDto.getPesananBaru());
-            binding.tvChatBelumDibaca.setText(""+dataDto.getChatBelumDibaca());
-            binding.tvPendapatanBersihBaru.setText(""+dataDto.getPendapatan_bersih_baru());
-            binding.tvUlasanBaru.setText(""+dataDto.getUlasanSelesai());
-            binding.tvPesananKomplain.setText(""+dataDto.getPesananKomplain());
-            binding.tvPesananSelesai.setText(""+dataDto.getPesananSelesai());
+            binding.tvPesanBaru.setText("" + dataDto.getPesananBaru());
+            binding.tvChatBelumDibaca.setText("" + dataDto.getChatBelumDibaca());
+            binding.tvPendapatanBersihBaru.setText("" + dataDto.getPendapatan_bersih_baru());
+            binding.tvUlasanBaru.setText("" + dataDto.getUlasanSelesai());
+            binding.tvPesananKomplain.setText("" + dataDto.getPesananKomplain());
+            binding.tvPesananSelesai.setText("" + dataDto.getPesananSelesai());
         }
 
 
-
     }
-
-
-
-
 
 
     private void findPlace() {
@@ -213,7 +180,7 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
             if (resultCode == RESULT_OK) {
                 try {
                     getAddress(data.getDoubleExtra(Consts.LATITUDE, 0.0), data.getDoubleExtra(Consts.LONGITUDE, 0.0));
-                    updateProfile();
+                    //updateProfile();
 
                 } catch (Exception e) {
                     e.printStackTrace();
@@ -256,7 +223,7 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
     }
 
     public void getPentingHariIni() {
-        ProjectUtils.showProgressDialog(requireActivity(), true, getResources().getString(R.string.please_wait));
+        // ProjectUtils.showProgressDialog(requireActivity(), true, getResources().getString(R.string.please_wait));
 
         new HttpsRequest(Consts.HOME_PENTING, getActivity(), userDTO.getUser_id().toString(), "").stringResendOTP("TAG", new Helper() {
             @Override
@@ -267,12 +234,12 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
                 if (flag) {
 
                     try {
-                             dataDto = new Gson().fromJson(response.getJSONObject("data").toString(), PentingHariIniDto.class);
-                        Log.e("TAG",new Gson().toJson(dataDto)+" "+dataDto.getPendapatan_bersih_baru()+" "+dataDto.getChatBelumDibaca());
+                        dataDto = new Gson().fromJson(response.getJSONObject("data").toString(), PentingHariIniDto.class);
+                        Log.e("TAG", new Gson().toJson(dataDto) + " " + dataDto.getPendapatan_bersih_baru() + " " + dataDto.getChatBelumDibaca());
 
 
                         binding.tvPesanBaru.setText(dataDto.getPesananBaru());
-                        binding.tvChatBelumDibaca.setText(dataDto.getChatBelumDibaca()+" aaa"+dataDto.getPendapatan_bersih_baru());
+                        binding.tvChatBelumDibaca.setText(dataDto.getChatBelumDibaca() + " aaa" + dataDto.getPendapatan_bersih_baru());
                         binding.tvPendapatanBersihBaru.setText(dataDto.getPendapatan_bersih_baru());
                         binding.tvUlasanBaru.setText(dataDto.getUlasanSelesai());
                         binding.tvPesananKomplain.setText(dataDto.getPesananKomplain());
@@ -282,10 +249,15 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
 
                     } catch (Exception e) {
                         e.getMessage();
+                        ProjectUtils.cancelDialog();
+                        ProjectUtils.pauseProgressDialog();
+
                     }
 
 
                 } else {
+                    ProjectUtils.cancelDialog();
+                    ProjectUtils.pauseProgressDialog();
                 }
             }
         });
@@ -303,7 +275,6 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
                 if (flag) {
                     try {
 
-                        ProjectUtils.showProgressDialog(requireActivity(), true, getResources().getString(R.string.please_wait)).dismiss();
 
                         Log.e(TAG, "backResponse: " + response.toString());
                         //   ProjectUtils.showToast(requireContext(), msg);
@@ -367,38 +338,90 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
     }
 
     public void getAllTerlaris() {
-        ProjectUtils.getProgressDialog(getActivity());
-        params.put(Consts.USER_ID, userDTO.getUser_id());
-        new HttpsRequest(Consts.GET_TERLARIS+"?user_id="+userDTO.getUser_id()+"&shop_id=YZ65d0", params, getActivity()).stringPost(TAG, new Helper() {
+
+        ProjectUtils.showProgressDialog(requireActivity(), true, getResources().getString(R.string.please_wait));
+
+
+        ApiInterface api = ServiceGenerator.createService(
+                ApiInterface.class,
+                Consts.username,
+                Consts.pass
+        );
+
+        api.getTerlaris(userDTO.getUser_id(), userDTO.getShop_id()).enqueue(new Callback<TerlarisHariIniDto>() {
             @Override
-            public void backResponse(boolean flag, String msg, JSONObject response) throws JSONException {
+            public void onResponse(Call<TerlarisHariIniDto> call, Response<TerlarisHariIniDto> response) {
+                ProjectUtils.cancelDialog();
                 ProjectUtils.pauseProgressDialog();
-                if (flag) {
-                    try {
+                if (response.isSuccessful()) {
+                    if (response.body().isStatus()) {
+                        List<TerlarisHariIniListDto> data = response.body().getData();
+                        linearLayoutManager = new LinearLayoutManager(getActivity(), LinearLayoutManager.HORIZONTAL, false);
+                        binding.rvTerlaris.setLayoutManager(linearLayoutManager);
+                        terlarisAdapter = new TerlarisAdapter(getActivity(), data);
+                        binding.rvTerlaris.setAdapter(terlarisAdapter);
+                        binding.tvKosongTerlaris.setVisibility(View.GONE);
+                    } else {
+                        binding.tvKosongTerlaris.setVisibility(View.VISIBLE);
 
-                        terlarisHariIniDto = new Gson().fromJson(response.getJSONObject("data").toString(), TerlarisHariIniDto.class);
-
-                        setData();
-                    } catch (Exception e) {
-                        e.printStackTrace();
                     }
-
-                } else {
-
                 }
+
+            }
+
+            @Override
+            public void onFailure(Call<TerlarisHariIniDto> call, Throwable t) {
+                binding.tvKosongTerlaris.setVisibility(View.VISIBLE);
+                ProjectUtils.cancelDialog();
+                ProjectUtils.pauseProgressDialog();
             }
         });
 
 
     }
 
-    private void setData() {
+    public void getKhususUntukmu() {
 
-        linearLayoutManager = new LinearLayoutManager(getActivity(), LinearLayoutManager.VERTICAL, false);
-        binding.rvTerlaris.setLayoutManager(linearLayoutManager);
-        terlarisAdapter = new TerlarisAdapter(getActivity(), terlarisHariIniDto.getOrder_list());
-        binding.rvTerlaris.setAdapter(terlarisAdapter);
+        
+        ApiInterface api = ServiceGenerator.createService(
+                ApiInterface.class,
+                Consts.username,
+                Consts.pass
+        );
+
+        api.getArtikel().enqueue(new Callback<KhususUntukmuDto>() {
+            @Override
+            public void onResponse(Call<KhususUntukmuDto> call, Response<KhususUntukmuDto> response) {
+                ProjectUtils.cancelDialog();
+                ProjectUtils.pauseProgressDialog();
+                if (response.isSuccessful()) {
+                    if (response.body().isStatus()) {
+                        List<KhususUntukmuListDto> data = response.body().getData();
+                        linearLayoutManager = new LinearLayoutManager(getActivity(), LinearLayoutManager.VERTICAL, false);
+                        binding.rvKhususUntukmu.setLayoutManager(linearLayoutManager);
+                        khususUntukmuAdapter = new KhususUntukmuAdapter(getActivity(), data);
+                        binding.rvKhususUntukmu.setAdapter(khususUntukmuAdapter);
+                        binding.tvKosongKhusus.setVisibility(View.GONE);
+                    } else {
+                        binding.tvKosongKhusus.setVisibility(View.VISIBLE);
+
+                    }
+                }
+
+            }
+
+            @Override
+            public void onFailure(Call<KhususUntukmuDto> call, Throwable t) {
+                ProjectUtils.cancelDialog();
+                ProjectUtils.pauseProgressDialog();
+                binding.tvKosongKhusus.setVisibility(View.VISIBLE);
+            }
+        });
+
     }
+
+
+
 
 
 }

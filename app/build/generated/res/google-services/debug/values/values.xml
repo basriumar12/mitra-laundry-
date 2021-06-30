@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="default_web_client_id" translatable="false">1020283631918-enbdsiv45aiup72idnaknjd1tq314gnp.apps.googleusercontent.com</string>
+    <string name="gcm_defaultSenderId" translatable="false">1020283631918</string>
+    <string name="google_api_key" translatable="false">AIzaSyB857xAK83F851ND4wjKVMOrLbOSxyRgFc</string>
+    <string name="google_app_id" translatable="false">1:1020283631918:android:3f893635d93735f4d7e2bf</string>
+    <string name="google_crash_reporting_api_key" translatable="false">AIzaSyB857xAK83F851ND4wjKVMOrLbOSxyRgFc</string>
+    <string name="google_storage_bucket" translatable="false">win-laundry-mitra.appspot.com</string>
+    <string name="project_id" translatable="false">win-laundry-mitra</string>
+</resources>

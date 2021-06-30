@@ -1,6 +1,7 @@
 package com.samyotech.laundrymitra.network;
 
 
+import com.samyotech.laundrymitra.model.home.TerlarisHariIniDto;
 import com.samyotech.laundrymitra.model.base.BaseResponse;
 import com.samyotech.laundrymitra.model.layanan.LayananItemDto;
 import com.samyotech.laundrymitra.model.layanan.ServiceItemDto;
@@ -44,13 +45,28 @@ public interface ApiInterface {
     @GET("layanan/item_layanan")
     Call<BaseResponse<List<LayananItemDto>>> getLayanan(@Query("service_id") String service_id);
 
+<<<<<<<
     @GET("layanan/detail_layanan")
     Call<BaseResponse<ServiceItemDto>> getDetailLayanan(@Query("service_id") String service_id);
+=======
+    @GET("chatt")
+    Call<ChatDto> getChat(@Query("user_id") String userId);
+>>>>>>>
 
+<<<<<<<
     @POST("layanan/update_layanan")
     Call<BaseResponse<ServiceItemDto>> postDataLayanan(@Body HashMap<String, String> body);
 
     @POST("penjualan/tambah")
     Call<BaseResponse> postTambahPenjualan(@Body Map<String, String> body);
 
+=======
+    @GET("home/terlaris")
+    Call<TerlarisHariIniDto> getTerlaris(@Query("user_id") String user_id, @Query("shop_id") String shop_id);
+
+    @GET("home/artikel")
+    Call<KhususUntukmuDto> getArtikel();
+
+
+>>>>>>>
 }
