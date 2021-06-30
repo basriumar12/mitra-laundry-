@@ -1,11 +1,8 @@
 package com.samyotech.laundrymitra.model.home;
 
 import com.google.gson.annotations.SerializedName;
-import com.samyotech.laundrymitra.model.OrderListDTO;
-import com.samyotech.laundrymitra.model.layanan.ItemLayananListDto;
 
 import java.io.Serializable;
-import java.util.ArrayList;
 import java.util.List;
 
 public class TerlarisHariIniDto implements Serializable {
