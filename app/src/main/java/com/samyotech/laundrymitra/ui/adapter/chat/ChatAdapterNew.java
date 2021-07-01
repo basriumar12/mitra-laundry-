@@ -1,6 +1,7 @@
 package com.samyotech.laundrymitra.ui.adapter.chat;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,6 +13,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.samyotech.laundrymitra.R;
 import com.samyotech.laundrymitra.databinding.AdapterChatBinding;
 import com.samyotech.laundrymitra.model.chat.ChatListDto;
+import com.samyotech.laundrymitra.ui.activity.ChatActivity;
 
 import java.util.List;
 
@@ -39,7 +41,7 @@ public class ChatAdapterNew extends RecyclerView.Adapter<ChatAdapterNew.MyViewHo
 
 
     @Override
-    public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull final MyViewHolder holder, final int position) {
 
         holder.binding.title.setText(popLaundryDTOArrayList.get(position).getCustomerName());
         holder.binding.tvDate.setText(popLaundryDTOArrayList.get(position).getJamPesan());
@@ -47,6 +49,10 @@ public class ChatAdapterNew extends RecyclerView.Adapter<ChatAdapterNew.MyViewHo
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Intent intent = new Intent(holder.itemView.getContext(), ChatActivity.class);
+                intent.putExtra("ID",popLaundryDTOArrayList.get(position).getMessageHeadId());
+                intent.putExtra("NAME",popLaundryDTOArrayList.get(position).getCustomerName());
+                holder.itemView.getContext().startActivity(intent);
 
             }
         });

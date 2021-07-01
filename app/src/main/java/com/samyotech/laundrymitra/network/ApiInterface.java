@@ -38,6 +38,15 @@ public interface ApiInterface {
     );
 
     @Multipart
+    @POST("chatt/kirim_pesan")
+    Call<ResponseOther> sendMessage(
+            @Part("user_id") RequestBody user_id,
+            @Part("message_head") RequestBody messagehead,
+            @Part("message") RequestBody message,
+                                    @Part MultipartBody.Part media
+    );
+
+    @Multipart
     @POST("lainnya/edit_foto_background")
     Call<ResponseOther> uploadFotoBackground(@Part("user_id") RequestBody user_id, @Part MultipartBody.Part file
     );
@@ -65,7 +74,6 @@ public interface ApiInterface {
     Call<ChatDto> getChat(@Query("user_id") String userId);
 
 
-
     @POST("layanan/update_layanan")
     Call<BaseResponse<ServiceItemDto>> postDataLayanan(@Body HashMap<String, String> body);
 
@@ -76,13 +84,11 @@ public interface ApiInterface {
     Call<BaseResponse> postTambahPenjualan(@Body Map<String, String> body);
 
 
-
     @GET("home/terlaris")
     Call<TerlarisHariIniDto> getTerlaris(@Query("user_id") String user_id, @Query("shop_id") String shop_id);
 
     @GET("home/artikel")
     Call<KhususUntukmuDto> getArtikel();
-
 
 
 }

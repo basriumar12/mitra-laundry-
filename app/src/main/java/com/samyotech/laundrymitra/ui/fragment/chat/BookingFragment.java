@@ -102,7 +102,8 @@ public class BookingFragment extends Fragment {
         );
 
         //wxde17
-        api.getChat(userDTO.getUser_id()).enqueue(new Callback<ChatDto>() {
+        api.getChat(  "wxde17"  //userDTO.getUser_id()
+        ).enqueue(new Callback<ChatDto>() {
             @Override
             public void onResponse(Call<ChatDto> call, Response<ChatDto> response) {
                 binding.swipeRefreshLayout.setRefreshing(false);

@@ -13,6 +13,7 @@ public interface Consts {
 
     /*-----Apis-----*/
     String lainya ="lainnya";
+    String messagedetail ="chatt/detail_pesan";
     String username = "dunialaundry";
     String pass ="laundry123";
     String FORGOTPASSWORD = "forgotPassword";
@@ -46,7 +47,7 @@ public interface Consts {
     String GETITEMBYSHOPID = "getItembyShopId";
     String APPLYPROMOCODE = "applyPromocode";
     String GETMESSAGE = "getMessage";
-    String SETMESSAGE = "setMessage";
+    String SETMESSAGE = "chatt/kirim_pesan";
     String ORDERSUBMIT = "orderSubmit";
     String ORDERCANCEL = "orderCancel";
     String ADDRATING = "addRating";
@@ -163,4 +164,5 @@ public interface Consts {
     //language
     String LANGUAGE = "language";
     String BACKGROUND = "background";
+    String message_head ="message_head" ;
 }
