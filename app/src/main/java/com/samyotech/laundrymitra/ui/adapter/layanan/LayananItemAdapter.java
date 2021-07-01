@@ -1,6 +1,7 @@
 package com.samyotech.laundrymitra.ui.adapter.layanan;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,8 +13,11 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.samyotech.laundrymitra.R;
 import com.samyotech.laundrymitra.databinding.AdapterLayananItemBinding;
 import com.samyotech.laundrymitra.databinding.AdapterPelayananBinding;
+import com.samyotech.laundrymitra.interfaces.Consts;
 import com.samyotech.laundrymitra.model.layanan.LayananItemDto;
 import com.samyotech.laundrymitra.model.layanan.ServiceItemDto;
+import com.samyotech.laundrymitra.ui.activity.Schedule_Activity;
+import com.samyotech.laundrymitra.ui.activity.layanan.DetailLayananItemActivity;
 import com.samyotech.laundrymitra.ui.activity.layanan.EditServiceActivity;
 import com.samyotech.laundrymitra.ui.fragment.layanan.LayananFragment;
 
@@ -44,9 +48,17 @@ public class LayananItemAdapter extends RecyclerView.Adapter<LayananItemAdapter.
     }
 
     @Override
-    public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull MyViewHolder holder, final int position) {
         holder.binding.namaItem.setText(layananItemDtos.get(position).getItemName());
         holder.binding.hargaItem.setText("Rp. " +layananItemDtos.get(position).getPrice());
+        holder.binding.layananItemCv.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent in = new Intent(kContext, DetailLayananItemActivity.class);
+                in.putExtra("LayananItem", layananItemDtos.get(position));
+                kContext.startActivity(in);
+            }
+        });
     }
 
     @Override
