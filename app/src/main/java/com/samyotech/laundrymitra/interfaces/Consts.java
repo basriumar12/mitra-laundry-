@@ -82,6 +82,7 @@ public interface Consts {
     String PASSWORD = "password";
     String PASSWORD_LAMA = "password_lama";
     String PASSWORD_REPLACE = "password_baru";
+    String PASSWORD_REPLACENG = "password_replace";
     String PASSWORD_REPLACE_ = "password_baru_ulang";
     String SHOP_ID = "shop_id";
     String COUNTRY_CODE = "country_code";

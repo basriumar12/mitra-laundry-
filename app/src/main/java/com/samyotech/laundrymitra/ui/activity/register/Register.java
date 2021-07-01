@@ -284,7 +284,7 @@ public class Register extends AppCompatActivity implements View.OnClickListener 
         params.put(Consts.NAME, ProjectUtils.getEditTextValue(binding.cetName));
         params.put(Consts.EMAIL, ProjectUtils.getEditTextValue(binding.cetEmail));
         params.put(Consts.PASSWORD, ProjectUtils.getEditTextValue(binding.cetPassword2));
-        params.put(Consts.PASSWORD_REPLACE, ProjectUtils.getEditTextValue(binding.cetPassword2));
+        params.put(Consts.PASSWORD_REPLACENG, ProjectUtils.getEditTextValue(binding.cetPassword2));
         params.put(Consts.MOBILE, ProjectUtils.getEditTextValue(binding.cetNumber));
        // params.put(Consts.ADDRESS, ProjectUtils.getEditTextValue(binding.alamat));
         //params.put(Consts.COUNTRY_CODE, "62");

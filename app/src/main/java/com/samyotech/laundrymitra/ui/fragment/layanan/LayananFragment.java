@@ -11,6 +11,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import com.samyotech.laundrymitra.R;
 import com.samyotech.laundrymitra.databinding.FragmentLayananBinding;
@@ -48,8 +49,6 @@ public class LayananFragment extends Fragment {
     LinearLayoutManager linearLayoutManager;
 
 
-
-
     public LayananFragment() {
         // Required empty public constructor
     }
@@ -79,12 +78,15 @@ public class LayananFragment extends Fragment {
                 startActivity(in4);
             }
         });
-        return  view;
+        return view;
     }
 
 
     public void getLayananData() {
-        ProjectUtils.showProgressDialog(requireActivity(), true, getResources().getString(R.string.please_wait));
+
+
+
+            ProjectUtils.showProgressDialog(requireActivity(), true, getResources().getString(R.string.please_wait));
 
         ApiInterface api = ServiceGenerator.createService(
                 ApiInterface.class,
@@ -93,7 +95,7 @@ public class LayananFragment extends Fragment {
         );
 
 
-        api.getListLayanan(userDTO.getUser_id(),"YZ65d0").enqueue(new Callback<BaseResponse<List<ServiceItemDto>>>() {
+        api.getListLayanan(userDTO.getUser_id(), "YZ65d0").enqueue(new Callback<BaseResponse<List<ServiceItemDto>>>() {
 
             @Override
             public void onResponse(Call<BaseResponse<List<ServiceItemDto>>> call, Response<BaseResponse<List<ServiceItemDto>>> response) {
@@ -105,6 +107,13 @@ public class LayananFragment extends Fragment {
                         binding.rvBooking.setAdapter(layananAdapter);
                         ProjectUtils.cancelDialog();
                         ProjectUtils.pauseProgressDialog();
+                        layananAdapter.setOnItemClickListener(new LayananAdapter.ClickListener() {
+                            @Override
+                            public void onItemClick(int position, View v) {
+                                getLayananData();
+                            }
+                        });
+
                     } else {
                         ProjectUtils.cancelDialog();
                         ProjectUtils.pauseProgressDialog();
@@ -123,5 +132,6 @@ public class LayananFragment extends Fragment {
 
 
     }
+
 
 }

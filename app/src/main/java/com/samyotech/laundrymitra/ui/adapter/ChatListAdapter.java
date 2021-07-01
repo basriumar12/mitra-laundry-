@@ -58,6 +58,7 @@ public class ChatListAdapter extends RecyclerView.Adapter<ChatListAdapter.MyView
                 in.putExtra(Consts.TO_USER_ID, chatList.get(position).getUser_id());
                 in.putExtra(Consts.NAME, chatList.get(position).getUser_name());
                 in.putExtra(Consts.IMAGE, chatList.get(position).getUser_image());
+                in.putExtra("ID", chatList.get(position).getMessage_head_id());
                 mContext.startActivity(in);
             }
         });

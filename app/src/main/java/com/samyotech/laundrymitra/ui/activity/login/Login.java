@@ -300,7 +300,7 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
         HashMap<String, String> parms = new HashMap<>();
         parms.put(Consts.EMAIL, email);
         parms.put(Consts.DEVICE_TYPE, "ANDROID");
-        parms.put(Consts.DEVICE_TOKEN,    ""); //firebase.getString(Consts.DEVICE_TOKEN, "ANDROID"));
+        parms.put(Consts.DEVICE_TOKEN,    "ANDROID"); //firebase.getString(Consts.DEVICE_TOKEN, "ANDROID"));
         Log.e(TAG + " Login", parms.toString());
         return parms;
     }

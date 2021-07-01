@@ -57,24 +57,24 @@
                     android:layout_marginTop="@dimen/_8sdp"
                     android:layout_weight="1">
 
-                    <TextView
+                    <ImageView
 
                         android:id="@+id/tv_camera"
                         android:layout_width="match_parent"
-                        android:layout_height="@dimen/_40sdp"
+                        android:layout_height="@dimen/_30sdp"
                         android:layout_margin="@dimen/_4sdp"
                         android:layout_weight="1"
                         android:background="@drawable/bg_white"
-                        android:drawableBottom="@drawable/ic_baseline_photo_camera_24" />
+                        android:src="@drawable/ic_camera_new" />
 
-                    <TextView
+                    <ImageView
                         android:id="@+id/tv_galery"
                         android:layout_width="match_parent"
-                        android:layout_height="@dimen/_40sdp"
+                        android:layout_height="@dimen/_30sdp"
                         android:layout_margin="@dimen/_4sdp"
                         android:layout_weight="1"
                         android:background="@drawable/bg_white"
-                        android:drawableBottom="@drawable/ic_baseline_collections_24" />
+                        android:src="@drawable/ic_galery_new" />
 
 
                 </LinearLayout>

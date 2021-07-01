@@ -420,22 +420,22 @@ public class ChatActivity extends AppCompatActivity implements View.OnClickListe
 
 
 
-        new HttpsRequest(Consts.SETMESSAGE, params, paramsFile, mContext)
-                .imagePost(TAG, new Helper() {
-                    @Override
-                    public void backResponse(boolean flag, String msg, JSONObject response) {
-                        ProjectUtils.pauseProgressDialog();
-                        if (flag) {
-                            edittextMessage.setText("");
-//                    hideImageContainer();
-                            getComment();
-
-                            file = null;
-                            pathOfImage = "";
-                        } else {
-                            ProjectUtils.showToast(getBaseContext(),"Gagal kirim");
-                        }
-                    }
-                });
+//        new HttpsRequest(Consts.SETMESSAGE, params, paramsFile, mContext)
+//                .imagePost(TAG, new Helper() {
+//                    @Override
+//                    public void backResponse(boolean flag, String msg, JSONObject response) {
+//                        ProjectUtils.pauseProgressDialog();
+//                        if (flag) {
+//                            edittextMessage.setText("");
+////                    hideImageContainer();
+//                            getComment();
+//
+//                            file = null;
+//                            pathOfImage = "";
+//                        } else {
+//                            ProjectUtils.showToast(getBaseContext(),"Gagal kirim");
+//                        }
+//                    }
+//                });
     }
 }

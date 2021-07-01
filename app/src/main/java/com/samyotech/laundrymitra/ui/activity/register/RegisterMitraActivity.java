@@ -147,13 +147,13 @@ public class RegisterMitraActivity extends AppCompatActivity {
             public void backResponse(boolean flag, String msg, JSONObject response) {
                 ProjectUtils.pauseProgressDialog();
                // JSONObject flagd = null;
-                boolean flagd= true;
+                boolean flagd;
                 try {
                     flagd = response.getBoolean("status");
                     if (flagd) {
                         try {
                             Log.e(TAG, "backResponse: " + response.toString());
-                            ProjectUtils.showToast(mContext, "Masih gagal daftar");
+                            ProjectUtils.showToast(mContext, "Berhasil  daftar");
 
 
 
@@ -174,7 +174,6 @@ public class RegisterMitraActivity extends AppCompatActivity {
                     e.printStackTrace();
                 }
 
-                Log.e(TAG, "backResponse: flagd " + flagd + " " + flag);
 
             }
         });
