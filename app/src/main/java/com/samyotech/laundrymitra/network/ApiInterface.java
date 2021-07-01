@@ -69,6 +69,9 @@ public interface ApiInterface {
     @POST("layanan/update_layanan")
     Call<BaseResponse<ServiceItemDto>> postDataLayanan(@Body HashMap<String, String> body);
 
+    @POST("layanan/edit_item")
+    Call<BaseResponse<LayananItemDto>> postDataItemLayanan(@Body HashMap<String, String> body);
+
     @POST("penjualan/tambah")
     Call<BaseResponse> postTambahPenjualan(@Body Map<String, String> body);
 
