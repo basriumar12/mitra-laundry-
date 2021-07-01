@@ -47,6 +47,9 @@ public interface ApiInterface {
     @GET("layanan/detail_layanan")
     Call<BaseResponse<ServiceItemDto>> getDetailLayanan(@Query("service_id") String service_id);
 
+    @GET("layanan/update_status")
+    Call<BaseResponse<ServiceItemDto>> getUpdateStatusLayanan(@Query("service_id") String service_id);
+
     @POST("layanan/update_layanan")
     Call<BaseResponse<ServiceItemDto>> postDataLayanan(@Body HashMap<String, String> body);
 

@@ -44,7 +44,6 @@ public class DetailLayananItemActivity extends AppCompatActivity {
                 updateDataItemLayanan();
             }
         });
-
     }
 
     public void updateDataItemLayanan() {
@@ -62,7 +61,6 @@ public class DetailLayananItemActivity extends AppCompatActivity {
         body.put("price",binding.serviceName.getText().toString());
         body.put("item_name",binding.des.getText().toString());
         api.postDataItemLayanan(body).enqueue(new Callback<BaseResponse<LayananItemDto>>() {
-
             @Override
             public void onResponse(Call<BaseResponse<LayananItemDto>> call, Response<BaseResponse<LayananItemDto>> response) {
                 if (response.isSuccessful()) {
@@ -81,10 +79,8 @@ public class DetailLayananItemActivity extends AppCompatActivity {
                 progressDialog.dismiss();
             }
         });
-
         System.out.println(binding.des.getText());
         System.out.println(binding.serviceName.getText());
-
     }
 
 }
