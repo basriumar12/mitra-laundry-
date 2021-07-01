@@ -74,6 +74,9 @@ public interface ApiInterface {
     Call<ChatDto> getChat(@Query("user_id") String userId);
 
 
+    @GET("layanan/update_status")
+    Call<BaseResponse<ServiceItemDto>> getUpdateStatusLayanan(@Query("service_id") String service_id);
+
     @POST("layanan/update_layanan")
     Call<BaseResponse<ServiceItemDto>> postDataLayanan(@Body HashMap<String, String> body);
 

@@ -1,4 +1,4 @@
-package com.samyotech.laundrymitra.ui.activity.layanan;
+package com.samyotech.laundrymitra.ui.activity;
 
 import android.content.Context;
 import android.content.Intent;
@@ -18,7 +18,6 @@ import com.samyotech.laundrymitra.model.ServicesDTO;
 import com.samyotech.laundrymitra.model.ShopServicesDTO;
 import com.samyotech.laundrymitra.model.UserDTO;
 import com.samyotech.laundrymitra.preferences.SharedPrefrence;
-import com.samyotech.laundrymitra.ui.activity.Schedule_Activity;
 
 import java.util.ArrayList;
 import java.util.HashMap;
