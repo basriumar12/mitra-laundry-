@@ -2,6 +2,7 @@ package com.samyotech.laundrymitra.ui.activity;
 
 import android.content.Context;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -25,6 +26,7 @@ import com.samyotech.laundrymitra.preferences.SharedPrefrence;
 import com.samyotech.laundrymitra.ui.adapter.ChatListAdapter;
 import com.samyotech.laundrymitra.utils.ProjectUtils;
 
+import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.lang.reflect.Type;
@@ -89,29 +91,37 @@ public class ChatList extends AppCompatActivity {
 
     public void getChat() {
         ProjectUtils.showProgressDialog(mContext, true, getResources().getString(R.string.please_wait));
-        new HttpsRequest(Consts.GETMESSAGEHISTORY, getparm(), mContext).stringPost(TAG, new Helper() {
+        new HttpsRequest(Consts.GETMESSAGEHISTORY, getBaseContext(), userDTO.getUser_id(), "").stringResendOTP(TAG, new Helper() {
             @Override
             public void backResponse(boolean flag, String msg, JSONObject response) {
                 ProjectUtils.pauseProgressDialog();
-                if (flag) {
-                    tvNo.setVisibility(View.GONE);
-                    rvChatList.setVisibility(View.VISIBLE);
-                    try {
-                        chatList = new ArrayList<>();
-                        Type getpetDTO = new TypeToken<List<ChatListDTO>>() {
-                        }.getType();
-                        chatList = new Gson().fromJson(response.getJSONArray("data").toString(), getpetDTO);
-                        showData();
+                Log.e("TAG","flag "+flag +" "+msg);
+                try {
+                    boolean flags = response.getBoolean("status");
 
-                    } catch (Exception e) {
-                        e.printStackTrace();
+                    if (flags) {
+                        tvNo.setVisibility(View.GONE);
+                        rvChatList.setVisibility(View.VISIBLE);
+                        try {
+                            chatList = new ArrayList<>();
+                            Type getpetDTO = new TypeToken<List<ChatListDTO>>() {
+                            }.getType();
+                            chatList = new Gson().fromJson(response.getJSONArray("data").toString(), getpetDTO);
+                            showData();
+
+                        } catch (Exception e) {
+                            e.printStackTrace();
+                        }
+
+
+                    } else {
+                        tvNo.setVisibility(View.VISIBLE);
+                        rvChatList.setVisibility(View.GONE);
                     }
-
-
-                } else {
-                    tvNo.setVisibility(View.VISIBLE);
-                    rvChatList.setVisibility(View.GONE);
+                } catch (JSONException e) {
+                    e.printStackTrace();
                 }
+
             }
         });
     }

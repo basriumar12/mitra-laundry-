@@ -4,6 +4,7 @@ import android.app.ProgressDialog;
 import android.content.Context;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
@@ -39,6 +40,13 @@ public class DetailPenjualanActivity extends AppCompatActivity {
         setContentView(R.layout.activity_detail_penjualan);
         binding = DataBindingUtil.setContentView(this, R.layout.activity_detail_penjualan);
         mContext = DetailPenjualanActivity.this;
+
+        binding.back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
         getDetailPenjualanData();
     }
 

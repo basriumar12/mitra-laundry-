@@ -1,7 +1,9 @@
 package com.samyotech.laundrymitra.ui.adapter.home;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
+import android.view.View;
 import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
@@ -13,6 +15,7 @@ import com.samyotech.laundrymitra.R;
 import com.samyotech.laundrymitra.databinding.AdapterKhususBinding;
 import com.samyotech.laundrymitra.databinding.AdapterPentingBinding;
 import com.samyotech.laundrymitra.model.home.KhususUntukmuListDto;
+import com.samyotech.laundrymitra.ui.activity.detailkhususuntukmu.DetailKhususUntukmuActivity;
 
 import java.util.List;
 
@@ -40,7 +43,7 @@ public class KhususUntukmuAdapter extends RecyclerView.Adapter<KhususUntukmuAdap
 
 
     @Override
-    public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull final MyViewHolder holder, final int position) {
 
         holder.binding.title.setText(popLaundryDTOArrayList.get(position).getTitle());
         holder.binding.tvDate.setText(popLaundryDTOArrayList.get(position).getCreatedAt());
@@ -51,6 +54,19 @@ public class KhususUntukmuAdapter extends RecyclerView.Adapter<KhususUntukmuAdap
                 .placeholder(R.drawable.laundryshop)
                 .error(R.drawable.laundryshop)
                 .into(holder.binding.imgTerlaris);
+
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent data = new Intent(holder.itemView.getContext(), DetailKhususUntukmuActivity.class);
+                data.putExtra("TITLE",popLaundryDTOArrayList.get(position).getTitle());
+                data.putExtra("DESK",popLaundryDTOArrayList.get(position).getDescription());
+                data.putExtra("IMAGE",popLaundryDTOArrayList.get(position).getUrlImage());
+                data.putExtra("DATE",popLaundryDTOArrayList.get(position).getCreatedAt());
+                holder.itemView.getContext().startActivity(data);
+
+            }
+        });
     }
 
     @Override

@@ -74,7 +74,7 @@ public class TicketAdapter extends RecyclerView.Adapter<TicketAdapter.MyViewHold
                 if (!ticketDTOSList.get(position).getStatus().equalsIgnoreCase("2")) {
                     Intent in = new Intent(mContext, TicketChatActivity.class);
                     in.putExtra(Consts.TICKET_ID, ticketDTOSList.get(position).getTiket_id());
-                    mContext.startActivity(in);
+                   // mContext.startActivity(in);
                 }
 
             }

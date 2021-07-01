@@ -136,6 +136,21 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
         super.onViewCreated(view, savedInstanceState);
 
         getPentingHariIni();
+        binding.ivNotification.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent in4 = new Intent(getActivity(), NotificationActivity.class);
+                startActivity(in4);
+            }
+        });
+
+        binding.ivSearch.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent in4 = new Intent(getActivity(), SearchActivity.class);
+                startActivity(in4);
+            }
+        });
         binding.tvNameHome.setText(userDTO.getName());
 
         binding.tvPesanBaru.setText("tee");

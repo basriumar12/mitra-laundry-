@@ -1,5 +1,8 @@
 package com.samyotech.laundrymitra.model;
 
+import com.google.gson.annotations.SerializedName;
+import com.samyotech.laundrymitra.model.rekening.RekeningDto;
+
 import java.io.Serializable;
 
 public class UserDTO implements Serializable {
@@ -25,7 +28,62 @@ public class UserDTO implements Serializable {
     String premium = "";
     String image_ktp = "";
     String shop_id = "";
+    String url_image = "";
+    String url_background = "";
+    String total_pendapatan = "";
+    String total_pendapatan_potongan = "";
+    String nama_mitra = "";
 
+    @SerializedName("rekening")
+    RekeningDto rekening;
+
+    public RekeningDto getRekening() {
+        return rekening;
+    }
+
+    public void setRekening(RekeningDto rekening) {
+        this.rekening = rekening;
+    }
+
+    public String getNama_mitra() {
+        return nama_mitra;
+    }
+
+    public void setNama_mitra(String nama_mitra) {
+        this.nama_mitra = nama_mitra;
+    }
+
+    public String getTotal_pendapatan() {
+        return total_pendapatan;
+    }
+
+    public void setTotal_pendapatan(String total_pendapatan) {
+        this.total_pendapatan = total_pendapatan;
+    }
+
+    public String getTotal_pendapatan_potongan() {
+        return total_pendapatan_potongan;
+    }
+
+    public void setTotal_pendapatan_potongan(String total_pendapatan_potongan) {
+        this.total_pendapatan_potongan = total_pendapatan_potongan;
+    }
+
+    public String getUrl_image() {
+        return url_image;
+    }
+
+    public void setUrl_image(String url_image) {
+        this.url_image = url_image;
+    }
+
+    public String getUrl_background() {
+        return url_background;
+    }
+
+    public void setUrl_background(String url_background) {
+        this.url_background = url_background;
+    }
 
 
     public String getPremium() {

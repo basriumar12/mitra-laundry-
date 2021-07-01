@@ -60,8 +60,8 @@
 
                     <LinearLayout
                         android:layout_width="match_parent"
-                        android:orientation="vertical"
-                        android:layout_height="match_parent">
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
 
                         <TextView
                             android:id="@+id/tvName"
@@ -69,10 +69,10 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginBottom="16dp"
+                            android:gravity="center"
                             android:paddingLeft="16dp"
                             android:singleLine="true"
                             android:text="Dariyanto"
-                            android:gravity="center"
                             android:textColor="@color/colorPrimary" />
 
 
@@ -104,7 +104,7 @@
 
                                     <TextView
 
-                                        android:id="@+id/tv_pesan_baru"
+                                        android:id="@+id/tv_pendapatan"
                                         android:layout_width="match_parent"
                                         android:layout_height="wrap_content"
                                         android:layout_marginTop="@dimen/_14sdp"
@@ -136,7 +136,7 @@
                                         android:text="Pendapatan Setelah Dipotong 30%" />
 
                                     <TextView
-                                        android:id="@+id/tv_pendapatan_bersih_baru"
+                                        android:id="@+id/tv_pendapatan_potongan"
                                         android:layout_width="match_parent"
                                         android:layout_height="wrap_content"
                                         android:layout_marginTop="@dimen/_14sdp"
@@ -146,13 +146,15 @@
                                 </LinearLayout>
                             </androidx.cardview.widget.CardView>
                         </LinearLayout>
+
                         <Button
-                            android:textColor="@color/white"
-                            android:text="Tarik Pendapatan"
-                            android:background="@color/colorPrimary"
-                            android:layout_margin="@dimen/_8sdp"
+                            android:id="@+id/btn_tarik_pendapatan"
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content"/>
+                            android:layout_height="wrap_content"
+                            android:layout_margin="@dimen/_8sdp"
+                            android:background="@color/colorPrimary"
+                            android:text="Tarik Pendapatan"
+                            android:textColor="@color/white" />
 
                         <LinearLayout
                             android:layout_width="match_parent"
@@ -189,6 +191,35 @@
                             </LinearLayout>
 
                             <LinearLayout
+                                android:id="@+id/ctRekening"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="?selectableItemBackground"
+                                android:gravity="center_vertical">
+
+                                <ImageView
+                                    android:layout_width="48dp"
+                                    android:layout_height="48dp"
+                                    android:padding="16dp"
+                                    android:src="@drawable/ic_baseline_monetization_on_24" />
+
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:gravity="center_vertical"
+                                    android:text="Rekening"
+                                    android:textColor="@color/black" />
+
+                                <ImageView
+                                    android:layout_width="48dp"
+                                    android:layout_height="48dp"
+                                    android:padding="18dp"
+                                    android:src="@drawable/icon_next" />
+                            </LinearLayout>
+
+
+                            <LinearLayout
                                 android:id="@+id/ctvChangePassword"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
@@ -222,7 +253,8 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:background="?selectableItemBackground"
-                                android:gravity="center_vertical">
+                                android:gravity="center_vertical"
+                                android:visibility="gone">
 
                                 <ImageView
                                     android:layout_width="48dp"
@@ -235,7 +267,7 @@
                                     android:layout_height="match_parent"
                                     android:layout_weight="1"
                                     android:gravity="center_vertical"
-                                    android:text="Notifikasi"
+                                    android:text="Komplain"
                                     android:textColor="@color/black" />
 
                                 <ImageView
@@ -362,13 +394,14 @@
                     </LinearLayout>
                     ​
                 </LinearLayout>
+
                 <FrameLayout
                     android:id="@+id/relayimage"
-                    android:layout_centerHorizontal="true"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="140dp"
+                    android:layout_centerHorizontal="true"
                     android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="140dp"
                     app:layout_anchorGravity="top|center_horizontal"
                     app:layout_scrollFlags="scroll">
 

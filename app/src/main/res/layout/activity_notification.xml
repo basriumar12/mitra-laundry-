@@ -32,6 +32,19 @@
                 android:textStyle="bold" />
         </LinearLayout>
 
+
+        <TextView
+            style="@style/TextAppearance.AppCompat.Body1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:visibility="gone"
+            android:id="@+id/tv_kosong"
+            android:layout_marginTop="@dimen/_40sdp"
+            android:text="Notifikasi Kosong"
+            android:textColor="@color/black"
+            android:textStyle="bold" />
+
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rvNotification"
             android:layout_width="match_parent"

@@ -23,16 +23,67 @@
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true"
         tools:replace="android:allowBackup,android:supportsRtl">
-        <activity android:name=".ui.activity.penjualan.SuccessPenjualanActivity"></activity>
-        <activity android:name=".ui.activity.penjualan.PaymentActivity" />
-        <activity android:name=".ui.activity.penjualan.DateTimeActivity" />
-        <activity android:name=".ui.activity.penjualan.PickupActivity" />
-        <activity android:name=".ui.activity.layanan.EditServiceActivity" />
-        <activity android:name=".ui.activity.penjualan.ServicePenjualanActivity" />
-        <activity android:name=".ui.activity.penjualan.ServiceMenuActivity" />
-        <activity android:name=".ui.activity.penjualan.DetailPenjualanActivity" />
-        <activity android:name=".ui.activity.register.RegisterMitraActivity" />
-        <activity android:name=".ui.activity.register.UploadKtpActivity" />
+        <activity android:name=".ui.activity.detailkhususuntukmu.DetailKhususUntukmuActivity"></activity>
+        <activity
+            android:name=".ui.activity.rekening.ManageProfileRekening"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateAlwaysVisible" />
+        <activity
+            android:name=".ui.activity.rekening.ManageTarikRekening"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateAlwaysVisible" />
+        <activity
+            android:name=".ui.activity.penjualan.SuccessPenjualanActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateAlwaysVisible" />
+        <activity
+            android:name=".ui.activity.penjualan.PaymentActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateAlwaysVisible" />
+        <activity
+            android:name=".ui.activity.penjualan.DateTimeActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateAlwaysVisible" />
+        <activity
+            android:name=".ui.activity.penjualan.PickupActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateAlwaysVisible" />
+        <activity
+            android:name=".ui.activity.layanan.EditServiceActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateAlwaysVisible" />
+        <activity
+            android:name=".ui.activity.penjualan.ServicePenjualanActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateAlwaysVisible" />
+        <activity
+            android:name=".ui.activity.penjualan.ServiceMenuActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateAlwaysVisible" />
+        <activity
+            android:name=".ui.activity.penjualan.DetailPenjualanActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateAlwaysVisible" />
+        <activity
+            android:name=".ui.activity.register.RegisterMitraActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateAlwaysVisible" />
+        <activity
+            android:name=".ui.activity.register.UploadKtpActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateAlwaysVisible" />
         <activity
             android:name=".ui.activity.register.OtpActivity"
             android:launchMode="singleTop"

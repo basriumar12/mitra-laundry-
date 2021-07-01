@@ -2,6 +2,7 @@ package com.samyotech.laundrymitra.ui.adapter.chat;
 
 import android.content.Context;
 import android.view.LayoutInflater;
+import android.view.View;
 import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
@@ -43,6 +44,12 @@ public class ChatAdapterNew extends RecyclerView.Adapter<ChatAdapterNew.MyViewHo
         holder.binding.title.setText(popLaundryDTOArrayList.get(position).getCustomerName());
         holder.binding.tvDate.setText(popLaundryDTOArrayList.get(position).getJamPesan());
         holder.binding.tvLastChat.setText(popLaundryDTOArrayList.get(position).getPesanTerakhir());
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
 
     }
 

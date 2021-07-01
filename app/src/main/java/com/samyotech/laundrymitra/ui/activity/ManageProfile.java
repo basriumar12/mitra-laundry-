@@ -76,18 +76,21 @@ public class ManageProfile extends AppCompatActivity implements View.OnClickList
 
             case R.id.simpan:
 
-                if (!ProjectUtils.isEditTextFilled(binding.namaLengkap)) {
+                if (binding.namaLengkap.getText().toString().isEmpty()) {
                     Toast.makeText(mContext, R.string.addname, Toast.LENGTH_SHORT).show();
-                } else if (!ProjectUtils.isEditTextFilled(binding.alamat)) {
-                    Toast.makeText(mContext, R.string.addAddress, Toast.LENGTH_SHORT).show();
-                } else if (!ProjectUtils.isPhoneNumberValid(binding.nomorHp.getText().toString().trim())) {
+                }
+//                else if (!ProjectUtils.isEditTextFilled(binding.alamat)) {
+//                    Toast.makeText(mContext, R.string.addAddress, Toast.LENGTH_SHORT).show();
+//                }
+//
+                else if (!ProjectUtils.isPhoneNumberValid(binding.nomorHp.getText().toString().trim())) {
                     Toast.makeText(mContext, R.string.val_num, Toast.LENGTH_SHORT).show();
                 } else {
-                    if (checkAdd) {
-                        params.put(Consts.LATITUDE, userDTO.getLatitude());
-                        params.put(Consts.LONGITUDE, userDTO.getLatitude());
-                    }
-                    params.put(Consts.ADDRESS, ProjectUtils.getEditTextValue(binding.alamat));
+//                    if (checkAdd) {
+//                        params.put(Consts.LATITUDE, userDTO.getLatitude());
+//                        params.put(Consts.LONGITUDE, userDTO.getLatitude());
+//                    }
+                  //  params.put(Consts.ADDRESS, ProjectUtils.getEditTextValue(binding.alamat));
 
                     getParams();
                     updateProfile();
@@ -154,11 +157,12 @@ public class ManageProfile extends AppCompatActivity implements View.OnClickList
         else
             Toast.makeText(mContext, R.string.addname, Toast.LENGTH_SHORT).show();
 
-        params.put(Consts.NAME, ProjectUtils.getEditTextValue(binding.namaLengkap));
-        params.put(Consts.MOBILE, ProjectUtils.getEditTextValue(binding.nomorHp));
-        params.put(Consts.COUNTRY_CODE, "62");
-        params.put(Consts.DEVICE_TYPE, "ANDROID");
-        params.put(Consts.DEVICE_TOKEN, "ANDROID");
+        params.put(Consts.NAME_MITRA, ProjectUtils.getEditTextValue(binding.namaLengkap));
+        params.put(Consts.NO_HP, ProjectUtils.getEditTextValue(binding.nomorHp));
+        params.put(Consts.EMAIL, ProjectUtils.getEditTextValue(binding.email));
+        params.put(Consts.USER_ID, userDTO.getUser_id());
+        params.put(Consts.SHOP_ID, userDTO.getShop_id());
+
 
         return params;
     }

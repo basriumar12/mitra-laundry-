@@ -59,20 +59,29 @@ public class NotificationActivity extends AppCompatActivity {
     }
 
     private void setData() {
-        HashMap<String, String> params = new HashMap<>();
-        params.put(Consts.USER_ID, userDTO.getUser_id());
-        new HttpsRequest(Consts.GET_NOTIFICATION, params, mContext).stringPost(TAG, new Helper() {
+        new HttpsRequest(Consts.GET_NOTIFICATION, getBaseContext(), userDTO.getUser_id(), "").stringResendOTP("TAG", new Helper() {
             @Override
             public void backResponse(boolean flag, String msg, JSONObject response) throws JSONException {
-                if (flag) {
+
+                boolean flags = response.getBoolean("status");
+                String msgs = response.getString("message");
+                if (flags) {
 
                     Type getpetDTO = new TypeToken<List<NotificationDTO>>() {
                     }.getType();
                     List<NotificationDTO> items = new Gson().fromJson(response.getJSONArray("data").toString(), getpetDTO);
                     originalList.addAll(items);
+                    if (originalList.isEmpty()) {
+
+                        binding.tvKosong.setVisibility(View.VISIBLE);
+                    } else {
+
+                        binding.tvKosong.setVisibility(View.GONE);
+                    }
                     showData();
 
                 } else {
+                    binding.tvKosong.setVisibility(View.VISIBLE);
                     ProjectUtils.showToast(mContext, msg);
                 }
             }

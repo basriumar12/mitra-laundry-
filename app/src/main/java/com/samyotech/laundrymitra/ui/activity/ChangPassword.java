@@ -214,9 +214,11 @@ public class ChangPassword extends AppCompatActivity implements View.OnClickList
     protected HashMap<String, String> getParamsChangePass() {
         HashMap<String, String> paramsChangePass = new HashMap<>();
 
-        paramsChangePass.put(Consts.PASSWORD, ProjectUtils.getEditTextValue(binding.etOldPass));
-        paramsChangePass.put(Consts.NEW_PASSWORD, ProjectUtils.getEditTextValue(binding.etNewPass));
+        paramsChangePass.put(Consts.PASSWORD_LAMA, ProjectUtils.getEditTextValue(binding.etOldPass));
+        paramsChangePass.put(Consts.PASSWORD_REPLACE, ProjectUtils.getEditTextValue(binding.etNewPass));
+        paramsChangePass.put(Consts.PASSWORD_REPLACE_, ProjectUtils.getEditTextValue(binding.etConfirmPass));
         paramsChangePass.put(Consts.USER_ID, userDTO.getUser_id());
+        paramsChangePass.put(Consts.SHOP_ID, userDTO.getShop_id());
 
         ProjectUtils.showLog(TAG + "---Params --->", paramsChangePass.toString());
 

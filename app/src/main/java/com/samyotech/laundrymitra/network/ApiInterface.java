@@ -32,6 +32,16 @@ public interface ApiInterface {
     Call<ResponseOther> uploadKtp(@Part("user_id") RequestBody user_id, @Part MultipartBody.Part file
     );
 
+    @Multipart
+    @POST("lainnya/edit_foto_profile")
+    Call<ResponseOther> uploadFotoProfile(@Part("user_id") RequestBody user_id, @Part MultipartBody.Part file
+    );
+
+    @Multipart
+    @POST("lainnya/edit_foto_background")
+    Call<ResponseOther> uploadFotoBackground(@Part("user_id") RequestBody user_id, @Part MultipartBody.Part file
+    );
+
     @GET("penjualan")
     Call<BaseResponse<List<PenjualanItemDto>>> getPenjualanData(@Query("shop_id") String shop_id);
 
@@ -61,6 +71,7 @@ public interface ApiInterface {
 
     @POST("penjualan/tambah")
     Call<BaseResponse> postTambahPenjualan(@Body Map<String, String> body);
+
 
 
     @GET("home/terlaris")

@@ -21,6 +21,8 @@ import com.samyotech.laundrymitra.model.penjualan.PenjualanItemDto;
 import com.samyotech.laundrymitra.network.ApiInterface;
 import com.samyotech.laundrymitra.network.ServiceGenerator;
 import com.samyotech.laundrymitra.preferences.SharedPrefrence;
+import com.samyotech.laundrymitra.ui.activity.NotificationActivity;
+import com.samyotech.laundrymitra.ui.activity.SearchActivity;
 import com.samyotech.laundrymitra.ui.activity.penjualan.ServiceMenuActivity;
 import com.samyotech.laundrymitra.ui.adapter.penjualan.PenjualanAdapter;
 import com.samyotech.laundrymitra.utils.ProjectUtils;
@@ -62,6 +64,22 @@ public class PenjualanFragment extends Fragment {
             public void onClick(View view) {
                 Intent intent = new Intent(getActivity(), ServiceMenuActivity.class);
                 startActivity(intent);
+            }
+        });
+
+        binding.ivNotification.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent in4 = new Intent(getActivity(), NotificationActivity.class);
+                startActivity(in4);
+            }
+        });
+
+        binding.ivSearch.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent in4 = new Intent(getActivity(), SearchActivity.class);
+                startActivity(in4);
             }
         });
         return view;

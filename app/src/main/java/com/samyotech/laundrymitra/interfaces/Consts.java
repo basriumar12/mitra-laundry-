@@ -12,6 +12,7 @@ public interface Consts {
 
 
     /*-----Apis-----*/
+    String lainya ="lainnya";
     String username = "dunialaundry";
     String pass ="laundry123";
     String FORGOTPASSWORD = "forgotPassword";
@@ -27,7 +28,7 @@ public interface Consts {
     String LOGIN_GOOGLE = "login/google";
     String LOGOUT = "logOut";
     String DELETEACCOUNT = "deleteAccount";
-    String CHANGEPASSWORD = "changePassword";
+    String CHANGEPASSWORD = "lainnya/edit_password";
     String GETHOMEDATA = "getHomeData";
     String GETALLSERVICE = "getAllService";
     String SEARCH = "search";
@@ -39,8 +40,8 @@ public interface Consts {
     String GETLAUNDRYSHOP = "getLaundryById";
     String GETBOOKINGLIST = "getBookingList";
     String GET_TERLARIS = "home/terlaris";
-    String ADDTIKET = "addTiket";
-    String TIKETLIST = "tiketList";
+    String ADDTIKET = "lainnya/tambah_tiket";
+    String TIKETLIST = "lainnya/tiket";
     String GETSHOPSERVICES = "getShopServices";
     String GETITEMBYSHOPID = "getItembyShopId";
     String APPLYPROMOCODE = "applyPromocode";
@@ -50,13 +51,15 @@ public interface Consts {
     String ORDERCANCEL = "orderCancel";
     String ADDRATING = "addRating";
     String GETRATING = "getRating";
-    String GETMESSAGEHISTORY = "getMessageHistory";
+    String GETMESSAGEHISTORY = "chatt";
     String GETLAUNDRYBYSERVICE = "getLaundryByService";
-    String GET_NOTIFICATION = "get_notification";
+    String GET_NOTIFICATION = "notifikasi";
     String GETCURRENCY = "getCurrency";
     String GETTIKETCOMMENT = "getTiketComment";
     String ADDTIKETCOMMENT = "addTiketComment";
-    String USERUPDATE = "userUpdate";
+    String USERUPDATE = "lainnya/edit_akun";
+    String EDITREKENING = "lainnya/edit_rekening";
+    String PENGAJUANDANA = "lainnya/pengajuan_dana";
     String USERUPDATE_FOTO_PROFILE = "lainnya/edit_foto_profile";
     String USERUPDATE_FOTO_BACKGROUND = "lainnya/edit_foto_background";
     String REGISTER_MITRA = "register/mitra";
@@ -68,14 +71,22 @@ public interface Consts {
     String ADDRESS = "address";
     String NAME = "name";
     String NAME_MITRA = "nama_mitra";
+    String NAME_BANK = "nama_bank";
+    String DANA_TOTAL = "dana";
+    String NO_REKENING = "no_rekening";
+    String NAMA_PEMILIK = "nama_pemilik";
     String ALAMAT_MITRA = "alamat";
     String LATITUDE = "latitude";
     String LONGITUDE = "longitude";
     String PASSWORD = "password";
-    String PASSWORD_REPLACE = "password_replace";
+    String PASSWORD_LAMA = "password_lama";
+    String PASSWORD_REPLACE = "password_baru";
+    String PASSWORD_REPLACE_ = "password_baru_ulang";
+    String SHOP_ID = "shop_id";
     String COUNTRY_CODE = "country_code";
     String DEVICE_TYPE = "device_type";
     String MOBILE = "mobile";
+    String NO_HP = "no_hp";
     String DEVICE_TOKEN = "device_token";
 
     String FLAG = "flag";
@@ -116,7 +127,7 @@ public interface Consts {
     String IS_NOT_FIRST_TIME = "is_first_time";
 
     String ORDER_ID = "order_id";
-    String SHOP_ID = "shop_id";
+
     String SERVICE_ID = "service_id";
     String SERVICEDTO = "servicedto";
     String SHOPSERVICEDTO = "shopservicedto";

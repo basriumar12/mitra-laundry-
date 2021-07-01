@@ -6,7 +6,6 @@
     </shared>
   </component>
   <component name="AndroidLogFilters">
-    <option name="TOOL_WINDOW_CUSTOM_FILTER" value="data terlaris" />
     <option name="TOOL_WINDOW_LOG_LEVEL" value="verbose" />
     <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Show only selected application" />
   </component>
@@ -16,16 +15,163 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fbff9040-f5a9-479e-8e62-a1f1396c1921" name="Default Changelist" comment="git init">
+      <change afterPath="$PROJECT_DIR$/app/build/generated/ap_generated_sources/debug/out/androidx/databinding/DataBinderMapperImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/generated/ap_generated_sources/debug/out/androidx/databinding/DataBindingComponent.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/generated/ap_generated_sources/debug/out/androidx/databinding/library/baseAdapters/BR.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/generated/ap_generated_sources/debug/out/com/samyotech/laundrymitra/BR.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/generated/ap_generated_sources/debug/out/com/samyotech/laundrymitra/DataBinderMapperImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/generated/ap_generated_sources/debug/out/com/samyotech/laundrymitra/databinding/ActivityAboutBindingImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/generated/ap_generated_sources/debug/out/com/samyotech/laundrymitra/databinding/ActivityAllServicesBindingImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/generated/ap_generated_sources/debug/out/com/samyotech/laundrymitra/databinding/ActivityBookingConfirmBindingImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/generated/ap_generated_sources/debug/out/com/samyotech/laundrymitra/databinding/ActivityBookingPaymentBindingImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/generated/ap_generated_sources/debug/out/com/samyotech/laundrymitra/databinding/ActivityBookingPickAddressBindingImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/generated/ap_generated_sources/debug/out/com/samyotech/laundrymitra/databinding/ActivityBookingPickDateTimeBindingImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/generated/ap_generated_sources/debug/out/com/samyotech/laundrymitra/databinding/ActivityChangPasswordBindingImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/generated/ap_generated_sources/debug/out/com/samyotech/laundrymitra/databinding/ActivityChatListBindingImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/generated/ap_generated_sources/debug/out/com/samyotech/laundrymitra/databinding/ActivityDashboardBindingImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/generated/ap_generated_sources/debug/out/com/samyotech/laundrymitra/databinding/ActivityDateTimeBindingImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/generated/ap_generated_sources/debug/out/com/samyotech/laundrymitra/databinding/ActivityDetailKhususUntukmuBindingImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/generated/ap_generated_sources/debug/out/com/samyotech/laundrymitra/databinding/ActivityDetailPenjualanBindingImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/generated/ap_generated_sources/debug/out/com/samyotech/laundrymitra/databinding/ActivityEditServiceBindingImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/generated/ap_generated_sources/debug/out/com/samyotech/laundrymitra/databinding/ActivityForgotPasswordBindingImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/generated/ap_generated_sources/debug/out/com/samyotech/laundrymitra/databinding/ActivityIntroBindingImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/generated/ap_generated_sources/debug/out/com/samyotech/laundrymitra/databinding/ActivityLoginBindingImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/generated/ap_generated_sources/debug/out/com/samyotech/laundrymitra/databinding/ActivityManageProfileBindingImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/generated/ap_generated_sources/debug/out/com/samyotech/laundrymitra/databinding/ActivityManageProfileRekeningBindingImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/generated/ap_generated_sources/debug/out/com/samyotech/laundrymitra/databinding/ActivityManageTarikRekeningBindingImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/generated/ap_generated_sources/debug/out/com/samyotech/laundrymitra/databinding/ActivityNotificationBindingImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/generated/ap_generated_sources/debug/out/com/samyotech/laundrymitra/databinding/ActivityOrderDetailsBindingImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/generated/ap_generated_sources/debug/out/com/samyotech/laundrymitra/databinding/ActivityOtpBindingImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/generated/ap_generated_sources/debug/out/com/samyotech/laundrymitra/databinding/ActivityPaymentBindingImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/generated/ap_generated_sources/debug/out/com/samyotech/laundrymitra/databinding/ActivityPickupBindingImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/generated/ap_generated_sources/debug/out/com/samyotech/laundrymitra/databinding/ActivityPreviewOrderBindingImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/generated/ap_generated_sources/debug/out/com/samyotech/laundrymitra/databinding/ActivityRegisterBindingImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/generated/ap_generated_sources/debug/out/com/samyotech/laundrymitra/databinding/ActivityRegisterMitraBindingImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/generated/ap_generated_sources/debug/out/com/samyotech/laundrymitra/databinding/ActivityScheduleBindingImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/generated/ap_generated_sources/debug/out/com/samyotech/laundrymitra/databinding/ActivitySearchBindingImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/generated/ap_generated_sources/debug/out/com/samyotech/laundrymitra/databinding/ActivityServiceAcitivityBindingImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/generated/ap_generated_sources/debug/out/com/samyotech/laundrymitra/databinding/ActivityServiceMenuBindingImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/generated/ap_generated_sources/debug/out/com/samyotech/laundrymitra/databinding/ActivityServicePenjualanBindingImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/generated/ap_generated_sources/debug/out/com/samyotech/laundrymitra/databinding/ActivityShopAcitivityBindingImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/generated/ap_generated_sources/debug/out/com/samyotech/laundrymitra/databinding/ActivitySuccessPenjualanBindingImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/generated/ap_generated_sources/debug/out/com/samyotech/laundrymitra/databinding/ActivitySuksesRegisterBindingImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/generated/ap_generated_sources/debug/out/com/samyotech/laundrymitra/databinding/ActivityTicketsBindingImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/generated/ap_generated_sources/debug/out/com/samyotech/laundrymitra/databinding/ActivityTopServicesBindingImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/generated/ap_generated_sources/debug/out/com/samyotech/laundrymitra/databinding/ActivityUploadKtpBindingImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/generated/ap_generated_sources/debug/out/com/samyotech/laundrymitra/databinding/ActivityWelcomeScreensBindingImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/generated/ap_generated_sources/debug/out/com/samyotech/laundrymitra/databinding/AdapterAddressBindingImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/generated/ap_generated_sources/debug/out/com/samyotech/laundrymitra/databinding/AdapterAllservicesBindingImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/generated/ap_generated_sources/debug/out/com/samyotech/laundrymitra/databinding/AdapterBookingBindingImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/generated/ap_generated_sources/debug/out/com/samyotech/laundrymitra/databinding/AdapterChatBindingImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/generated/ap_generated_sources/debug/out/com/samyotech/laundrymitra/databinding/AdapterDetailPenjualanBindingImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/generated/ap_generated_sources/debug/out/com/samyotech/laundrymitra/databinding/AdapterItemBindingImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/generated/ap_generated_sources/debug/out/com/samyotech/laundrymitra/databinding/AdapterKhususBindingImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/generated/ap_generated_sources/debug/out/com/samyotech/laundrymitra/databinding/AdapterLayananItemBindingImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/generated/ap_generated_sources/debug/out/com/samyotech/laundrymitra/databinding/AdapterNearBindingImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/generated/ap_generated_sources/debug/out/com/samyotech/laundrymitra/databinding/AdapterNotificationBindingImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/generated/ap_generated_sources/debug/out/com/samyotech/laundrymitra/databinding/AdapterOffersBindingImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/generated/ap_generated_sources/debug/out/com/samyotech/laundrymitra/databinding/AdapterPelayananBindingImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/generated/ap_generated_sources/debug/out/com/samyotech/laundrymitra/databinding/AdapterPenjualanBindingImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/generated/ap_generated_sources/debug/out/com/samyotech/laundrymitra/databinding/AdapterPenjualanLayananItemBindingImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/generated/ap_generated_sources/debug/out/com/samyotech/laundrymitra/databinding/AdapterPentingBindingImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/generated/ap_generated_sources/debug/out/com/samyotech/laundrymitra/databinding/AdapterPopularLaundriesBindingImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/generated/ap_generated_sources/debug/out/com/samyotech/laundrymitra/databinding/AdapterPreviewBindingImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/generated/ap_generated_sources/debug/out/com/samyotech/laundrymitra/databinding/AdapterServiceMenuBindingImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/generated/ap_generated_sources/debug/out/com/samyotech/laundrymitra/databinding/AdapterServicesBindingImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/generated/ap_generated_sources/debug/out/com/samyotech/laundrymitra/databinding/AdapterTicketBindingImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/generated/ap_generated_sources/debug/out/com/samyotech/laundrymitra/databinding/AdapterTopservicesBindingImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/generated/ap_generated_sources/debug/out/com/samyotech/laundrymitra/databinding/AddAddressBottomsheetBindingImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/generated/ap_generated_sources/debug/out/com/samyotech/laundrymitra/databinding/DailogAddTicketBindingImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/generated/ap_generated_sources/debug/out/com/samyotech/laundrymitra/databinding/DailogCancelOrderBindingImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/generated/ap_generated_sources/debug/out/com/samyotech/laundrymitra/databinding/DailogRatingBindingImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/generated/ap_generated_sources/debug/out/com/samyotech/laundrymitra/databinding/DialogBuatTiketBindingImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/generated/ap_generated_sources/debug/out/com/samyotech/laundrymitra/databinding/FragmentAboutBindingImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/generated/ap_generated_sources/debug/out/com/samyotech/laundrymitra/databinding/FragmentBookingBindingImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/generated/ap_generated_sources/debug/out/com/samyotech/laundrymitra/databinding/FragmentDynamicBindingImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/generated/ap_generated_sources/debug/out/com/samyotech/laundrymitra/databinding/FragmentLayananBindingImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/generated/ap_generated_sources/debug/out/com/samyotech/laundrymitra/databinding/FragmentNearByBindingImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/generated/ap_generated_sources/debug/out/com/samyotech/laundrymitra/databinding/FragmentOfferShopBindingImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/generated/ap_generated_sources/debug/out/com/samyotech/laundrymitra/databinding/FragmentOffersBindingImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/generated/ap_generated_sources/debug/out/com/samyotech/laundrymitra/databinding/FragmentPenjualanBindingImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/generated/ap_generated_sources/debug/out/com/samyotech/laundrymitra/databinding/FragmentProfileBindingImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/generated/ap_generated_sources/debug/out/com/samyotech/laundrymitra/databinding/FragmentServicesBindingImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/generated/ap_generated_sources/debug/out/com/samyotech/laundrymitra/databinding/HomeFragmentBindingImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/generated/ap_generated_sources/debug/out/com/samyotech/laundrymitra/databinding/ServicesAdapterBindingImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/generated/ap_generated_sources/debug/out/com/samyotech/laundrymitra/databinding/SpecialOffersBindingImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/generated/ap_generated_sources/debug/out/com/samyotech/laundrymitra/utils/MainFragmentPermissionsDispatcher.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/generated/crashlytics/res/debug/values/com_crashlytics_build_id.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/generated/res/google-services/debug/values/values.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/generated/source/buildConfig/debug/com/samyotech/laundrymitra/BuildConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/samyotech/laundrymitra/model/rekening/RekeningDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/samyotech/laundrymitra/ui/activity/detailkhususuntukmu/DetailKhususUntukmuActivity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/samyotech/laundrymitra/ui/activity/rekening/ManageProfileRekening.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/samyotech/laundrymitra/ui/activity/rekening/ManageTarikRekening.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/bg_color_blue.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/bg_primary_color.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/ic_baseline_monetization_on_24.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_detail_khusus_untukmu.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_manage_profile_rekening.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_manage_tarik_rekening.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.5/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/executionHistory/executionHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.5/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/executionHistory/executionHistory.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.5/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/fileHashes/fileHashes.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.5/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.5/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/fileHashes/resourceHashesCache.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.5/javaCompile/classAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/javaCompile/classAnalysis.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.5/javaCompile/jarAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/javaCompile/jarAnalysis.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.5/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/javaCompile/javaCompile.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.5/javaCompile/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/javaCompile/taskHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/checksums/checksums.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/checksums/checksums.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/assetWizardSettings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/assetWizardSettings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_ToxicBakery_viewpager_transforms_view_pager_transforms_1_2_32_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_ToxicBakery_viewpager_transforms_view_pager_transforms_1_2_32_aar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_amitshekhar_android_android_networking_1_0_2_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_amitshekhar_android_android_networking_1_0_2_aar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_volley_volley_1_1_1_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_volley_volley_1_1_1_aar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_cocosw_bottomsheet_1_4_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_cocosw_bottomsheet_1_4_0_aar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_github_florent37_singledateandtimepicker_1_2_2_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_github_florent37_singledateandtimepicker_1_2_2_aar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_github_hani_momanii_SuperNova_Emoji_1_1_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_github_hani_momanii_SuperNova_Emoji_1_1_aar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_github_hotchemi_permissionsdispatcher_2_2_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_github_hotchemi_permissionsdispatcher_2_2_0_aar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_github_mahimrocky_TagView_1_0_3_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_github_mahimrocky_TagView_1_0_3_aar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_github_medyo_fancybuttons_1_9_1_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_github_medyo_fancybuttons_1_9_1_aar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_miguelcatalan_materialsearchview_1_4_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_miguelcatalan_materialsearchview_1_4_0_aar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_tbuonomo_andrui_viewpagerdotsindicator_3_0_3_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_tbuonomo_andrui_viewpagerdotsindicator_3_0_3_aar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__net_gotev_uploadservice_2_1_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__net_gotev_uploadservice_2_1_aar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__pl_charmas_android_android_reactive_location2_2_1_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__pl_charmas_android_android_reactive_location2_2_1_aar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/samyotech/laundrymitra/interfaces/Consts.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/samyotech/laundrymitra/interfaces/Consts.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/samyotech/laundrymitra/model/UserDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/samyotech/laundrymitra/model/UserDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/samyotech/laundrymitra/network/ApiInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/samyotech/laundrymitra/network/ApiInterface.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/samyotech/laundrymitra/ui/activity/ChangPassword.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/samyotech/laundrymitra/ui/activity/ChangPassword.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/samyotech/laundrymitra/ui/activity/ChatList.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/samyotech/laundrymitra/ui/activity/ChatList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/samyotech/laundrymitra/ui/activity/ManageProfile.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/samyotech/laundrymitra/ui/activity/ManageProfile.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/samyotech/laundrymitra/ui/activity/NotificationActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/samyotech/laundrymitra/ui/activity/NotificationActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/samyotech/laundrymitra/ui/activity/TicketsActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/samyotech/laundrymitra/ui/activity/TicketsActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/samyotech/laundrymitra/ui/activity/penjualan/DetailPenjualanActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/samyotech/laundrymitra/ui/activity/penjualan/DetailPenjualanActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/samyotech/laundrymitra/ui/adapter/TicketAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/samyotech/laundrymitra/ui/adapter/TicketAdapter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/samyotech/laundrymitra/ui/adapter/chat/ChatAdapterNew.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/samyotech/laundrymitra/ui/adapter/chat/ChatAdapterNew.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/samyotech/laundrymitra/ui/adapter/home/KhususUntukmuAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/samyotech/laundrymitra/ui/adapter/home/KhususUntukmuAdapter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/samyotech/laundrymitra/ui/adapter/home/TerlarisAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/samyotech/laundrymitra/ui/adapter/home/TerlarisAdapter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/samyotech/laundrymitra/ui/fragment/HomeFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/samyotech/laundrymitra/ui/fragment/HomeFragment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/samyotech/laundrymitra/ui/fragment/ProfileFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/samyotech/laundrymitra/ui/fragment/ProfileFragment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/samyotech/laundrymitra/ui/fragment/chat/BookingFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/samyotech/laundrymitra/ui/fragment/chat/BookingFragment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/samyotech/laundrymitra/ui/fragment/layanan/LayananFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/samyotech/laundrymitra/ui/fragment/layanan/LayananFragment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/samyotech/laundrymitra/ui/fragment/penjualan/PenjualanFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/samyotech/laundrymitra/ui/fragment/penjualan/PenjualanFragment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_about.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_about.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_chat_list.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_chat_list.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_manage_profile.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_manage_profile.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_notification.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_notification.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_booking.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_booking.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_profile.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_profile.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[8e6497310804]" />
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
@@ -117,9 +263,9 @@
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/app/src/main/res/drawable" />
+      <recent name="$PROJECT_DIR$/app/src/main/res/layout" />
       <recent name="$PROJECT_DIR$/app/src/main/java/com/samyotech/laundrymitra/network" />
       <recent name="$PROJECT_DIR$/app/src/main/res/drawable-mdpi" />
-      <recent name="$PROJECT_DIR$/app/src/main/res/layout" />
       <recent name="$PROJECT_DIR$/app" />
     </key>
     <key name="android.template.-1256696697">
@@ -128,7 +274,11 @@
     <key name="android.template.-71036437">
       <recent name="com.samyotech.laundrymitra.ui.activity.register" />
     </key>
+    <key name="android.template.-535835367">
+      <recent name="com.samyotech.laundrymitra.ui.activity.detailkhususuntukmu" />
+    </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.samyotech.laundrymitra.ui.activity.rekening" />
       <recent name="com.samyotech.laundrymitra.network" />
       <recent name="com.samyotech.laundrymitra.model.home" />
       <recent name="com.samyotech.laundrymitra.ui.adapter.home" />
@@ -347,10 +497,10 @@
       <screen x="0" y="23" width="1280" height="729" />
     </state>
     <state x="104" y="49" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.23.1280.729@0.23.1280.729" timestamp="1621841041653" />
-    <state x="453" y="78" key="#com.intellij.ide.util.MemberChooser" timestamp="1623120627948">
+    <state x="453" y="78" key="#com.intellij.ide.util.MemberChooser" timestamp="1625042611648">
       <screen x="0" y="23" width="1280" height="729" />
     </state>
-    <state x="453" y="78" key="#com.intellij.ide.util.MemberChooser/0.23.1280.729@0.23.1280.729" timestamp="1623120627948" />
+    <state x="453" y="78" key="#com.intellij.ide.util.MemberChooser/0.23.1280.729@0.23.1280.729" timestamp="1625042611648" />
     <state x="378" y="141" key="#com.intellij.refactoring.typeMigration.ui.FailedConversionsDialog" timestamp="1623033478039">
       <screen x="0" y="23" width="1280" height="729" />
     </state>
@@ -364,29 +514,29 @@
     </state>
     <state x="100" y="100" width="1080" height="600" key="DiffContextDialog/0.0.1280.800@0.0.1280.800" timestamp="1623944853846" />
     <state x="100" y="114" width="1080" height="547" key="DiffContextDialog/0.23.1280.729@0.23.1280.729" timestamp="1623945506358" />
-    <state width="1236" height="469" key="GridCell.Tab.0.bottom" timestamp="1624429118959">
+    <state width="1236" height="469" key="GridCell.Tab.0.bottom" timestamp="1625101497721">
       <screen x="0" y="23" width="1280" height="729" />
     </state>
     <state width="1236" height="397" key="GridCell.Tab.0.bottom/0.0.1280.800@0.0.1280.800" timestamp="1624428494794" />
-    <state width="1236" height="469" key="GridCell.Tab.0.bottom/0.23.1280.729@0.23.1280.729" timestamp="1624429118959" />
+    <state width="1236" height="469" key="GridCell.Tab.0.bottom/0.23.1280.729@0.23.1280.729" timestamp="1625101497721" />
     <state width="1236" height="301" key="GridCell.Tab.0.bottom/0.23.1280.730@0.23.1280.730" timestamp="1624339959729" />
-    <state width="1236" height="469" key="GridCell.Tab.0.center" timestamp="1624429118958">
+    <state width="1236" height="469" key="GridCell.Tab.0.center" timestamp="1625101497720">
       <screen x="0" y="23" width="1280" height="729" />
     </state>
     <state width="1236" height="397" key="GridCell.Tab.0.center/0.0.1280.800@0.0.1280.800" timestamp="1624428494793" />
-    <state width="1236" height="469" key="GridCell.Tab.0.center/0.23.1280.729@0.23.1280.729" timestamp="1624429118958" />
+    <state width="1236" height="469" key="GridCell.Tab.0.center/0.23.1280.729@0.23.1280.729" timestamp="1625101497720" />
     <state width="1236" height="301" key="GridCell.Tab.0.center/0.23.1280.730@0.23.1280.730" timestamp="1624339959727" />
-    <state width="1236" height="469" key="GridCell.Tab.0.left" timestamp="1624429118957">
+    <state width="1236" height="469" key="GridCell.Tab.0.left" timestamp="1625101497720">
       <screen x="0" y="23" width="1280" height="729" />
     </state>
     <state width="1236" height="397" key="GridCell.Tab.0.left/0.0.1280.800@0.0.1280.800" timestamp="1624428494793" />
-    <state width="1236" height="469" key="GridCell.Tab.0.left/0.23.1280.729@0.23.1280.729" timestamp="1624429118957" />
+    <state width="1236" height="469" key="GridCell.Tab.0.left/0.23.1280.729@0.23.1280.729" timestamp="1625101497720" />
     <state width="1236" height="301" key="GridCell.Tab.0.left/0.23.1280.730@0.23.1280.730" timestamp="1624339959725" />
-    <state width="1236" height="469" key="GridCell.Tab.0.right" timestamp="1624429118959">
+    <state width="1236" height="469" key="GridCell.Tab.0.right" timestamp="1625101497721">
       <screen x="0" y="23" width="1280" height="729" />
     </state>
     <state width="1236" height="397" key="GridCell.Tab.0.right/0.0.1280.800@0.0.1280.800" timestamp="1624428494794" />
-    <state width="1236" height="469" key="GridCell.Tab.0.right/0.23.1280.729@0.23.1280.729" timestamp="1624429118959" />
+    <state width="1236" height="469" key="GridCell.Tab.0.right/0.23.1280.729@0.23.1280.729" timestamp="1625101497721" />
     <state width="1236" height="301" key="GridCell.Tab.0.right/0.23.1280.730@0.23.1280.730" timestamp="1624339959728" />
     <state x="141" y="26" key="SettingsEditor" timestamp="1624437694971">
       <screen x="0" y="23" width="1280" height="729" />
@@ -414,11 +564,11 @@
       <screen x="0" y="23" width="1280" height="729" />
     </state>
     <state x="370" y="283" key="git4idea.remote.GitConfigureRemotesDialog/0.23.1280.729@0.23.1280.729" timestamp="1623987087462" />
-    <state x="305" y="77" width="670" height="676" key="search.everywhere.popup" timestamp="1624437147358">
+    <state x="305" y="77" width="670" height="676" key="search.everywhere.popup" timestamp="1625101367476">
       <screen x="0" y="23" width="1280" height="729" />
     </state>
-    <state x="305" y="77" width="670" height="676" key="search.everywhere.popup/0.0.1280.800@0.0.1280.800" timestamp="1621651173903" />
-    <state x="305" y="77" width="670" height="676" key="search.everywhere.popup/0.23.1280.729@0.23.1280.729" timestamp="1624437147358" />
+    <state x="305" y="77" width="670" height="676" key="search.everywhere.popup/0.0.1280.800@0.0.1280.800" timestamp="1625025587874" />
+    <state x="305" y="77" width="670" height="676" key="search.everywhere.popup/0.23.1280.729@0.23.1280.729" timestamp="1625101367476" />
     <state x="305" y="77" width="670" height="677" key="search.everywhere.popup/0.23.1280.730@0.23.1280.730" timestamp="1623224313681" />
     <state x="305" y="77" width="670" height="679" key="search.everywhere.popup/0.23.1280.732@0.23.1280.732" timestamp="1623819477688" />
   </component>

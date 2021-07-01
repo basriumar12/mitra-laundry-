@@ -1,5 +1,6 @@
 package com.samyotech.laundrymitra.ui.fragment.layanan;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.databinding.DataBindingUtil;
@@ -22,6 +23,8 @@ import com.samyotech.laundrymitra.model.penjualan.PenjualanItemDto;
 import com.samyotech.laundrymitra.network.ApiInterface;
 import com.samyotech.laundrymitra.network.ServiceGenerator;
 import com.samyotech.laundrymitra.preferences.SharedPrefrence;
+import com.samyotech.laundrymitra.ui.activity.NotificationActivity;
+import com.samyotech.laundrymitra.ui.activity.SearchActivity;
 import com.samyotech.laundrymitra.ui.adapter.layanan.LayananAdapter;
 import com.samyotech.laundrymitra.ui.adapter.penjualan.PenjualanAdapter;
 import com.samyotech.laundrymitra.ui.fragment.penjualan.PenjualanFragment;
@@ -60,6 +63,22 @@ public class LayananFragment extends Fragment {
         prefrence = SharedPrefrence.getInstance(getActivity());
         userDTO = prefrence.getParentUser(Consts.USER_DTO);
         getLayananData();
+
+        binding.ivNotification.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent in4 = new Intent(getActivity(), NotificationActivity.class);
+                startActivity(in4);
+            }
+        });
+
+        binding.ivSearch.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent in4 = new Intent(getActivity(), SearchActivity.class);
+                startActivity(in4);
+            }
+        });
         return  view;
     }
 

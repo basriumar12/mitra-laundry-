@@ -82,11 +82,18 @@
                     android:textColor="@color/black"
                     android:textStyle="bold" />
 
+                <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+                    android:layout_width="match_parent"
+                    android:id="@+id/swipe_refresh_layout"
+                    android:layout_height="wrap_content">
+
                 <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/rv_chat"
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/_500sdp"
                     android:paddingBottom="@dimen/_7sdp" />
+
+                </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
 
 
             </LinearLayout>
