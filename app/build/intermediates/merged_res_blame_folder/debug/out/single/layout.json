@@ -1,0 +1,342 @@
+[
+    {
+        "merged": "/Users/macbook/Desktop/frelance/tokoweb/mitra-new/mitra-laundry-/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/activity_manage_tarik_rekening.xml",
+        "source": "/Users/macbook/Desktop/frelance/tokoweb/mitra-new/mitra-laundry-/app/src/main/res/layout/activity_manage_tarik_rekening.xml"
+    },
+    {
+        "merged": "/Users/macbook/Desktop/frelance/tokoweb/mitra-new/mitra-laundry-/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/activity_edit_service.xml",
+        "source": "/Users/macbook/Desktop/frelance/tokoweb/mitra-new/mitra-laundry-/app/src/main/res/layout/activity_edit_service.xml"
+    },
+    {
+        "merged": "/Users/macbook/Desktop/frelance/tokoweb/mitra-new/mitra-laundry-/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/activity_sukses_register.xml",
+        "source": "/Users/macbook/Desktop/frelance/tokoweb/mitra-new/mitra-laundry-/app/src/main/res/layout/activity_sukses_register.xml"
+    },
+    {
+        "merged": "/Users/macbook/Desktop/frelance/tokoweb/mitra-new/mitra-laundry-/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/activity_manage_profile_chat_email.xml",
+        "source": "/Users/macbook/Desktop/frelance/tokoweb/mitra-new/mitra-laundry-/app/src/main/res/layout/activity_manage_profile_chat_email.xml"
+    },
+    {
+        "merged": "/Users/macbook/Desktop/frelance/tokoweb/mitra-new/mitra-laundry-/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/adapter_service_menu.xml",
+        "source": "/Users/macbook/Desktop/frelance/tokoweb/mitra-new/mitra-laundry-/app/src/main/res/layout/adapter_service_menu.xml"
+    },
+    {
+        "merged": "/Users/macbook/Desktop/frelance/tokoweb/mitra-new/mitra-laundry-/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/adapter_offers.xml",
+        "source": "/Users/macbook/Desktop/frelance/tokoweb/mitra-new/mitra-laundry-/app/src/main/res/layout/adapter_offers.xml"
+    },
+    {
+        "merged": "/Users/macbook/Desktop/frelance/tokoweb/mitra-new/mitra-laundry-/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/activity_date_time.xml",
+        "source": "/Users/macbook/Desktop/frelance/tokoweb/mitra-new/mitra-laundry-/app/src/main/res/layout/activity_date_time.xml"
+    },
+    {
+        "merged": "/Users/macbook/Desktop/frelance/tokoweb/mitra-new/mitra-laundry-/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/activity_intro.xml",
+        "source": "/Users/macbook/Desktop/frelance/tokoweb/mitra-new/mitra-laundry-/app/src/main/res/layout/activity_intro.xml"
+    },
+    {
+        "merged": "/Users/macbook/Desktop/frelance/tokoweb/mitra-new/mitra-laundry-/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/adapter_preview.xml",
+        "source": "/Users/macbook/Desktop/frelance/tokoweb/mitra-new/mitra-laundry-/app/src/main/res/layout/adapter_preview.xml"
+    },
+    {
+        "merged": "/Users/macbook/Desktop/frelance/tokoweb/mitra-new/mitra-laundry-/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/activity_detail_layanan_item.xml",
+        "source": "/Users/macbook/Desktop/frelance/tokoweb/mitra-new/mitra-laundry-/app/src/main/res/layout/activity_detail_layanan_item.xml"
+    },
+    {
+        "merged": "/Users/macbook/Desktop/frelance/tokoweb/mitra-new/mitra-laundry-/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/dailog_rating.xml",
+        "source": "/Users/macbook/Desktop/frelance/tokoweb/mitra-new/mitra-laundry-/app/src/main/res/layout/dailog_rating.xml"
+    },
+    {
+        "merged": "/Users/macbook/Desktop/frelance/tokoweb/mitra-new/mitra-laundry-/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/adapter_near.xml",
+        "source": "/Users/macbook/Desktop/frelance/tokoweb/mitra-new/mitra-laundry-/app/src/main/res/layout/adapter_near.xml"
+    },
+    {
+        "merged": "/Users/macbook/Desktop/frelance/tokoweb/mitra-new/mitra-laundry-/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/adapter_topservices.xml",
+        "source": "/Users/macbook/Desktop/frelance/tokoweb/mitra-new/mitra-laundry-/app/src/main/res/layout/adapter_topservices.xml"
+    },
+    {
+        "merged": "/Users/macbook/Desktop/frelance/tokoweb/mitra-new/mitra-laundry-/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/dialog_buat_tiket.xml",
+        "source": "/Users/macbook/Desktop/frelance/tokoweb/mitra-new/mitra-laundry-/app/src/main/res/layout/dialog_buat_tiket.xml"
+    },
+    {
+        "merged": "/Users/macbook/Desktop/frelance/tokoweb/mitra-new/mitra-laundry-/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/fragment_booking.xml",
+        "source": "/Users/macbook/Desktop/frelance/tokoweb/mitra-new/mitra-laundry-/app/src/main/res/layout/fragment_booking.xml"
+    },
+    {
+        "merged": "/Users/macbook/Desktop/frelance/tokoweb/mitra-new/mitra-laundry-/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/dailog_cancel_order.xml",
+        "source": "/Users/macbook/Desktop/frelance/tokoweb/mitra-new/mitra-laundry-/app/src/main/res/layout/dailog_cancel_order.xml"
+    },
+    {
+        "merged": "/Users/macbook/Desktop/frelance/tokoweb/mitra-new/mitra-laundry-/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/activity_manage_promosi_toko.xml",
+        "source": "/Users/macbook/Desktop/frelance/tokoweb/mitra-new/mitra-laundry-/app/src/main/res/layout/activity_manage_promosi_toko.xml"
+    },
+    {
+        "merged": "/Users/macbook/Desktop/frelance/tokoweb/mitra-new/mitra-laundry-/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/fragment_offer_shop.xml",
+        "source": "/Users/macbook/Desktop/frelance/tokoweb/mitra-new/mitra-laundry-/app/src/main/res/layout/fragment_offer_shop.xml"
+    },
+    {
+        "merged": "/Users/macbook/Desktop/frelance/tokoweb/mitra-new/mitra-laundry-/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/adapter_layanan_item.xml",
+        "source": "/Users/macbook/Desktop/frelance/tokoweb/mitra-new/mitra-laundry-/app/src/main/res/layout/adapter_layanan_item.xml"
+    },
+    {
+        "merged": "/Users/macbook/Desktop/frelance/tokoweb/mitra-new/mitra-laundry-/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/adapter_item.xml",
+        "source": "/Users/macbook/Desktop/frelance/tokoweb/mitra-new/mitra-laundry-/app/src/main/res/layout/adapter_item.xml"
+    },
+    {
+        "merged": "/Users/macbook/Desktop/frelance/tokoweb/mitra-new/mitra-laundry-/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/activity_chat_list.xml",
+        "source": "/Users/macbook/Desktop/frelance/tokoweb/mitra-new/mitra-laundry-/app/src/main/res/layout/activity_chat_list.xml"
+    },
+    {
+        "merged": "/Users/macbook/Desktop/frelance/tokoweb/mitra-new/mitra-laundry-/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/adapter_pelayanan.xml",
+        "source": "/Users/macbook/Desktop/frelance/tokoweb/mitra-new/mitra-laundry-/app/src/main/res/layout/adapter_pelayanan.xml"
+    },
+    {
+        "merged": "/Users/macbook/Desktop/frelance/tokoweb/mitra-new/mitra-laundry-/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/activity_service_menu.xml",
+        "source": "/Users/macbook/Desktop/frelance/tokoweb/mitra-new/mitra-laundry-/app/src/main/res/layout/activity_service_menu.xml"
+    },
+    {
+        "merged": "/Users/macbook/Desktop/frelance/tokoweb/mitra-new/mitra-laundry-/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/adapter_penjualan_layanan_item.xml",
+        "source": "/Users/macbook/Desktop/frelance/tokoweb/mitra-new/mitra-laundry-/app/src/main/res/layout/adapter_penjualan_layanan_item.xml"
+    },
+    {
+        "merged": "/Users/macbook/Desktop/frelance/tokoweb/mitra-new/mitra-laundry-/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/activity_preview_order.xml",
+        "source": "/Users/macbook/Desktop/frelance/tokoweb/mitra-new/mitra-laundry-/app/src/main/res/layout/activity_preview_order.xml"
+    },
+    {
+        "merged": "/Users/macbook/Desktop/frelance/tokoweb/mitra-new/mitra-laundry-/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/adapter_ticket.xml",
+        "source": "/Users/macbook/Desktop/frelance/tokoweb/mitra-new/mitra-laundry-/app/src/main/res/layout/adapter_ticket.xml"
+    },
+    {
+        "merged": "/Users/macbook/Desktop/frelance/tokoweb/mitra-new/mitra-laundry-/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/activity_register.xml",
+        "source": "/Users/macbook/Desktop/frelance/tokoweb/mitra-new/mitra-laundry-/app/src/main/res/layout/activity_register.xml"
+    },
+    {
+        "merged": "/Users/macbook/Desktop/frelance/tokoweb/mitra-new/mitra-laundry-/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/home_fragment.xml",
+        "source": "/Users/macbook/Desktop/frelance/tokoweb/mitra-new/mitra-laundry-/app/src/main/res/layout/home_fragment.xml"
+    },
+    {
+        "merged": "/Users/macbook/Desktop/frelance/tokoweb/mitra-new/mitra-laundry-/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/activity_success_penjualan.xml",
+        "source": "/Users/macbook/Desktop/frelance/tokoweb/mitra-new/mitra-laundry-/app/src/main/res/layout/activity_success_penjualan.xml"
+    },
+    {
+        "merged": "/Users/macbook/Desktop/frelance/tokoweb/mitra-new/mitra-laundry-/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/fragment_penjualan.xml",
+        "source": "/Users/macbook/Desktop/frelance/tokoweb/mitra-new/mitra-laundry-/app/src/main/res/layout/fragment_penjualan.xml"
+    },
+    {
+        "merged": "/Users/macbook/Desktop/frelance/tokoweb/mitra-new/mitra-laundry-/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/activity_payment.xml",
+        "source": "/Users/macbook/Desktop/frelance/tokoweb/mitra-new/mitra-laundry-/app/src/main/res/layout/activity_payment.xml"
+    },
+    {
+        "merged": "/Users/macbook/Desktop/frelance/tokoweb/mitra-new/mitra-laundry-/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/activity_order_details.xml",
+        "source": "/Users/macbook/Desktop/frelance/tokoweb/mitra-new/mitra-laundry-/app/src/main/res/layout/activity_order_details.xml"
+    },
+    {
+        "merged": "/Users/macbook/Desktop/frelance/tokoweb/mitra-new/mitra-laundry-/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/activity_welcome_screens.xml",
+        "source": "/Users/macbook/Desktop/frelance/tokoweb/mitra-new/mitra-laundry-/app/src/main/res/layout/activity_welcome_screens.xml"
+    },
+    {
+        "merged": "/Users/macbook/Desktop/frelance/tokoweb/mitra-new/mitra-laundry-/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/activity_booking_confirm.xml",
+        "source": "/Users/macbook/Desktop/frelance/tokoweb/mitra-new/mitra-laundry-/app/src/main/res/layout/activity_booking_confirm.xml"
+    },
+    {
+        "merged": "/Users/macbook/Desktop/frelance/tokoweb/mitra-new/mitra-laundry-/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/activity_tickets.xml",
+        "source": "/Users/macbook/Desktop/frelance/tokoweb/mitra-new/mitra-laundry-/app/src/main/res/layout/activity_tickets.xml"
+    },
+    {
+        "merged": "/Users/macbook/Desktop/frelance/tokoweb/mitra-new/mitra-laundry-/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/activity_register_mitra.xml",
+        "source": "/Users/macbook/Desktop/frelance/tokoweb/mitra-new/mitra-laundry-/app/src/main/res/layout/activity_register_mitra.xml"
+    },
+    {
+        "merged": "/Users/macbook/Desktop/frelance/tokoweb/mitra-new/mitra-laundry-/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/adapter_chat.xml",
+        "source": "/Users/macbook/Desktop/frelance/tokoweb/mitra-new/mitra-laundry-/app/src/main/res/layout/adapter_chat.xml"
+    },
+    {
+        "merged": "/Users/macbook/Desktop/frelance/tokoweb/mitra-new/mitra-laundry-/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/fragment_services.xml",
+        "source": "/Users/macbook/Desktop/frelance/tokoweb/mitra-new/mitra-laundry-/app/src/main/res/layout/fragment_services.xml"
+    },
+    {
+        "merged": "/Users/macbook/Desktop/frelance/tokoweb/mitra-new/mitra-laundry-/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/adapter_penting.xml",
+        "source": "/Users/macbook/Desktop/frelance/tokoweb/mitra-new/mitra-laundry-/app/src/main/res/layout/adapter_penting.xml"
+    },
+    {
+        "merged": "/Users/macbook/Desktop/frelance/tokoweb/mitra-new/mitra-laundry-/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/adapter_services.xml",
+        "source": "/Users/macbook/Desktop/frelance/tokoweb/mitra-new/mitra-laundry-/app/src/main/res/layout/adapter_services.xml"
+    },
+    {
+        "merged": "/Users/macbook/Desktop/frelance/tokoweb/mitra-new/mitra-laundry-/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/adapter_notification.xml",
+        "source": "/Users/macbook/Desktop/frelance/tokoweb/mitra-new/mitra-laundry-/app/src/main/res/layout/adapter_notification.xml"
+    },
+    {
+        "merged": "/Users/macbook/Desktop/frelance/tokoweb/mitra-new/mitra-laundry-/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/fragment_offers.xml",
+        "source": "/Users/macbook/Desktop/frelance/tokoweb/mitra-new/mitra-laundry-/app/src/main/res/layout/fragment_offers.xml"
+    },
+    {
+        "merged": "/Users/macbook/Desktop/frelance/tokoweb/mitra-new/mitra-laundry-/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/adapter_popular_laundries.xml",
+        "source": "/Users/macbook/Desktop/frelance/tokoweb/mitra-new/mitra-laundry-/app/src/main/res/layout/adapter_popular_laundries.xml"
+    },
+    {
+        "merged": "/Users/macbook/Desktop/frelance/tokoweb/mitra-new/mitra-laundry-/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/activity_dashboard.xml",
+        "source": "/Users/macbook/Desktop/frelance/tokoweb/mitra-new/mitra-laundry-/app/src/main/res/layout/activity_dashboard.xml"
+    },
+    {
+        "merged": "/Users/macbook/Desktop/frelance/tokoweb/mitra-new/mitra-laundry-/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/adapter_booking.xml",
+        "source": "/Users/macbook/Desktop/frelance/tokoweb/mitra-new/mitra-laundry-/app/src/main/res/layout/adapter_booking.xml"
+    },
+    {
+        "merged": "/Users/macbook/Desktop/frelance/tokoweb/mitra-new/mitra-laundry-/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/add_address_bottomsheet.xml",
+        "source": "/Users/macbook/Desktop/frelance/tokoweb/mitra-new/mitra-laundry-/app/src/main/res/layout/add_address_bottomsheet.xml"
+    },
+    {
+        "merged": "/Users/macbook/Desktop/frelance/tokoweb/mitra-new/mitra-laundry-/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/activity_manage_profile_address.xml",
+        "source": "/Users/macbook/Desktop/frelance/tokoweb/mitra-new/mitra-laundry-/app/src/main/res/layout/activity_manage_profile_address.xml"
+    },
+    {
+        "merged": "/Users/macbook/Desktop/frelance/tokoweb/mitra-new/mitra-laundry-/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/activity_notification.xml",
+        "source": "/Users/macbook/Desktop/frelance/tokoweb/mitra-new/mitra-laundry-/app/src/main/res/layout/activity_notification.xml"
+    },
+    {
+        "merged": "/Users/macbook/Desktop/frelance/tokoweb/mitra-new/mitra-laundry-/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/fragment_profile.xml",
+        "source": "/Users/macbook/Desktop/frelance/tokoweb/mitra-new/mitra-laundry-/app/src/main/res/layout/fragment_profile.xml"
+    },
+    {
+        "merged": "/Users/macbook/Desktop/frelance/tokoweb/mitra-new/mitra-laundry-/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/adapter_khusus.xml",
+        "source": "/Users/macbook/Desktop/frelance/tokoweb/mitra-new/mitra-laundry-/app/src/main/res/layout/adapter_khusus.xml"
+    },
+    {
+        "merged": "/Users/macbook/Desktop/frelance/tokoweb/mitra-new/mitra-laundry-/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/dailog_add_ticket.xml",
+        "source": "/Users/macbook/Desktop/frelance/tokoweb/mitra-new/mitra-laundry-/app/src/main/res/layout/dailog_add_ticket.xml"
+    },
+    {
+        "merged": "/Users/macbook/Desktop/frelance/tokoweb/mitra-new/mitra-laundry-/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/activity_manage_profile_rekening.xml",
+        "source": "/Users/macbook/Desktop/frelance/tokoweb/mitra-new/mitra-laundry-/app/src/main/res/layout/activity_manage_profile_rekening.xml"
+    },
+    {
+        "merged": "/Users/macbook/Desktop/frelance/tokoweb/mitra-new/mitra-laundry-/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/fragment_dynamic.xml",
+        "source": "/Users/macbook/Desktop/frelance/tokoweb/mitra-new/mitra-laundry-/app/src/main/res/layout/fragment_dynamic.xml"
+    },
+    {
+        "merged": "/Users/macbook/Desktop/frelance/tokoweb/mitra-new/mitra-laundry-/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/services_adapter.xml",
+        "source": "/Users/macbook/Desktop/frelance/tokoweb/mitra-new/mitra-laundry-/app/src/main/res/layout/services_adapter.xml"
+    },
+    {
+        "merged": "/Users/macbook/Desktop/frelance/tokoweb/mitra-new/mitra-laundry-/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/fragment_near_by.xml",
+        "source": "/Users/macbook/Desktop/frelance/tokoweb/mitra-new/mitra-laundry-/app/src/main/res/layout/fragment_near_by.xml"
+    },
+    {
+        "merged": "/Users/macbook/Desktop/frelance/tokoweb/mitra-new/mitra-laundry-/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/adapter_address.xml",
+        "source": "/Users/macbook/Desktop/frelance/tokoweb/mitra-new/mitra-laundry-/app/src/main/res/layout/adapter_address.xml"
+    },
+    {
+        "merged": "/Users/macbook/Desktop/frelance/tokoweb/mitra-new/mitra-laundry-/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/activity_top_services.xml",
+        "source": "/Users/macbook/Desktop/frelance/tokoweb/mitra-new/mitra-laundry-/app/src/main/res/layout/activity_top_services.xml"
+    },
+    {
+        "merged": "/Users/macbook/Desktop/frelance/tokoweb/mitra-new/mitra-laundry-/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/activity_upload_ktp.xml",
+        "source": "/Users/macbook/Desktop/frelance/tokoweb/mitra-new/mitra-laundry-/app/src/main/res/layout/activity_upload_ktp.xml"
+    },
+    {
+        "merged": "/Users/macbook/Desktop/frelance/tokoweb/mitra-new/mitra-laundry-/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/activity_about.xml",
+        "source": "/Users/macbook/Desktop/frelance/tokoweb/mitra-new/mitra-laundry-/app/src/main/res/layout/activity_about.xml"
+    },
+    {
+        "merged": "/Users/macbook/Desktop/frelance/tokoweb/mitra-new/mitra-laundry-/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/activity_manage_profile.xml",
+        "source": "/Users/macbook/Desktop/frelance/tokoweb/mitra-new/mitra-laundry-/app/src/main/res/layout/activity_manage_profile.xml"
+    },
+    {
+        "merged": "/Users/macbook/Desktop/frelance/tokoweb/mitra-new/mitra-laundry-/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/activity_service_acitivity.xml",
+        "source": "/Users/macbook/Desktop/frelance/tokoweb/mitra-new/mitra-laundry-/app/src/main/res/layout/activity_service_acitivity.xml"
+    },
+    {
+        "merged": "/Users/macbook/Desktop/frelance/tokoweb/mitra-new/mitra-laundry-/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/activity_login.xml",
+        "source": "/Users/macbook/Desktop/frelance/tokoweb/mitra-new/mitra-laundry-/app/src/main/res/layout/activity_login.xml"
+    },
+    {
+        "merged": "/Users/macbook/Desktop/frelance/tokoweb/mitra-new/mitra-laundry-/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/activity_booking_payment.xml",
+        "source": "/Users/macbook/Desktop/frelance/tokoweb/mitra-new/mitra-laundry-/app/src/main/res/layout/activity_booking_payment.xml"
+    },
+    {
+        "merged": "/Users/macbook/Desktop/frelance/tokoweb/mitra-new/mitra-laundry-/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/activity_pickup.xml",
+        "source": "/Users/macbook/Desktop/frelance/tokoweb/mitra-new/mitra-laundry-/app/src/main/res/layout/activity_pickup.xml"
+    },
+    {
+        "merged": "/Users/macbook/Desktop/frelance/tokoweb/mitra-new/mitra-laundry-/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/special_offers.xml",
+        "source": "/Users/macbook/Desktop/frelance/tokoweb/mitra-new/mitra-laundry-/app/src/main/res/layout/special_offers.xml"
+    },
+    {
+        "merged": "/Users/macbook/Desktop/frelance/tokoweb/mitra-new/mitra-laundry-/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/activity_all_services.xml",
+        "source": "/Users/macbook/Desktop/frelance/tokoweb/mitra-new/mitra-laundry-/app/src/main/res/layout/activity_all_services.xml"
+    },
+    {
+        "merged": "/Users/macbook/Desktop/frelance/tokoweb/mitra-new/mitra-laundry-/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/activity_chang_password.xml",
+        "source": "/Users/macbook/Desktop/frelance/tokoweb/mitra-new/mitra-laundry-/app/src/main/res/layout/activity_chang_password.xml"
+    },
+    {
+        "merged": "/Users/macbook/Desktop/frelance/tokoweb/mitra-new/mitra-laundry-/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/activity_pusat_edukasi.xml",
+        "source": "/Users/macbook/Desktop/frelance/tokoweb/mitra-new/mitra-laundry-/app/src/main/res/layout/activity_pusat_edukasi.xml"
+    },
+    {
+        "merged": "/Users/macbook/Desktop/frelance/tokoweb/mitra-new/mitra-laundry-/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/activity_manage_profile_operasional.xml",
+        "source": "/Users/macbook/Desktop/frelance/tokoweb/mitra-new/mitra-laundry-/app/src/main/res/layout/activity_manage_profile_operasional.xml"
+    },
+    {
+        "merged": "/Users/macbook/Desktop/frelance/tokoweb/mitra-new/mitra-laundry-/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/activity_manage.xml",
+        "source": "/Users/macbook/Desktop/frelance/tokoweb/mitra-new/mitra-laundry-/app/src/main/res/layout/activity_manage.xml"
+    },
+    {
+        "merged": "/Users/macbook/Desktop/frelance/tokoweb/mitra-new/mitra-laundry-/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/activity_detail_khusus_untukmu.xml",
+        "source": "/Users/macbook/Desktop/frelance/tokoweb/mitra-new/mitra-laundry-/app/src/main/res/layout/activity_detail_khusus_untukmu.xml"
+    },
+    {
+        "merged": "/Users/macbook/Desktop/frelance/tokoweb/mitra-new/mitra-laundry-/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/fragment_layanan.xml",
+        "source": "/Users/macbook/Desktop/frelance/tokoweb/mitra-new/mitra-laundry-/app/src/main/res/layout/fragment_layanan.xml"
+    },
+    {
+        "merged": "/Users/macbook/Desktop/frelance/tokoweb/mitra-new/mitra-laundry-/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/activity_schedule.xml",
+        "source": "/Users/macbook/Desktop/frelance/tokoweb/mitra-new/mitra-laundry-/app/src/main/res/layout/activity_schedule.xml"
+    },
+    {
+        "merged": "/Users/macbook/Desktop/frelance/tokoweb/mitra-new/mitra-laundry-/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/activity_booking_pick_address.xml",
+        "source": "/Users/macbook/Desktop/frelance/tokoweb/mitra-new/mitra-laundry-/app/src/main/res/layout/activity_booking_pick_address.xml"
+    },
+    {
+        "merged": "/Users/macbook/Desktop/frelance/tokoweb/mitra-new/mitra-laundry-/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/adapter_penjualan.xml",
+        "source": "/Users/macbook/Desktop/frelance/tokoweb/mitra-new/mitra-laundry-/app/src/main/res/layout/adapter_penjualan.xml"
+    },
+    {
+        "merged": "/Users/macbook/Desktop/frelance/tokoweb/mitra-new/mitra-laundry-/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/adapter_detail_penjualan.xml",
+        "source": "/Users/macbook/Desktop/frelance/tokoweb/mitra-new/mitra-laundry-/app/src/main/res/layout/adapter_detail_penjualan.xml"
+    },
+    {
+        "merged": "/Users/macbook/Desktop/frelance/tokoweb/mitra-new/mitra-laundry-/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/activity_booking_pick_date_time.xml",
+        "source": "/Users/macbook/Desktop/frelance/tokoweb/mitra-new/mitra-laundry-/app/src/main/res/layout/activity_booking_pick_date_time.xml"
+    },
+    {
+        "merged": "/Users/macbook/Desktop/frelance/tokoweb/mitra-new/mitra-laundry-/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/activity_shop_acitivity.xml",
+        "source": "/Users/macbook/Desktop/frelance/tokoweb/mitra-new/mitra-laundry-/app/src/main/res/layout/activity_shop_acitivity.xml"
+    },
+    {
+        "merged": "/Users/macbook/Desktop/frelance/tokoweb/mitra-new/mitra-laundry-/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/activity_search.xml",
+        "source": "/Users/macbook/Desktop/frelance/tokoweb/mitra-new/mitra-laundry-/app/src/main/res/layout/activity_search.xml"
+    },
+    {
+        "merged": "/Users/macbook/Desktop/frelance/tokoweb/mitra-new/mitra-laundry-/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/fragment_about.xml",
+        "source": "/Users/macbook/Desktop/frelance/tokoweb/mitra-new/mitra-laundry-/app/src/main/res/layout/fragment_about.xml"
+    },
+    {
+        "merged": "/Users/macbook/Desktop/frelance/tokoweb/mitra-new/mitra-laundry-/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/activity_otp.xml",
+        "source": "/Users/macbook/Desktop/frelance/tokoweb/mitra-new/mitra-laundry-/app/src/main/res/layout/activity_otp.xml"
+    },
+    {
+        "merged": "/Users/macbook/Desktop/frelance/tokoweb/mitra-new/mitra-laundry-/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/adapter_allservices.xml",
+        "source": "/Users/macbook/Desktop/frelance/tokoweb/mitra-new/mitra-laundry-/app/src/main/res/layout/adapter_allservices.xml"
+    },
+    {
+        "merged": "/Users/macbook/Desktop/frelance/tokoweb/mitra-new/mitra-laundry-/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/activity_detail_penjualan.xml",
+        "source": "/Users/macbook/Desktop/frelance/tokoweb/mitra-new/mitra-laundry-/app/src/main/res/layout/activity_detail_penjualan.xml"
+    },
+    {
+        "merged": "/Users/macbook/Desktop/frelance/tokoweb/mitra-new/mitra-laundry-/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/activity_service_penjualan.xml",
+        "source": "/Users/macbook/Desktop/frelance/tokoweb/mitra-new/mitra-laundry-/app/src/main/res/layout/activity_service_penjualan.xml"
+    },
+    {
+        "merged": "/Users/macbook/Desktop/frelance/tokoweb/mitra-new/mitra-laundry-/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/activity_forgot_password.xml",
+        "source": "/Users/macbook/Desktop/frelance/tokoweb/mitra-new/mitra-laundry-/app/src/main/res/layout/activity_forgot_password.xml"
+    }
+]

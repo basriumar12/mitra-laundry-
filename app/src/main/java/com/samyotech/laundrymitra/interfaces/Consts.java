@@ -70,6 +70,11 @@ public interface Consts {
     /*LOGINSIGNUPPARAMS*/
     String EMAIL = "email";
     String ADDRESS = "address";
+    String ALAMAT = "alamat";
+    String JAMBUKA = "jam_buka";
+    String JAMTUTUP = "jam_tutup";
+    String EDIT_ALAMAT = "lainnya/edit_alamat";
+    String EDIT_OP = "lainnya/edit_jam";
     String NAME = "name";
     String NAME_MITRA = "nama_mitra";
     String NAME_BANK = "nama_bank";
@@ -91,6 +96,8 @@ public interface Consts {
     String NO_HP = "no_hp";
     String DEVICE_TOKEN = "device_token";
 
+    String edit_notif="lainnya/edit_notif";
+    String edit_notif_email = "lainnya/edit_notif_email";
     String FLAG = "flag";
     String USER_DTO = "userdto";
     String REGISTER_DTO = "registerdto";

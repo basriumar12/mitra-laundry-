@@ -226,5 +226,8 @@
     <string name="server_client_id">174912023580-v190ma0rd27ol3qeni8efa7h3usvae29.apps.googleusercontent.com</string>
     <string name="verifikasi_akun">Verifikasi Akun</string>
     <string name="konfirmasi">Konfirmasi</string>
+    <string name="jika_mengatifkan" translatable="false">Jika mengatifkan notifkasi ini, anda akan mendapatkan pemberitahuan tentang chat yang masuk</string>
+    <string name="anda_akan_mendapatkan" translatable="false">Anda akan mendapatkan notifikasi dari Dunia Laundry di email anda</string>
+    <string name="chat_dan_notifikasi" translatable="false">Chat dan Notifikasi</string>
 
 </resources>

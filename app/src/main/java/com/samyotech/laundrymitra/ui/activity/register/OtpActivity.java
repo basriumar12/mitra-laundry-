@@ -252,30 +252,6 @@ public class OtpActivity extends AppCompatActivity implements GoogleApiClient.Co
                             }
                         });
 
-
-//                new HttpsRequest(Consts.OTPSMS, getBaseContext(), userid, otpView.getText().toString()).stringOTP("TAG", new Helper() {
-//                    @Override
-//                    public void backResponse(boolean flag, String msg, JSONObject response) throws JSONException {
-//
-//                        progress_circular.setVisibility(View.GONE);
-//                        if (flag) {
-//
-//                            try {
-//                                finish();
-//                                String message = response.getJSONObject("message").toString();
-//                                ProjectUtils.showToast(getBaseContext(), msg);
-//
-//                            } catch (Exception e) {
-//                                e.getMessage();
-//                            }
-//
-//
-//                        } else {
-//                            progress_circular.setVisibility(View.GONE);
-//                            ProjectUtils.showToast(getBaseContext(), msg);
-//                        }
-//                    }
-//                });
             }
         });
 

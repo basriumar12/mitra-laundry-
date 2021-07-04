@@ -1,6 +1,7 @@
 package com.samyotech.laundrymitra.ui.adapter.home;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,6 +13,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.samyotech.laundrymitra.R;
+import com.samyotech.laundrymitra.databinding.ActivityManagePromosiTokoBinding;
 import com.samyotech.laundrymitra.databinding.AdapterPentingBinding;
 import com.samyotech.laundrymitra.model.home.TerlarisHariIniListDto;
 
@@ -42,7 +44,7 @@ public class TerlarisAdapter extends RecyclerView.Adapter<TerlarisAdapter.MyView
 
 
     @Override
-    public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull final MyViewHolder holder, int position) {
 
         holder.binding.title.setText(popLaundryDTOArrayList.get(position).getServiceName());
 
@@ -56,7 +58,9 @@ public class TerlarisAdapter extends RecyclerView.Adapter<TerlarisAdapter.MyView
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(kContext, "Belum tersedia", Toast.LENGTH_SHORT).show();
+                holder.itemView.getContext().startActivity(new Intent(holder.itemView.getContext(),
+                        ActivityManagePromosiTokoBinding.class
+                ));
             }
         });
     }

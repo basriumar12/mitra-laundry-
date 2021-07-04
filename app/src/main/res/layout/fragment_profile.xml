@@ -163,7 +163,7 @@
 
 
                             <LinearLayout
-                                android:id="@+id/ctvprofile"
+                                android:id="@+id/ctvpromosi"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:background="?selectableItemBackground"
@@ -173,14 +173,14 @@
                                     android:layout_width="48dp"
                                     android:layout_height="48dp"
                                     android:padding="16dp"
-                                    android:src="@drawable/icon_person" />
+                                    android:src="@drawable/ic_promosi" />
 
                                 <TextView
                                     android:layout_width="0dp"
                                     android:layout_height="match_parent"
                                     android:layout_weight="1"
                                     android:gravity="center_vertical"
-                                    android:text="Akun"
+                                    android:text="Promosi Toko"
                                     android:textColor="@color/black" />
 
                                 <ImageView
@@ -189,9 +189,8 @@
                                     android:padding="18dp"
                                     android:src="@drawable/icon_next" />
                             </LinearLayout>
-
                             <LinearLayout
-                                android:id="@+id/ctRekening"
+                                android:id="@+id/ctvulasan"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:background="?selectableItemBackground"
@@ -201,14 +200,68 @@
                                     android:layout_width="48dp"
                                     android:layout_height="48dp"
                                     android:padding="16dp"
-                                    android:src="@drawable/ic_baseline_monetization_on_24" />
+                                    android:src="@drawable/ic_ulasan" />
 
                                 <TextView
                                     android:layout_width="0dp"
                                     android:layout_height="match_parent"
                                     android:layout_weight="1"
                                     android:gravity="center_vertical"
-                                    android:text="Rekening"
+                                    android:text="Ulasan"
+                                    android:textColor="@color/black" />
+
+                                <ImageView
+                                    android:layout_width="48dp"
+                                    android:layout_height="48dp"
+                                    android:padding="18dp"
+                                    android:src="@drawable/icon_next" />
+                            </LinearLayout>
+                            <LinearLayout
+                                android:id="@+id/ctvChat"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="?selectableItemBackground"
+                                android:gravity="center_vertical">
+
+                                <ImageView
+                                    android:layout_width="48dp"
+                                    android:layout_height="48dp"
+                                    android:padding="16dp"
+                                    android:src="@drawable/ic_komplan" />
+
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:gravity="center_vertical"
+                                    android:text="Komplain"
+                                    android:textColor="@color/black" />
+
+                                <ImageView
+                                    android:layout_width="48dp"
+                                    android:layout_height="48dp"
+                                    android:padding="18dp"
+                                    android:src="@drawable/icon_next" />
+                            </LinearLayout>
+                            <LinearLayout
+                                android:id="@+id/ctvpusatEdukasi"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="?selectableItemBackground"
+                                android:gravity="center_vertical">
+
+                                <ImageView
+                                    android:layout_width="48dp"
+                                    android:layout_height="48dp"
+                                    android:padding="16dp"
+                                    android:src="@drawable/ic_pusat_edukasi" />
+
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:gravity="center_vertical"
+                                    android:text="Pusat Edukasi Mitra/Agen"
                                     android:textColor="@color/black" />
 
                                 <ImageView
@@ -220,6 +273,36 @@
 
 
                             <LinearLayout
+                                android:id="@+id/ctPengaturan"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="?selectableItemBackground"
+                                android:gravity="center_vertical">
+
+                                <ImageView
+                                    android:layout_width="48dp"
+                                    android:layout_height="48dp"
+                                    android:padding="16dp"
+                                    android:src="@drawable/ic_pengaturan" />
+
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:gravity="center_vertical"
+                                    android:text="Pengaturan"
+                                    android:textColor="@color/black" />
+
+                                <ImageView
+                                    android:layout_width="48dp"
+                                    android:layout_height="48dp"
+                                    android:padding="18dp"
+                                    android:src="@drawable/icon_next" />
+                            </LinearLayout>
+
+
+                            <LinearLayout
+                                android:visibility="gone"
                                 android:id="@+id/ctvChangePassword"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
@@ -277,33 +360,6 @@
                                     android:src="@drawable/icon_next" />
                             </LinearLayout>
 
-                            <LinearLayout
-                                android:id="@+id/ctvChat"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:background="?selectableItemBackground"
-                                android:gravity="center_vertical">
-
-                                <ImageView
-                                    android:layout_width="48dp"
-                                    android:layout_height="48dp"
-                                    android:padding="16dp"
-                                    android:src="@drawable/icon_chat" />
-
-                                <TextView
-                                    android:layout_width="0dp"
-                                    android:layout_height="match_parent"
-                                    android:layout_weight="1"
-                                    android:gravity="center_vertical"
-                                    android:text="Pesan"
-                                    android:textColor="@color/black" />
-
-                                <ImageView
-                                    android:layout_width="48dp"
-                                    android:layout_height="48dp"
-                                    android:padding="18dp"
-                                    android:src="@drawable/icon_next" />
-                            </LinearLayout>
 
                             <LinearLayout
                                 android:id="@+id/ctvSupport"
@@ -323,7 +379,7 @@
                                     android:layout_height="match_parent"
                                     android:layout_weight="1"
                                     android:gravity="center_vertical"
-                                    android:text="@string/support"
+                                    android:text="Dunia Laundry Care"
                                     android:textColor="@color/black" />
 
                                 <ImageView

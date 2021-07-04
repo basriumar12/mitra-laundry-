@@ -81,14 +81,14 @@ public class ManageProfileRekening extends AppCompatActivity implements View.OnC
             case R.id.simpan:
 
                 if (binding.namaBank.getText().toString().isEmpty()) {
-                    Toast.makeText(mContext, R.string.addname, Toast.LENGTH_SHORT).show();
+                    Toast.makeText(mContext, "Silahkan isi nama bank", Toast.LENGTH_SHORT).show();
                 }
                 else if (!ProjectUtils.isEditTextFilled(binding.namaRekening)) {
-                    Toast.makeText(mContext, R.string.addAddress, Toast.LENGTH_SHORT).show();
+                    Toast.makeText(mContext,"Silahkan isi pemilik rekening", Toast.LENGTH_SHORT).show();
                 }
 //
                 else if (!ProjectUtils.isPhoneNumberValid(binding.nomorRekening.getText().toString().trim())) {
-                    Toast.makeText(mContext, R.string.val_num, Toast.LENGTH_SHORT).show();
+                    Toast.makeText(mContext, "Silahkan isi nomor rekening", Toast.LENGTH_SHORT).show();
                 } else {
 
                     getParams();

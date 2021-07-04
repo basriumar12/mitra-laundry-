@@ -45,11 +45,8 @@ public class PenjualanFragment extends Fragment {
     LinearLayoutManager linearLayoutManager;
 
 
-
-
     public PenjualanFragment() {
     }
-
 
 
     @Override
@@ -95,7 +92,7 @@ public class PenjualanFragment extends Fragment {
         );
 
 
-        api.getPenjualanData("zAd1d3").enqueue(new Callback<BaseResponse<List<PenjualanItemDto>>>() {
+        api.getPenjualanData(userDTO.getUser_id()).enqueue(new Callback<BaseResponse<List<PenjualanItemDto>>>() {
 
             @Override
             public void onResponse(Call<BaseResponse<List<PenjualanItemDto>>> call, Response<BaseResponse<List<PenjualanItemDto>>> response) {
@@ -103,11 +100,14 @@ public class PenjualanFragment extends Fragment {
                     if (response.body().isStatus()) {
                         linearLayoutManager = new LinearLayoutManager(getActivity(), LinearLayoutManager.VERTICAL, false);
                         binding.rvPenjualan.setLayoutManager(linearLayoutManager);
-                        penjualanAdapter = new PenjualanAdapter(getActivity(), (ArrayList<PenjualanItemDto>) response.body().getData(),PenjualanFragment.this);
+                        penjualanAdapter = new PenjualanAdapter(getActivity(), (ArrayList<PenjualanItemDto>) response.body().getData(), PenjualanFragment.this);
                         binding.rvPenjualan.setAdapter(penjualanAdapter);
                         ProjectUtils.cancelDialog();
                         ProjectUtils.pauseProgressDialog();
+
+                        binding.tvKosong.setVisibility(View.GONE);
                     } else {
+                        binding.tvKosong.setVisibility(View.VISIBLE);
                         ProjectUtils.cancelDialog();
                         ProjectUtils.pauseProgressDialog();
                     }
@@ -119,6 +119,8 @@ public class PenjualanFragment extends Fragment {
                 Log.e("TAG", "gagal upload " + t.getMessage());
                 ProjectUtils.cancelDialog();
                 ProjectUtils.pauseProgressDialog();
+
+                binding.tvKosong.setVisibility(View.VISIBLE);
 
             }
         });

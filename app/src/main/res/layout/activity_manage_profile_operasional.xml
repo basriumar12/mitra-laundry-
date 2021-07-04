@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:orientation="vertical"
+        tools:context=".activity.authentication.ChangePassword">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/back"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:padding="16dp"
+                    android:src="@drawable/icon_prev" />
+
+                <TextView
+                    style="@style/TextAppearance.AppCompat.Subhead"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:layout_marginRight="48dp"
+                    android:gravity="center"
+                    android:text="Waktu Operasional"
+                    android:textColor="@color/colorPrimary"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <TextView
+                    style="@style/TextAppearance.AppCompat.Body2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Waktu Operasional Laundry"
+                    android:textColor="@color/black" />
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_8sdp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/tv_buka"
+                        style="@style/TextAppearance.AppCompat.Body1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/_2sdp"
+                        android:layout_weight="1"
+                        android:background="#f2f2f2"
+                        android:drawableRight="@drawable/icon_next"
+                        android:padding="@dimen/_4sdp"
+                        android:hint="Jam Buka"
+                        android:textColor="@color/black"
+                        android:textSize="16sp"
+
+                        />
+
+                    <TextView
+                        android:id="@+id/tv_tutup"
+                        style="@style/TextAppearance.AppCompat.Body1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/_2sdp"
+                        android:layout_weight="1"
+                        android:background="#f2f2f2"
+                        android:drawableRight="@drawable/icon_next"
+                        android:padding="@dimen/_4sdp"
+                        android:hint="Jam Tutup"
+                        android:textColor="@color/black"
+                        android:textSize="16sp" />
+
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+                <mehdi.sakout.fancybuttons.FancyButton
+                    android:id="@+id/simpan"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="end"
+                    android:layout_marginTop="16dp"
+                    android:paddingHorizontal="18dp"
+                    android:paddingVertical="6dp"
+                    app:fb_defaultColor="@color/colorPrimary"
+                    app:fb_focusColor="@color/colorPrimary"
+                    app:fb_iconPosition="left"
+                    app:fb_radius="16dp"
+                    app:fb_text="Simpan"
+                    app:fb_textColor="@color/white" />
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</layout>

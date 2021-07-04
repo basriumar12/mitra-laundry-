@@ -310,17 +310,7 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
     }
 
 
-    @Override
-    public void onResume() {
-        super.onResume();
-    }
 
-
-    @Override
-    public void onPause() {
-        //  stopLocationUpdates();
-        super.onPause();
-    }
 
 
     @Override

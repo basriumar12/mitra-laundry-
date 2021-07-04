@@ -24,16 +24,45 @@
         android:usesCleartextTraffic="true"
         tools:replace="android:allowBackup,android:supportsRtl">
 
-        <activity android:name=".ui.activity.layanan.DetailLayananItemActivity"
+        <activity android:name=".ui.activity.manage.ManageChatAndEmailProfile"
             android:launchMode="singleTop"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="stateAlwaysVisible"
             />
-        <activity android:name=".ui.activity.detailkhususuntukmu.DetailKhususUntukmuActivity"
+        <activity android:name=".ui.activity.manage.ManagePromosiTokoActivity"
             android:launchMode="singleTop"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="stateAlwaysVisible"
             />
+        <activity android:name=".ui.activity.manage.PusatEdukasiActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateAlwaysVisible"/>
+        <activity
+            android:name=".ui.activity.manage.ManageActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateAlwaysVisible" />
+        <activity
+            android:name=".ui.activity.manage.ManageAddressProfile"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateAlwaysVisible" />
+        <activity
+            android:name=".ui.activity.manage.ManageOperasionalProfile"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateAlwaysVisible" />
+        <activity
+            android:name=".ui.activity.layanan.DetailLayananItemActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateAlwaysVisible" />
+        <activity
+            android:name=".ui.activity.detailkhususuntukmu.DetailKhususUntukmuActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateAlwaysVisible" />
         <activity
             android:name=".ui.activity.rekening.ManageProfileRekening"
             android:launchMode="singleTop"
@@ -94,7 +123,6 @@
             android:launchMode="singleTop"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="stateAlwaysVisible" />
-
         <activity
             android:name=".ui.activity.register.OtpActivity"
             android:launchMode="singleTop"
@@ -135,7 +163,7 @@
             android:screenOrientation="portrait"
             android:windowSoftInputMode="stateAlwaysHidden" />
         <activity
-            android:name=".ui.activity.ManageProfile"
+            android:name=".ui.activity.manage.ManageProfile"
             android:launchMode="singleTop"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="stateAlwaysHidden" />

@@ -94,8 +94,8 @@ public class LayananFragment extends Fragment {
                 Consts.pass
         );
 
-
-        api.getListLayanan(userDTO.getUser_id(), "YZ65d0").enqueue(new Callback<BaseResponse<List<ServiceItemDto>>>() {
+//"YZ65d0"
+        api.getListLayanan(userDTO.getUser_id(), userDTO.getShop_id()).enqueue(new Callback<BaseResponse<List<ServiceItemDto>>>() {
 
             @Override
             public void onResponse(Call<BaseResponse<List<ServiceItemDto>>> call, Response<BaseResponse<List<ServiceItemDto>>> response) {

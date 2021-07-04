@@ -2,14 +2,17 @@ package com.samyotech.laundrymitra.ui.fragment;
 
 import android.annotation.SuppressLint;
 import android.app.ProgressDialog;
+import android.content.ActivityNotFoundException;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
@@ -39,11 +42,13 @@ import com.samyotech.laundrymitra.ui.activity.About;
 import com.samyotech.laundrymitra.ui.activity.ChangPassword;
 import com.samyotech.laundrymitra.ui.activity.ChatList;
 import com.samyotech.laundrymitra.ui.activity.Dashboard;
-import com.samyotech.laundrymitra.ui.activity.ManageProfile;
+import com.samyotech.laundrymitra.ui.activity.manage.ManageActivity;
+import com.samyotech.laundrymitra.ui.activity.manage.ManageProfile;
 import com.samyotech.laundrymitra.ui.activity.NotificationActivity;
 import com.samyotech.laundrymitra.ui.activity.TicketsActivity;
 import com.samyotech.laundrymitra.ui.activity.login.Login;
-import com.samyotech.laundrymitra.ui.activity.rekening.ManageProfileRekening;
+import com.samyotech.laundrymitra.ui.activity.manage.ManagePromosiTokoActivity;
+import com.samyotech.laundrymitra.ui.activity.manage.PusatEdukasiActivity;
 import com.samyotech.laundrymitra.ui.activity.rekening.ManageTarikRekening;
 import com.samyotech.laundrymitra.utils.ProjectUtils;
 
@@ -158,26 +163,42 @@ public class ProfileFragment extends Fragment implements View.OnClickListener {
     }
 
     private void setUIAction() {
+        String userImage = "";
+        String userImageBg = "";
+
+        if (userDTO.getUrl_image().isEmpty() || userDTO.getUrl_image() == null) {
+            userImage = "http://blcstore.id/dunia-laundry/assets/images/user/default.png";
+
+        } else {
+            userImage = userDTO.getUrl_image();
+        }
+
+
+        if (userDTO.getUrl_background().isEmpty() || userDTO.getUrl_background() == null) {
+            userImageBg = "http://blcstore.id/dunia-laundry/assets/images/user/background/default.png";
+
+        } else {
+            userImageBg = userDTO.getUrl_background();
+        }
+
+
         Glide.with(requireActivity())
-                .load(userDTO.getUrl_image())
+                .load(userImage)
                 .error(R.drawable.profile)
                 .diskCacheStrategy(DiskCacheStrategy.ALL)
                 .into(binding.ivAvtaimg);
         Glide.with(requireActivity())
-                .load(userDTO.getUrl_background())
+                .load(userImageBg)
                 .error(R.drawable.cover)
                 .diskCacheStrategy(DiskCacheStrategy.ALL)
                 .into(binding.ivBanner);
 
-//        camera();
+
 
         binding.tvName.setText(userDTO.getName());
         binding.tvPendapatan.setText(userDTO.getTotal_pendapatan());
         binding.tvPendapatanPotongan.setText(userDTO.getTotal_pendapatan_potongan());
-
-//        mMaxScrollSize = binding.appbar.getTotalScrollRange();
-
-        binding.ctvprofile.setOnClickListener(this);
+        binding.ctvpromosi.setOnClickListener(this);
         binding.ctvChangePassword.setOnClickListener(this);
         binding.ctvnotification.setOnClickListener(this);
         binding.ctvChat.setOnClickListener(this);
@@ -187,8 +208,10 @@ public class ProfileFragment extends Fragment implements View.OnClickListener {
 
         binding.updatePhoto.setOnClickListener(this);
         binding.updateBackground.setOnClickListener(this);
-        binding.ctRekening.setOnClickListener(this);
+        binding.ctPengaturan.setOnClickListener(this);
         binding.btnTarikPendapatan.setOnClickListener(this);
+        binding.ctvulasan.setOnClickListener(this);
+        binding.ctvpusatEdukasi.setOnClickListener(this);
 
     }
 
@@ -199,8 +222,8 @@ public class ProfileFragment extends Fragment implements View.OnClickListener {
             case R.id.ctvLogout:
                 alertDialogLogout();
                 break;
-            case R.id.ctvprofile:
-                Intent in123 = new Intent(getActivity(), ManageProfile.class);
+            case R.id.ctvpromosi:
+                Intent in123 = new Intent(getActivity(), ManagePromosiTokoActivity.class);
                 startActivity(in123);
                 break;
             case R.id.ctvSupport:
@@ -224,12 +247,12 @@ public class ProfileFragment extends Fragment implements View.OnClickListener {
                 startActivity(in4);
                 break;
 
-            case R.id.ctRekening:
-                Intent in6 = new Intent(getActivity(), ManageProfileRekening.class);
+            case R.id.ctPengaturan:
+                Intent in6 = new Intent(getActivity(), ManageActivity.class);
                 startActivity(in6);
                 break;
 
-                case R.id.btn_tarik_pendapatan:
+            case R.id.btn_tarik_pendapatan:
                 Intent in7 = new Intent(getActivity(), ManageTarikRekening.class);
                 startActivity(in7);
                 break;
@@ -240,6 +263,20 @@ public class ProfileFragment extends Fragment implements View.OnClickListener {
             case R.id.updateBackground:
 //                builder.show();
                 showBs("background");
+                break;
+
+            case R.id.ctvpusatEdukasi:
+                startActivity(new Intent(getContext(), PusatEdukasiActivity.class));
+                break;
+
+            case R.id.ctvulasan:
+                try {
+                    Intent myIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://play.google.com/store/apps/details?id=com.windigitalkhatulistiwa.laundry"));
+                    startActivity(myIntent);
+                } catch (ActivityNotFoundException e) {
+                    Toast.makeText(getActivity(), "No application can handle this request." + " Please install a webbrowser", Toast.LENGTH_LONG).show();
+                    e.printStackTrace();
+                }
                 break;
         }
     }

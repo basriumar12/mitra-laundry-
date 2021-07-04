@@ -8,6 +8,7 @@ import com.androidnetworking.common.Priority;
 import com.androidnetworking.error.ANError;
 import com.androidnetworking.interfaces.JSONObjectRequestListener;
 import com.androidnetworking.interfaces.UploadProgressListener;
+import com.google.gson.Gson;
 import com.samyotech.laundrymitra.interfaces.Consts;
 import com.samyotech.laundrymitra.interfaces.Helper;
 import com.samyotech.laundrymitra.jsonparser.JSONParser;
@@ -141,7 +142,7 @@ HttpsRequest {
 
                 .setPriority(Priority.HIGH)
                 .build();
-        ProjectUtils.showLog(TAG, " url --->" + test.getUrl());
+        ProjectUtils.showLog(TAG, " url --->" + test.getUrl() +" body "+new Gson().toJson(params));
         test.getAsJSONObject(new JSONObjectRequestListener() {
             @Override
             public void onResponse(JSONObject response) {

@@ -83,10 +83,9 @@ public class ManageTarikRekening extends AppCompatActivity implements View.OnCli
     }
 
     private void setdata() {
-        Log.e(TAG, "setdata: " + userDTO.getUser_id());
-
+        binding.tvPendapatan.setText(userDTO.getTotal_pendapatan());
         if (userDTO.getRekening() != null) {
-            binding.tvPendapatan.setText(userDTO.getTotal_pendapatan());
+
             binding.tvNamaMitra.setText(userDTO.getNama_mitra());
             binding.tvDataRekening.setText(
                     userDTO.getRekening().getAccountName() +
@@ -98,6 +97,9 @@ public class ManageTarikRekening extends AppCompatActivity implements View.OnCli
 
             );
 
+        }else {
+            binding.tvNamaMitra.setText("Belum di isi");
+            binding.tvDataRekening.setText("Belum di isi");
         }
 
 
