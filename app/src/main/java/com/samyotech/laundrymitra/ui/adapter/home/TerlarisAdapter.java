@@ -16,6 +16,7 @@ import com.samyotech.laundrymitra.R;
 import com.samyotech.laundrymitra.databinding.ActivityManagePromosiTokoBinding;
 import com.samyotech.laundrymitra.databinding.AdapterPentingBinding;
 import com.samyotech.laundrymitra.model.home.TerlarisHariIniListDto;
+import com.samyotech.laundrymitra.ui.activity.manage.ManagePromosiTokoActivity;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -59,7 +60,7 @@ public class TerlarisAdapter extends RecyclerView.Adapter<TerlarisAdapter.MyView
             @Override
             public void onClick(View v) {
                 holder.itemView.getContext().startActivity(new Intent(holder.itemView.getContext(),
-                        ActivityManagePromosiTokoBinding.class
+                        ManagePromosiTokoActivity.class
                 ));
             }
         });

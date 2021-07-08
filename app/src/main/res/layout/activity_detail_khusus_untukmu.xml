@@ -6,61 +6,85 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:context="com.samyotech.laundrymitra.ui.activity.ChatList">
-
-
         <LinearLayout
+            android:id="@+id/parent_header"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/back"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:padding="16dp"
+                android:src="@drawable/icon_prev" />
+
+            <TextView
+                android:visibility="gone"
+                android:id="@+id/tv_title"
+                style="@style/TextAppearance.AppCompat.Subhead"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginRight="48dp"
+                android:gravity="center"
+                android:text="Khusus Untukmu"
+                android:textColor="@color/colorPrimary"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+
+        <RelativeLayout
+
+            android:layout_below="@+id/parent_header"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:gravity="center_horizontal"
             android:orientation="vertical">
 
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
 
-                <ImageView
-                    android:id="@+id/back"
-                    android:layout_width="48dp"
-                    android:layout_height="48dp"
-                    android:padding="16dp"
-                    android:src="@drawable/icon_prev" />
-
-                <TextView
-                    android:id="@+id/tv_title"
-                    style="@style/TextAppearance.AppCompat.Subhead"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_marginRight="48dp"
-                    android:gravity="center"
-                    android:text="Khusus Untukmu"
-                    android:textColor="@color/colorPrimary"
-                    android:textStyle="bold" />
-            </LinearLayout>
 
             <ImageView
                 android:id="@+id/img_detail"
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/_220sdp"
-                android:scaleType="centerInside" />
+                android:layout_height="@dimen/_200sdp"
+                android:scaleType="fitXY" />
 
             <LinearLayout
+                android:layout_marginTop="@dimen/_190sdp"
+                android:background="@drawable/round_background_2"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:orientation="vertical"
                 android:padding="16dp">
 
                 <TextView
+                    android:layout_marginTop="@dimen/_8sdp"
+                    android:id="@+id/tv_title_d"
+                    style="@style/TextAppearance.AppCompat.Subhead"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+
+                    android:textSize="20sp"
+                    android:textColor="@color/black"
+                    android:textStyle="bold" />
+
+
+                <TextView
+                    android:gravity="right"
                     android:id="@+id/tv_date"
-                    style="@style/TextAppearance.AppCompat.Body2"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Date"
                     android:textColor="@color/black" />
 
+
+                <ScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
                 <TextView
-                    android:layout_marginTop="@dimen/_4sdp"
+                    android:layout_marginTop="@dimen/_8sdp"
                     android:id="@+id/tv_desk"
                     style="@style/TextAppearance.AppCompat.Body1"
                     android:layout_width="match_parent"
@@ -68,11 +92,13 @@
                     android:text="Deskripsi"
                     android:textColor="@color/black" />
 
+                </ScrollView>
+
 
             </LinearLayout>
 
 
-        </LinearLayout>
+        </RelativeLayout>
 
     </RelativeLayout>
 </layout>

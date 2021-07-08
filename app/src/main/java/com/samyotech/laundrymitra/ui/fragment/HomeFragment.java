@@ -42,6 +42,7 @@ import com.samyotech.laundrymitra.ui.activity.Dashboard;
 import com.samyotech.laundrymitra.ui.activity.NotificationActivity;
 import com.samyotech.laundrymitra.ui.activity.SearchActivity;
 import com.samyotech.laundrymitra.ui.activity.TopServices;
+import com.samyotech.laundrymitra.ui.activity.detailkhususuntukmu.ListKhususUntukmuActivity;
 import com.samyotech.laundrymitra.ui.adapter.home.KhususUntukmuAdapter;
 import com.samyotech.laundrymitra.ui.adapter.home.TerlarisAdapter;
 import com.samyotech.laundrymitra.utils.ProjectUtils;
@@ -310,9 +311,6 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
     }
 
 
-
-
-
     @Override
     public void onAttach(@NonNull Context context) {
         super.onAttach(context);
@@ -387,7 +385,12 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
 
     public void getKhususUntukmu() {
 
-        
+        binding.tvSelengkapnya.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getContext(), ListKhususUntukmuActivity.class));
+            }
+        });
         ApiInterface api = ServiceGenerator.createService(
                 ApiInterface.class,
                 Consts.username,
@@ -401,7 +404,13 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
                 ProjectUtils.pauseProgressDialog();
                 if (response.isSuccessful()) {
                     if (response.body().isStatus()) {
+
                         List<KhususUntukmuListDto> data = response.body().getData();
+
+                        if (data.size() > 5) {
+                            binding.tvSelengkapnya.setVisibility(View.VISIBLE);
+                        }
+                        //binding.tvSelengkapnya.setVisibility(View.VISIBLE);
                         linearLayoutManager = new LinearLayoutManager(getActivity(), LinearLayoutManager.VERTICAL, false);
                         binding.rvKhususUntukmu.setLayoutManager(linearLayoutManager);
                         khususUntukmuAdapter = new KhususUntukmuAdapter(getActivity(), data);
@@ -409,7 +418,7 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
                         binding.tvKosongKhusus.setVisibility(View.GONE);
                     } else {
                         binding.tvKosongKhusus.setVisibility(View.VISIBLE);
-
+                        binding.tvSelengkapnya.setVisibility(View.GONE);
                     }
                 }
 
@@ -420,13 +429,11 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
                 ProjectUtils.cancelDialog();
                 ProjectUtils.pauseProgressDialog();
                 binding.tvKosongKhusus.setVisibility(View.VISIBLE);
+                binding.tvSelengkapnya.setVisibility(View.GONE);
             }
         });
 
     }
-
-
-
 
 
 }

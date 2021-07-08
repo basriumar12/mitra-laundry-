@@ -250,18 +250,18 @@ public class Register extends AppCompatActivity implements View.OnClickListener 
         new HttpsRequest(Consts.SIGNUP, getParams(), mContext).stringPost(TAG, new Helper() {
             @Override
             public void backResponse(boolean flag, String msg, JSONObject response) {
-                ProjectUtils.showToast(mContext, msg+" "+flag);
+                ProjectUtils.showToast(mContext, msg + " " + flag);
                 ProjectUtils.pauseProgressDialog();
                 if (flag) {
                     try {
 
-                          RegisterNewDto registerNewDto = new Gson().fromJson(response.getJSONObject("data").toString(), RegisterNewDto.class);
+                        RegisterNewDto registerNewDto = new Gson().fromJson(response.getJSONObject("data").toString(), RegisterNewDto.class);
                         prefrence.setParentUserRegister(registerNewDto, Consts.REGISTER_DTO);
 
                         doubleClick = false;
                         ProjectUtils.showToast(mContext, "Berhasil register, otp akan dikirim ke nomor yang telah di daftarkan");
                         Intent in = new Intent(mContext, OtpActivity.class);
-                        in.putExtra("otp_otp",registerNewDto.getOtpSms());
+                        in.putExtra("otp_otp", registerNewDto.getOtpSms());
                         startActivity(in);
                         finish();
                         overridePendingTransition(R.anim.anim_slide_in_left,
@@ -286,7 +286,8 @@ public class Register extends AppCompatActivity implements View.OnClickListener 
         params.put(Consts.PASSWORD, ProjectUtils.getEditTextValue(binding.cetPassword2));
         params.put(Consts.PASSWORD_REPLACENG, ProjectUtils.getEditTextValue(binding.cetPassword2));
         params.put(Consts.MOBILE, ProjectUtils.getEditTextValue(binding.cetNumber));
-       // params.put(Consts.ADDRESS, ProjectUtils.getEditTextValue(binding.alamat));
+        params.put(Consts.TYPE_REGISTER, getIntent().getStringExtra("TYPE"));
+        // params.put(Consts.ADDRESS, ProjectUtils.getEditTextValue(binding.alamat));
         //params.put(Consts.COUNTRY_CODE, "62");
         //params.put(Consts.DEVICE_TYPE, "ANDROID");
         params.put(Consts.DEVICE_TOKEN, "ANDROID");

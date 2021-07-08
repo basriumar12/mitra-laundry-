@@ -8,7 +8,7 @@ public interface Consts {
     String DEV_URL = "http://blcstore.id/dunia-laundry/api_v2/";
     String PROD_URL = "http://laundryapp.windigitalkhatulistiwa.com/";
     String BASE_URL =PROD_URL;
-    String API_URL = "http://blcstore.id/dunia-laundry/api_v2/";
+    String API_URL = "http://blcstore.id/dunia-laundry/api_driver/";
 
 
     /*-----Apis-----*/
@@ -93,6 +93,7 @@ public interface Consts {
     String COUNTRY_CODE = "country_code";
     String DEVICE_TYPE = "device_type";
     String MOBILE = "mobile";
+    String TYPE_REGISTER = "type";
     String NO_HP = "no_hp";
     String DEVICE_TOKEN = "device_token";
 

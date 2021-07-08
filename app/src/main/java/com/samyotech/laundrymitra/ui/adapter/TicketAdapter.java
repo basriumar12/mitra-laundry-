@@ -57,16 +57,16 @@ public class TicketAdapter extends RecyclerView.Adapter<TicketAdapter.MyViewHold
 
         holder.binding.headerTitle.setText(ticketDTOSList.get(position).getTitle());
         holder.binding.des.setText(ticketDTOSList.get(position).getDescription());
-
-        if (ticketDTOSList.get(position).getStatus().equalsIgnoreCase("0")) {
-            holder.binding.status.setText("Pending");
-        } else if (ticketDTOSList.get(position).getStatus().equalsIgnoreCase("1")) {
-            holder.binding.status.setText("Sedang diproses");
-        } else if (ticketDTOSList.get(position).getStatus().equalsIgnoreCase("2")) {
-            holder.binding.status.setText("Selesai");
-        } else if (ticketDTOSList.get(position).getStatus().equalsIgnoreCase("3")) {
-            holder.binding.status.setText("Ditokak");
-        }
+        holder.binding.status.setText(ticketDTOSList.get(position).getStatus());
+//        if (ticketDTOSList.get(position).getStatus().equalsIgnoreCase("0")) {
+//            holder.binding.status.setText("Pending");
+//        } else if (ticketDTOSList.get(position).getStatus().equalsIgnoreCase("1")) {
+//            holder.binding.status.setText("Sedang diproses");
+//        } else if (ticketDTOSList.get(position).getStatus().equalsIgnoreCase("2")) {
+//            holder.binding.status.setText("Selesai");
+//        } else if (ticketDTOSList.get(position).getStatus().equalsIgnoreCase("3")) {
+//            holder.binding.status.setText("Ditokak");
+//        }
 
         holder.binding.container.setOnClickListener(new View.OnClickListener() {
             @Override

@@ -54,7 +54,7 @@ android {
     signingConfigs {
 
         release {
-            storeFile file("../app/winlaundry.jks")
+            storeFile file("../app/winlaundrymitra.jks")
             storePassword "android"
             keyAlias "Laundry"
             keyPassword "winlaundry"

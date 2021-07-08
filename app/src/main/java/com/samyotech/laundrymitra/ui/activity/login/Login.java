@@ -46,6 +46,7 @@ import com.samyotech.laundrymitra.network.NetworkManager;
 import com.samyotech.laundrymitra.preferences.SharedPrefrence;
 import com.samyotech.laundrymitra.ui.activity.Dashboard;
 import com.samyotech.laundrymitra.ui.activity.ForgotPassword;
+import com.samyotech.laundrymitra.ui.activity.register.ChooseRegister;
 import com.samyotech.laundrymitra.ui.activity.register.Register;
 import com.samyotech.laundrymitra.utils.ProjectUtils;
 

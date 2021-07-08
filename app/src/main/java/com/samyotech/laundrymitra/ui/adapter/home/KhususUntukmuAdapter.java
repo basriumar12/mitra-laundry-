@@ -71,7 +71,12 @@ public class KhususUntukmuAdapter extends RecyclerView.Adapter<KhususUntukmuAdap
 
     @Override
     public int getItemCount() {
-        return popLaundryDTOArrayList.size();
+        int showItem;
+        int size = popLaundryDTOArrayList.size();
+
+        showItem = Math.min(size, 5);
+
+        return showItem;
     }
 
     public class MyViewHolder extends RecyclerView.ViewHolder {

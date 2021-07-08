@@ -34,12 +34,12 @@ public class DetailKhususUntukmuActivity extends AppCompatActivity {
     }
 
     private void setData() {
-        String desk = getIntent().getStringExtra("DESC");
+        String desk = getIntent().getStringExtra("DESK");
         if (desk== null || desk.isEmpty()){
             desk ="Tidak ada deskripsi";
         }
 
-        binding.tvTitle.setText(getIntent().getStringExtra("TITLE"));
+        binding.tvTitleD.setText(getIntent().getStringExtra("TITLE"));
         binding.tvDesk.setText(desk);
         binding.tvDate.setText(getIntent().getStringExtra("DATE"));
 

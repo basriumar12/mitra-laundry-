@@ -56,6 +56,7 @@ public class PenjualanFragment extends Fragment {
         prefrence = SharedPrefrence.getInstance(getActivity());
         userDTO = prefrence.getParentUser(Consts.USER_DTO);
         getPenjualanData();
+        binding.fab.setVisibility(View.GONE);
         binding.fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

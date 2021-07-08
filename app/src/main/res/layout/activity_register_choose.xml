@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#F5F5F5">
+
+        <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            xmlns:tools="http://schemas.android.com/tools"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/auth_bg"
+            tools:context=".Activity.Login">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <ImageView
+                    android:layout_width="200dp"
+                    android:layout_height="350dp"
+                    android:scaleType="centerInside"
+                    android:src="@drawable/ic_logo_white" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="Daftar Sebagai"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_16sdp" />
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:id="@+id/parent_mitra"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/_8sdp"
+                        android:layout_weight="1"
+                        android:background="@drawable/bg_button_register"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        android:padding="@dimen/_12sdp">
+
+                        <ImageView
+                            android:layout_width="@dimen/_75sdp"
+                            android:layout_height="@dimen/_95sdp"
+                            android:src="@drawable/profile" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginBottom="@dimen/_8sdp"
+                            android:gravity="center"
+                            android:text="Mitra"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/_16sdp" />
+
+
+                    </LinearLayout>
+
+                    <LinearLayout
+
+                        android:id="@+id/parent_agen"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/_8sdp"
+                        android:layout_weight="1"
+                        android:background="@drawable/bg_button_register"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        android:padding="@dimen/_12sdp">
+
+                        <ImageView
+                            android:layout_width="@dimen/_75sdp"
+                            android:layout_height="@dimen/_95sdp"
+                            android:src="@drawable/profile" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginBottom="@dimen/_8sdp"
+                            android:gravity="center"
+                            android:text="Agen"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/_16sdp" />
+
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+
+                <mehdi.sakout.fancybuttons.FancyButton
+                    android:id="@+id/cvRegister"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:padding="12dp"
+                    app:fb_defaultColor="@color/white"
+                    app:fb_focusColor="@color/white"
+                    app:fb_iconPosition="left"
+                    app:fb_radius="30dp"
+                    app:fb_text="Selanjutnya"
+                    app:fb_textColor="@color/colorPrimary" />
+
+
+            </LinearLayout>
+
+            <RelativeLayout
+                android:id="@+id/RRsncbar"
+                android:layout_width="match_parent"
+                android:layout_height="20dp"
+                android:layout_alignParentBottom="true" />
+        </RelativeLayout>
+    </ScrollView>
+</layout>
