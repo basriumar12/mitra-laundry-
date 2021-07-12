@@ -137,7 +137,7 @@ public class ManageProfile extends AppCompatActivity implements View.OnClickList
                         Log.e(TAG, "backResponse: " + response.toString());
                         ProjectUtils.showToast(mContext, msg);
                         userDTO = new Gson().fromJson(response.getJSONObject("data").toString(), UserDTO.class);
-                        prefrence.setParentUser(userDTO, Consts.USER_DTO);
+                       // prefrence.setParentUser(userDTO, Consts.USER_DTO);
                         prefrence.setBooleanValue(Consts.IS_REGISTERED, true);
                         Intent in = new Intent(mContext, Dashboard.class);
                         startActivity(in);

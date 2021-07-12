@@ -18,7 +18,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|center"
-        android:layout_marginBottom="140dp"
+        android:layout_marginBottom="170dp"
         android:padding="8dp"
         android:text="Choose Your Clothes"
         android:textColor="@color/white"

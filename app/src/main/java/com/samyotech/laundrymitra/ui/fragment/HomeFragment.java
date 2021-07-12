@@ -21,6 +21,13 @@ import androidx.databinding.DataBindingUtil;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 
+import com.androidnetworking.AndroidNetworking;
+import com.androidnetworking.common.ANRequest;
+import com.androidnetworking.common.Priority;
+import com.androidnetworking.error.ANError;
+import com.androidnetworking.interfaces.JSONObjectRequestListener;
+import com.bumptech.glide.Glide;
+import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.google.android.gms.location.FusedLocationProviderClient;
 import com.google.android.gms.location.LocationServices;
 import com.google.gson.Gson;
@@ -43,6 +50,8 @@ import com.samyotech.laundrymitra.ui.activity.NotificationActivity;
 import com.samyotech.laundrymitra.ui.activity.SearchActivity;
 import com.samyotech.laundrymitra.ui.activity.TopServices;
 import com.samyotech.laundrymitra.ui.activity.detailkhususuntukmu.ListKhususUntukmuActivity;
+import com.samyotech.laundrymitra.ui.activity.manage.ManageProfileMitra;
+import com.samyotech.laundrymitra.ui.activity.register.UploadKtpActivity;
 import com.samyotech.laundrymitra.ui.adapter.home.KhususUntukmuAdapter;
 import com.samyotech.laundrymitra.ui.adapter.home.TerlarisAdapter;
 import com.samyotech.laundrymitra.utils.ProjectUtils;
@@ -51,11 +60,17 @@ import com.schibstedspain.leku.LocationPickerActivity;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.io.IOException;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Locale;
 
 import mehdi.sakout.fancybuttons.FancyButton;
+import okhttp3.Authenticator;
+import okhttp3.Credentials;
+import okhttp3.OkHttpClient;
+import okhttp3.Request;
+import okhttp3.Route;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -87,12 +102,12 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
         view = binding.getRoot();
         prefrence = SharedPrefrence.getInstance(getActivity());
         userDTO = prefrence.getParentUser(Consts.USER_DTO);
-        if (userDTO.getImage_ktp().isEmpty() || userDTO.getImage_ktp().equals(null)) {
-            //  startActivity(new Intent(getActivity(), UploadKtpActivity.class));
-            //getActivity().finish();
+        if (userDTO.getShop_id().isEmpty() || userDTO.getShop_id().equals(null)) {
+            startActivity(new Intent(getActivity(), ManageProfileMitra.class));
+            //  getActivity().finish();
         }
 
-
+        getUpdateProfile();
         getPentingHariIni();
         getAllTerlaris();
         getKhususUntukmu();
@@ -380,6 +395,61 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
             }
         });
 
+
+    }
+
+
+    private void getUpdateProfile() {
+        OkHttpClient okHttpClient = new OkHttpClient.Builder()
+                .authenticator(new Authenticator() {
+                    @Override
+                    public Request authenticate(Route route, okhttp3.Response response) throws IOException {
+                        return response.request().newBuilder()
+                                .header("Authorization", Credentials.basic(Consts.username, Consts.pass))
+                                .build();
+                    }
+                })
+                .build();
+        final ANRequest request =
+                AndroidNetworking.get(Consts.API_URL + Consts.lainya + "?user_id=" + userDTO.getUser_id() + "&" + "shop_id=" + userDTO.getShop_id())
+                        .setOkHttpClient(okHttpClient)
+                        .setTag("test")
+//                        .addQueryParameter("id_user", userid)
+//                        .addQueryParameter("otp", otpSms)
+                        .setPriority(Priority.HIGH)
+                        .build();
+        ProjectUtils.showLog("TAG", " url data --->" + request.getUrl());
+
+        request.getAsJSONObject(new JSONObjectRequestListener() {
+            @Override
+            public void onResponse(JSONObject response) {
+
+
+                try {
+                    boolean flag = response.getBoolean("status");
+                    String msg = response.getString("message");
+
+                    //ProjectUtils.showToast(getContext(), msg);
+
+                    if (flag) {
+                        userDTO = new Gson().fromJson(response.getJSONObject("data").toString(), UserDTO.class);
+                        prefrence.setParentUser(userDTO, Consts.USER_DTO);
+
+
+                    }
+
+
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+
+
+            }
+
+            @Override
+            public void onError(ANError anError) {
+            }
+        });
 
     }
 

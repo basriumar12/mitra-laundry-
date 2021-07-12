@@ -10,8 +10,19 @@ public class BaseResponse<T>{
 	@SerializedName("message")
 	private String message;
 
+	@SerializedName("total_rating")
+	private String totalRating;
+
 	@SerializedName("status")
 	private boolean status;
+
+	public String getTotalRating() {
+		return totalRating;
+	}
+
+	public void setTotalRating(String totalRating) {
+		this.totalRating = totalRating;
+	}
 
 	public void setData(T data){
 		this.data = data;

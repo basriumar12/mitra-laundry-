@@ -42,6 +42,13 @@ public class ManageActivity extends AppCompatActivity {
             }
         });
 
+        binding.ctvprofileMitra.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(ManageActivity.this, ManageProfileMitra.class));
+            }
+        });
+
         binding.ctChatDanNotif.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

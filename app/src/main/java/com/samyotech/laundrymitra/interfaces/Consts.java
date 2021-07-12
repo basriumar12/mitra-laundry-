@@ -8,7 +8,7 @@ public interface Consts {
     String DEV_URL = "http://blcstore.id/dunia-laundry/api_v2/";
     String PROD_URL = "http://laundryapp.windigitalkhatulistiwa.com/";
     String BASE_URL =PROD_URL;
-    String API_URL = "http://blcstore.id/dunia-laundry/api_driver/";
+    String API_URL = DEV_URL;
 
 
     /*-----Apis-----*/

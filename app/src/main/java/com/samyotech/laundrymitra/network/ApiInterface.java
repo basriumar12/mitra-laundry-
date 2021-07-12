@@ -9,6 +9,7 @@ import com.samyotech.laundrymitra.model.layanan.LayananItemDto;
 import com.samyotech.laundrymitra.model.layanan.ServiceItemDto;
 import com.samyotech.laundrymitra.model.penjualan.DetailPenjualanDto;
 import com.samyotech.laundrymitra.model.penjualan.PenjualanItemDto;
+import com.samyotech.laundrymitra.model.ulasandata.UlasanNewDto;
 
 import java.util.HashMap;
 import java.util.List;
@@ -43,7 +44,7 @@ public interface ApiInterface {
             @Part("user_id") RequestBody user_id,
             @Part("message_head") RequestBody messagehead,
             @Part("message") RequestBody message,
-                                    @Part MultipartBody.Part media
+            @Part MultipartBody.Part media
     );
 
     @Multipart
@@ -69,6 +70,9 @@ public interface ApiInterface {
 
     @GET("layanan/detail_layanan")
     Call<BaseResponse<ServiceItemDto>> getDetailLayanan(@Query("service_id") String service_id);
+
+    @GET("lainnya/ulasan")
+    Call<BaseResponse<List<UlasanNewDto>>> getUlasan(@Query("shop_id") String shopId);
 
     @GET("chatt")
     Call<ChatDto> getChat(@Query("user_id") String userId);

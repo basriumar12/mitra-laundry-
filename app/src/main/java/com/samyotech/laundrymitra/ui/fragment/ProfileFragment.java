@@ -50,6 +50,7 @@ import com.samyotech.laundrymitra.ui.activity.login.Login;
 import com.samyotech.laundrymitra.ui.activity.manage.ManagePromosiTokoActivity;
 import com.samyotech.laundrymitra.ui.activity.manage.PusatEdukasiActivity;
 import com.samyotech.laundrymitra.ui.activity.rekening.ManageTarikRekening;
+import com.samyotech.laundrymitra.ui.activity.ulasan.UlasanActivity;
 import com.samyotech.laundrymitra.utils.ProjectUtils;
 
 import org.json.JSONException;
@@ -270,13 +271,14 @@ public class ProfileFragment extends Fragment implements View.OnClickListener {
                 break;
 
             case R.id.ctvulasan:
-                try {
-                    Intent myIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://play.google.com/store/apps/details?id=com.windigitalkhatulistiwa.laundry"));
-                    startActivity(myIntent);
-                } catch (ActivityNotFoundException e) {
-                    Toast.makeText(getActivity(), "No application can handle this request." + " Please install a webbrowser", Toast.LENGTH_LONG).show();
-                    e.printStackTrace();
-                }
+                startActivity(new Intent(getContext(), UlasanActivity.class));
+//                try {
+//                    Intent myIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://play.google.com/store/apps/details?id=com.windigitalkhatulistiwa.laundry"));
+//                    startActivity(myIntent);
+//                } catch (ActivityNotFoundException e) {
+//                    Toast.makeText(getActivity(), "No application can handle this request." + " Please install a webbrowser", Toast.LENGTH_LONG).show();
+//                    e.printStackTrace();
+//                }
                 break;
         }
     }

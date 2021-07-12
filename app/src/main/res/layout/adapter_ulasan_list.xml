@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <androidx.cardview.widget.CardView
+        android:layout_margin="@dimen/_4sdp"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        app:cardElevation="@dimen/_4sdp"
+        app:cardCornerRadius="@dimen/_4sdp"
+        android:layout_height="wrap_content">
+    <LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/img_ulasan"
+            android:layout_width="@dimen/_40sdp"
+            android:layout_height="@dimen/_40sdp"
+            android:layout_margin="@dimen/_6sdp" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/title"
+                style="@style/TextAppearance.AppCompat.Body1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:maxLines="2"
+                android:text="Laundary Shop"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tv_count"
+                style="@style/TextAppearance.AppCompat.Body1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/title"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:singleLine="true"
+                android:text="4.1" />
+            <com.bigstark.animatedratingbar.lib.AnimatedRatingBar
+                android:id="@+id/arb"
+                android:layout_marginTop="@dimen/_4sdp"
+                android:layout_toEndOf="@id/tv_count"
+                android:layout_below="@+id/title"
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:layout_gravity="center"
+                app:gapSize="1dp"
+                app:max="5"
+                app:numStars="5"
+                app:progressImage="@drawable/icon_star_yellow"
+                app:secondaryProgressImage="@drawable/icon_star_gray"
+                app:starSize="16dp" />
+
+
+
+
+        </RelativeLayout>
+
+    </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+
+</layout>
