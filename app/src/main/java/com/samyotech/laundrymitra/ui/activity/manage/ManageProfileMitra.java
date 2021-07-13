@@ -149,8 +149,8 @@ public class ManageProfileMitra extends AppCompatActivity implements View.OnClic
 
     private HashMap<String, String> getParams() {
 
-        params.put(Consts.NAME_MITRA, ProjectUtils.getEditTextValue(binding.alamat));
-        params.put(Consts.ALAMAT_MITRA, ProjectUtils.getEditTextValue(binding.namaLengkap));
+        params.put(Consts.NAME_MITRA, ProjectUtils.getEditTextValue(binding.namaLengkap));
+        params.put(Consts.ALAMAT_MITRA, ProjectUtils.getEditTextValue(binding.alamat));
         params.put(Consts.USER_ID, userDTO.getUser_id());
 
 
