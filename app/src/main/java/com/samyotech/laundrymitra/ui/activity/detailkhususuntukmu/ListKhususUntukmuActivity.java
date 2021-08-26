@@ -52,7 +52,7 @@ public class ListKhususUntukmuActivity extends AppCompatActivity {
                 Consts.pass
         );
 
-        api.getArtikel().enqueue(new Callback<KhususUntukmuDto>() {
+        api.getArtikel("publik").enqueue(new Callback<KhususUntukmuDto>() {
             @Override
             public void onResponse(Call<KhususUntukmuDto> call, Response<KhususUntukmuDto> response) {
                 ProjectUtils.cancelDialog();

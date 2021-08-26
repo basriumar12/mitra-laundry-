@@ -16,8 +16,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.samyotech.laundrymitra.R;
 import com.samyotech.laundrymitra.interfaces.Consts;
 import com.samyotech.laundrymitra.model.ChatListDTO;
-import com.samyotech.laundrymitra.ui.activity.ChatActivity;
-import com.samyotech.laundrymitra.utils.ProjectUtils;
+import com.samyotech.laundrymitra.ui.activity.chat.ChatActivity;
 
 import java.util.ArrayList;
 
@@ -44,10 +43,11 @@ public class ChatListAdapter extends RecyclerView.Adapter<ChatListAdapter.MyView
     @Override
     public void onBindViewHolder(final MyViewHolder holder, final int position) {
 
-        holder.tvTitle.setText(chatList.get(position).getUser_name());
-        holder.tvMsg.setText(chatList.get(position).getMessage());
         try {
-            holder.tvDate.setText(ProjectUtils.convertTimestampToTime(ProjectUtils.correctTimestamp(Long.parseLong(chatList.get(position).getUpdated_at()))));
+
+            holder.tvTitle.setText(chatList.get(position).getCustomer_name());
+            holder.tvMsg.setText(chatList.get(position).getPesan_terakhir());
+            holder.tvDate.setText(chatList.get(position).getUpdated_at());
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -56,7 +56,7 @@ public class ChatListAdapter extends RecyclerView.Adapter<ChatListAdapter.MyView
             public void onClick(View v) {
                 Intent in = new Intent(mContext, ChatActivity.class);
                 in.putExtra(Consts.TO_USER_ID, chatList.get(position).getUser_id());
-                in.putExtra(Consts.NAME, chatList.get(position).getUser_name());
+                in.putExtra(Consts.NAME, chatList.get(position).getCustomer_name());
                 in.putExtra(Consts.IMAGE, chatList.get(position).getUser_image());
                 in.putExtra("ID", chatList.get(position).getMessage_head_id());
                 mContext.startActivity(in);

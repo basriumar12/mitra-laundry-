@@ -37,6 +37,7 @@ import com.samyotech.laundrymitra.https.HttpsRequest;
 import com.samyotech.laundrymitra.interfaces.Consts;
 import com.samyotech.laundrymitra.interfaces.Helper;
 import com.samyotech.laundrymitra.model.UserDTO;
+import com.samyotech.laundrymitra.model.base.BaseResponse;
 import com.samyotech.laundrymitra.model.home.KhususUntukmuDto;
 import com.samyotech.laundrymitra.model.home.KhususUntukmuListDto;
 import com.samyotech.laundrymitra.model.home.PentingHariIniDto;
@@ -50,6 +51,7 @@ import com.samyotech.laundrymitra.ui.activity.NotificationActivity;
 import com.samyotech.laundrymitra.ui.activity.SearchActivity;
 import com.samyotech.laundrymitra.ui.activity.TopServices;
 import com.samyotech.laundrymitra.ui.activity.detailkhususuntukmu.ListKhususUntukmuActivity;
+import com.samyotech.laundrymitra.ui.activity.manage.ManageAddressProfile;
 import com.samyotech.laundrymitra.ui.activity.manage.ManageProfileMitra;
 import com.samyotech.laundrymitra.ui.activity.register.UploadKtpActivity;
 import com.samyotech.laundrymitra.ui.adapter.home.KhususUntukmuAdapter;
@@ -106,10 +108,17 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
             startActivity(new Intent(getActivity(), ManageProfileMitra.class));
             //  getActivity().finish();
         }
+        if (userDTO.getLatitude().isEmpty() || userDTO.getLatitude().equals("0")
+                || userDTO.getLatitude().equals("")
+        ) {
+            startActivity(new Intent(getActivity(), ManageAddressProfile.class));
+            //  getActivity().finish();
+        }
 
         getUpdateProfile();
-        getPentingHariIni();
-        getAllTerlaris();
+        getPenting();
+        //getPentingHariIni();
+        //getAllTerlaris();
         getKhususUntukmu();
 
         fusedLocationClient = LocationServices.getFusedLocationProviderClient(getContext());
@@ -168,27 +177,6 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
             }
         });
         binding.tvNameHome.setText(userDTO.getName());
-
-        binding.tvPesanBaru.setText("tee");
-
-        if (dataDto != null) {
-            Log.e("TAG", new Gson().toJson(dataDto) + " " + dataDto.getPendapatan_bersih_baru() + " " + dataDto.getChatBelumDibaca());
-
-            binding.tvPesanBaru.setText("" + dataDto.getPesananBaru());
-            binding.tvChatBelumDibaca.setText("" + dataDto.getChatBelumDibaca());
-            binding.tvPendapatanBersihBaru.setText("" + dataDto.getPendapatan_bersih_baru());
-            binding.tvUlasanBaru.setText("" + dataDto.getUlasanSelesai());
-            binding.tvPesananKomplain.setText("" + dataDto.getPesananKomplain());
-            binding.tvPesananSelesai.setText("" + dataDto.getPesananSelesai());
-        } else {
-            getPentingHariIni();
-            binding.tvPesanBaru.setText("" + dataDto.getPesananBaru());
-            binding.tvChatBelumDibaca.setText("" + dataDto.getChatBelumDibaca());
-            binding.tvPendapatanBersihBaru.setText("" + dataDto.getPendapatan_bersih_baru());
-            binding.tvUlasanBaru.setText("" + dataDto.getUlasanSelesai());
-            binding.tvPesananKomplain.setText("" + dataDto.getPesananKomplain());
-            binding.tvPesananSelesai.setText("" + dataDto.getPesananSelesai());
-        }
 
 
     }
@@ -266,17 +254,13 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
 
                     try {
                         dataDto = new Gson().fromJson(response.getJSONObject("data").toString(), PentingHariIniDto.class);
-                        Log.e("TAG", new Gson().toJson(dataDto) + " " + dataDto.getPendapatan_bersih_baru() + " " + dataDto.getChatBelumDibaca());
-
 
                         binding.tvPesanBaru.setText(dataDto.getPesananBaru());
-                        binding.tvChatBelumDibaca.setText(dataDto.getChatBelumDibaca() + " aaa" + dataDto.getPendapatan_bersih_baru());
+                        binding.tvChatBelumDibaca.setText(dataDto.getChatBelumDibaca());
                         binding.tvPendapatanBersihBaru.setText(dataDto.getPendapatan_bersih_baru());
                         binding.tvUlasanBaru.setText(dataDto.getUlasanSelesai());
                         binding.tvPesananKomplain.setText(dataDto.getPesananKomplain());
                         binding.tvPesananSelesai.setText(dataDto.getPesananSelesai());
-                        TextView tv = view.findViewById(R.id.tv_chat_belum_dibaca);
-                        tv.setText(dataDto.getChatBelumDibaca());
 
                     } catch (Exception e) {
                         e.getMessage();
@@ -353,6 +337,45 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
                 startActivity(in4);
                 break;
         }
+    }
+
+    public void getPenting() {
+        ProjectUtils.showProgressDialog(requireActivity(), true, getResources().getString(R.string.please_wait));
+
+
+        ApiInterface api = ServiceGenerator.createService(
+                ApiInterface.class,
+                Consts.username,
+                Consts.pass
+        );
+        api.getPentingHariIni(userDTO.getUser_id()).enqueue(new Callback<BaseResponse<PentingHariIniDto>>() {
+            @Override
+            public void onResponse(Call<BaseResponse<PentingHariIniDto>> call, Response<BaseResponse<PentingHariIniDto>> response) {
+                ProjectUtils.cancelDialog();
+                ProjectUtils.pauseProgressDialog();
+                ProjectUtils.showToast(getActivity(), response.body().getMessage());
+                if (response.isSuccessful()) {
+                    if (response.body().isStatus()) {
+
+
+                        binding.tvPesanBaru.setText("" + response.body().getData().getPesananBaru());
+                        binding.tvChatBelumDibaca.setText("" + response.body().getData().getChatBelumDibaca());
+                        binding.tvPendapatanBersihBaru.setText("" + response.body().getData().getPendapatan_bersih_baru());
+                        binding.tvUlasanBaru.setText("" + response.body().getData().getUlasanSelesai());
+                        binding.tvPesananKomplain.setText("" + response.body().getData().getPesananKomplain());
+                        binding.tvPesananSelesai.setText("" + response.body().getData().getPesananSelesai());
+
+                    }
+                }
+            }
+
+            @Override
+            public void onFailure(Call<BaseResponse<PentingHariIniDto>> call, Throwable t) {
+                ProjectUtils.cancelDialog();
+                ProjectUtils.pauseProgressDialog();
+
+            }
+        });
     }
 
     public void getAllTerlaris() {
@@ -434,6 +457,7 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
                     if (flag) {
                         userDTO = new Gson().fromJson(response.getJSONObject("data").toString(), UserDTO.class);
                         prefrence.setParentUser(userDTO, Consts.USER_DTO);
+                        ProjectUtils.showLog("TAG", "  data --->" + new Gson().toJson(response.getJSONObject("data")));
 
 
                     }
@@ -467,7 +491,7 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
                 Consts.pass
         );
 
-        api.getArtikel().enqueue(new Callback<KhususUntukmuDto>() {
+        api.getArtikel("publik").enqueue(new Callback<KhususUntukmuDto>() {
             @Override
             public void onResponse(Call<KhususUntukmuDto> call, Response<KhususUntukmuDto> response) {
                 ProjectUtils.cancelDialog();

@@ -38,7 +38,7 @@ public class ActivityManageProfileRekeningBindingImpl extends ActivityManageProf
             , (android.widget.EditText) bindings[5]
             , (android.widget.ImageView) bindings[1]
             , (android.widget.ImageView) bindings[6]
-            , (android.widget.EditText) bindings[2]
+            , (android.widget.TextView) bindings[2]
             , (android.widget.EditText) bindings[4]
             , (android.widget.EditText) bindings[3]
             , (mehdi.sakout.fancybuttons.FancyButton) bindings[7]

@@ -11,7 +11,6 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.core.widget.NestedScrollView;
 import androidx.databinding.DataBindingUtil;
 import androidx.databinding.ViewDataBinding;
 import androidx.recyclerview.widget.RecyclerView;
@@ -21,6 +20,9 @@ import java.lang.Object;
 import mehdi.sakout.fancybuttons.FancyButton;
 
 public abstract class ActivityEditServiceBinding extends ViewDataBinding {
+  @NonNull
+  public final ImageView add;
+
   @NonNull
   public final LinearLayout appbar;
 
@@ -46,16 +48,17 @@ public abstract class ActivityEditServiceBinding extends ViewDataBinding {
   public final RecyclerView rvServiceItem;
 
   @NonNull
-  public final NestedScrollView scrollNested;
-
-  @NonNull
   public final EditText serviceName;
 
+  @NonNull
+  public final TextView tvDataProdukKoosong;
+
   protected ActivityEditServiceBinding(Object _bindingComponent, View _root, int _localFieldCount,
-      LinearLayout appbar, ImageView back, FancyButton btnSave, FrameLayout collapsing,
-      EditText des, ImageView ivBanner, TextView ivShopName, RecyclerView rvServiceItem,
-      NestedScrollView scrollNested, EditText serviceName) {
+      ImageView add, LinearLayout appbar, ImageView back, FancyButton btnSave,
+      FrameLayout collapsing, EditText des, ImageView ivBanner, TextView ivShopName,
+      RecyclerView rvServiceItem, EditText serviceName, TextView tvDataProdukKoosong) {
     super(_bindingComponent, _root, _localFieldCount);
+    this.add = add;
     this.appbar = appbar;
     this.back = back;
     this.btnSave = btnSave;
@@ -64,8 +67,8 @@ public abstract class ActivityEditServiceBinding extends ViewDataBinding {
     this.ivBanner = ivBanner;
     this.ivShopName = ivShopName;
     this.rvServiceItem = rvServiceItem;
-    this.scrollNested = scrollNested;
     this.serviceName = serviceName;
+    this.tvDataProdukKoosong = tvDataProdukKoosong;
   }
 
   @NonNull

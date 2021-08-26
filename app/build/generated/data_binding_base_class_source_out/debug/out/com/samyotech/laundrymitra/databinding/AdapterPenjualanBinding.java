@@ -28,16 +28,20 @@ public abstract class AdapterPenjualanBinding extends ViewDataBinding {
   public final FancyButton selengkapnya;
 
   @NonNull
+  public final TextView status;
+
+  @NonNull
   public final TextView totalPcs;
 
   protected AdapterPenjualanBinding(Object _bindingComponent, View _root, int _localFieldCount,
       FancyButton batalkan, TextView harga, TextView namaPenjualan, FancyButton selengkapnya,
-      TextView totalPcs) {
+      TextView status, TextView totalPcs) {
     super(_bindingComponent, _root, _localFieldCount);
     this.batalkan = batalkan;
     this.harga = harga;
     this.namaPenjualan = namaPenjualan;
     this.selengkapnya = selengkapnya;
+    this.status = status;
     this.totalPcs = totalPcs;
   }
 

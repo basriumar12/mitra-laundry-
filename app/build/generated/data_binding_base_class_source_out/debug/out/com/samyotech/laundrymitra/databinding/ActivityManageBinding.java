@@ -25,6 +25,9 @@ public abstract class ActivityManageBinding extends ViewDataBinding {
   public final LinearLayout ctGantiAlamat;
 
   @NonNull
+  public final LinearLayout ctOutletImage;
+
+  @NonNull
   public final LinearLayout ctRekening;
 
   @NonNull
@@ -36,18 +39,23 @@ public abstract class ActivityManageBinding extends ViewDataBinding {
   @NonNull
   public final LinearLayout ctvprofile;
 
+  @NonNull
+  public final LinearLayout ctvprofileMitra;
+
   protected ActivityManageBinding(Object _bindingComponent, View _root, int _localFieldCount,
       ImageView back, LinearLayout ctChatDanNotif, LinearLayout ctGantiAlamat,
-      LinearLayout ctRekening, LinearLayout ctWaktuOP, LinearLayout ctvChangePassword,
-      LinearLayout ctvprofile) {
+      LinearLayout ctOutletImage, LinearLayout ctRekening, LinearLayout ctWaktuOP,
+      LinearLayout ctvChangePassword, LinearLayout ctvprofile, LinearLayout ctvprofileMitra) {
     super(_bindingComponent, _root, _localFieldCount);
     this.back = back;
     this.ctChatDanNotif = ctChatDanNotif;
     this.ctGantiAlamat = ctGantiAlamat;
+    this.ctOutletImage = ctOutletImage;
     this.ctRekening = ctRekening;
     this.ctWaktuOP = ctWaktuOP;
     this.ctvChangePassword = ctvChangePassword;
     this.ctvprofile = ctvprofile;
+    this.ctvprofileMitra = ctvprofileMitra;
   }
 
   @NonNull

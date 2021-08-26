@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -22,6 +23,9 @@ public abstract class ActivityDetailKhususUntukmuBinding extends ViewDataBinding
   public final ImageView imgDetail;
 
   @NonNull
+  public final LinearLayout parentHeader;
+
+  @NonNull
   public final TextView tvDate;
 
   @NonNull
@@ -30,15 +34,20 @@ public abstract class ActivityDetailKhususUntukmuBinding extends ViewDataBinding
   @NonNull
   public final TextView tvTitle;
 
+  @NonNull
+  public final TextView tvTitleD;
+
   protected ActivityDetailKhususUntukmuBinding(Object _bindingComponent, View _root,
-      int _localFieldCount, ImageView back, ImageView imgDetail, TextView tvDate, TextView tvDesk,
-      TextView tvTitle) {
+      int _localFieldCount, ImageView back, ImageView imgDetail, LinearLayout parentHeader,
+      TextView tvDate, TextView tvDesk, TextView tvTitle, TextView tvTitleD) {
     super(_bindingComponent, _root, _localFieldCount);
     this.back = back;
     this.imgDetail = imgDetail;
+    this.parentHeader = parentHeader;
     this.tvDate = tvDate;
     this.tvDesk = tvDesk;
     this.tvTitle = tvTitle;
+    this.tvTitleD = tvTitleD;
   }
 
   @NonNull

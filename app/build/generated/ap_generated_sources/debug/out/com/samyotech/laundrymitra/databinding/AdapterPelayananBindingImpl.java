@@ -17,7 +17,8 @@ public class AdapterPelayananBindingImpl extends AdapterPelayananBinding  {
         sViewsWithIds.put(R.id.img_terlaris, 1);
         sViewsWithIds.put(R.id.nama_penjualan, 2);
         sViewsWithIds.put(R.id.status, 3);
-        sViewsWithIds.put(R.id.ubah, 4);
+        sViewsWithIds.put(R.id.selengkapnya, 4);
+        sViewsWithIds.put(R.id.ubah, 5);
     }
     // views
     @NonNull
@@ -28,14 +29,15 @@ public class AdapterPelayananBindingImpl extends AdapterPelayananBinding  {
     // Inverse Binding Event Handlers
 
     public AdapterPelayananBindingImpl(@Nullable androidx.databinding.DataBindingComponent bindingComponent, @NonNull View root) {
-        this(bindingComponent, root, mapBindings(bindingComponent, root, 5, sIncludes, sViewsWithIds));
+        this(bindingComponent, root, mapBindings(bindingComponent, root, 6, sIncludes, sViewsWithIds));
     }
     private AdapterPelayananBindingImpl(androidx.databinding.DataBindingComponent bindingComponent, View root, Object[] bindings) {
         super(bindingComponent, root, 0
             , (android.widget.ImageView) bindings[1]
             , (android.widget.TextView) bindings[2]
-            , (mehdi.sakout.fancybuttons.FancyButton) bindings[3]
             , (mehdi.sakout.fancybuttons.FancyButton) bindings[4]
+            , (mehdi.sakout.fancybuttons.FancyButton) bindings[3]
+            , (mehdi.sakout.fancybuttons.FancyButton) bindings[5]
             );
         this.mboundView0 = (androidx.cardview.widget.CardView) bindings[0];
         this.mboundView0.setTag(null);

@@ -5,10 +5,12 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.databinding.DataBindingUtil;
 import androidx.databinding.ViewDataBinding;
+import androidx.recyclerview.widget.RecyclerView;
 import com.samyotech.laundrymitra.R;
 import java.lang.Deprecated;
 import java.lang.Object;
@@ -17,10 +19,18 @@ public abstract class ActivityPusatEdukasiBinding extends ViewDataBinding {
   @NonNull
   public final ImageView back;
 
+  @NonNull
+  public final RecyclerView rvKhususUntukmu;
+
+  @NonNull
+  public final TextView tvKosong;
+
   protected ActivityPusatEdukasiBinding(Object _bindingComponent, View _root, int _localFieldCount,
-      ImageView back) {
+      ImageView back, RecyclerView rvKhususUntukmu, TextView tvKosong) {
     super(_bindingComponent, _root, _localFieldCount);
     this.back = back;
+    this.rvKhususUntukmu = rvKhususUntukmu;
+    this.tvKosong = tvKosong;
   }
 
   @NonNull

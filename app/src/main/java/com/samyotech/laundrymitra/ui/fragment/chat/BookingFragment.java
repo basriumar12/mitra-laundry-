@@ -111,6 +111,7 @@ public class BookingFragment extends Fragment {
                 ProjectUtils.pauseProgressDialog();
                 if (response.isSuccessful()) {
                     if (response.body().isStatus()) {
+                        binding.tvKosongChat.setText(response.body().getMessage());
                         binding.tvKosongChat.setVisibility(View.GONE);
                         linearLayoutManager = new LinearLayoutManager(getActivity(), LinearLayoutManager.VERTICAL, false);
                         binding.rvChat.setLayoutManager(linearLayoutManager);
@@ -122,6 +123,7 @@ public class BookingFragment extends Fragment {
                         binding.rvChat.addItemDecoration(dividerItemDecoration);
                     } else {
 
+                        binding.tvKosongChat.setText(response.body().getMessage());
                         binding.tvKosongChat.setVisibility(View.VISIBLE);
                     }
                 }

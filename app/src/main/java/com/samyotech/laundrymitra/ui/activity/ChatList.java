@@ -91,7 +91,7 @@ public class ChatList extends AppCompatActivity {
 
     public void getChat() {
         ProjectUtils.showProgressDialog(mContext, true, getResources().getString(R.string.please_wait));
-        new HttpsRequest(Consts.GETMESSAGEHISTORY, getBaseContext(), userDTO.getUser_id(), "").stringResendOTP(TAG, new Helper() {
+        new HttpsRequest(Consts.GETMESSAGEHISTORY, getBaseContext(), userDTO.getUser_id(), "").stringGetParamUserId(TAG, new Helper() {
             @Override
             public void backResponse(boolean flag, String msg, JSONObject response) {
                 ProjectUtils.pauseProgressDialog();
@@ -128,7 +128,7 @@ public class ChatList extends AppCompatActivity {
 
     public HashMap<String, String> getparm() {
         HashMap<String, String> parms = new HashMap<>();
-        parms.put(Consts.USER_ID, userDTO.getUser_id());
+        parms.put("user_id", userDTO.getUser_id());
         return parms;
     }
 

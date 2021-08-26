@@ -1,12 +1,14 @@
 package com.samyotech.laundrymitra.ui.adapter;
 
 import android.content.Context;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
 
+import com.google.gson.Gson;
 import com.samyotech.laundrymitra.R;
 import com.samyotech.laundrymitra.model.TicketCommentDTO;
 import com.samyotech.laundrymitra.model.UserDTO;
@@ -49,6 +51,7 @@ public class TicketChatAdapter extends BaseAdapter {
 
     @Override
     public View getView(int position, View view, ViewGroup parent) {
+        Log.e("TAG","isi tiket "+ticketCommentDTOSList.get(position).getMessage());
 
         //ViewHolder holder = new ViewHolder();
         TicketCommentDTO item = ticketCommentDTOSList.get(position);
@@ -75,6 +78,7 @@ public class TicketChatAdapter extends BaseAdapter {
         try {
             textViewTime.setText(ProjectUtils.convertTimestampToTime(ProjectUtils.correctTimestamp(Long.parseLong(item.getCreated_at()))));
         } catch (Exception e) {
+            Log.e("TAG","error adapter "+e.getMessage());
             e.printStackTrace();
         }
         return view;

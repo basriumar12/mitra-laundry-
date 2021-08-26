@@ -13,6 +13,8 @@ public class UlasanNewDto{
 	@SerializedName("image")
 	private String image;
 
+
+
 	@SerializedName("nama_layanan")
 	private String namaLayanan;
 

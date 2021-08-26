@@ -20,7 +20,7 @@ public class AdapterKhususBindingImpl extends AdapterKhususBinding  {
     }
     // views
     @NonNull
-    private final androidx.cardview.widget.CardView mboundView0;
+    private final android.widget.LinearLayout mboundView0;
     // variables
     // values
     // listeners
@@ -35,7 +35,7 @@ public class AdapterKhususBindingImpl extends AdapterKhususBinding  {
             , (android.widget.TextView) bindings[2]
             , (android.widget.TextView) bindings[3]
             );
-        this.mboundView0 = (androidx.cardview.widget.CardView) bindings[0];
+        this.mboundView0 = (android.widget.LinearLayout) bindings[0];
         this.mboundView0.setTag(null);
         setRootTag(root);
         // listeners

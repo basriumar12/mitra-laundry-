@@ -33,12 +33,7 @@ public class Dashboard extends AppCompatActivity {
     ActivityDashboardBinding binding;
     Fragment fragment;
     Context mContext;
-    HomeFragment homeFragment = new HomeFragment();
-    NearByFragment nearByFragment = new NearByFragment();
-    BookingFragment bookingFragment = new BookingFragment();
-    OffersFragment offersFragment = new OffersFragment();
-    ProfileFragment profileFragment = new ProfileFragment();
-    FragmentManager fragmentManager;
+
     SharedPrefrence prefrence;
     CurrencyDTO currencyDTO;
     private Location mylocation;

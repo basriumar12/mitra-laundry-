@@ -10,6 +10,7 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.appcompat.widget.LinearLayoutCompat;
 import androidx.databinding.DataBindingUtil;
 import androidx.databinding.ViewDataBinding;
 import androidx.recyclerview.widget.RecyclerView;
@@ -35,6 +36,9 @@ public abstract class ActivityDetailPenjualanBinding extends ViewDataBinding {
   public final FancyButton confirmBtn;
 
   @NonNull
+  public final FancyButton confirmBtnStatus;
+
+  @NonNull
   public final TextView dateTimeAntar;
 
   @NonNull
@@ -45,6 +49,9 @@ public abstract class ActivityDetailPenjualanBinding extends ViewDataBinding {
 
   @NonNull
   public final TextView headerTitle;
+
+  @NonNull
+  public final LinearLayoutCompat layoutParent;
 
   @NonNull
   public final TextView namaPemesan;
@@ -70,22 +77,28 @@ public abstract class ActivityDetailPenjualanBinding extends ViewDataBinding {
   @NonNull
   public final TextView totalPembayaran;
 
+  @NonNull
+  public final TextView tvStatus;
+
   protected ActivityDetailPenjualanBinding(Object _bindingComponent, View _root,
       int _localFieldCount, TextView addressAntar, TextView addressJemput, ImageView back,
-      LinearLayout cardRely, FancyButton confirmBtn, TextView dateTimeAntar,
-      TextView dateTimeJemput, TextView diskon, TextView headerTitle, TextView namaPemesan,
-      TextView namaPesanan, TextView noOrder, TextView pajak, RelativeLayout relayBackground,
-      RecyclerView rvDetailPenjualan, TextView subtotal, TextView totalPembayaran) {
+      LinearLayout cardRely, FancyButton confirmBtn, FancyButton confirmBtnStatus,
+      TextView dateTimeAntar, TextView dateTimeJemput, TextView diskon, TextView headerTitle,
+      LinearLayoutCompat layoutParent, TextView namaPemesan, TextView namaPesanan, TextView noOrder,
+      TextView pajak, RelativeLayout relayBackground, RecyclerView rvDetailPenjualan,
+      TextView subtotal, TextView totalPembayaran, TextView tvStatus) {
     super(_bindingComponent, _root, _localFieldCount);
     this.addressAntar = addressAntar;
     this.addressJemput = addressJemput;
     this.back = back;
     this.cardRely = cardRely;
     this.confirmBtn = confirmBtn;
+    this.confirmBtnStatus = confirmBtnStatus;
     this.dateTimeAntar = dateTimeAntar;
     this.dateTimeJemput = dateTimeJemput;
     this.diskon = diskon;
     this.headerTitle = headerTitle;
+    this.layoutParent = layoutParent;
     this.namaPemesan = namaPemesan;
     this.namaPesanan = namaPesanan;
     this.noOrder = noOrder;
@@ -94,6 +107,7 @@ public abstract class ActivityDetailPenjualanBinding extends ViewDataBinding {
     this.rvDetailPenjualan = rvDetailPenjualan;
     this.subtotal = subtotal;
     this.totalPembayaran = totalPembayaran;
+    this.tvStatus = tvStatus;
   }
 
   @NonNull

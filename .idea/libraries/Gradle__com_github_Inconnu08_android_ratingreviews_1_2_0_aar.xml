@@ -1,9 +1,9 @@
 <component name="libraryTable">
   <library name="Gradle: com.github.Inconnu08:android-ratingreviews:1.2.0@aar">
     <CLASSES>
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/4d47a2c870c78682a514a61076f307da/jetified-android-ratingreviews-1.2.0/jars/classes.jar!/" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/4d47a2c870c78682a514a61076f307da/jetified-android-ratingreviews-1.2.0/res" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/4d47a2c870c78682a514a61076f307da/jetified-android-ratingreviews-1.2.0/AndroidManifest.xml" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/473dd90582d8be030427b550901e7df2/jetified-android-ratingreviews-1.2.0/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/473dd90582d8be030427b550901e7df2/jetified-android-ratingreviews-1.2.0/AndroidManifest.xml" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/473dd90582d8be030427b550901e7df2/jetified-android-ratingreviews-1.2.0/jars/classes.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>

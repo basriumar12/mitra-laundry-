@@ -14,9 +14,9 @@
             android:orientation="vertical">
 
             <RelativeLayout
-                android:layout_marginBottom="@dimen/_6sdp"
                 android:layout_width="match_parent"
                 android:layout_height="?actionBarSize"
+                android:layout_marginBottom="@dimen/_6sdp"
                 android:background="@color/white">
 
                 <TextView
@@ -26,9 +26,9 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="@dimen/_12sdp"
                     android:layout_marginTop="@dimen/_10sdp"
+                    android:layout_marginBottom="@dimen/_4sdp"
                     android:layout_weight="1"
                     android:text="Home"
-                    android:layout_marginBottom="@dimen/_4sdp"
                     android:textColor="@color/colorPrimary"
                     android:textSize="20sp"
                     android:textStyle="bold"
@@ -37,13 +37,13 @@
 
                 <androidx.appcompat.widget.AppCompatImageView
                     android:id="@+id/ivSearch"
-                    android:visibility="gone"
                     android:layout_width="24dp"
                     android:layout_height="24dp"
                     android:layout_centerVertical="true"
                     android:layout_marginEnd="16dp"
                     android:layout_toLeftOf="@id/ivNotification"
                     android:src="@drawable/icon_search"
+                    android:visibility="gone"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toStartOf="@+id/ivNotification"
                     app:layout_constraintTop_toTopOf="parent" />
@@ -309,11 +309,11 @@
                     </LinearLayout>
 
                     <LinearLayout
-                        android:visibility="gone"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginVertical="8dp"
-                        android:gravity="bottom">
+                        android:gravity="bottom"
+                        android:visibility="gone">
 
                         <TextView
                             style="@style/TextAppearance.AppCompat.Subhead"
@@ -325,39 +325,40 @@
                             android:textStyle="bold" />
 
                         <TextView
-                            android:visibility="gone"
                             android:id="@+id/lihat_semua_laundry_terdekat"
                             style="@style/TextAppearance.AppCompat.Caption"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginEnd="2dp"
                             android:text="Lihat semua"
-                            android:textAlignment="textEnd" />
+                            android:textAlignment="textEnd"
+                            android:visibility="gone" />
 
                         <ImageView
-                            android:visibility="gone"
                             android:layout_width="14dp"
                             android:layout_height="14dp"
                             android:layout_marginBottom="2dp"
-                            android:src="@drawable/icon_next" />
+                            android:src="@drawable/icon_next"
+                            android:visibility="gone" />
                     </LinearLayout>
 
                     <TextView
-                        android:gravity="center"
-                        android:layout_marginTop="@dimen/_16sdp"
-                        android:visibility="gone"
+
                         android:id="@+id/tv_kosong_terlaris"
                         style="@style/TextAppearance.AppCompat.Caption"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_16sdp"
                         android:layout_marginEnd="2dp"
-                        android:text="Data Terlaris Kosong" />
+                        android:gravity="center"
+                        android:text="Data Terlaris Kosong"
+                        android:visibility="gone" />
 
                     <androidx.recyclerview.widget.RecyclerView
                         android:id="@+id/rv_terlaris"
-                        android:visibility="gone"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content" />
+                        android:layout_height="wrap_content"
+                        android:visibility="gone" />
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -377,54 +378,54 @@
                     </LinearLayout>
 
                     <TextView
-                        android:gravity="center"
-                        android:layout_marginTop="@dimen/_16sdp"
-                        android:visibility="gone"
                         android:id="@+id/tv_kosong_khusus"
                         style="@style/TextAppearance.AppCompat.Caption"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_16sdp"
                         android:layout_marginEnd="2dp"
-                        android:text="Data Khusus Untukmu Kosong" />
+                        android:gravity="center"
+                        android:text="Data Khusus Untukmu Kosong"
+                        android:visibility="gone" />
 
-                    <androidx.cardview.widget.CardView
-                        xmlns:android="http://schemas.android.com/apk/res/android"
+                    <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_margin="@dimen/_5sdp"
                         app:cardCornerRadius="@dimen/_5sdp"
                         app:cardElevation="@dimen/_5sdp">
+
                         <LinearLayout
-                            android:orientation="vertical"
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content">
-
-                    <androidx.recyclerview.widget.RecyclerView
-                        android:id="@+id/rv_khusus_untukmu"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:nestedScrollingEnabled="false" />
-
-
-
-                        <TextView
-                            android:layout_marginBottom="@dimen/_4sdp"
-                            android:layout_gravity="center"
-                            android:layout_marginTop="@dimen/_16sdp"
-                            android:visibility="gone"
-                            android:id="@+id/tv_selengkapnya"
-                            style="@style/TextAppearance.AppCompat.Caption"
-                            android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginEnd="2dp"
-                            android:textSize="14sp"
-                            android:drawableEnd="@drawable/icon_next"
-                            android:text="Selengkapnya" />
+                            android:orientation="vertical">
 
+                            <androidx.recyclerview.widget.RecyclerView
+                                android:id="@+id/rv_khusus_untukmu"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:nestedScrollingEnabled="false" />
+
+
+                            <TextView
+                                android:id="@+id/tv_selengkapnya"
+                                style="@style/TextAppearance.AppCompat.Caption"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_marginTop="@dimen/_16sdp"
+                                android:layout_marginEnd="2dp"
+                                android:layout_marginBottom="@dimen/_4sdp"
+                                android:drawableEnd="@drawable/icon_next"
+                                android:text="Selengkapnya"
+                                android:textSize="14sp"
+                                android:visibility="gone" />
 
 
                         </LinearLayout>
                     </androidx.cardview.widget.CardView>
+
+
                 </LinearLayout>
 
 

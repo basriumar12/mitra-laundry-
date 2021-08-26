@@ -129,7 +129,7 @@ public class ServicePenjualanActivity extends AppCompatActivity implements View.
                 Consts.username,
                 Consts.pass
         );
-        api.getLayanan(otherServiceData.getServiceId()).enqueue(new Callback<BaseResponse<List<LayananItemDto>>>() {
+        api.getLayanan(otherServiceData.getServiceId(),userDTO.getUser_id()).enqueue(new Callback<BaseResponse<List<LayananItemDto>>>() {
 
             @Override
             public void onResponse(Call<BaseResponse<List<LayananItemDto>>> call, Response<BaseResponse<List<LayananItemDto>>> response) {

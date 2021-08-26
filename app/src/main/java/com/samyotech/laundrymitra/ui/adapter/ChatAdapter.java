@@ -79,11 +79,16 @@ public class ChatAdapter extends BaseAdapter {
         } else {
             status.setText("");
         }
-        if (item.getType().equalsIgnoreCase("2")) {
-            media.setVisibility(View.VISIBLE);
-            Glide.with(mContext).load(Consts.BASE_URL + item.getMedia()).into(media);
-        } else {
-            media.setVisibility(View.GONE);
+
+        try {
+            if (item.getType().equalsIgnoreCase("2")) {
+                media.setVisibility(View.VISIBLE);
+                Glide.with(mContext).load(Consts.BASE_URL + item.getMedia()).into(media);
+            } else {
+                media.setVisibility(View.GONE);
+            }
+        } catch (NullPointerException e) {
+
         }
         textViewMessage.setText(item.getMessage());
 

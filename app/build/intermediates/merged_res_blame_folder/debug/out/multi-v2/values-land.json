@@ -4,7 +4,7 @@
             "outputFile": "/Users/macbook/Desktop/frelance/tokoweb/mitra-new/mitra-laundry-/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-land/values-land.xml",
             "map": [
                 {
-                    "source": "/Users/macbook/.gradle/caches/transforms-2/files-2.1/a5cff7bfc7703b066da0df080b168981/jetified-bottomsheet-1.4.0/res/values-land/values-land.xml",
+                    "source": "/Users/macbook/.gradle/caches/transforms-2/files-2.1/61a1a70a1468c85579f3056589f35d97/jetified-bottomsheet-1.4.0/res/values-land/values-land.xml",
                     "from": {
                         "startLines": "2,3,4",
                         "startColumns": "4,4,4",
@@ -21,7 +21,7 @@
                     }
                 },
                 {
-                    "source": "/Users/macbook/.gradle/caches/transforms-2/files-2.1/534b0b60cdeb6351839eea92c91ee473/appcompat-1.2.0/res/values-land/values-land.xml",
+                    "source": "/Users/macbook/.gradle/caches/transforms-2/files-2.1/7ae4476aa7a9d0f75860bba58f4ef57c/appcompat-1.2.0/res/values-land/values-land.xml",
                     "from": {
                         "startLines": "2,3,4",
                         "startColumns": "4,4,4",
@@ -31,7 +31,7 @@
                     }
                 },
                 {
-                    "source": "/Users/macbook/.gradle/caches/transforms-2/files-2.1/22981d4cdf71825cb5a7a5ec96c4acd6/material-1.2.1/res/values-land/values-land.xml",
+                    "source": "/Users/macbook/.gradle/caches/transforms-2/files-2.1/f1a2be3786dfcc4cfaca8a457104b699/material-1.2.1/res/values-land/values-land.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,24,30",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",

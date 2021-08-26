@@ -6,6 +6,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.databinding.DataBindingUtil;
@@ -26,7 +27,7 @@ public abstract class ActivityManageProfileRekeningBinding extends ViewDataBindi
   public final ImageView location;
 
   @NonNull
-  public final EditText namaBank;
+  public final TextView namaBank;
 
   @NonNull
   public final EditText namaRekening;
@@ -38,7 +39,7 @@ public abstract class ActivityManageProfileRekeningBinding extends ViewDataBindi
   public final FancyButton simpan;
 
   protected ActivityManageProfileRekeningBinding(Object _bindingComponent, View _root,
-      int _localFieldCount, EditText alamat, ImageView back, ImageView location, EditText namaBank,
+      int _localFieldCount, EditText alamat, ImageView back, ImageView location, TextView namaBank,
       EditText namaRekening, EditText nomorRekening, FancyButton simpan) {
     super(_bindingComponent, _root, _localFieldCount);
     this.alamat = alamat;

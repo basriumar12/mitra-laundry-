@@ -7,8 +7,8 @@ public class ChatListDTO implements Serializable {
 
     String message_head_id = "";
     String updated_at = "";
-    String message = "";
-    String user_name = "";
+    String pesan_terakhir = "";
+    String customer_name = "";
     String user_id = "";
     String user_image = "";
 
@@ -28,20 +28,20 @@ public class ChatListDTO implements Serializable {
         this.updated_at = updated_at;
     }
 
-    public String getMessage() {
-        return message;
+    public String getPesan_terakhir() {
+        return pesan_terakhir;
     }
 
-    public void setMessage(String message) {
-        this.message = message;
+    public void setPesan_terakhir(String pesan_terakhir) {
+        this.pesan_terakhir = pesan_terakhir;
     }
 
-    public String getUser_name() {
-        return user_name;
+    public String getCustomer_name() {
+        return customer_name;
     }
 
-    public void setUser_name(String user_name) {
-        this.user_name = user_name;
+    public void setCustomer_name(String customer_name) {
+        this.customer_name = customer_name;
     }
 
     public String getUser_id() {

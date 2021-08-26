@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.Switch;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -20,21 +21,102 @@ public abstract class ActivityManageProfileOperasionalBinding extends ViewDataBi
   public final ImageView back;
 
   @NonNull
+  public final Switch jumat;
+
+  @NonNull
+  public final Switch kamis;
+
+  @NonNull
+  public final Switch minggu;
+
+  @NonNull
+  public final Switch rabu;
+
+  @NonNull
+  public final Switch sabtu;
+
+  @NonNull
+  public final Switch selasa;
+
+  @NonNull
+  public final Switch senin;
+
+  @NonNull
   public final FancyButton simpan;
 
   @NonNull
-  public final TextView tvBuka;
+  public final TextView tvBukaJumat;
 
   @NonNull
-  public final TextView tvTutup;
+  public final TextView tvBukaKamis;
+
+  @NonNull
+  public final TextView tvBukaMinggu;
+
+  @NonNull
+  public final TextView tvBukaRabu;
+
+  @NonNull
+  public final TextView tvBukaSabtu;
+
+  @NonNull
+  public final TextView tvBukaSelasa;
+
+  @NonNull
+  public final TextView tvBukaSenin;
+
+  @NonNull
+  public final TextView tvTutupJumat;
+
+  @NonNull
+  public final TextView tvTutupKamis;
+
+  @NonNull
+  public final TextView tvTutupMinggu;
+
+  @NonNull
+  public final TextView tvTutupRabu;
+
+  @NonNull
+  public final TextView tvTutupSabtu;
+
+  @NonNull
+  public final TextView tvTutupSelasa;
+
+  @NonNull
+  public final TextView tvTutupSenin;
 
   protected ActivityManageProfileOperasionalBinding(Object _bindingComponent, View _root,
-      int _localFieldCount, ImageView back, FancyButton simpan, TextView tvBuka, TextView tvTutup) {
+      int _localFieldCount, ImageView back, Switch jumat, Switch kamis, Switch minggu, Switch rabu,
+      Switch sabtu, Switch selasa, Switch senin, FancyButton simpan, TextView tvBukaJumat,
+      TextView tvBukaKamis, TextView tvBukaMinggu, TextView tvBukaRabu, TextView tvBukaSabtu,
+      TextView tvBukaSelasa, TextView tvBukaSenin, TextView tvTutupJumat, TextView tvTutupKamis,
+      TextView tvTutupMinggu, TextView tvTutupRabu, TextView tvTutupSabtu, TextView tvTutupSelasa,
+      TextView tvTutupSenin) {
     super(_bindingComponent, _root, _localFieldCount);
     this.back = back;
+    this.jumat = jumat;
+    this.kamis = kamis;
+    this.minggu = minggu;
+    this.rabu = rabu;
+    this.sabtu = sabtu;
+    this.selasa = selasa;
+    this.senin = senin;
     this.simpan = simpan;
-    this.tvBuka = tvBuka;
-    this.tvTutup = tvTutup;
+    this.tvBukaJumat = tvBukaJumat;
+    this.tvBukaKamis = tvBukaKamis;
+    this.tvBukaMinggu = tvBukaMinggu;
+    this.tvBukaRabu = tvBukaRabu;
+    this.tvBukaSabtu = tvBukaSabtu;
+    this.tvBukaSelasa = tvBukaSelasa;
+    this.tvBukaSenin = tvBukaSenin;
+    this.tvTutupJumat = tvTutupJumat;
+    this.tvTutupKamis = tvTutupKamis;
+    this.tvTutupMinggu = tvTutupMinggu;
+    this.tvTutupRabu = tvTutupRabu;
+    this.tvTutupSabtu = tvTutupSabtu;
+    this.tvTutupSelasa = tvTutupSelasa;
+    this.tvTutupSenin = tvTutupSenin;
   }
 
   @NonNull

@@ -79,6 +79,7 @@
                                 android:src="@drawable/icon_next" />
                         </LinearLayout>
                         <LinearLayout
+                            android:visibility="gone"
                             android:id="@+id/ctvprofileMitra"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
@@ -188,6 +189,28 @@
                                 android:layout_weight="1"
                                 android:gravity="center_vertical"
                                 android:text="Rekening Bank"
+                                android:textColor="@color/black" />
+
+                            <ImageView
+                                android:layout_width="48dp"
+                                android:layout_height="48dp"
+                                android:padding="18dp"
+                                android:src="@drawable/icon_next" />
+                        </LinearLayout>
+ <LinearLayout
+                            android:id="@+id/ctOutletImage"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="?selectableItemBackground"
+                            android:gravity="center_vertical">
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_marginStart="@dimen/_16sdp"
+                                android:layout_weight="1"
+                                android:gravity="center_vertical"
+                                android:text="Image Outlet"
                                 android:textColor="@color/black" />
 
                             <ImageView

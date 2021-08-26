@@ -35,14 +35,32 @@
         android:layout_height="match_parent"
         android:layout_above="@+id/linearLayoutFooter"
         android:layout_below="@+id/header_container">
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
 
-        <ListView
-            android:id="@+id/lvComment"
+        <TextView
+            android:id="@+id/tv_kosong"
+            style="@style/TextAppearance.AppCompat.Subhead"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginRight="48dp"
+            android:gravity="center"
+            android:text="Data kosong"
+            android:visibility="gone"
+            android:textColor="@color/black"
+            android:textStyle="bold" />
+        <ListView
+            android:id="@+id/lvCommentt"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
             android:divider="@null"
             android:fastScrollEnabled="false"
             android:padding="16dp" />
+        </LinearLayout>
+
+
 
     </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
 

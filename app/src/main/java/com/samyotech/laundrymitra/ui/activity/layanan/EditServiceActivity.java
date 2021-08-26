@@ -14,12 +14,13 @@ import android.text.TextWatcher;
 import android.util.Log;
 import android.view.View;
 import android.widget.LinearLayout;
+import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.samyotech.laundrymitra.R;
-import com.samyotech.laundrymitra.databinding.ActivityDetailPenjualanBinding;
 import com.samyotech.laundrymitra.databinding.ActivityEditServiceBinding;
 import com.samyotech.laundrymitra.interfaces.Consts;
+import com.samyotech.laundrymitra.model.UserDTO;
 import com.samyotech.laundrymitra.model.base.BaseResponse;
 import com.samyotech.laundrymitra.model.layanan.LayananItemDto;
 import com.samyotech.laundrymitra.model.layanan.ServiceItemDto;
@@ -27,6 +28,7 @@ import com.samyotech.laundrymitra.model.penjualan.DetailPenjualanDto;
 import com.samyotech.laundrymitra.model.penjualan.DetailPenjualanList;
 import com.samyotech.laundrymitra.network.ApiInterface;
 import com.samyotech.laundrymitra.network.ServiceGenerator;
+import com.samyotech.laundrymitra.preferences.SharedPrefrence;
 import com.samyotech.laundrymitra.ui.activity.penjualan.DetailPenjualanActivity;
 import com.samyotech.laundrymitra.ui.adapter.layanan.LayananItemAdapter;
 import com.samyotech.laundrymitra.ui.adapter.penjualan.DetailPenjualanAdapter;
@@ -48,19 +50,51 @@ public class EditServiceActivity extends AppCompatActivity {
     ServiceItemDto serviceItemDto;
     LayananItemAdapter layananItemAdapter;
 
+    UserDTO userDTO;
+    private SharedPrefrence prefrence;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         binding = DataBindingUtil.setContentView(this, R.layout.activity_edit_service);
         mContext = EditServiceActivity.this;
+
+        prefrence = SharedPrefrence.getInstance(this);
+        userDTO = prefrence.getParentUser(Consts.USER_DTO);
         serviceId = getIntent().getStringExtra("ServiceId");
         getDetailLayananData();
         getLayananItem();
         binding.btnSave.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                updateDataLayanan();
+
+                if (userDTO.getPremium().equals("0")) {
+                    Toast.makeText(EditServiceActivity.this, "Hanya bisa di akses oleh User Premium", Toast.LENGTH_SHORT).show();
+
+                }
+                if (userDTO.getPremium().equals("1")) {
+                    updateDataLayanan();
+                }
+            }
+        });
+
+        binding.add.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                if (userDTO.getPremium().equals("0")) {
+                    Toast.makeText(EditServiceActivity.this, "Hanya bisa di akses oleh User Premium", Toast.LENGTH_SHORT).show();
+
+                }
+                if (userDTO.getPremium().equals("1")) {
+                   startActivity(new Intent(EditServiceActivity.this, DetailAddLayananItemActivity.class));
+                }
+            }
+        });
+        binding.back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
             }
         });
     }
@@ -117,18 +151,25 @@ public class EditServiceActivity extends AppCompatActivity {
                 Consts.username,
                 Consts.pass
         );
-        api.getLayanan(serviceId).enqueue(new Callback<BaseResponse<List<LayananItemDto>>>() {
+        api.getLayanan(serviceId,userDTO.getUser_id()).enqueue(new Callback<BaseResponse<List<LayananItemDto>>>() {
 
             @Override
             public void onResponse(Call<BaseResponse<List<LayananItemDto>>> call, Response<BaseResponse<List<LayananItemDto>>> response) {
                 if (response.isSuccessful()) {
                     progressDialog.dismiss();
                     if (response.body().isStatus()) {
-                        linearLayoutManager = new LinearLayoutManager(mContext,LinearLayoutManager.VERTICAL,false);
+                        linearLayoutManager = new LinearLayoutManager(mContext, LinearLayoutManager.VERTICAL, false);
                         binding.rvServiceItem.setLayoutManager(linearLayoutManager);
-                        layananItemAdapter = new LayananItemAdapter(mContext, (ArrayList<LayananItemDto>) response.body().getData(),EditServiceActivity.this);
+                        layananItemAdapter = new LayananItemAdapter(mContext, (ArrayList<LayananItemDto>) response.body().getData(), EditServiceActivity.this);
                         binding.rvServiceItem.setAdapter(layananItemAdapter);
+
+                        if (response.body().getData().isEmpty()){
+
+                            binding.tvDataProdukKoosong.setVisibility(View.VISIBLE);
+                        }
                     } else {
+
+                        binding.tvDataProdukKoosong.setVisibility(View.VISIBLE);
 
                     }
                 }
@@ -155,9 +196,9 @@ public class EditServiceActivity extends AppCompatActivity {
                 Consts.pass
         );
         HashMap<String, String> body = new HashMap<String, String>();
-        body.put("service_id",serviceId);
-        body.put("service_name",binding.serviceName.getText().toString());
-        body.put("description",binding.des.getText().toString());
+        body.put("service_id", serviceId);
+        body.put("service_name", binding.serviceName.getText().toString());
+        body.put("description", binding.des.getText().toString());
         api.postDataLayanan(body).enqueue(new Callback<BaseResponse<ServiceItemDto>>() {
 
             @Override

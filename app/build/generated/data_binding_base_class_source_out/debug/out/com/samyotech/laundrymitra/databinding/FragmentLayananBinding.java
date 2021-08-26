@@ -36,9 +36,13 @@ public abstract class FragmentLayananBinding extends ViewDataBinding {
   @NonNull
   public final RecyclerView rvBooking;
 
+  @NonNull
+  public final TextView tvKosong;
+
   protected FragmentLayananBinding(Object _bindingComponent, View _root, int _localFieldCount,
       EditText cetSearch, TextView headerTitle, AppCompatImageView ivNotification,
-      AppCompatImageView ivSearch, ConstraintLayout relayTop, RecyclerView rvBooking) {
+      AppCompatImageView ivSearch, ConstraintLayout relayTop, RecyclerView rvBooking,
+      TextView tvKosong) {
     super(_bindingComponent, _root, _localFieldCount);
     this.cetSearch = cetSearch;
     this.headerTitle = headerTitle;
@@ -46,6 +50,7 @@ public abstract class FragmentLayananBinding extends ViewDataBinding {
     this.ivSearch = ivSearch;
     this.relayTop = relayTop;
     this.rvBooking = rvBooking;
+    this.tvKosong = tvKosong;
   }
 
   @NonNull

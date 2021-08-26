@@ -38,75 +38,545 @@
                     android:textStyle="bold" />
             </LinearLayout>
 
-            <LinearLayout
+            <ScrollView
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:padding="16dp">
+                android:layout_height="wrap_content">
 
-                <TextView
-                    style="@style/TextAppearance.AppCompat.Body2"
+                <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Waktu Operasional Laundry"
-                    android:textColor="@color/black" />
+                    android:orientation="vertical">
 
-                <androidx.appcompat.widget.LinearLayoutCompat
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/_8sdp"
-                    android:orientation="horizontal">
-
-                    <TextView
-                        android:id="@+id/tv_buka"
-                        style="@style/TextAppearance.AppCompat.Body1"
+                    <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_margin="@dimen/_2sdp"
-                        android:layout_weight="1"
-                        android:background="#f2f2f2"
-                        android:drawableRight="@drawable/icon_next"
-                        android:padding="@dimen/_4sdp"
-                        android:hint="Jam Buka"
-                        android:textColor="@color/black"
-                        android:textSize="16sp"
+                        android:orientation="vertical"
+                        android:padding="10dp">
 
-                        />
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
 
-                    <TextView
-                        android:id="@+id/tv_tutup"
-                        style="@style/TextAppearance.AppCompat.Body1"
+                            <TextView
+                                style="@style/TextAppearance.AppCompat.Body2"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Senin"
+                                android:textColor="@color/black" />
+
+                            <Switch
+
+                                android:id="@+id/senin"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentRight="true"
+                                tools:ignore="UseSwitchCompatOrMaterialXml" />
+                        </RelativeLayout>
+
+
+                        <androidx.appcompat.widget.LinearLayoutCompat
+
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/tv_buka_senin"
+                                style="@style/TextAppearance.AppCompat.Body1"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="@dimen/_2sdp"
+                                android:layout_weight="1"
+                                android:background="#f2f2f2"
+                                android:drawableRight="@drawable/icon_next"
+                                android:hint="Jam Buka"
+                                android:text="08:00"
+                                android:padding="@dimen/_4sdp"
+                                android:textColor="@color/black"
+                                android:textSize="16sp"
+
+                                />
+
+                            <TextView
+                                android:id="@+id/tv_tutup_senin"
+                                style="@style/TextAppearance.AppCompat.Body1"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="@dimen/_2sdp"
+                                android:layout_weight="1"
+                                android:background="#f2f2f2"
+                                android:drawableRight="@drawable/icon_next"
+                                android:hint="Jam Tutup"
+                                android:padding="@dimen/_4sdp"
+                                android:text="08:00"
+                                android:textColor="@color/black"
+                                android:textSize="16sp" />
+
+
+                        </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+
+
+                    </LinearLayout>
+
+                    <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_margin="@dimen/_2sdp"
-                        android:layout_weight="1"
-                        android:background="#f2f2f2"
-                        android:drawableRight="@drawable/icon_next"
-                        android:padding="@dimen/_4sdp"
-                        android:hint="Jam Tutup"
-                        android:textColor="@color/black"
-                        android:textSize="16sp" />
+                        android:orientation="vertical"
+                        android:padding="10dp">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                style="@style/TextAppearance.AppCompat.Body2"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Selasa"
+                                android:textColor="@color/black" />
+
+                            <Switch
+
+                                android:id="@+id/selasa"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentRight="true"
+                                tools:ignore="UseSwitchCompatOrMaterialXml" />
+                        </RelativeLayout>
 
 
-                </androidx.appcompat.widget.LinearLayoutCompat>
+                        <androidx.appcompat.widget.LinearLayoutCompat
+
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/tv_buka_selasa"
+                                style="@style/TextAppearance.AppCompat.Body1"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="@dimen/_2sdp"
+                                android:layout_weight="1"
+                                android:background="#f2f2f2"
+                                android:drawableRight="@drawable/icon_next"
+                                android:hint="Jam Buka"
+                                android:text="08:00"
+                                android:padding="@dimen/_4sdp"
+                                android:textColor="@color/black"
+                                android:textSize="16sp"
+
+                                />
+
+                            <TextView
+                                android:id="@+id/tv_tutup_selasa"
+                                style="@style/TextAppearance.AppCompat.Body1"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="@dimen/_2sdp"
+                                android:layout_weight="1"
+                                android:background="#f2f2f2"
+                                android:text="08:00"
+                                android:drawableRight="@drawable/icon_next"
+                                android:hint="Jam Tutup"
+                                android:padding="@dimen/_4sdp"
+                                android:textColor="@color/black"
+                                android:textSize="16sp" />
 
 
-                <mehdi.sakout.fancybuttons.FancyButton
-                    android:id="@+id/simpan"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="end"
-                    android:layout_marginTop="16dp"
-                    android:paddingHorizontal="18dp"
-                    android:paddingVertical="6dp"
-                    app:fb_defaultColor="@color/colorPrimary"
-                    app:fb_focusColor="@color/colorPrimary"
-                    app:fb_iconPosition="left"
-                    app:fb_radius="16dp"
-                    app:fb_text="Simpan"
-                    app:fb_textColor="@color/white" />
+                        </androidx.appcompat.widget.LinearLayoutCompat>
 
-            </LinearLayout>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="10dp">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                style="@style/TextAppearance.AppCompat.Body2"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Rabu"
+                                android:textColor="@color/black" />
+
+                            <Switch
+
+                                android:id="@+id/rabu"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentRight="true"
+                                tools:ignore="UseSwitchCompatOrMaterialXml" />
+                        </RelativeLayout>
+
+
+                        <androidx.appcompat.widget.LinearLayoutCompat
+
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/tv_buka_rabu"
+                                style="@style/TextAppearance.AppCompat.Body1"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="@dimen/_2sdp"
+                                android:layout_weight="1"
+                                android:background="#f2f2f2"
+                                android:drawableRight="@drawable/icon_next"
+                                android:hint="Jam Buka"
+                                android:text="08:00"
+                                android:padding="@dimen/_4sdp"
+                                android:textColor="@color/black"
+                                android:textSize="16sp"
+
+                                />
+
+                            <TextView
+                                android:id="@+id/tv_tutup_rabu"
+                                style="@style/TextAppearance.AppCompat.Body1"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="@dimen/_2sdp"
+                                android:layout_weight="1"
+                                android:background="#f2f2f2"
+                                android:drawableRight="@drawable/icon_next"
+                                android:hint="Jam Tutup"
+                                android:text="08:00"
+                                android:padding="@dimen/_4sdp"
+                                android:textColor="@color/black"
+                                android:textSize="16sp" />
+
+
+                        </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+                    </LinearLayout>
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="10dp">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                style="@style/TextAppearance.AppCompat.Body2"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Kamis"
+                                android:textColor="@color/black" />
+
+                            <Switch
+
+                                android:id="@+id/kamis"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentRight="true"
+                                tools:ignore="UseSwitchCompatOrMaterialXml" />
+                        </RelativeLayout>
+
+
+                        <androidx.appcompat.widget.LinearLayoutCompat
+
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/tv_buka_kamis"
+                                style="@style/TextAppearance.AppCompat.Body1"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="@dimen/_2sdp"
+                                android:layout_weight="1"
+                                android:background="#f2f2f2"
+                                android:drawableRight="@drawable/icon_next"
+                                android:hint="Jam Buka"
+                                android:text="08:00"
+                                android:padding="@dimen/_4sdp"
+                                android:textColor="@color/black"
+                                android:textSize="16sp"
+
+                                />
+
+                            <TextView
+                                android:id="@+id/tv_tutup_kamis"
+                                style="@style/TextAppearance.AppCompat.Body1"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="@dimen/_2sdp"
+                                android:layout_weight="1"
+                                android:background="#f2f2f2"
+                                android:drawableRight="@drawable/icon_next"
+                                android:hint="Jam Tutup"
+                                android:text="08:00"
+                                android:padding="@dimen/_4sdp"
+                                android:textColor="@color/black"
+                                android:textSize="16sp" />
+
+
+                        </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+                    </LinearLayout>
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="10dp">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                style="@style/TextAppearance.AppCompat.Body2"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Jumat"
+                                android:textColor="@color/black" />
+
+                            <Switch
+
+                                android:id="@+id/jumat"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentRight="true"
+                                tools:ignore="UseSwitchCompatOrMaterialXml" />
+                        </RelativeLayout>
+
+
+                        <androidx.appcompat.widget.LinearLayoutCompat
+
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/tv_buka_jumat"
+                                style="@style/TextAppearance.AppCompat.Body1"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="@dimen/_2sdp"
+                                android:layout_weight="1"
+                                android:background="#f2f2f2"
+                                android:drawableRight="@drawable/icon_next"
+                                android:hint="Jam Buka"
+                                android:text="08:00"
+                                android:padding="@dimen/_4sdp"
+                                android:textColor="@color/black"
+                                android:textSize="16sp"
+
+                                />
+
+                            <TextView
+                                android:id="@+id/tv_tutup_jumat"
+                                style="@style/TextAppearance.AppCompat.Body1"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="@dimen/_2sdp"
+                                android:layout_weight="1"
+                                android:background="#f2f2f2"
+                                android:drawableRight="@drawable/icon_next"
+                                android:hint="Jam Tutup"
+                                android:text="08:00"
+                                android:padding="@dimen/_4sdp"
+                                android:textColor="@color/black"
+                                android:textSize="16sp" />
+
+
+                        </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+                    </LinearLayout>
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="10dp">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                style="@style/TextAppearance.AppCompat.Body2"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Sabtu"
+                                android:textColor="@color/black" />
+
+                            <Switch
+
+                                android:id="@+id/sabtu"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentRight="true"
+                                tools:ignore="UseSwitchCompatOrMaterialXml" />
+                        </RelativeLayout>
+
+
+                        <androidx.appcompat.widget.LinearLayoutCompat
+
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/tv_buka_sabtu"
+                                style="@style/TextAppearance.AppCompat.Body1"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="@dimen/_2sdp"
+                                android:layout_weight="1"
+                                android:background="#f2f2f2"
+                                android:drawableRight="@drawable/icon_next"
+                                android:hint="Jam Buka"
+                                android:text="08:00"
+                                android:padding="@dimen/_4sdp"
+                                android:textColor="@color/black"
+                                android:textSize="16sp"
+
+                                />
+
+                            <TextView
+                                android:id="@+id/tv_tutup_sabtu"
+                                style="@style/TextAppearance.AppCompat.Body1"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="@dimen/_2sdp"
+                                android:layout_weight="1"
+                                android:background="#f2f2f2"
+                                android:drawableRight="@drawable/icon_next"
+                                android:hint="Jam Tutup"
+                                android:text="08:00"
+                                android:padding="@dimen/_4sdp"
+                                android:textColor="@color/black"
+                                android:textSize="16sp" />
+
+
+                        </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+                    </LinearLayout>
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="10dp">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                style="@style/TextAppearance.AppCompat.Body2"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Minggu"
+                                android:textColor="@color/black" />
+
+                            <Switch
+
+                                android:id="@+id/minggu"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentRight="true"
+                                tools:ignore="UseSwitchCompatOrMaterialXml" />
+                        </RelativeLayout>
+
+
+                        <androidx.appcompat.widget.LinearLayoutCompat
+
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/tv_buka_minggu"
+                                style="@style/TextAppearance.AppCompat.Body1"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="@dimen/_2sdp"
+                                android:layout_weight="1"
+                                android:background="#f2f2f2"
+                                android:drawableRight="@drawable/icon_next"
+                                android:hint="Jam Buka"
+                                android:padding="@dimen/_4sdp"
+                                android:textColor="@color/black"
+                                android:textSize="16sp"
+                                android:text="08:00"
+
+                                />
+
+                            <TextView
+                                android:id="@+id/tv_tutup_minggu"
+                                style="@style/TextAppearance.AppCompat.Body1"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="@dimen/_2sdp"
+                                android:layout_weight="1"
+                                android:background="#f2f2f2"
+                                android:drawableRight="@drawable/icon_next"
+                                android:hint="Jam Tutup"
+                                android:text="08:00"
+                                android:padding="@dimen/_4sdp"
+                                android:textColor="@color/black"
+                                android:textSize="16sp" />
+
+
+                        </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+                    </LinearLayout>
+
+                    <mehdi.sakout.fancybuttons.FancyButton
+                        android:layout_marginEnd="@dimen/_8sdp"
+                        android:id="@+id/simpan"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="end"
+                        android:layout_marginTop="16dp"
+                        android:paddingHorizontal="18dp"
+                        android:paddingVertical="6dp"
+                        android:visibility="visible"
+                        app:fb_defaultColor="@color/colorPrimary"
+                        app:fb_focusColor="@color/colorPrimary"
+                        app:fb_iconPosition="left"
+                        app:fb_radius="16dp"
+                        app:fb_text="Simpan"
+                        app:fb_textColor="@color/white" />
+
+                </LinearLayout>
+
+            </ScrollView>
 
 
         </LinearLayout>

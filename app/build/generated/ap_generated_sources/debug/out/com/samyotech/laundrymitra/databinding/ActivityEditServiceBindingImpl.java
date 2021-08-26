@@ -19,37 +19,39 @@ public class ActivityEditServiceBindingImpl extends ActivityEditServiceBinding  
         sViewsWithIds.put(R.id.ivBanner, 3);
         sViewsWithIds.put(R.id.back, 4);
         sViewsWithIds.put(R.id.ivShopName, 5);
-        sViewsWithIds.put(R.id.scrollNested, 6);
+        sViewsWithIds.put(R.id.add, 6);
         sViewsWithIds.put(R.id.des, 7);
         sViewsWithIds.put(R.id.serviceName, 8);
         sViewsWithIds.put(R.id.rvServiceItem, 9);
-        sViewsWithIds.put(R.id.btnSave, 10);
+        sViewsWithIds.put(R.id.tv_data_produk_koosong, 10);
+        sViewsWithIds.put(R.id.btnSave, 11);
     }
     // views
     @NonNull
-    private final android.widget.LinearLayout mboundView0;
+    private final android.widget.ScrollView mboundView0;
     // variables
     // values
     // listeners
     // Inverse Binding Event Handlers
 
     public ActivityEditServiceBindingImpl(@Nullable androidx.databinding.DataBindingComponent bindingComponent, @NonNull View root) {
-        this(bindingComponent, root, mapBindings(bindingComponent, root, 11, sIncludes, sViewsWithIds));
+        this(bindingComponent, root, mapBindings(bindingComponent, root, 12, sIncludes, sViewsWithIds));
     }
     private ActivityEditServiceBindingImpl(androidx.databinding.DataBindingComponent bindingComponent, View root, Object[] bindings) {
         super(bindingComponent, root, 0
+            , (android.widget.ImageView) bindings[6]
             , (android.widget.LinearLayout) bindings[1]
             , (android.widget.ImageView) bindings[4]
-            , (mehdi.sakout.fancybuttons.FancyButton) bindings[10]
+            , (mehdi.sakout.fancybuttons.FancyButton) bindings[11]
             , (android.widget.FrameLayout) bindings[2]
             , (android.widget.EditText) bindings[7]
             , (android.widget.ImageView) bindings[3]
             , (android.widget.TextView) bindings[5]
             , (androidx.recyclerview.widget.RecyclerView) bindings[9]
-            , (androidx.core.widget.NestedScrollView) bindings[6]
             , (android.widget.EditText) bindings[8]
+            , (android.widget.TextView) bindings[10]
             );
-        this.mboundView0 = (android.widget.LinearLayout) bindings[0];
+        this.mboundView0 = (android.widget.ScrollView) bindings[0];
         this.mboundView0.setTag(null);
         setRootTag(root);
         // listeners

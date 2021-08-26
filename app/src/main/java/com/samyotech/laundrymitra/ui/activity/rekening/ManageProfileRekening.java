@@ -7,32 +7,52 @@ import android.location.Geocoder;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.view.Window;
+import android.widget.LinearLayout;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
+import com.google.android.material.bottomsheet.BottomSheetDialog;
 import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
 import com.samyotech.laundrymitra.R;
 import com.samyotech.laundrymitra.databinding.ActivityManageProfileBinding;
 import com.samyotech.laundrymitra.databinding.ActivityManageProfileRekeningBinding;
 import com.samyotech.laundrymitra.https.HttpsRequest;
 import com.samyotech.laundrymitra.interfaces.Consts;
 import com.samyotech.laundrymitra.interfaces.Helper;
+import com.samyotech.laundrymitra.model.ServicesDTO;
 import com.samyotech.laundrymitra.model.UserDTO;
+import com.samyotech.laundrymitra.model.home.KhususUntukmuListDto;
+import com.samyotech.laundrymitra.model.rekening.DaftarRekeningDto;
+import com.samyotech.laundrymitra.network.ApiInterface;
 import com.samyotech.laundrymitra.network.NetworkManager;
+import com.samyotech.laundrymitra.network.ServiceGenerator;
+import com.samyotech.laundrymitra.network.ServiceGeneratorDaftarRekening;
 import com.samyotech.laundrymitra.preferences.SharedPrefrence;
 import com.samyotech.laundrymitra.ui.activity.Dashboard;
+import com.samyotech.laundrymitra.ui.adapter.rekening.BankAdapter;
 import com.samyotech.laundrymitra.utils.ProjectUtils;
 import com.schibstedspain.leku.LocationPickerActivity;
 
+import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.lang.reflect.Type;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Locale;
 
-public class ManageProfileRekening extends AppCompatActivity implements View.OnClickListener {
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+
+public class ManageProfileRekening extends AppCompatActivity implements View.OnClickListener, BankAdapter.OnItemClickListener {
     public boolean checkAdd = true, doubleCheck = true;
     String TAG = ManageProfileRekening.class.getSimpleName();
     ActivityManageProfileRekeningBinding binding;
@@ -41,7 +61,9 @@ public class ManageProfileRekening extends AppCompatActivity implements View.OnC
     NetworkManager networkManager;
     SharedPrefrence prefrence;
     UserDTO userDTO;
+    BottomSheetDialog dialog;
     HashMap<String, String> params = new HashMap<>();
+    List<DaftarRekeningDto> data ;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -56,7 +78,12 @@ public class ManageProfileRekening extends AppCompatActivity implements View.OnC
         binding.simpan.setOnClickListener(this);
         binding.location.setOnClickListener(this);
         binding.back.setOnClickListener(this);
-
+        binding.namaBank.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                daftarBank();
+            }
+        });
     }
 
     private void setdata() {
@@ -71,8 +98,54 @@ public class ManageProfileRekening extends AppCompatActivity implements View.OnC
         if (!userDTO.getAddress().equalsIgnoreCase("")) {
             binding.alamat.setText(userDTO.getAddress());
         }
+        getBank();
     }
 
+    private void getBank() {
+        ApiInterface api = ServiceGeneratorDaftarRekening.createService(
+                ApiInterface.class,
+                Consts.username,
+                Consts.pass
+        );
+
+        api.getDatarekening().enqueue(new Callback<List<DaftarRekeningDto>>() {
+            @Override
+            public void onResponse(Call<List<DaftarRekeningDto>> call, Response<List<DaftarRekeningDto>> response) {
+                Log.e("TAG","data bank"+new Gson().toJson(response));
+                if (response.isSuccessful()){
+                    data = response.body();
+                }
+            }
+
+            @Override
+            public void onFailure(Call<List<DaftarRekeningDto>> call, Throwable t) {
+                Log.e("TAG","data bank"+t.getMessage());
+                Toast.makeText(mContext, "gagal dapatkan daftar bank", Toast.LENGTH_SHORT).show();
+            }
+        });
+    }
+
+    private void daftarBank(){
+        dialog = new BottomSheetDialog(this);
+        View view = getLayoutInflater().inflate(R.layout.view_bank, null);
+        Window window = dialog.getWindow();
+        window.setLayout(
+                LinearLayout.LayoutParams.MATCH_PARENT,
+                LinearLayout.LayoutParams.WRAP_CONTENT
+        );
+        dialog.getWindow().setBackgroundDrawableResource(android.R.color.transparent);
+        dialog.setContentView(view);
+        RecyclerView recyclerView;
+        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false);
+
+        recyclerView = view.findViewById(R.id.rv_bank);
+        recyclerView.setLayoutManager(linearLayoutManager);
+        BankAdapter adapter = new BankAdapter(this,data,this);
+        recyclerView.setAdapter(adapter);
+        adapter.notifyDataSetChanged();
+
+        dialog.show();
+    }
 
     @Override
     public void onClick(View v) {
@@ -152,7 +225,7 @@ public class ManageProfileRekening extends AppCompatActivity implements View.OnC
 
     private HashMap<String, String> getParams() {
 
-        params.put(Consts.NAME_BANK, ProjectUtils.getEditTextValue(binding.namaBank));
+        params.put(Consts.NAME_BANK, binding.namaBank.getText().toString());
         params.put(Consts.NO_REKENING, ProjectUtils.getEditTextValue(binding.nomorRekening));
         params.put(Consts.NAMA_PEMILIK, ProjectUtils.getEditTextValue(binding.namaRekening));
         params.put(Consts.USER_ID, userDTO.getUser_id());
@@ -214,4 +287,10 @@ public class ManageProfileRekening extends AppCompatActivity implements View.OnC
     }
 
 
+    @Override
+    public void onItemClick(DaftarRekeningDto item) {
+        binding.namaBank.setText(item.getName());
+        dialog.dismiss();
+
+    }
 }

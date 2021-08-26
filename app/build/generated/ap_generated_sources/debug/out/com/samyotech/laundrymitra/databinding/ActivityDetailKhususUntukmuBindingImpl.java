@@ -14,11 +14,13 @@ public class ActivityDetailKhususUntukmuBindingImpl extends ActivityDetailKhusus
     static {
         sIncludes = null;
         sViewsWithIds = new android.util.SparseIntArray();
-        sViewsWithIds.put(R.id.back, 1);
-        sViewsWithIds.put(R.id.tv_title, 2);
-        sViewsWithIds.put(R.id.img_detail, 3);
-        sViewsWithIds.put(R.id.tv_date, 4);
-        sViewsWithIds.put(R.id.tv_desk, 5);
+        sViewsWithIds.put(R.id.parent_header, 1);
+        sViewsWithIds.put(R.id.back, 2);
+        sViewsWithIds.put(R.id.tv_title, 3);
+        sViewsWithIds.put(R.id.img_detail, 4);
+        sViewsWithIds.put(R.id.tv_title_d, 5);
+        sViewsWithIds.put(R.id.tv_date, 6);
+        sViewsWithIds.put(R.id.tv_desk, 7);
     }
     // views
     @NonNull
@@ -29,15 +31,17 @@ public class ActivityDetailKhususUntukmuBindingImpl extends ActivityDetailKhusus
     // Inverse Binding Event Handlers
 
     public ActivityDetailKhususUntukmuBindingImpl(@Nullable androidx.databinding.DataBindingComponent bindingComponent, @NonNull View root) {
-        this(bindingComponent, root, mapBindings(bindingComponent, root, 6, sIncludes, sViewsWithIds));
+        this(bindingComponent, root, mapBindings(bindingComponent, root, 8, sIncludes, sViewsWithIds));
     }
     private ActivityDetailKhususUntukmuBindingImpl(androidx.databinding.DataBindingComponent bindingComponent, View root, Object[] bindings) {
         super(bindingComponent, root, 0
-            , (android.widget.ImageView) bindings[1]
-            , (android.widget.ImageView) bindings[3]
-            , (android.widget.TextView) bindings[4]
+            , (android.widget.ImageView) bindings[2]
+            , (android.widget.ImageView) bindings[4]
+            , (android.widget.LinearLayout) bindings[1]
+            , (android.widget.TextView) bindings[6]
+            , (android.widget.TextView) bindings[7]
+            , (android.widget.TextView) bindings[3]
             , (android.widget.TextView) bindings[5]
-            , (android.widget.TextView) bindings[2]
             );
         this.mboundView0 = (android.widget.RelativeLayout) bindings[0];
         this.mboundView0.setTag(null);

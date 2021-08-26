@@ -50,6 +50,7 @@ public class UlasanAdapter extends RecyclerView.Adapter<UlasanAdapter.MyViewHold
                 || !popLaundryDTOArrayList.get(position).getRating().equals("")
                 || !popLaundryDTOArrayList.get(position).getRating().equals(null)
         ) {
+            holder.binding.tvCount.setText(popLaundryDTOArrayList.get(position).getRating());
             holder.binding.arb.setRating(Float.parseFloat(popLaundryDTOArrayList.get(position).getRating()));
         }
         Glide.with(kContext)
@@ -77,7 +78,7 @@ public class UlasanAdapter extends RecyclerView.Adapter<UlasanAdapter.MyViewHold
 
         showItem = Math.min(size, 5);
 
-        return showItem;
+        return size;
     }
 
     public class MyViewHolder extends RecyclerView.ViewHolder {

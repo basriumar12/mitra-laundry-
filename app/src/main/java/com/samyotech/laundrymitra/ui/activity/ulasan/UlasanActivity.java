@@ -43,6 +43,7 @@ public class UlasanActivity extends AppCompatActivity implements View.OnClickLis
     SharedPrefrence prefrence;
     UserDTO userDTO;
     HashMap<String, String> params = new HashMap<>();
+    RatingReviews ratingReviews;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -63,25 +64,8 @@ public class UlasanActivity extends AppCompatActivity implements View.OnClickLis
             }
         });
 
-        RatingReviews ratingReviews = (RatingReviews) findViewById(R.id.rating_reviews);
+        ratingReviews = (RatingReviews) findViewById(R.id.rating_reviews);
 
-        int colors[] = new int[]{
-                Color.parseColor("#0e9d58"),
-                Color.parseColor("#bfd047"),
-                Color.parseColor("#ffc105"),
-                Color.parseColor("#ef7e14"),
-                Color.parseColor("#d36259")};
-
-
-        int raters[] = new int[]{
-                new Random().nextInt(100),
-                new Random().nextInt(100),
-                new Random().nextInt(100),
-                new Random().nextInt(100),
-                new Random().nextInt(100)
-        };
-
-        ratingReviews.createRatingBars(100, BarLabels.STYPE3, Color.parseColor("#FFC107"), raters);
 
     }
 
@@ -98,8 +82,8 @@ public class UlasanActivity extends AppCompatActivity implements View.OnClickLis
 
 
         api.getUlasan(
-                "YZ65d0"
-                //userDTO.getShop_id()
+
+                userDTO.getShop_id()
 
 
         ).enqueue(new Callback<BaseResponse<List<UlasanNewDto>>>() {
@@ -114,22 +98,44 @@ public class UlasanActivity extends AppCompatActivity implements View.OnClickLis
 
 
                         int totalUlasan = response.body().getData().size();
-                        String totalRating =response.body().getTotalRating();
+                        String totalRating = response.body().getTotalRating().toString();
+                        try {
 
 
-                        binding.tvTotalRating.setText(totalRating.substring(0, totalRating.length() - 3));
-                        binding.tvTotalUlasan.setText(""+totalUlasan + " Ulasan");
+                            if (!totalRating.equals("0") || !totalRating.isEmpty()) {
+                                binding.tvTotalRating.setText(totalRating.substring(0, totalRating.length() - 3));
+                            } else {
+                                binding.tvTotalRating.setText("0");
+                            }
+                        } catch (StringIndexOutOfBoundsException e) {
+                            binding.tvTotalRating.setText("0");
+                        }
+                        binding.tvTotalUlasan.setText("" + totalUlasan + " Ulasan");
 
                         String rating = response.body().getTotalRating();
                         if (rating.equals("") || rating.equals(null)) {
                             rating = "0.0";
                         }
+
                         binding.arb.setRating(Float.parseFloat(rating));
 
                         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(mContext, LinearLayoutManager.VERTICAL, false);
                         binding.rvUlasan.setLayoutManager(linearLayoutManager);
                         UlasanAdapter penjualanAdapter = new UlasanAdapter(mContext, (ArrayList<UlasanNewDto>) response.body().getData());
                         binding.rvUlasan.setAdapter(penjualanAdapter);
+
+
+                        int bintang1 = Integer.parseInt(response.body().getRataUlasanDto().getJsonMember1());
+                        int bintang2 = Integer.parseInt(response.body().getRataUlasanDto().getJsonMember2());
+                        int bintang3 = Integer.parseInt(response.body().getRataUlasanDto().getJsonMember3());
+                        int bintang4 = Integer.parseInt(response.body().getRataUlasanDto().getJsonMember4());
+                        int bintang5 = Integer.parseInt(response.body().getRataUlasanDto().getJsonMember5());
+                        int raters[] = new int[]{
+                                bintang5, bintang4, bintang3, bintang2, bintang1
+                        };
+
+                        ratingReviews.createRatingBars(100, BarLabels.STYPE3, Color.parseColor("#FFC107"),
+                                raters);
 
 
                     } else {

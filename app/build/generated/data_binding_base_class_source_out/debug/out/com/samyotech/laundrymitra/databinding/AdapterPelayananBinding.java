@@ -23,16 +23,21 @@ public abstract class AdapterPelayananBinding extends ViewDataBinding {
   public final TextView namaPenjualan;
 
   @NonNull
+  public final FancyButton selengkapnya;
+
+  @NonNull
   public final FancyButton status;
 
   @NonNull
   public final FancyButton ubah;
 
   protected AdapterPelayananBinding(Object _bindingComponent, View _root, int _localFieldCount,
-      ImageView imgTerlaris, TextView namaPenjualan, FancyButton status, FancyButton ubah) {
+      ImageView imgTerlaris, TextView namaPenjualan, FancyButton selengkapnya, FancyButton status,
+      FancyButton ubah) {
     super(_bindingComponent, _root, _localFieldCount);
     this.imgTerlaris = imgTerlaris;
     this.namaPenjualan = namaPenjualan;
+    this.selengkapnya = selengkapnya;
     this.status = status;
     this.ubah = ubah;
   }

@@ -17,8 +17,9 @@ public class AdapterPenjualanBindingImpl extends AdapterPenjualanBinding  {
         sViewsWithIds.put(R.id.nama_penjualan, 1);
         sViewsWithIds.put(R.id.total_pcs, 2);
         sViewsWithIds.put(R.id.harga, 3);
-        sViewsWithIds.put(R.id.batalkan, 4);
-        sViewsWithIds.put(R.id.selengkapnya, 5);
+        sViewsWithIds.put(R.id.status, 4);
+        sViewsWithIds.put(R.id.batalkan, 5);
+        sViewsWithIds.put(R.id.selengkapnya, 6);
     }
     // views
     @NonNull
@@ -29,14 +30,15 @@ public class AdapterPenjualanBindingImpl extends AdapterPenjualanBinding  {
     // Inverse Binding Event Handlers
 
     public AdapterPenjualanBindingImpl(@Nullable androidx.databinding.DataBindingComponent bindingComponent, @NonNull View root) {
-        this(bindingComponent, root, mapBindings(bindingComponent, root, 6, sIncludes, sViewsWithIds));
+        this(bindingComponent, root, mapBindings(bindingComponent, root, 7, sIncludes, sViewsWithIds));
     }
     private AdapterPenjualanBindingImpl(androidx.databinding.DataBindingComponent bindingComponent, View root, Object[] bindings) {
         super(bindingComponent, root, 0
-            , (mehdi.sakout.fancybuttons.FancyButton) bindings[4]
+            , (mehdi.sakout.fancybuttons.FancyButton) bindings[5]
             , (android.widget.TextView) bindings[3]
             , (android.widget.TextView) bindings[1]
-            , (mehdi.sakout.fancybuttons.FancyButton) bindings[5]
+            , (mehdi.sakout.fancybuttons.FancyButton) bindings[6]
+            , (android.widget.TextView) bindings[4]
             , (android.widget.TextView) bindings[2]
             );
         this.mboundView0 = (androidx.cardview.widget.CardView) bindings[0];

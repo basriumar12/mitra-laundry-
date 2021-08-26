@@ -28,6 +28,7 @@ public class HomeFragmentBindingImpl extends HomeFragmentBinding  {
         sViewsWithIds.put(R.id.rv_terlaris, 12);
         sViewsWithIds.put(R.id.tv_kosong_khusus, 13);
         sViewsWithIds.put(R.id.rv_khusus_untukmu, 14);
+        sViewsWithIds.put(R.id.tv_selengkapnya, 15);
     }
     // views
     @NonNull
@@ -38,7 +39,7 @@ public class HomeFragmentBindingImpl extends HomeFragmentBinding  {
     // Inverse Binding Event Handlers
 
     public HomeFragmentBindingImpl(@Nullable androidx.databinding.DataBindingComponent bindingComponent, @NonNull View root) {
-        this(bindingComponent, root, mapBindings(bindingComponent, root, 15, sIncludes, sViewsWithIds));
+        this(bindingComponent, root, mapBindings(bindingComponent, root, 16, sIncludes, sViewsWithIds));
     }
     private HomeFragmentBindingImpl(androidx.databinding.DataBindingComponent bindingComponent, View root, Object[] bindings) {
         super(bindingComponent, root, 0
@@ -55,6 +56,7 @@ public class HomeFragmentBindingImpl extends HomeFragmentBinding  {
             , (android.widget.TextView) bindings[4]
             , (android.widget.TextView) bindings[6]
             , (android.widget.TextView) bindings[8]
+            , (android.widget.TextView) bindings[15]
             , (android.widget.TextView) bindings[9]
             );
         this.mboundView0 = (androidx.core.widget.NestedScrollView) bindings[0];

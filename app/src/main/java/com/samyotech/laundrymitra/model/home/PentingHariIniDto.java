@@ -1,11 +1,26 @@
 package com.samyotech.laundrymitra.model.home;
 
+import com.google.gson.annotations.SerializedName;
+
 public class PentingHariIniDto{
+
+
+	@SerializedName("pesanan_komplain")
 	private int pesananKomplain;
+
+	@SerializedName("pesanan_baru")
 	private int pesananBaru;
+
+	@SerializedName("ulasan_selesai")
 	private int ulasanSelesai;
+
+	@SerializedName("chat_belum_dibaca")
 	private int chatBelumDibaca;
+
+	@SerializedName("pesanan_selesai")
 	private int pesananSelesai;
+
+	@SerializedName("pendapatan_bersih_baru")
 	private String pendapatan_bersih_baru ="Rp. 0";
 
 	public int getPesananKomplain(){

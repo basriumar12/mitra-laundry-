@@ -36,8 +36,6 @@ public class ManageProfile extends AppCompatActivity implements View.OnClickList
     String TAG = ManageProfile.class.getSimpleName();
     ActivityManageProfileBinding binding;
     Context mContext;
-    ProjectUtils projectUtils;
-    NetworkManager networkManager;
     SharedPrefrence prefrence;
     UserDTO userDTO;
     HashMap<String, String> params = new HashMap<>();
@@ -153,10 +151,10 @@ public class ManageProfile extends AppCompatActivity implements View.OnClickList
     }
 
     private HashMap<String, String> getParams() {
-        if (!ProjectUtils.isEditTextFilled(binding.namaLengkap))
-            params.put(Consts.NAME, ProjectUtils.getEditTextValue(binding.namaLengkap));
-        else
-            Toast.makeText(mContext, R.string.addname, Toast.LENGTH_SHORT).show();
+//        if (!ProjectUtils.isEditTextFilled(binding.namaLengkap))
+//            params.put(Consts.NAME, ProjectUtils.getEditTextValue(binding.namaLengkap));
+//        else
+//            Toast.makeText(mContext, R.string.addname, Toast.LENGTH_SHORT).show();
 
         params.put(Consts.NAME_MITRA, ProjectUtils.getEditTextValue(binding.namaLengkap));
         params.put(Consts.NO_HP, ProjectUtils.getEditTextValue(binding.nomorHp));

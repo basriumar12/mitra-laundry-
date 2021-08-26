@@ -15,6 +15,8 @@ public class ActivityPusatEdukasiBindingImpl extends ActivityPusatEdukasiBinding
         sIncludes = null;
         sViewsWithIds = new android.util.SparseIntArray();
         sViewsWithIds.put(R.id.back, 1);
+        sViewsWithIds.put(R.id.rv_khusus_untukmu, 2);
+        sViewsWithIds.put(R.id.tv_kosong, 3);
     }
     // views
     @NonNull
@@ -25,11 +27,13 @@ public class ActivityPusatEdukasiBindingImpl extends ActivityPusatEdukasiBinding
     // Inverse Binding Event Handlers
 
     public ActivityPusatEdukasiBindingImpl(@Nullable androidx.databinding.DataBindingComponent bindingComponent, @NonNull View root) {
-        this(bindingComponent, root, mapBindings(bindingComponent, root, 2, sIncludes, sViewsWithIds));
+        this(bindingComponent, root, mapBindings(bindingComponent, root, 4, sIncludes, sViewsWithIds));
     }
     private ActivityPusatEdukasiBindingImpl(androidx.databinding.DataBindingComponent bindingComponent, View root, Object[] bindings) {
         super(bindingComponent, root, 0
             , (android.widget.ImageView) bindings[1]
+            , (androidx.recyclerview.widget.RecyclerView) bindings[2]
+            , (android.widget.TextView) bindings[3]
             );
         this.mboundView0 = (android.widget.LinearLayout) bindings[0];
         this.mboundView0.setTag(null);

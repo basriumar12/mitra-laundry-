@@ -9,6 +9,7 @@ public class UserDTO implements Serializable {
 
 
     String user_id = "";
+    String image_outlet = "";
     String name = "";
     String email = "";
     String country_code = "";
@@ -33,9 +34,35 @@ public class UserDTO implements Serializable {
     String total_pendapatan = "";
     String total_pendapatan_potongan = "";
     String nama_mitra = "";
+    String notif_firebase="";
+    String notif_email="";
 
     @SerializedName("rekening")
     RekeningDto rekening;
+
+    public String getImage_outlet() {
+        return image_outlet;
+    }
+
+    public void setImage_outlet(String image_outlet) {
+        this.image_outlet = image_outlet;
+    }
+
+    public String getNotif_firebase() {
+        return notif_firebase;
+    }
+
+    public void setNotif_firebase(String notif_firebase) {
+        this.notif_firebase = notif_firebase;
+    }
+
+    public String getNotif_email() {
+        return notif_email;
+    }
+
+    public void setNotif_email(String notif_email) {
+        this.notif_email = notif_email;
+    }
 
     public RekeningDto getRekening() {
         return rekening;

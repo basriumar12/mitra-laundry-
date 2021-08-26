@@ -259,7 +259,7 @@ public class Register extends AppCompatActivity implements View.OnClickListener 
                         prefrence.setParentUserRegister(registerNewDto, Consts.REGISTER_DTO);
 
                         doubleClick = false;
-                        ProjectUtils.showToast(mContext, "Berhasil register, otp akan dikirim ke nomor yang telah di daftarkan");
+                        ProjectUtils.showToast(mContext, "Berhasil register, kode otp atau link verifikasi akan dikirim ke email yang telah di daftarkan");
                         Intent in = new Intent(mContext, OtpActivity.class);
                         in.putExtra("otp_otp", registerNewDto.getOtpSms());
                         startActivity(in);
@@ -286,10 +286,10 @@ public class Register extends AppCompatActivity implements View.OnClickListener 
         params.put(Consts.PASSWORD, ProjectUtils.getEditTextValue(binding.cetPassword2));
         params.put(Consts.PASSWORD_REPLACENG, ProjectUtils.getEditTextValue(binding.cetPassword2));
         params.put(Consts.MOBILE, ProjectUtils.getEditTextValue(binding.cetNumber));
-        params.put(Consts.TYPE_REGISTER, getIntent().getStringExtra("TYPE"));
+        params.put(Consts.TYPE_REGISTER, "2");
         // params.put(Consts.ADDRESS, ProjectUtils.getEditTextValue(binding.alamat));
         //params.put(Consts.COUNTRY_CODE, "62");
-        //params.put(Consts.DEVICE_TYPE, "ANDROID");
+        params.put(Consts.DEVICE_TYPE, "ANDROID");
         params.put(Consts.DEVICE_TOKEN, "ANDROID");
         return params;
     }

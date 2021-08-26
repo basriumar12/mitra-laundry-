@@ -70,9 +70,37 @@ public class PenjualanAdapter extends RecyclerView.Adapter<PenjualanAdapter.MyVi
             @Override
             public void onClick(View view) {
                 Intent in = new Intent(kContext, DetailPenjualanActivity.class);
+                in.putExtra("ID",penjualanDTOArrayList.get(position).getOrderId());
                 kContext.startActivity(in);
             }
         });
+        String status = penjualanDTOArrayList.get(position).getStatus();
+
+        String statusName = "";
+        if (status.equals("0")){
+            statusName = "Tertunda";
+        }
+        else if (status.equals("1")){
+            statusName ="Konfirmasi";
+        }
+        else if (status.equals("2")){
+            statusName ="Di Jemput";
+        }
+        else if (status.equals("3")){
+            statusName ="Proses";
+        }
+        else if (status.equals("4")){
+            statusName ="Di Kirim";
+        }
+        else if (status.equals("5")){
+            statusName ="Terkirim";
+        }
+        else if (status.equals("6")){
+            statusName ="Cancel";
+
+        }
+
+        binding.status.setText(statusName);
     }
 
     @Override

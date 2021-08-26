@@ -88,6 +88,17 @@ public class ManageChatAndEmailProfile extends AppCompatActivity implements View
 
     private void setdata() {
 
+        if (userDTO.getNotif_email().equals("1")){
+            binding.email.setChecked(true);
+        }else {
+            binding.email.setChecked(false);
+        }
+
+        if (userDTO.getNotif_firebase().equals("1")){
+            binding.notifikasi.setChecked(true);
+        }else {
+            binding.notifikasi.setChecked(false);
+        }
 
     }
 

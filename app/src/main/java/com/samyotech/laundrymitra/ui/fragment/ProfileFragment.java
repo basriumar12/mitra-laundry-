@@ -133,6 +133,9 @@ public class ProfileFragment extends Fragment implements View.OnClickListener {
                     //ProjectUtils.showToast(getContext(), msg);
 
                     if (flag) {
+                        try {
+
+                            ProjectUtils.showLog("TAG", "  data --->" +new Gson().toJson(response.getJSONObject("data")));
                         userDTO = new Gson().fromJson(response.getJSONObject("data").toString(), UserDTO.class);
                         prefrence.setParentUser(userDTO, Consts.USER_DTO);
                         Glide.with(requireActivity())
@@ -145,6 +148,11 @@ public class ProfileFragment extends Fragment implements View.OnClickListener {
                                 .error(R.drawable.cover)
                                 .diskCacheStrategy(DiskCacheStrategy.ALL)
                                 .into(binding.ivBanner);
+
+
+                        }catch (IllegalStateException e){
+
+                        }
 
                     }
 

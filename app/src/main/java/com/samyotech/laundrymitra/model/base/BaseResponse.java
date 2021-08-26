@@ -1,6 +1,7 @@
 package com.samyotech.laundrymitra.model.base;
 
 import com.google.gson.annotations.SerializedName;
+import com.samyotech.laundrymitra.model.ulasandata.RataRataUlasanDto;
 
 public class BaseResponse<T>{
 
@@ -15,6 +16,17 @@ public class BaseResponse<T>{
 
 	@SerializedName("status")
 	private boolean status;
+
+	@SerializedName("rata_rata")
+	private RataRataUlasanDto rataUlasanDto;
+
+	public RataRataUlasanDto getRataUlasanDto() {
+		return rataUlasanDto;
+	}
+
+	public void setRataUlasanDto(RataRataUlasanDto rataUlasanDto) {
+		this.rataUlasanDto = rataUlasanDto;
+	}
 
 	public String getTotalRating() {
 		return totalRating;

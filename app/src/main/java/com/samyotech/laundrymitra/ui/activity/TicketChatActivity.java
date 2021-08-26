@@ -17,6 +17,11 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.localbroadcastmanager.content.LocalBroadcastManager;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
+import com.androidnetworking.AndroidNetworking;
+import com.androidnetworking.common.ANRequest;
+import com.androidnetworking.common.Priority;
+import com.androidnetworking.error.ANError;
+import com.androidnetworking.interfaces.JSONObjectRequestListener;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import com.samyotech.laundrymitra.R;
@@ -30,14 +35,22 @@ import com.samyotech.laundrymitra.preferences.SharedPrefrence;
 import com.samyotech.laundrymitra.ui.adapter.TicketChatAdapter;
 import com.samyotech.laundrymitra.utils.ProjectUtils;
 
+import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.io.IOException;
 import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
 import hani.momanii.supernova_emoji_library.Helper.EmojiconEditText;
+import okhttp3.Authenticator;
+import okhttp3.Credentials;
+import okhttp3.OkHttpClient;
+import okhttp3.Request;
+import okhttp3.Response;
+import okhttp3.Route;
 
 public class TicketChatActivity extends AppCompatActivity implements View.OnClickListener, SwipeRefreshLayout.OnRefreshListener {
     private final String TAG = TicketChatActivity.class.getSimpleName();
@@ -53,7 +66,7 @@ public class TicketChatActivity extends AppCompatActivity implements View.OnClic
     private EmojiconEditText edittextMessage;
     private RelativeLayout relative;
     private Context mContext;
-    private TextView tvNameHedar;
+    private TextView tvNameHedar, tvKosong;
     private SharedPrefrence prefrence;
     private UserDTO userDTO;
     BroadcastReceiver mBroadcastReceiver = new BroadcastReceiver() {
@@ -80,6 +93,7 @@ public class TicketChatActivity extends AppCompatActivity implements View.OnClic
         mContext = TicketChatActivity.this;
         prefrence = SharedPrefrence.getInstance(mContext);
         userDTO = prefrence.getParentUser(Consts.USER_DTO);
+        tvKosong= findViewById(R.id.tv_kosong);
 
         inputManager = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
 
@@ -90,8 +104,8 @@ public class TicketChatActivity extends AppCompatActivity implements View.OnClic
 
             ticket_id = getIntent().getStringExtra(Consts.TICKET_ID);
 
-            parmsGet.put(Consts.TIKET_ID, ticket_id);
-            parmsGet.put(Consts.USER_ID, userDTO.getUser_id());
+            parmsGet.put(Consts.TIKET_ID_COMMENT, ticket_id);
+            //parmsGet.put(Consts.USER_ID, userDTO.getUser_id());
 
 
         }
@@ -104,25 +118,25 @@ public class TicketChatActivity extends AppCompatActivity implements View.OnClic
         relative = findViewById(R.id.relative);
         edittextMessage = findViewById(R.id.edittextMessage);
         swipeRefreshLayout = findViewById(R.id.swipe_refresh_layout);
-        lvComment = findViewById(R.id.lvComment);
+        lvComment = findViewById(R.id.lvCommentt);
         sendBtn = findViewById(R.id.sendBtn);
         IVback = findViewById(R.id.back);
         sendBtn.setOnClickListener(this);
         IVback.setOnClickListener(this);
         swipeRefreshLayout.setOnRefreshListener(this);
         swipeRefreshLayout.post(new Runnable() {
-            @Override
-            public void run() {
+                                    @Override
+                                    public void run() {
 
-                Log.e("Runnable", "FIRST");
-                if (NetworkManager.isConnectToInternet(mContext)) {
-                    swipeRefreshLayout.setRefreshing(true);
-                    getComment();
+                                        Log.e("Runnable", "FIRST");
+                                        if (NetworkManager.isConnectToInternet(mContext)) {
+                                            swipeRefreshLayout.setRefreshing(true);
+                                            getComment();
 
-                } else {
-                    ProjectUtils.showToast(mContext, getResources().getString(R.string.internet_concation));
-                }
-            }
+                                        } else {
+                                            ProjectUtils.showToast(mContext, getResources().getString(R.string.internet_concation));
+                                        }
+                                    }
                                 }
         );
 
@@ -184,35 +198,104 @@ public class TicketChatActivity extends AppCompatActivity implements View.OnClic
     }
 
     public void getComment() {
-        ProjectUtils.showProgressDialog(mContext, true, getResources().getString(R.string.please_wait));
-        new HttpsRequest(Consts.GETTIKETCOMMENT, parmsGet, mContext).stringPost(TAG, new Helper() {
-            @Override
-            public void backResponse(boolean flag, String msg, JSONObject response) {
-                ProjectUtils.pauseProgressDialog();
-                swipeRefreshLayout.setRefreshing(false);
-                if (flag) {
-                    try {
-                        ticketCommentDTOSList = new ArrayList<>();
-                        Type getpetDTO = new TypeToken<List<TicketCommentDTO>>() {
-                        }.getType();
-                        ticketCommentDTOSList = new Gson().fromJson(response.getJSONArray("data").toString(), getpetDTO);
-                        showData();
 
-                    } catch (Exception e) {
-                        e.printStackTrace();
+
+        OkHttpClient okHttpClient = new OkHttpClient.Builder()
+                .authenticator(new Authenticator() {
+                    @Override
+                    public Request authenticate(Route route, Response response) throws IOException {
+                        return response.request().newBuilder()
+                                .header("Authorization", Credentials.basic(Consts.username, Consts.pass))
+                                .build();
                     }
+                })
+                .build();
+        final ANRequest request =
+                AndroidNetworking.get(Consts.API_URL + Consts.GETTIKETCOMMENT + "?id_tiket=" + ticket_id)
+                        .setOkHttpClient(okHttpClient)
+                        .setTag("test")
+//                        .addQueryParameter("id_user", userid)
+//                        .addQueryParameter("otp", otpSms)
+                        .setPriority(Priority.HIGH)
+                        .build();
+        ProjectUtils.showLog("TAG", " url data --->" + request.getUrl());
 
+        ProjectUtils.showProgressDialog(mContext, true, getResources().getString(R.string.please_wait));
 
-                } else {
+        request.getAsJSONObject(new JSONObjectRequestListener() {
+            @Override
+            public void onResponse(JSONObject response) {
+                boolean flag = false;
+                swipeRefreshLayout.setRefreshing(false);
+                try {
+                    flag = response.getBoolean("status");
+                    String msg = response.getString("message");
+
+                    ProjectUtils.showToast(TicketChatActivity.this, msg);
+
+                    ProjectUtils.pauseProgressDialog();
+                    if (flag) {
+                        try {
+                            ticketCommentDTOSList = new ArrayList<>();
+                            Type getpetDTO = new TypeToken<List<TicketCommentDTO>>() {}.getType();
+                            ticketCommentDTOSList = new Gson().fromJson(response.getJSONArray("data").toString(), getpetDTO);
+
+                            Log.e("TAG","isi tiket "+new Gson().toJson(ticketCommentDTOSList));
+
+                            TicketChatAdapter adapterViewCommentTicket = new TicketChatAdapter(mContext, ticketCommentDTOSList, userDTO);
+                            lvComment.setAdapter(adapterViewCommentTicket);
+                            lvComment.setSelection(ticketCommentDTOSList.size() - 1);
+
+                            if (ticketCommentDTOSList.isEmpty()){
+                                tvKosong.setVisibility(View.VISIBLE);
+                                tvKosong.setText(msg);
+                            }else {
+                                tvKosong.setVisibility(View.GONE);
+                            }
+
+                        } catch (Exception e) {
+                            e.printStackTrace();
+                        }
+                    }
+                } catch (JSONException e) {
+                    e.printStackTrace();
                 }
             }
+
+            @Override
+            public void onError(ANError anError) {
+                swipeRefreshLayout.setRefreshing(false);
+                ProjectUtils.pauseProgressDialog();
+                ProjectUtils.showToast(TicketChatActivity.this, "Gagal dapatkan detail");
+            }
         });
+//        ProjectUtils.showProgressDialog(mContext, true, getResources().getString(R.string.please_wait));
+//        new HttpsRequest(Consts.GETTIKETCOMMENT, parmsGet, mContext).stringGet(TAG, new Helper() {
+//            @Override
+//            public void backResponse(boolean flag, String msg, JSONObject response) {
+//                ProjectUtils.pauseProgressDialog();
+//                swipeRefreshLayout.setRefreshing(false);
+//                if (flag) {
+//                    try {
+//                        ticketCommentDTOSList = new ArrayList<>();
+//                        Type getpetDTO = new TypeToken<List<TicketCommentDTO>>() {
+//                        }.getType();
+//                        ticketCommentDTOSList = new Gson().fromJson(response.getJSONArray("data").toString(), getpetDTO);
+//                        showData();
+//
+//                    } catch (Exception e) {
+//                        e.printStackTrace();
+//                    }
+//
+//
+//                } else {
+//                }
+//            }
+//        });
     }
 
     public void showData() {
-        adapterViewCommentTicket = new TicketChatAdapter(mContext, ticketCommentDTOSList, userDTO);
-        lvComment.setAdapter(adapterViewCommentTicket);
-        lvComment.setSelection(ticketCommentDTOSList.size() - 1);
+
     }
 
     public void doComment() {
@@ -232,7 +315,7 @@ public class TicketChatActivity extends AppCompatActivity implements View.OnClic
 
     public HashMap<String, String> getParamDO() {
         HashMap<String, String> values = new HashMap<>();
-        values.put(Consts.TIKET_ID, ticket_id);
+        values.put(Consts.TIKET_ID_COMMENT, ticket_id);
         values.put(Consts.MESSAGE, ProjectUtils.getEditTextValue(edittextMessage));
         Log.e("POST", values.toString());
         return values;

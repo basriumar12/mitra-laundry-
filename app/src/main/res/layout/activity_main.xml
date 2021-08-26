@@ -27,7 +27,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/logo"
             android:gravity="center"
-            android:text="Aplikasi Mitra &amp; Agen Dunia Laundry"
+            android:text="Aplikasi Mitra Dunia Laundry"
             android:textColor="@color/black"
             android:textSize="22sp"
             android:textStyle="bold" />

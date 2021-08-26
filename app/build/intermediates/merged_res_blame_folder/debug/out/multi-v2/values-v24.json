@@ -4,7 +4,7 @@
             "outputFile": "/Users/macbook/Desktop/frelance/tokoweb/mitra-new/mitra-laundry-/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-v24/values-v24.xml",
             "map": [
                 {
-                    "source": "/Users/macbook/.gradle/caches/transforms-2/files-2.1/81abfd33c96fb57d50e7a03cb1f48de5/media-1.0.0/res/values-v24/values-v24.xml",
+                    "source": "/Users/macbook/.gradle/caches/transforms-2/files-2.1/be1bb1b720e8dde37099c98c286981f4/media-1.0.0/res/values-v24/values-v24.xml",
                     "from": {
                         "startLines": "2,3,4,5",
                         "startColumns": "4,4,4,4",
@@ -21,7 +21,7 @@
                     }
                 },
                 {
-                    "source": "/Users/macbook/.gradle/caches/transforms-2/files-2.1/534b0b60cdeb6351839eea92c91ee473/appcompat-1.2.0/res/values-v24/values-v24.xml",
+                    "source": "/Users/macbook/.gradle/caches/transforms-2/files-2.1/7ae4476aa7a9d0f75860bba58f4ef57c/appcompat-1.2.0/res/values-v24/values-v24.xml",
                     "from": {
                         "startLines": "2,3",
                         "startColumns": "4,4",

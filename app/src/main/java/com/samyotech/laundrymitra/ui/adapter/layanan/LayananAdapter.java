@@ -82,6 +82,30 @@ public class LayananAdapter extends RecyclerView.Adapter<LayananAdapter.MyViewHo
                 .into(holder.binding.imgTerlaris);
         holder.binding.namaPenjualan.setText(serviceItemDtos.get(position).getServiceName());
         System.out.println("STATUS " + serviceItemDtos.get(position).getStatus());
+
+        if (userDTO.getPremium().equals("0")) {
+            binding.ubah.setVisibility(View.GONE);
+            binding.status.setVisibility(View.GONE);
+            binding.selengkapnya.setVisibility(View.VISIBLE);
+        } else {
+            binding.ubah.setVisibility(View.VISIBLE);
+            binding.status.setVisibility(View.VISIBLE);
+            binding.selengkapnya.setVisibility(View.GONE);
+        }
+
+        holder.binding.selengkapnya.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+
+                Intent intent = new Intent(kContext, EditServiceActivity.class);
+                intent.putExtra("ServiceId", serviceItemDtos.get(position).getServiceId());
+                kContext.startActivity(intent);
+
+            }
+        });
+
+
         if (serviceItemDtos.get(position).getStatus().equals("0")) {
             holder.binding.ubah.setBorderColor(Color.parseColor("#808080"));
             holder.binding.status.setText("Aktifkan");
@@ -94,7 +118,7 @@ public class LayananAdapter extends RecyclerView.Adapter<LayananAdapter.MyViewHo
                 @Override
                 public void onClick(View view) {
 
-                    if (userDTO.getPremium() == null || userDTO.getPremium().isEmpty()) {
+                    if (userDTO.getPremium() == null || userDTO.getPremium().isEmpty() || userDTO.getPremium().equals("0")) {
                         Toast.makeText(kContext, "Hanya bisa di akses oleh User Premium", Toast.LENGTH_SHORT).show();
                     } else {
                         Intent intent = new Intent(kContext, EditServiceActivity.class);
@@ -106,10 +130,26 @@ public class LayananAdapter extends RecyclerView.Adapter<LayananAdapter.MyViewHo
 
 
         }
+
+        holder.binding.ubah.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                if (userDTO.getPremium() == null || userDTO.getPremium().isEmpty() || userDTO.getPremium().equals("0")) {
+                    Toast.makeText(kContext, "Hanya bisa di akses oleh User Premium", Toast.LENGTH_SHORT).show();
+                } else {
+                    Intent intent = new Intent(kContext, EditServiceActivity.class);
+                    intent.putExtra("ServiceId", serviceItemDtos.get(position).getServiceId());
+                    kContext.startActivity(intent);
+                }
+            }
+        });
+
+
         holder.binding.status.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(final View view) {
-                if (userDTO.getPremium() == null || userDTO.getPremium().isEmpty()) {
+                if (userDTO.getPremium() == null || userDTO.getPremium().isEmpty() || userDTO.getPremium().equals("0")) {
                     Toast.makeText(kContext, "Hanya bisa di akses oleh User Premium", Toast.LENGTH_SHORT).show();
                 } else {
 

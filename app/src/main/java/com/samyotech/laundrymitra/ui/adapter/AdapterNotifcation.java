@@ -44,7 +44,11 @@ public class AdapterNotifcation extends RecyclerView.Adapter<AdapterNotifcation.
         NotificationDTO item = popLaundryDTOArrayList.get(position);
         holder.binding.title.setText(item.getTitle());
         holder.binding.ctvMessage.setText(item.getMessage());
-        holder.binding.ctvtime.setText(ProjectUtils.convertTimestampDateToTime(Long.parseLong(item.getCreated_at())));
+        try {
+            holder.binding.ctvtime.setText(ProjectUtils.convertTimestampDateToTime(Long.parseLong(item.getCreated_at())));
+        }catch (NumberFormatException e){
+
+        }
     }
 
     @Override

@@ -1,9 +1,11 @@
 <component name="libraryTable">
   <library name="Gradle: androidx.emoji:emoji-appcompat:1.1.0@aar">
     <CLASSES>
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/10ce5f8123662ac867857d048f55201a/emoji-appcompat-1.1.0/jars/classes.jar!/" />
       <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/10ce5f8123662ac867857d048f55201a/emoji-appcompat-1.1.0/res" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/10ce5f8123662ac867857d048f55201a/emoji-appcompat-1.1.0/AndroidManifest.xml" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/3939dd539b519376555954b4843ef3b0/emoji-appcompat-1.1.0/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/8f8fbc2479f811543fd73458368c496d/emoji-appcompat-1.1.0/res" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/8f8fbc2479f811543fd73458368c496d/emoji-appcompat-1.1.0/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/8f8fbc2479f811543fd73458368c496d/emoji-appcompat-1.1.0/AndroidManifest.xml" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>

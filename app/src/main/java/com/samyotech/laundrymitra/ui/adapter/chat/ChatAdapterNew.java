@@ -13,7 +13,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.samyotech.laundrymitra.R;
 import com.samyotech.laundrymitra.databinding.AdapterChatBinding;
 import com.samyotech.laundrymitra.model.chat.ChatListDto;
-import com.samyotech.laundrymitra.ui.activity.ChatActivity;
+import com.samyotech.laundrymitra.ui.activity.chat.ChatActivity;
 
 import java.util.List;
 

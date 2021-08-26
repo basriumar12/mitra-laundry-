@@ -26,6 +26,7 @@ import com.samyotech.laundrymitra.model.ItemDetailsDTO;
 import com.samyotech.laundrymitra.model.OrderListDTO;
 import com.samyotech.laundrymitra.model.UserDTO;
 import com.samyotech.laundrymitra.preferences.SharedPrefrence;
+import com.samyotech.laundrymitra.ui.activity.chat.ChatActivity;
 import com.samyotech.laundrymitra.ui.adapter.PreviewBookingAdapter;
 import com.samyotech.laundrymitra.utils.AppFormat;
 import com.samyotech.laundrymitra.utils.ProjectUtils;

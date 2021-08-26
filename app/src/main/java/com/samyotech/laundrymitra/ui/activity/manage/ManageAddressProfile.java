@@ -42,6 +42,8 @@ public class ManageAddressProfile extends AppCompatActivity implements View.OnCl
     SharedPrefrence prefrence;
     UserDTO userDTO;
     HashMap<String, String> params = new HashMap<>();
+    String latitude = "";
+    String longitude ="";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -65,9 +67,12 @@ public class ManageAddressProfile extends AppCompatActivity implements View.OnCl
         binding.namaLengkap.setText(userDTO.getName());
         binding.nomorHp.setText(userDTO.getMobile());
         binding.email.setText(userDTO.getEmail());
+        binding.alamat.setText(userDTO.getAddress());
 
         if (!userDTO.getAddress().equalsIgnoreCase("")) {
             binding.alamat.setText(userDTO.getAddress());
+            latitude = userDTO.getLatitude();
+            longitude = userDTO.getLongitude();
         }
     }
 
@@ -81,6 +86,9 @@ public class ManageAddressProfile extends AppCompatActivity implements View.OnCl
               if (!ProjectUtils.isEditTextFilled(binding.alamat)) {
                     Toast.makeText(mContext, R.string.addAddress, Toast.LENGTH_SHORT).show();
                 }
+              else  if (latitude.isEmpty()|latitude.equals("")){
+                  Toast.makeText(mContext, "Silahkan klik icon, untuk mengambil posisi latitude dan longitude ", Toast.LENGTH_SHORT).show();
+              }
 
                  else {
 //                    if (checkAdd) {
@@ -90,7 +98,6 @@ public class ManageAddressProfile extends AppCompatActivity implements View.OnCl
                   //  params.put(Consts.ADDRESS, ProjectUtils.getEditTextValue(binding.alamat));
 
                     getParams();
-                    updateProfile();
                 }
                 break;
             case R.id.location:
@@ -153,6 +160,13 @@ public class ManageAddressProfile extends AppCompatActivity implements View.OnCl
         params.put(Consts.ALAMAT, ProjectUtils.getEditTextValue(binding.alamat));
         params.put(Consts.USER_ID, userDTO.getUser_id());
         params.put(Consts.SHOP_ID, userDTO.getShop_id());
+        params.put(Consts.LATITUDE, latitude);
+        params.put(Consts.LONGITUDE, longitude);
+
+        updateProfile();
+
+        Log.e("TAG","param addres "+new Gson().toJson(params));
+
 
 
         return params;
@@ -190,7 +204,9 @@ public class ManageAddressProfile extends AppCompatActivity implements View.OnCl
             // TennisAppActivity.showDialog(add);
             binding.alamat.setText(obj.getAddressLine(0));
 
-            params.put(Consts.ADDRESS, obj.getAddressLine(0));
+            //params.put(Consts.ADDRESS, obj.getAddressLine(0));
+            latitude = String.valueOf(obj.getLatitude());
+            longitude = String.valueOf(obj.getLongitude());
             params.put(Consts.LATITUDE, String.valueOf(obj.getLatitude()));
             params.put(Consts.LONGITUDE, String.valueOf(obj.getLongitude()));
 

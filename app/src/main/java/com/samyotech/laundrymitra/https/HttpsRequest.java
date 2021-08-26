@@ -6,6 +6,7 @@ import com.androidnetworking.AndroidNetworking;
 import com.androidnetworking.common.ANRequest;
 import com.androidnetworking.common.Priority;
 import com.androidnetworking.error.ANError;
+import com.androidnetworking.interfaces.JSONArrayRequestListener;
 import com.androidnetworking.interfaces.JSONObjectRequestListener;
 import com.androidnetworking.interfaces.UploadProgressListener;
 import com.google.gson.Gson;
@@ -14,6 +15,7 @@ import com.samyotech.laundrymitra.interfaces.Helper;
 import com.samyotech.laundrymitra.jsonparser.JSONParser;
 import com.samyotech.laundrymitra.utils.ProjectUtils;
 
+import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -32,7 +34,7 @@ import okhttp3.Route;
 public class
 HttpsRequest {
     private final String match;
-    private  String otp;
+    private String otp;
     private String user_id;
     private final Context ctx;
     private Map<String, String> params;
@@ -135,14 +137,14 @@ HttpsRequest {
                 .build();
 
         ANRequest test = AndroidNetworking.post(Consts.API_URL + match)
-               .setOkHttpClient(okHttpClient)
+                .setOkHttpClient(okHttpClient)
 
                 .addBodyParameter(params)
                 .setTag("test")
 
                 .setPriority(Priority.HIGH)
                 .build();
-        ProjectUtils.showLog(TAG, " url --->" + test.getUrl() +" body "+new Gson().toJson(params));
+        ProjectUtils.showLog(TAG, " url --->" + test.getUrl() + " body " + new Gson().toJson(params));
         test.getAsJSONObject(new JSONObjectRequestListener() {
             @Override
             public void onResponse(JSONObject response) {
@@ -154,29 +156,29 @@ HttpsRequest {
                         h.backResponse(jsonParser.RESULT, jsonParser.MESSAGE, response);
                     } catch (JSONException e) {
                         e.printStackTrace();
-                            }
-                        } else {
-                            try {
-                                h.backResponse(jsonParser.RESULT, jsonParser.MESSAGE, null);
-                            } catch (JSONException e) {
-                                e.printStackTrace();
-                            }
-                        }
-
-
                     }
-
-                    @Override
-                    public void onError(ANError anError) {
-                        try {
-                            h.backResponse(false, "Gagal "+anError.getErrorBody(),null);
-                        } catch (JSONException e) {
-                            e.printStackTrace();
-                        }
-                        ProjectUtils.pauseProgressDialog();
-                        ProjectUtils.showLog(TAG, " error body --->" + anError.getErrorBody() + " error msg --->" + anError.getMessage());
+                } else {
+                    try {
+                        h.backResponse(jsonParser.RESULT, jsonParser.MESSAGE, null);
+                    } catch (JSONException e) {
+                        e.printStackTrace();
                     }
-                });
+                }
+
+
+            }
+
+            @Override
+            public void onError(ANError anError) {
+                try {
+                    h.backResponse(false, "Gagal " + anError.getErrorBody(), null);
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+                ProjectUtils.pauseProgressDialog();
+                ProjectUtils.showLog(TAG, " error body --->" + anError.getErrorBody() + " error msg --->" + anError.getMessage());
+            }
+        });
     }
 
     public void stringGet(final String TAG, final Helper h) {
@@ -225,7 +227,7 @@ HttpsRequest {
                     @Override
                     public void onError(ANError anError) {
                         try {
-                            h.backResponse(false, "Gagal "+anError.getErrorBody(),null);
+                            h.backResponse(false, "Gagal " + anError.getErrorBody(), null);
                         } catch (JSONException e) {
                             e.printStackTrace();
                         }
@@ -235,19 +237,20 @@ HttpsRequest {
                 });
     }
 
-   public void stringOTP(final String TAG, final Helper h) {
-       OkHttpClient okHttpClient = new OkHttpClient.Builder()
-               .authenticator(new Authenticator() {
-                   @Override
-                   public Request authenticate(Route route, Response response) throws IOException {
-                       return response.request().newBuilder()
-                               .header("Authorization", Credentials.basic(Consts.username, Consts.pass))
-                               .build();
-                   }
-               })
-               .build();
 
-       ProjectUtils.showLog(TAG, " url --->" + match);
+    public void stringOTP(final String TAG, final Helper h) {
+        OkHttpClient okHttpClient = new OkHttpClient.Builder()
+                .authenticator(new Authenticator() {
+                    @Override
+                    public Request authenticate(Route route, Response response) throws IOException {
+                        return response.request().newBuilder()
+                                .header("Authorization", Credentials.basic(Consts.username, Consts.pass))
+                                .build();
+                    }
+                })
+                .build();
+
+        ProjectUtils.showLog(TAG, " url --->" + match);
         ANRequest request = AndroidNetworking.get(Consts.API_URL + match)
                 .setOkHttpClient(okHttpClient)
                 .setTag("test")
@@ -286,7 +289,7 @@ HttpsRequest {
                     @Override
                     public void onError(ANError anError) {
                         try {
-                            h.backResponse(false, "Gagal "+anError.getErrorBody(),null);
+                            h.backResponse(false, "Gagal " + anError.getErrorBody(), null);
                         } catch (JSONException e) {
                             e.printStackTrace();
                         }
@@ -297,18 +300,18 @@ HttpsRequest {
     }
 
 
-     public void stringResendOTP(final String TAG, final Helper h) {
-         OkHttpClient okHttpClient = new OkHttpClient.Builder()
-                 .authenticator(new Authenticator() {
-                     @Override
-                     public Request authenticate(Route route, Response response) throws IOException {
-                         return response.request().newBuilder()
-                                 .header("Authorization", Credentials.basic(Consts.username, Consts.pass))
-                                 .build();
-                     }
-                 })
-                 .build();
-       ProjectUtils.showLog(TAG, " url --->" + match);
+    public void stringResendOTP(final String TAG, final Helper h) {
+        OkHttpClient okHttpClient = new OkHttpClient.Builder()
+                .authenticator(new Authenticator() {
+                    @Override
+                    public Request authenticate(Route route, Response response) throws IOException {
+                        return response.request().newBuilder()
+                                .header("Authorization", Credentials.basic(Consts.username, Consts.pass))
+                                .build();
+                    }
+                })
+                .build();
+        ProjectUtils.showLog(TAG, " url --->" + match);
         ANRequest request = AndroidNetworking.get(Consts.API_URL + match)
                 .setOkHttpClient(okHttpClient)
                 .setTag("test")
@@ -343,7 +346,63 @@ HttpsRequest {
                     @Override
                     public void onError(ANError anError) {
                         try {
-                            h.backResponse(false, "Gagal "+anError.getErrorBody(),null);
+                            h.backResponse(false, "Gagal " + anError.getErrorBody(), null);
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
+                        ProjectUtils.pauseProgressDialog();
+                        ProjectUtils.showLog(TAG, " error body --->" + anError.getErrorBody() + " error msg --->" + anError.getMessage());
+                    }
+                });
+    }
+
+    public void stringGetParamUserId(final String TAG, final Helper h) {
+        OkHttpClient okHttpClient = new OkHttpClient.Builder()
+                .authenticator(new Authenticator() {
+                    @Override
+                    public Request authenticate(Route route, Response response) throws IOException {
+                        return response.request().newBuilder()
+                                .header("Authorization", Credentials.basic(Consts.username, Consts.pass))
+                                .build();
+                    }
+                })
+                .build();
+        ProjectUtils.showLog(TAG, " url --->" + match);
+        ANRequest request = AndroidNetworking.get(Consts.API_URL + match)
+                .setOkHttpClient(okHttpClient)
+                .setTag("test")
+                .addQueryParameter("user_id", user_id)
+
+                .setPriority(Priority.HIGH)
+                .build();
+        ProjectUtils.showLog(TAG, " url --->" + request.getUrl());
+        request
+                .getAsJSONObject(new JSONObjectRequestListener() {
+                    @Override
+                    public void onResponse(JSONObject response) {
+                        ProjectUtils.showLog(TAG, " response body --->" + response.toString());
+                        JSONParser jsonParser = new JSONParser(ctx, response);
+                        if (jsonParser.RESULT) {
+
+                            try {
+                                h.backResponse(jsonParser.RESULT, jsonParser.MESSAGE, response);
+                            } catch (JSONException e) {
+                                e.printStackTrace();
+                            }
+                        } else {
+
+                            try {
+                                h.backResponse(jsonParser.RESULT, jsonParser.MESSAGE, null);
+                            } catch (JSONException e) {
+                                e.printStackTrace();
+                            }
+                        }
+                    }
+
+                    @Override
+                    public void onError(ANError anError) {
+                        try {
+                            h.backResponse(false, "Gagal " + anError.getErrorBody(), null);
                         } catch (JSONException e) {
                             e.printStackTrace();
                         }
@@ -378,44 +437,44 @@ HttpsRequest {
                     }
                 });
 
-        ProjectUtils.showLog(TAG, " url upload --->" + request.getUrl() +" - "+fileparams +" - "+params);
+        ProjectUtils.showLog(TAG, " url upload --->" + request.getUrl() + " - " + fileparams + " - " + params);
 
         request.getAsJSONObject(new JSONObjectRequestListener() {
-                    @Override
-                    public void onResponse(JSONObject response) {
-                        ProjectUtils.showLog(TAG, " response body --->" + response.toString());
-                        ProjectUtils.showLog(TAG, " param --->" + params.toString());
-                        JSONParser jsonParser = new JSONParser(ctx, response);
+            @Override
+            public void onResponse(JSONObject response) {
+                ProjectUtils.showLog(TAG, " response body --->" + response.toString());
+                ProjectUtils.showLog(TAG, " param --->" + params.toString());
+                JSONParser jsonParser = new JSONParser(ctx, response);
 
-                        if (jsonParser.RESULT) {
+                if (jsonParser.RESULT) {
 
-                            try {
-                                h.backResponse(jsonParser.RESULT, jsonParser.MESSAGE, response);
-                            } catch (JSONException e) {
-                                e.printStackTrace();
-                            }
-                        } else {
-                            try {
-                                h.backResponse(jsonParser.RESULT, jsonParser.MESSAGE, null);
-                            } catch (JSONException e) {
-                                e.printStackTrace();
-                            }
-                        }
-
-
+                    try {
+                        h.backResponse(jsonParser.RESULT, jsonParser.MESSAGE, response);
+                    } catch (JSONException e) {
+                        e.printStackTrace();
                     }
-
-                    @Override
-                    public void onError(ANError anError) {
-                        try {
-                            h.backResponse(false, "Gagal "+anError.getMessage(),null);
-                        } catch (JSONException e) {
-                            e.printStackTrace();
-                        }
-                        ProjectUtils.pauseProgressDialog();
-                        ProjectUtils.showLog(TAG, " error body --->" + anError.getErrorBody() + " error msg --->" + anError.getMessage());
+                } else {
+                    try {
+                        h.backResponse(jsonParser.RESULT, jsonParser.MESSAGE, null);
+                    } catch (JSONException e) {
+                        e.printStackTrace();
                     }
-                });
+                }
+
+
+            }
+
+            @Override
+            public void onError(ANError anError) {
+                try {
+                    h.backResponse(false, "Gagal " + anError.getMessage(), null);
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+                ProjectUtils.pauseProgressDialog();
+                ProjectUtils.showLog(TAG, " error body --->" + anError.getErrorBody() + " error msg --->" + anError.getMessage());
+            }
+        });
     }
 
     public void multiImagePost(final String TAG, final Helper h) {

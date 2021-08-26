@@ -67,6 +67,7 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
     private long lastClickTime = 0;
     private final int GOOGLE_SIGN_IN = 1;
     private GoogleSignInClient googleSignInClient;
+    String token = "";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -104,12 +105,12 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
                             Log.w(TAG, "Fetching FCM registration token failed", task.getException());
                             return;
                         }
+                        token = task.getResult();
 
                         // Get new FCM registration token
                         String token = task.getResult();
                         prefrence.setValue(Consts.DEVICE_TOKEN, token);
-                        // Log and toast
-                        Log.d(TAG, token);
+                        Log.e(TAG, token);
                     }
                 });
     }
@@ -301,7 +302,7 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
         HashMap<String, String> parms = new HashMap<>();
         parms.put(Consts.EMAIL, email);
         parms.put(Consts.DEVICE_TYPE, "ANDROID");
-        parms.put(Consts.DEVICE_TOKEN,    "ANDROID"); //firebase.getString(Consts.DEVICE_TOKEN, "ANDROID"));
+        parms.put(Consts.DEVICE_TOKEN,    token);
         Log.e(TAG + " Login", parms.toString());
         return parms;
     }
@@ -311,7 +312,7 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
         parms.put(Consts.EMAIL, ProjectUtils.getEditTextValue(binding.cetEmailADD));
         parms.put(Consts.PASSWORD, ProjectUtils.getEditTextValue(binding.cetPasword));
         //  parms.put(Consts.DEVICE_TYPE, "ANDROID");
-        //parms.put(Consts.DEVICE_TOKEN, firebase.getString(Consts.DEVICE_TOKEN, "ANDROID"));
+        parms.put(Consts.DEVICE_TOKEN, token);
         Log.e(TAG + " Login", parms.toString());
         return parms;
     }

@@ -19,7 +19,8 @@ public class FragmentLayananBindingImpl extends FragmentLayananBinding  {
         sViewsWithIds.put(R.id.header_title, 3);
         sViewsWithIds.put(R.id.ivSearch, 4);
         sViewsWithIds.put(R.id.ivNotification, 5);
-        sViewsWithIds.put(R.id.rvBooking, 6);
+        sViewsWithIds.put(R.id.tv_kosong, 6);
+        sViewsWithIds.put(R.id.rvBooking, 7);
     }
     // views
     @NonNull
@@ -30,7 +31,7 @@ public class FragmentLayananBindingImpl extends FragmentLayananBinding  {
     // Inverse Binding Event Handlers
 
     public FragmentLayananBindingImpl(@Nullable androidx.databinding.DataBindingComponent bindingComponent, @NonNull View root) {
-        this(bindingComponent, root, mapBindings(bindingComponent, root, 7, sIncludes, sViewsWithIds));
+        this(bindingComponent, root, mapBindings(bindingComponent, root, 8, sIncludes, sViewsWithIds));
     }
     private FragmentLayananBindingImpl(androidx.databinding.DataBindingComponent bindingComponent, View root, Object[] bindings) {
         super(bindingComponent, root, 0
@@ -39,7 +40,8 @@ public class FragmentLayananBindingImpl extends FragmentLayananBinding  {
             , (androidx.appcompat.widget.AppCompatImageView) bindings[5]
             , (androidx.appcompat.widget.AppCompatImageView) bindings[4]
             , (androidx.constraintlayout.widget.ConstraintLayout) bindings[1]
-            , (androidx.recyclerview.widget.RecyclerView) bindings[6]
+            , (androidx.recyclerview.widget.RecyclerView) bindings[7]
+            , (android.widget.TextView) bindings[6]
             );
         this.mboundView0 = (android.widget.FrameLayout) bindings[0];
         this.mboundView0.setTag(null);

@@ -47,12 +47,13 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:text="Masukan kode verifkasi yang sudah di kirim ke nomor anda."
+                    android:text="Link Verifikasi telah dikirim ke email yang terdaftar"
                     android:textColor="@color/white"
                     android:textSize="12sp" />
 
 
                 <TextView
+                    android:visibility="gone"
                     android:id="@+id/otp"
                     android:layout_marginTop="@dimen/_20sdp"
                     android:gravity="left"
@@ -65,6 +66,7 @@
 
 
                 <com.chaos.view.PinView
+                    android:visibility="gone"
                     android:layout_marginTop="@dimen/_20sdp"
                     android:id="@+id/pinview"
                     style="@style/PinWidget.PinView"
@@ -94,6 +96,7 @@
                     android:layout_height="0.5dp"/>
 
                 <TextView
+                    android:visibility="gone"
                     android:id="@+id/tv_kirim_ulang"
                     android:textStyle="bold"
                     android:layout_marginTop="@dimen/_4sdp"

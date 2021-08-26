@@ -9,11 +9,15 @@ public interface Consts {
     String PROD_URL = "http://laundryapp.windigitalkhatulistiwa.com/";
     String BASE_URL =PROD_URL;
     String API_URL = DEV_URL;
+    String BANK_URL ="https://raw.githubusercontent.com/mul14/gudang-data/master/bank/";
+
 
 
     /*-----Apis-----*/
     String lainya ="lainnya";
+    String endpoint_bank="bank.json";
     String messagedetail ="chatt/detail_pesan";
+    String hubungikonsumen ="chatt/hubungi_konsumen";
     String username = "dunialaundry";
     String pass ="laundry123";
     String FORGOTPASSWORD = "forgotPassword";
@@ -56,8 +60,8 @@ public interface Consts {
     String GETLAUNDRYBYSERVICE = "getLaundryByService";
     String GET_NOTIFICATION = "notifikasi";
     String GETCURRENCY = "getCurrency";
-    String GETTIKETCOMMENT = "getTiketComment";
-    String ADDTIKETCOMMENT = "addTiketComment";
+    String GETTIKETCOMMENT = "lainnya/detail_tiket";
+    String ADDTIKETCOMMENT = "lainnya/tambah_komen_tiket";
     String USERUPDATE = "lainnya/edit_akun";
     String EDITREKENING = "lainnya/edit_rekening";
     String PENGAJUANDANA = "lainnya/pengajuan_dana";
@@ -109,7 +113,8 @@ public interface Consts {
     String ORDERLISTDTO = "orderlistdto";
     String USER_ID = "user_id";
     String RATING = "rating";
-    String TIKET_ID = "tiket_id";
+    String TIKET_ID = "id_tiket";
+    String TIKET_ID_COMMENT = "tiket_id";
     String IMAGE = "image";
     String FILE = "file";
     String UPLOAD_KTP ="register/foto_ktp";

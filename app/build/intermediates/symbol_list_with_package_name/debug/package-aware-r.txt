@@ -127,6 +127,7 @@ attr alphabeticModifiers
 attr altSrc
 attr ambientEnabled
 attr animate_relativeTo
+attr animation
 attr animationMode
 attr appBarLayoutStyle
 attr applyMotionScene
@@ -591,6 +592,7 @@ attr gapBetweenBars
 attr gapSize
 attr gestureInsetBottomIgnored
 attr goIcon
+attr gradiant
 attr graph
 attr haloColor
 attr haloRadius
@@ -828,6 +830,7 @@ attr maxLine
 attr maxLines
 attr maxVelocity
 attr maxWidth
+attr max_value
 attr measureWithLargestChild
 attr menu
 attr menumoduleEnable
@@ -968,6 +971,7 @@ attr reverseLayout
 attr rippleColor
 attr round
 attr roundPercent
+attr rounded
 attr saturation
 attr scopeUris
 attr scrimAnimationDuration
@@ -1023,6 +1027,8 @@ attr showPaths
 attr showPrefix
 attr showText
 attr showTitle
+attr show_label
+attr show_raters
 attr shrinkMotionSpec
 attr singleChoiceItemLayout
 attr singleLine
@@ -1032,6 +1038,7 @@ attr sliderStyle
 attr snackbarButtonStyle
 attr snackbarStyle
 attr snackbarTextViewStyle
+attr spaces
 attr spanCount
 attr spinBars
 attr spinnerDropDownItemStyle
@@ -1065,6 +1072,7 @@ attr stepSize
 attr stiffness
 attr strokeColor
 attr strokeWidth
+attr style
 attr subMenuArrow
 attr submitBackground
 attr subtitle
@@ -1144,6 +1152,8 @@ attr textInputLayoutFocusedRectEnabled
 attr textInputStyle
 attr textLocale
 attr textStartPadding
+attr text_color
+attr text_size
 attr theme
 attr themeLineHeight
 attr thickness
@@ -1257,6 +1267,7 @@ attr wheel_same_width
 attr wheel_selected_item_position
 attr wheel_selected_item_text_color
 attr wheel_visible_item_count
+attr width
 attr windowActionBar
 attr windowActionBarOverlay
 attr windowActionModeOverlay
@@ -3124,6 +3135,8 @@ drawable avd_hide_password
 drawable avd_show_password
 drawable backgradient
 drawable banner_img
+drawable bg_button_register
+drawable bg_button_register_2
 drawable bg_color_blue
 drawable bg_primary_color
 drawable bg_white
@@ -4852,6 +4865,7 @@ drawable ic_action_voice_search_inverted
 drawable ic_add
 drawable ic_avatar
 drawable ic_backspace_black_24dp
+drawable ic_baseline_add_24
 drawable ic_baseline_collections_24
 drawable ic_baseline_monetization_on_24
 drawable ic_baseline_photo_camera_24
@@ -4907,6 +4921,7 @@ drawable ic_offers_second
 drawable ic_paymenttab
 drawable ic_pengaturan
 drawable ic_penjualan
+drawable ic_person
 drawable ic_pesanan
 drawable ic_photo_black_48dp
 drawable ic_photo_camera_black_48dp
@@ -5105,6 +5120,7 @@ drawable register
 drawable right
 drawable right_bubble_drawable
 drawable round_background
+drawable round_background_2
 drawable round_drawable
 drawable round_search_background
 drawable selector_emoji_activity
@@ -5437,6 +5453,7 @@ id collapsing
 id column
 id column_reverse
 id confirm_btn
+id confirm_btn_status
 id confirm_button
 id confirm_payment
 id constMain
@@ -5455,6 +5472,7 @@ id countryCodeHolder
 id cropImageView
 id ctChatDanNotif
 id ctGantiAlamat
+id ctOutletImage
 id ctPengaturan
 id ctRekening
 id ctWaktuOP
@@ -5502,6 +5520,7 @@ id ctvnodata
 id ctvnotification
 id ctvpickedup
 id ctvprofile
+id ctvprofileMitra
 id ctvpromosi
 id ctvpusatEdukasi
 id ctvtime
@@ -5635,6 +5654,8 @@ id groups
 id gvServiceMenu
 id harga
 id hargaItem
+id harga_produk
+id harga_produk_tambahan
 id hari_buka
 id header
 id header_container
@@ -5669,6 +5690,7 @@ id img_dismiss
 id img_ktp
 id img_logo
 id img_terlaris
+id img_ulasan
 id info
 id inputExtractAccessories
 id inputExtractAction
@@ -5693,8 +5715,10 @@ id ivServiceItem
 id ivShopName
 id jam_buka
 id judul
+id jumat
 id jumpToEnd
 id jumpToStart
+id kamis
 id kebijakan
 id kirim_pesan_btn
 id kode_promo
@@ -5711,6 +5735,7 @@ id layanan
 id layanan_item_cv
 id layout
 id layout_aspect_ratio
+id layout_parent
 id layout_root
 id layout_rotate_wheel
 id layout_scale_wheel
@@ -5726,6 +5751,7 @@ id line1
 id line3
 id linear
 id linearLayoutFooter
+id linear_bar
 id linear_flag_border
 id linear_flag_holder
 id lisensi
@@ -5742,6 +5768,7 @@ id login_now
 id logo
 id longitude
 id lvComment
+id lvCommentt
 id lytCameraPick
 id lytGalleryPick
 id map
@@ -5754,6 +5781,7 @@ id menu_crop
 id menu_loader
 id message
 id middle
+id minggu
 id mini
 id minutesPicker
 id mobile_navigation_xml
@@ -5796,6 +5824,7 @@ id nama_lengkap
 id nama_pemesan
 id nama_penjualan
 id nama_pesanan
+id nama_produk
 id nama_rekening
 id nama_service
 id nama_toko
@@ -5845,7 +5874,10 @@ id parallax
 id parent
 id parentPanel
 id parentRelative
+id parent_agen
+id parent_header
 id parent_matrix
+id parent_mitra
 id password_toggle
 id path
 id pathRelative
@@ -5903,9 +5935,11 @@ id promo_btn
 id promosi
 id quantity
 id quantityTotal
+id rabu
 id radio
 id rate_now_btn
 id rating
+id rating_reviews
 id ratio
 id ratio_16_9
 id ratio_3_4
@@ -5948,6 +5982,7 @@ id rounded
 id row
 id row_index_key
 id row_reverse
+id rv
 id rvBooking
 id rvChatList
 id rvDetailPenjualan
@@ -5960,10 +5995,13 @@ id rvOtherService
 id rvPenjualan
 id rvServiceItem
 id rvServices
+id rv_bank
 id rv_chat
 id rv_khusus_untukmu
 id rv_terlaris
+id rv_ulasan
 id rvoffer
+id sabtu
 id satellite
 id save_non_transition_alpha
 id save_overlay_view
@@ -5992,10 +6030,12 @@ id search_top_bar
 id search_voice_btn
 id secondary
 id secondary_progress_image
+id selasa
 id select_dialog_listview
 id selected
 id selengkapnya
 id sendBtn
+id senin
 id servImage
 id servName
 id serviceName
@@ -6046,6 +6086,8 @@ id status_bar_latest_event_content
 id stop
 id street
 id stretch
+id style1
+id style2
 id submenuarrow
 id submit_area
 id subtotal
@@ -6086,6 +6128,7 @@ id textSpacerNoButtons
 id textSpacerNoTitle
 id textStart
 id textTitle
+id textView
 id textViewMessage
 id textViewTime
 id textView_code
@@ -6097,7 +6140,9 @@ id textWatcher
 id text_input_end_icon
 id text_input_start_icon
 id text_status
+id text_view_bar_label
 id text_view_crop
+id text_view_raters
 id text_view_rotate
 id text_view_scale
 id text_view_tag
@@ -6145,9 +6190,17 @@ id tvName
 id tvNo
 id tvServiceName
 id tvTitle
-id tv_buka
+id tv_buka_jumat
+id tv_buka_kamis
+id tv_buka_minggu
+id tv_buka_rabu
+id tv_buka_sabtu
+id tv_buka_selasa
+id tv_buka_senin
 id tv_camera
 id tv_chat_belum_dibaca
+id tv_count
+id tv_data_produk_koosong
 id tv_data_rekening
 id tv_date
 id tv_desk
@@ -6166,8 +6219,19 @@ id tv_pendapatan_potongan
 id tv_pesan_baru
 id tv_pesanan_komplain
 id tv_pesanan_selesai
+id tv_selengkapnya
+id tv_status
 id tv_title
-id tv_tutup
+id tv_title_d
+id tv_total_rating
+id tv_total_ulasan
+id tv_tutup_jumat
+id tv_tutup_kamis
+id tv_tutup_minggu
+id tv_tutup_rabu
+id tv_tutup_sabtu
+id tv_tutup_selasa
+id tv_tutup_senin
 id tv_ulasan_baru
 id ubah
 id ucrop
@@ -6271,6 +6335,7 @@ layout abc_search_view
 layout abc_select_dialog_material
 layout abc_tooltip
 layout activity_about
+layout activity_add_detail_layanan_item
 layout activity_all_services
 layout activity_booking_confirm
 layout activity_booking_payment
@@ -6288,12 +6353,14 @@ layout activity_edit_service
 layout activity_forgot_password
 layout activity_intro
 layout activity_ipaymu
+layout activity_list_khusus_untukmu
 layout activity_login
 layout activity_main
 layout activity_manage
 layout activity_manage_profile
 layout activity_manage_profile_address
 layout activity_manage_profile_chat_email
+layout activity_manage_profile_mitra
 layout activity_manage_profile_operasional
 layout activity_manage_profile_rekening
 layout activity_manage_promosi_toko
@@ -6301,11 +6368,13 @@ layout activity_manage_tarik_rekening
 layout activity_notification
 layout activity_order_details
 layout activity_otp
+layout activity_outlet_image
 layout activity_payment
 layout activity_pickup
 layout activity_preview_order
 layout activity_pusat_edukasi
 layout activity_register
+layout activity_register_choose
 layout activity_register_mitra
 layout activity_schedule
 layout activity_search
@@ -6319,16 +6388,19 @@ layout activity_sukses_register
 layout activity_ticket_chat
 layout activity_tickets
 layout activity_top_services
+layout activity_ulasan
 layout activity_upload_ktp
 layout activity_welcome_screens
 layout adapter_address
 layout adapter_allservices
+layout adapter_bank
 layout adapter_booking
 layout adapter_chat
 layout adapter_chat_list
 layout adapter_detail_penjualan
 layout adapter_item
 layout adapter_khusus
+layout adapter_khusus_list
 layout adapter_layanan_item
 layout adapter_near
 layout adapter_notification
@@ -6343,12 +6415,15 @@ layout adapter_service_menu
 layout adapter_services
 layout adapter_ticket
 layout adapter_topservices
+layout adapter_ulasan_list
 layout adapter_view_comment
 layout adapter_view_comment_my
 layout add_address_bottomsheet
 layout animated_rating_bar_item
 layout appintropager_adapter
 layout auth_dialog
+layout bar
+layout bar_two
 layout bottom_sheet_dialog
 layout bottom_sheet_double_picker
 layout bottom_sheet_double_picker_bottom_sheet
@@ -6401,6 +6476,7 @@ layout fragment_main
 layout fragment_near_by
 layout fragment_offer_shop
 layout fragment_offers
+layout fragment_outlet
 layout fragment_penjualan
 layout fragment_profile
 layout fragment_progress_dialog
@@ -6505,6 +6581,9 @@ layout ucrop_fragment_photobox
 layout ucrop_layout_rotate_wheel
 layout ucrop_layout_scale_wheel
 layout ucrop_view
+layout view_bank
+layout view_list_produk
+layout view_status_penjualan
 layout viewpager_sliding_screens
 layout worm_dot_layout
 menu bottom_nav_menu
@@ -7824,6 +7903,7 @@ styleable PopupWindow android_popupBackground android_popupAnimationStyle overla
 styleable PopupWindowBackgroundState state_above_anchor
 styleable PropertySet android_visibility android_alpha layout_constraintTag motionProgress visibilityMode
 styleable RangeSlider values
+styleable RatingReviews animation color gradiant max_value rounded show_label show_raters spaces style text_color text_size width
 styleable RecycleListView paddingBottomNoButtons paddingTopNoTitle
 styleable RecyclerView android_orientation android_clipToPadding android_descendantFocusability fastScrollEnabled fastScrollHorizontalThumbDrawable fastScrollHorizontalTrackDrawable fastScrollVerticalThumbDrawable fastScrollVerticalTrackDrawable layoutManager reverseLayout spanCount stackFromEnd
 styleable ScrimInsetsFrameLayout insetForeground

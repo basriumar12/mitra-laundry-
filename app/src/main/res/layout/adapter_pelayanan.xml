@@ -64,6 +64,22 @@
                             app:fb_radius="24dp"
                             app:fb_text="Nonaktifkan"
                             app:fb_textColor="@color/white" />
+                        <mehdi.sakout.fancybuttons.FancyButton
+                            android:visibility="gone"
+                            android:id="@+id/selengkapnya"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="8dp"
+                            android:layout_weight="1"
+                            android:padding="8dp"
+                            app:fb_borderColor="@color/colorPrimary"
+                            app:fb_borderWidth="2dp"
+                            app:fb_defaultColor="@color/colorPrimary"
+                            app:fb_focusColor="@color/colorPrimary"
+                            app:fb_iconPosition="left"
+                            app:fb_radius="24dp"
+                            app:fb_text="Selengkapnya"
+                            app:fb_textColor="@color/white" />
 
                         <mehdi.sakout.fancybuttons.FancyButton
                             android:id="@+id/ubah"

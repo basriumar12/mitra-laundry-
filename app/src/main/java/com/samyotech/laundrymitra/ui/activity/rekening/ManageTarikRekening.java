@@ -60,7 +60,7 @@ public class ManageTarikRekening extends AppCompatActivity implements View.OnCli
                 if (!ProjectUtils.isEditTextFilled(binding.edtPenarikan) || binding.edtPenarikan.getText().toString().isEmpty() || binding.edtPenarikan.getText().toString().equals("")) {
                     Toast.makeText(mContext, "Silahkan isi jumlah penarikan", Toast.LENGTH_SHORT).show();
                 } else {
-                    String saldo = userDTO.getTotal_pendapatan().replaceFirst("Rp. ", "");
+                    String saldo = userDTO.getTotal_pendapatan_potongan().replaceFirst("Rp. ", "").replace(",","");
 
                     if (saldo.isEmpty() || saldo.equals("0") || saldo.equals("")) {
                         Toast.makeText(mContext, "Saldo anda Rp. 0", Toast.LENGTH_SHORT).show();
@@ -69,7 +69,7 @@ public class ManageTarikRekening extends AppCompatActivity implements View.OnCli
                     int jumlahPenarikan = Integer.parseInt(binding.edtPenarikan.getText().toString());
 
                     if (jumlahPenarikan > jumlahSaldo) {
-                        Toast.makeText(mContext, "Jumlah penarikan terlalu besar dan saldo anda "+userDTO.getTotal_pendapatan(), Toast.LENGTH_SHORT).show();
+                        Toast.makeText(mContext, "Jumlah penarikan terlalu besar dan Maksimal saldo yang bisa di tarik adalah "+userDTO.getTotal_pendapatan_potongan(), Toast.LENGTH_SHORT).show();
                     } else {
 
                         getParams();
@@ -83,7 +83,7 @@ public class ManageTarikRekening extends AppCompatActivity implements View.OnCli
     }
 
     private void setdata() {
-        binding.tvPendapatan.setText(userDTO.getTotal_pendapatan());
+        binding.tvPendapatan.setText(userDTO.getTotal_pendapatan_potongan());
         if (userDTO.getRekening() != null) {
 
             binding.tvNamaMitra.setText(userDTO.getNama_mitra());

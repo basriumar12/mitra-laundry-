@@ -7,6 +7,7 @@ import androidx.databinding.DataBinderMapper;
 import androidx.databinding.DataBindingComponent;
 import androidx.databinding.ViewDataBinding;
 import com.samyotech.laundrymitra.databinding.ActivityAboutBindingImpl;
+import com.samyotech.laundrymitra.databinding.ActivityAddDetailLayananItemBindingImpl;
 import com.samyotech.laundrymitra.databinding.ActivityAllServicesBindingImpl;
 import com.samyotech.laundrymitra.databinding.ActivityBookingConfirmBindingImpl;
 import com.samyotech.laundrymitra.databinding.ActivityBookingPaymentBindingImpl;
@@ -22,11 +23,13 @@ import com.samyotech.laundrymitra.databinding.ActivityDetailPenjualanBindingImpl
 import com.samyotech.laundrymitra.databinding.ActivityEditServiceBindingImpl;
 import com.samyotech.laundrymitra.databinding.ActivityForgotPasswordBindingImpl;
 import com.samyotech.laundrymitra.databinding.ActivityIntroBindingImpl;
+import com.samyotech.laundrymitra.databinding.ActivityListKhususUntukmuBindingImpl;
 import com.samyotech.laundrymitra.databinding.ActivityLoginBindingImpl;
 import com.samyotech.laundrymitra.databinding.ActivityManageBindingImpl;
 import com.samyotech.laundrymitra.databinding.ActivityManageProfileAddressBindingImpl;
 import com.samyotech.laundrymitra.databinding.ActivityManageProfileBindingImpl;
 import com.samyotech.laundrymitra.databinding.ActivityManageProfileChatEmailBindingImpl;
+import com.samyotech.laundrymitra.databinding.ActivityManageProfileMitraBindingImpl;
 import com.samyotech.laundrymitra.databinding.ActivityManageProfileOperasionalBindingImpl;
 import com.samyotech.laundrymitra.databinding.ActivityManageProfileRekeningBindingImpl;
 import com.samyotech.laundrymitra.databinding.ActivityManagePromosiTokoBindingImpl;
@@ -39,6 +42,7 @@ import com.samyotech.laundrymitra.databinding.ActivityPickupBindingImpl;
 import com.samyotech.laundrymitra.databinding.ActivityPreviewOrderBindingImpl;
 import com.samyotech.laundrymitra.databinding.ActivityPusatEdukasiBindingImpl;
 import com.samyotech.laundrymitra.databinding.ActivityRegisterBindingImpl;
+import com.samyotech.laundrymitra.databinding.ActivityRegisterChooseBindingImpl;
 import com.samyotech.laundrymitra.databinding.ActivityRegisterMitraBindingImpl;
 import com.samyotech.laundrymitra.databinding.ActivityScheduleBindingImpl;
 import com.samyotech.laundrymitra.databinding.ActivitySearchBindingImpl;
@@ -50,15 +54,18 @@ import com.samyotech.laundrymitra.databinding.ActivitySuccessPenjualanBindingImp
 import com.samyotech.laundrymitra.databinding.ActivitySuksesRegisterBindingImpl;
 import com.samyotech.laundrymitra.databinding.ActivityTicketsBindingImpl;
 import com.samyotech.laundrymitra.databinding.ActivityTopServicesBindingImpl;
+import com.samyotech.laundrymitra.databinding.ActivityUlasanBindingImpl;
 import com.samyotech.laundrymitra.databinding.ActivityUploadKtpBindingImpl;
 import com.samyotech.laundrymitra.databinding.ActivityWelcomeScreensBindingImpl;
 import com.samyotech.laundrymitra.databinding.AdapterAddressBindingImpl;
 import com.samyotech.laundrymitra.databinding.AdapterAllservicesBindingImpl;
+import com.samyotech.laundrymitra.databinding.AdapterBankBindingImpl;
 import com.samyotech.laundrymitra.databinding.AdapterBookingBindingImpl;
 import com.samyotech.laundrymitra.databinding.AdapterChatBindingImpl;
 import com.samyotech.laundrymitra.databinding.AdapterDetailPenjualanBindingImpl;
 import com.samyotech.laundrymitra.databinding.AdapterItemBindingImpl;
 import com.samyotech.laundrymitra.databinding.AdapterKhususBindingImpl;
+import com.samyotech.laundrymitra.databinding.AdapterKhususListBindingImpl;
 import com.samyotech.laundrymitra.databinding.AdapterLayananItemBindingImpl;
 import com.samyotech.laundrymitra.databinding.AdapterNearBindingImpl;
 import com.samyotech.laundrymitra.databinding.AdapterNotificationBindingImpl;
@@ -73,6 +80,7 @@ import com.samyotech.laundrymitra.databinding.AdapterServiceMenuBindingImpl;
 import com.samyotech.laundrymitra.databinding.AdapterServicesBindingImpl;
 import com.samyotech.laundrymitra.databinding.AdapterTicketBindingImpl;
 import com.samyotech.laundrymitra.databinding.AdapterTopservicesBindingImpl;
+import com.samyotech.laundrymitra.databinding.AdapterUlasanListBindingImpl;
 import com.samyotech.laundrymitra.databinding.AddAddressBottomsheetBindingImpl;
 import com.samyotech.laundrymitra.databinding.DailogAddTicketBindingImpl;
 import com.samyotech.laundrymitra.databinding.DailogCancelOrderBindingImpl;
@@ -85,6 +93,7 @@ import com.samyotech.laundrymitra.databinding.FragmentLayananBindingImpl;
 import com.samyotech.laundrymitra.databinding.FragmentNearByBindingImpl;
 import com.samyotech.laundrymitra.databinding.FragmentOfferShopBindingImpl;
 import com.samyotech.laundrymitra.databinding.FragmentOffersBindingImpl;
+import com.samyotech.laundrymitra.databinding.FragmentOutletBindingImpl;
 import com.samyotech.laundrymitra.databinding.FragmentPenjualanBindingImpl;
 import com.samyotech.laundrymitra.databinding.FragmentProfileBindingImpl;
 import com.samyotech.laundrymitra.databinding.FragmentServicesBindingImpl;
@@ -104,178 +113,197 @@ import java.util.List;
 public class DataBinderMapperImpl extends DataBinderMapper {
   private static final int LAYOUT_ACTIVITYABOUT = 1;
 
-  private static final int LAYOUT_ACTIVITYALLSERVICES = 2;
+  private static final int LAYOUT_ACTIVITYADDDETAILLAYANANITEM = 2;
 
-  private static final int LAYOUT_ACTIVITYBOOKINGCONFIRM = 3;
+  private static final int LAYOUT_ACTIVITYALLSERVICES = 3;
 
-  private static final int LAYOUT_ACTIVITYBOOKINGPAYMENT = 4;
+  private static final int LAYOUT_ACTIVITYBOOKINGCONFIRM = 4;
 
-  private static final int LAYOUT_ACTIVITYBOOKINGPICKADDRESS = 5;
+  private static final int LAYOUT_ACTIVITYBOOKINGPAYMENT = 5;
 
-  private static final int LAYOUT_ACTIVITYBOOKINGPICKDATETIME = 6;
+  private static final int LAYOUT_ACTIVITYBOOKINGPICKADDRESS = 6;
 
-  private static final int LAYOUT_ACTIVITYCHANGPASSWORD = 7;
+  private static final int LAYOUT_ACTIVITYBOOKINGPICKDATETIME = 7;
 
-  private static final int LAYOUT_ACTIVITYCHATLIST = 8;
+  private static final int LAYOUT_ACTIVITYCHANGPASSWORD = 8;
 
-  private static final int LAYOUT_ACTIVITYDASHBOARD = 9;
+  private static final int LAYOUT_ACTIVITYCHATLIST = 9;
 
-  private static final int LAYOUT_ACTIVITYDATETIME = 10;
+  private static final int LAYOUT_ACTIVITYDASHBOARD = 10;
 
-  private static final int LAYOUT_ACTIVITYDETAILKHUSUSUNTUKMU = 11;
+  private static final int LAYOUT_ACTIVITYDATETIME = 11;
 
-  private static final int LAYOUT_ACTIVITYDETAILLAYANANITEM = 12;
+  private static final int LAYOUT_ACTIVITYDETAILKHUSUSUNTUKMU = 12;
 
-  private static final int LAYOUT_ACTIVITYDETAILPENJUALAN = 13;
+  private static final int LAYOUT_ACTIVITYDETAILLAYANANITEM = 13;
 
-  private static final int LAYOUT_ACTIVITYEDITSERVICE = 14;
+  private static final int LAYOUT_ACTIVITYDETAILPENJUALAN = 14;
 
-  private static final int LAYOUT_ACTIVITYFORGOTPASSWORD = 15;
+  private static final int LAYOUT_ACTIVITYEDITSERVICE = 15;
 
-  private static final int LAYOUT_ACTIVITYINTRO = 16;
+  private static final int LAYOUT_ACTIVITYFORGOTPASSWORD = 16;
 
-  private static final int LAYOUT_ACTIVITYLOGIN = 17;
+  private static final int LAYOUT_ACTIVITYINTRO = 17;
 
-  private static final int LAYOUT_ACTIVITYMANAGE = 18;
+  private static final int LAYOUT_ACTIVITYLISTKHUSUSUNTUKMU = 18;
 
-  private static final int LAYOUT_ACTIVITYMANAGEPROFILE = 19;
+  private static final int LAYOUT_ACTIVITYLOGIN = 19;
 
-  private static final int LAYOUT_ACTIVITYMANAGEPROFILEADDRESS = 20;
+  private static final int LAYOUT_ACTIVITYMANAGE = 20;
 
-  private static final int LAYOUT_ACTIVITYMANAGEPROFILECHATEMAIL = 21;
+  private static final int LAYOUT_ACTIVITYMANAGEPROFILE = 21;
 
-  private static final int LAYOUT_ACTIVITYMANAGEPROFILEOPERASIONAL = 22;
+  private static final int LAYOUT_ACTIVITYMANAGEPROFILEADDRESS = 22;
 
-  private static final int LAYOUT_ACTIVITYMANAGEPROFILEREKENING = 23;
+  private static final int LAYOUT_ACTIVITYMANAGEPROFILECHATEMAIL = 23;
 
-  private static final int LAYOUT_ACTIVITYMANAGEPROMOSITOKO = 24;
+  private static final int LAYOUT_ACTIVITYMANAGEPROFILEMITRA = 24;
 
-  private static final int LAYOUT_ACTIVITYMANAGETARIKREKENING = 25;
+  private static final int LAYOUT_ACTIVITYMANAGEPROFILEOPERASIONAL = 25;
 
-  private static final int LAYOUT_ACTIVITYNOTIFICATION = 26;
+  private static final int LAYOUT_ACTIVITYMANAGEPROFILEREKENING = 26;
 
-  private static final int LAYOUT_ACTIVITYORDERDETAILS = 27;
+  private static final int LAYOUT_ACTIVITYMANAGEPROMOSITOKO = 27;
 
-  private static final int LAYOUT_ACTIVITYOTP = 28;
+  private static final int LAYOUT_ACTIVITYMANAGETARIKREKENING = 28;
 
-  private static final int LAYOUT_ACTIVITYPAYMENT = 29;
+  private static final int LAYOUT_ACTIVITYNOTIFICATION = 29;
 
-  private static final int LAYOUT_ACTIVITYPICKUP = 30;
+  private static final int LAYOUT_ACTIVITYORDERDETAILS = 30;
 
-  private static final int LAYOUT_ACTIVITYPREVIEWORDER = 31;
+  private static final int LAYOUT_ACTIVITYOTP = 31;
 
-  private static final int LAYOUT_ACTIVITYPUSATEDUKASI = 32;
+  private static final int LAYOUT_ACTIVITYPAYMENT = 32;
 
-  private static final int LAYOUT_ACTIVITYREGISTER = 33;
+  private static final int LAYOUT_ACTIVITYPICKUP = 33;
 
-  private static final int LAYOUT_ACTIVITYREGISTERMITRA = 34;
+  private static final int LAYOUT_ACTIVITYPREVIEWORDER = 34;
 
-  private static final int LAYOUT_ACTIVITYSCHEDULE = 35;
+  private static final int LAYOUT_ACTIVITYPUSATEDUKASI = 35;
 
-  private static final int LAYOUT_ACTIVITYSEARCH = 36;
+  private static final int LAYOUT_ACTIVITYREGISTER = 36;
 
-  private static final int LAYOUT_ACTIVITYSERVICEACITIVITY = 37;
+  private static final int LAYOUT_ACTIVITYREGISTERCHOOSE = 37;
 
-  private static final int LAYOUT_ACTIVITYSERVICEMENU = 38;
+  private static final int LAYOUT_ACTIVITYREGISTERMITRA = 38;
 
-  private static final int LAYOUT_ACTIVITYSERVICEPENJUALAN = 39;
+  private static final int LAYOUT_ACTIVITYSCHEDULE = 39;
 
-  private static final int LAYOUT_ACTIVITYSHOPACITIVITY = 40;
+  private static final int LAYOUT_ACTIVITYSEARCH = 40;
 
-  private static final int LAYOUT_ACTIVITYSUCCESSPENJUALAN = 41;
+  private static final int LAYOUT_ACTIVITYSERVICEACITIVITY = 41;
 
-  private static final int LAYOUT_ACTIVITYSUKSESREGISTER = 42;
+  private static final int LAYOUT_ACTIVITYSERVICEMENU = 42;
 
-  private static final int LAYOUT_ACTIVITYTICKETS = 43;
+  private static final int LAYOUT_ACTIVITYSERVICEPENJUALAN = 43;
 
-  private static final int LAYOUT_ACTIVITYTOPSERVICES = 44;
+  private static final int LAYOUT_ACTIVITYSHOPACITIVITY = 44;
 
-  private static final int LAYOUT_ACTIVITYUPLOADKTP = 45;
+  private static final int LAYOUT_ACTIVITYSUCCESSPENJUALAN = 45;
 
-  private static final int LAYOUT_ACTIVITYWELCOMESCREENS = 46;
+  private static final int LAYOUT_ACTIVITYSUKSESREGISTER = 46;
 
-  private static final int LAYOUT_ADAPTERADDRESS = 47;
+  private static final int LAYOUT_ACTIVITYTICKETS = 47;
 
-  private static final int LAYOUT_ADAPTERALLSERVICES = 48;
+  private static final int LAYOUT_ACTIVITYTOPSERVICES = 48;
 
-  private static final int LAYOUT_ADAPTERBOOKING = 49;
+  private static final int LAYOUT_ACTIVITYULASAN = 49;
 
-  private static final int LAYOUT_ADAPTERCHAT = 50;
+  private static final int LAYOUT_ACTIVITYUPLOADKTP = 50;
 
-  private static final int LAYOUT_ADAPTERDETAILPENJUALAN = 51;
+  private static final int LAYOUT_ACTIVITYWELCOMESCREENS = 51;
 
-  private static final int LAYOUT_ADAPTERITEM = 52;
+  private static final int LAYOUT_ADAPTERADDRESS = 52;
 
-  private static final int LAYOUT_ADAPTERKHUSUS = 53;
+  private static final int LAYOUT_ADAPTERALLSERVICES = 53;
 
-  private static final int LAYOUT_ADAPTERLAYANANITEM = 54;
+  private static final int LAYOUT_ADAPTERBANK = 54;
 
-  private static final int LAYOUT_ADAPTERNEAR = 55;
+  private static final int LAYOUT_ADAPTERBOOKING = 55;
 
-  private static final int LAYOUT_ADAPTERNOTIFICATION = 56;
+  private static final int LAYOUT_ADAPTERCHAT = 56;
 
-  private static final int LAYOUT_ADAPTEROFFERS = 57;
+  private static final int LAYOUT_ADAPTERDETAILPENJUALAN = 57;
 
-  private static final int LAYOUT_ADAPTERPELAYANAN = 58;
+  private static final int LAYOUT_ADAPTERITEM = 58;
 
-  private static final int LAYOUT_ADAPTERPENJUALAN = 59;
+  private static final int LAYOUT_ADAPTERKHUSUS = 59;
 
-  private static final int LAYOUT_ADAPTERPENJUALANLAYANANITEM = 60;
+  private static final int LAYOUT_ADAPTERKHUSUSLIST = 60;
 
-  private static final int LAYOUT_ADAPTERPENTING = 61;
+  private static final int LAYOUT_ADAPTERLAYANANITEM = 61;
 
-  private static final int LAYOUT_ADAPTERPOPULARLAUNDRIES = 62;
+  private static final int LAYOUT_ADAPTERNEAR = 62;
 
-  private static final int LAYOUT_ADAPTERPREVIEW = 63;
+  private static final int LAYOUT_ADAPTERNOTIFICATION = 63;
 
-  private static final int LAYOUT_ADAPTERSERVICEMENU = 64;
+  private static final int LAYOUT_ADAPTEROFFERS = 64;
 
-  private static final int LAYOUT_ADAPTERSERVICES = 65;
+  private static final int LAYOUT_ADAPTERPELAYANAN = 65;
 
-  private static final int LAYOUT_ADAPTERTICKET = 66;
+  private static final int LAYOUT_ADAPTERPENJUALAN = 66;
 
-  private static final int LAYOUT_ADAPTERTOPSERVICES = 67;
+  private static final int LAYOUT_ADAPTERPENJUALANLAYANANITEM = 67;
 
-  private static final int LAYOUT_ADDADDRESSBOTTOMSHEET = 68;
+  private static final int LAYOUT_ADAPTERPENTING = 68;
 
-  private static final int LAYOUT_DAILOGADDTICKET = 69;
+  private static final int LAYOUT_ADAPTERPOPULARLAUNDRIES = 69;
 
-  private static final int LAYOUT_DAILOGCANCELORDER = 70;
+  private static final int LAYOUT_ADAPTERPREVIEW = 70;
 
-  private static final int LAYOUT_DAILOGRATING = 71;
+  private static final int LAYOUT_ADAPTERSERVICEMENU = 71;
 
-  private static final int LAYOUT_DIALOGBUATTIKET = 72;
+  private static final int LAYOUT_ADAPTERSERVICES = 72;
 
-  private static final int LAYOUT_FRAGMENTABOUT = 73;
+  private static final int LAYOUT_ADAPTERTICKET = 73;
 
-  private static final int LAYOUT_FRAGMENTBOOKING = 74;
+  private static final int LAYOUT_ADAPTERTOPSERVICES = 74;
 
-  private static final int LAYOUT_FRAGMENTDYNAMIC = 75;
+  private static final int LAYOUT_ADAPTERULASANLIST = 75;
 
-  private static final int LAYOUT_FRAGMENTLAYANAN = 76;
+  private static final int LAYOUT_ADDADDRESSBOTTOMSHEET = 76;
 
-  private static final int LAYOUT_FRAGMENTNEARBY = 77;
+  private static final int LAYOUT_DAILOGADDTICKET = 77;
 
-  private static final int LAYOUT_FRAGMENTOFFERSHOP = 78;
+  private static final int LAYOUT_DAILOGCANCELORDER = 78;
 
-  private static final int LAYOUT_FRAGMENTOFFERS = 79;
+  private static final int LAYOUT_DAILOGRATING = 79;
 
-  private static final int LAYOUT_FRAGMENTPENJUALAN = 80;
+  private static final int LAYOUT_DIALOGBUATTIKET = 80;
 
-  private static final int LAYOUT_FRAGMENTPROFILE = 81;
+  private static final int LAYOUT_FRAGMENTABOUT = 81;
 
-  private static final int LAYOUT_FRAGMENTSERVICES = 82;
+  private static final int LAYOUT_FRAGMENTBOOKING = 82;
 
-  private static final int LAYOUT_HOMEFRAGMENT = 83;
+  private static final int LAYOUT_FRAGMENTDYNAMIC = 83;
 
-  private static final int LAYOUT_SERVICESADAPTER = 84;
+  private static final int LAYOUT_FRAGMENTLAYANAN = 84;
 
-  private static final int LAYOUT_SPECIALOFFERS = 85;
+  private static final int LAYOUT_FRAGMENTNEARBY = 85;
 
-  private static final SparseIntArray INTERNAL_LAYOUT_ID_LOOKUP = new SparseIntArray(85);
+  private static final int LAYOUT_FRAGMENTOFFERSHOP = 86;
+
+  private static final int LAYOUT_FRAGMENTOFFERS = 87;
+
+  private static final int LAYOUT_FRAGMENTOUTLET = 88;
+
+  private static final int LAYOUT_FRAGMENTPENJUALAN = 89;
+
+  private static final int LAYOUT_FRAGMENTPROFILE = 90;
+
+  private static final int LAYOUT_FRAGMENTSERVICES = 91;
+
+  private static final int LAYOUT_HOMEFRAGMENT = 92;
+
+  private static final int LAYOUT_SERVICESADAPTER = 93;
+
+  private static final int LAYOUT_SPECIALOFFERS = 94;
+
+  private static final SparseIntArray INTERNAL_LAYOUT_ID_LOOKUP = new SparseIntArray(94);
 
   static {
     INTERNAL_LAYOUT_ID_LOOKUP.put(com.samyotech.laundrymitra.R.layout.activity_about, LAYOUT_ACTIVITYABOUT);
+    INTERNAL_LAYOUT_ID_LOOKUP.put(com.samyotech.laundrymitra.R.layout.activity_add_detail_layanan_item, LAYOUT_ACTIVITYADDDETAILLAYANANITEM);
     INTERNAL_LAYOUT_ID_LOOKUP.put(com.samyotech.laundrymitra.R.layout.activity_all_services, LAYOUT_ACTIVITYALLSERVICES);
     INTERNAL_LAYOUT_ID_LOOKUP.put(com.samyotech.laundrymitra.R.layout.activity_booking_confirm, LAYOUT_ACTIVITYBOOKINGCONFIRM);
     INTERNAL_LAYOUT_ID_LOOKUP.put(com.samyotech.laundrymitra.R.layout.activity_booking_payment, LAYOUT_ACTIVITYBOOKINGPAYMENT);
@@ -291,11 +319,13 @@ public class DataBinderMapperImpl extends DataBinderMapper {
     INTERNAL_LAYOUT_ID_LOOKUP.put(com.samyotech.laundrymitra.R.layout.activity_edit_service, LAYOUT_ACTIVITYEDITSERVICE);
     INTERNAL_LAYOUT_ID_LOOKUP.put(com.samyotech.laundrymitra.R.layout.activity_forgot_password, LAYOUT_ACTIVITYFORGOTPASSWORD);
     INTERNAL_LAYOUT_ID_LOOKUP.put(com.samyotech.laundrymitra.R.layout.activity_intro, LAYOUT_ACTIVITYINTRO);
+    INTERNAL_LAYOUT_ID_LOOKUP.put(com.samyotech.laundrymitra.R.layout.activity_list_khusus_untukmu, LAYOUT_ACTIVITYLISTKHUSUSUNTUKMU);
     INTERNAL_LAYOUT_ID_LOOKUP.put(com.samyotech.laundrymitra.R.layout.activity_login, LAYOUT_ACTIVITYLOGIN);
     INTERNAL_LAYOUT_ID_LOOKUP.put(com.samyotech.laundrymitra.R.layout.activity_manage, LAYOUT_ACTIVITYMANAGE);
     INTERNAL_LAYOUT_ID_LOOKUP.put(com.samyotech.laundrymitra.R.layout.activity_manage_profile, LAYOUT_ACTIVITYMANAGEPROFILE);
     INTERNAL_LAYOUT_ID_LOOKUP.put(com.samyotech.laundrymitra.R.layout.activity_manage_profile_address, LAYOUT_ACTIVITYMANAGEPROFILEADDRESS);
     INTERNAL_LAYOUT_ID_LOOKUP.put(com.samyotech.laundrymitra.R.layout.activity_manage_profile_chat_email, LAYOUT_ACTIVITYMANAGEPROFILECHATEMAIL);
+    INTERNAL_LAYOUT_ID_LOOKUP.put(com.samyotech.laundrymitra.R.layout.activity_manage_profile_mitra, LAYOUT_ACTIVITYMANAGEPROFILEMITRA);
     INTERNAL_LAYOUT_ID_LOOKUP.put(com.samyotech.laundrymitra.R.layout.activity_manage_profile_operasional, LAYOUT_ACTIVITYMANAGEPROFILEOPERASIONAL);
     INTERNAL_LAYOUT_ID_LOOKUP.put(com.samyotech.laundrymitra.R.layout.activity_manage_profile_rekening, LAYOUT_ACTIVITYMANAGEPROFILEREKENING);
     INTERNAL_LAYOUT_ID_LOOKUP.put(com.samyotech.laundrymitra.R.layout.activity_manage_promosi_toko, LAYOUT_ACTIVITYMANAGEPROMOSITOKO);
@@ -308,6 +338,7 @@ public class DataBinderMapperImpl extends DataBinderMapper {
     INTERNAL_LAYOUT_ID_LOOKUP.put(com.samyotech.laundrymitra.R.layout.activity_preview_order, LAYOUT_ACTIVITYPREVIEWORDER);
     INTERNAL_LAYOUT_ID_LOOKUP.put(com.samyotech.laundrymitra.R.layout.activity_pusat_edukasi, LAYOUT_ACTIVITYPUSATEDUKASI);
     INTERNAL_LAYOUT_ID_LOOKUP.put(com.samyotech.laundrymitra.R.layout.activity_register, LAYOUT_ACTIVITYREGISTER);
+    INTERNAL_LAYOUT_ID_LOOKUP.put(com.samyotech.laundrymitra.R.layout.activity_register_choose, LAYOUT_ACTIVITYREGISTERCHOOSE);
     INTERNAL_LAYOUT_ID_LOOKUP.put(com.samyotech.laundrymitra.R.layout.activity_register_mitra, LAYOUT_ACTIVITYREGISTERMITRA);
     INTERNAL_LAYOUT_ID_LOOKUP.put(com.samyotech.laundrymitra.R.layout.activity_schedule, LAYOUT_ACTIVITYSCHEDULE);
     INTERNAL_LAYOUT_ID_LOOKUP.put(com.samyotech.laundrymitra.R.layout.activity_search, LAYOUT_ACTIVITYSEARCH);
@@ -319,15 +350,18 @@ public class DataBinderMapperImpl extends DataBinderMapper {
     INTERNAL_LAYOUT_ID_LOOKUP.put(com.samyotech.laundrymitra.R.layout.activity_sukses_register, LAYOUT_ACTIVITYSUKSESREGISTER);
     INTERNAL_LAYOUT_ID_LOOKUP.put(com.samyotech.laundrymitra.R.layout.activity_tickets, LAYOUT_ACTIVITYTICKETS);
     INTERNAL_LAYOUT_ID_LOOKUP.put(com.samyotech.laundrymitra.R.layout.activity_top_services, LAYOUT_ACTIVITYTOPSERVICES);
+    INTERNAL_LAYOUT_ID_LOOKUP.put(com.samyotech.laundrymitra.R.layout.activity_ulasan, LAYOUT_ACTIVITYULASAN);
     INTERNAL_LAYOUT_ID_LOOKUP.put(com.samyotech.laundrymitra.R.layout.activity_upload_ktp, LAYOUT_ACTIVITYUPLOADKTP);
     INTERNAL_LAYOUT_ID_LOOKUP.put(com.samyotech.laundrymitra.R.layout.activity_welcome_screens, LAYOUT_ACTIVITYWELCOMESCREENS);
     INTERNAL_LAYOUT_ID_LOOKUP.put(com.samyotech.laundrymitra.R.layout.adapter_address, LAYOUT_ADAPTERADDRESS);
     INTERNAL_LAYOUT_ID_LOOKUP.put(com.samyotech.laundrymitra.R.layout.adapter_allservices, LAYOUT_ADAPTERALLSERVICES);
+    INTERNAL_LAYOUT_ID_LOOKUP.put(com.samyotech.laundrymitra.R.layout.adapter_bank, LAYOUT_ADAPTERBANK);
     INTERNAL_LAYOUT_ID_LOOKUP.put(com.samyotech.laundrymitra.R.layout.adapter_booking, LAYOUT_ADAPTERBOOKING);
     INTERNAL_LAYOUT_ID_LOOKUP.put(com.samyotech.laundrymitra.R.layout.adapter_chat, LAYOUT_ADAPTERCHAT);
     INTERNAL_LAYOUT_ID_LOOKUP.put(com.samyotech.laundrymitra.R.layout.adapter_detail_penjualan, LAYOUT_ADAPTERDETAILPENJUALAN);
     INTERNAL_LAYOUT_ID_LOOKUP.put(com.samyotech.laundrymitra.R.layout.adapter_item, LAYOUT_ADAPTERITEM);
     INTERNAL_LAYOUT_ID_LOOKUP.put(com.samyotech.laundrymitra.R.layout.adapter_khusus, LAYOUT_ADAPTERKHUSUS);
+    INTERNAL_LAYOUT_ID_LOOKUP.put(com.samyotech.laundrymitra.R.layout.adapter_khusus_list, LAYOUT_ADAPTERKHUSUSLIST);
     INTERNAL_LAYOUT_ID_LOOKUP.put(com.samyotech.laundrymitra.R.layout.adapter_layanan_item, LAYOUT_ADAPTERLAYANANITEM);
     INTERNAL_LAYOUT_ID_LOOKUP.put(com.samyotech.laundrymitra.R.layout.adapter_near, LAYOUT_ADAPTERNEAR);
     INTERNAL_LAYOUT_ID_LOOKUP.put(com.samyotech.laundrymitra.R.layout.adapter_notification, LAYOUT_ADAPTERNOTIFICATION);
@@ -342,6 +376,7 @@ public class DataBinderMapperImpl extends DataBinderMapper {
     INTERNAL_LAYOUT_ID_LOOKUP.put(com.samyotech.laundrymitra.R.layout.adapter_services, LAYOUT_ADAPTERSERVICES);
     INTERNAL_LAYOUT_ID_LOOKUP.put(com.samyotech.laundrymitra.R.layout.adapter_ticket, LAYOUT_ADAPTERTICKET);
     INTERNAL_LAYOUT_ID_LOOKUP.put(com.samyotech.laundrymitra.R.layout.adapter_topservices, LAYOUT_ADAPTERTOPSERVICES);
+    INTERNAL_LAYOUT_ID_LOOKUP.put(com.samyotech.laundrymitra.R.layout.adapter_ulasan_list, LAYOUT_ADAPTERULASANLIST);
     INTERNAL_LAYOUT_ID_LOOKUP.put(com.samyotech.laundrymitra.R.layout.add_address_bottomsheet, LAYOUT_ADDADDRESSBOTTOMSHEET);
     INTERNAL_LAYOUT_ID_LOOKUP.put(com.samyotech.laundrymitra.R.layout.dailog_add_ticket, LAYOUT_DAILOGADDTICKET);
     INTERNAL_LAYOUT_ID_LOOKUP.put(com.samyotech.laundrymitra.R.layout.dailog_cancel_order, LAYOUT_DAILOGCANCELORDER);
@@ -354,6 +389,7 @@ public class DataBinderMapperImpl extends DataBinderMapper {
     INTERNAL_LAYOUT_ID_LOOKUP.put(com.samyotech.laundrymitra.R.layout.fragment_near_by, LAYOUT_FRAGMENTNEARBY);
     INTERNAL_LAYOUT_ID_LOOKUP.put(com.samyotech.laundrymitra.R.layout.fragment_offer_shop, LAYOUT_FRAGMENTOFFERSHOP);
     INTERNAL_LAYOUT_ID_LOOKUP.put(com.samyotech.laundrymitra.R.layout.fragment_offers, LAYOUT_FRAGMENTOFFERS);
+    INTERNAL_LAYOUT_ID_LOOKUP.put(com.samyotech.laundrymitra.R.layout.fragment_outlet, LAYOUT_FRAGMENTOUTLET);
     INTERNAL_LAYOUT_ID_LOOKUP.put(com.samyotech.laundrymitra.R.layout.fragment_penjualan, LAYOUT_FRAGMENTPENJUALAN);
     INTERNAL_LAYOUT_ID_LOOKUP.put(com.samyotech.laundrymitra.R.layout.fragment_profile, LAYOUT_FRAGMENTPROFILE);
     INTERNAL_LAYOUT_ID_LOOKUP.put(com.samyotech.laundrymitra.R.layout.fragment_services, LAYOUT_FRAGMENTSERVICES);
@@ -370,6 +406,12 @@ public class DataBinderMapperImpl extends DataBinderMapper {
           return new ActivityAboutBindingImpl(component, view);
         }
         throw new IllegalArgumentException("The tag for activity_about is invalid. Received: " + tag);
+      }
+      case  LAYOUT_ACTIVITYADDDETAILLAYANANITEM: {
+        if ("layout/activity_add_detail_layanan_item_0".equals(tag)) {
+          return new ActivityAddDetailLayananItemBindingImpl(component, view);
+        }
+        throw new IllegalArgumentException("The tag for activity_add_detail_layanan_item is invalid. Received: " + tag);
       }
       case  LAYOUT_ACTIVITYALLSERVICES: {
         if ("layout/activity_all_services_0".equals(tag)) {
@@ -461,6 +503,12 @@ public class DataBinderMapperImpl extends DataBinderMapper {
         }
         throw new IllegalArgumentException("The tag for activity_intro is invalid. Received: " + tag);
       }
+      case  LAYOUT_ACTIVITYLISTKHUSUSUNTUKMU: {
+        if ("layout/activity_list_khusus_untukmu_0".equals(tag)) {
+          return new ActivityListKhususUntukmuBindingImpl(component, view);
+        }
+        throw new IllegalArgumentException("The tag for activity_list_khusus_untukmu is invalid. Received: " + tag);
+      }
       case  LAYOUT_ACTIVITYLOGIN: {
         if ("layout/activity_login_0".equals(tag)) {
           return new ActivityLoginBindingImpl(component, view);
@@ -490,6 +538,12 @@ public class DataBinderMapperImpl extends DataBinderMapper {
           return new ActivityManageProfileChatEmailBindingImpl(component, view);
         }
         throw new IllegalArgumentException("The tag for activity_manage_profile_chat_email is invalid. Received: " + tag);
+      }
+      case  LAYOUT_ACTIVITYMANAGEPROFILEMITRA: {
+        if ("layout/activity_manage_profile_mitra_0".equals(tag)) {
+          return new ActivityManageProfileMitraBindingImpl(component, view);
+        }
+        throw new IllegalArgumentException("The tag for activity_manage_profile_mitra is invalid. Received: " + tag);
       }
       case  LAYOUT_ACTIVITYMANAGEPROFILEOPERASIONAL: {
         if ("layout/activity_manage_profile_operasional_0".equals(tag)) {
@@ -563,6 +617,12 @@ public class DataBinderMapperImpl extends DataBinderMapper {
         }
         throw new IllegalArgumentException("The tag for activity_register is invalid. Received: " + tag);
       }
+      case  LAYOUT_ACTIVITYREGISTERCHOOSE: {
+        if ("layout/activity_register_choose_0".equals(tag)) {
+          return new ActivityRegisterChooseBindingImpl(component, view);
+        }
+        throw new IllegalArgumentException("The tag for activity_register_choose is invalid. Received: " + tag);
+      }
       case  LAYOUT_ACTIVITYREGISTERMITRA: {
         if ("layout/activity_register_mitra_0".equals(tag)) {
           return new ActivityRegisterMitraBindingImpl(component, view);
@@ -629,12 +689,25 @@ public class DataBinderMapperImpl extends DataBinderMapper {
         }
         throw new IllegalArgumentException("The tag for activity_top_services is invalid. Received: " + tag);
       }
+      case  LAYOUT_ACTIVITYULASAN: {
+        if ("layout/activity_ulasan_0".equals(tag)) {
+          return new ActivityUlasanBindingImpl(component, view);
+        }
+        throw new IllegalArgumentException("The tag for activity_ulasan is invalid. Received: " + tag);
+      }
       case  LAYOUT_ACTIVITYUPLOADKTP: {
         if ("layout/activity_upload_ktp_0".equals(tag)) {
           return new ActivityUploadKtpBindingImpl(component, view);
         }
         throw new IllegalArgumentException("The tag for activity_upload_ktp is invalid. Received: " + tag);
       }
+    }
+    return null;
+  }
+
+  private final ViewDataBinding internalGetViewDataBinding1(DataBindingComponent component,
+      View view, int internalId, Object tag) {
+    switch(internalId) {
       case  LAYOUT_ACTIVITYWELCOMESCREENS: {
         if ("layout/activity_welcome_screens_0".equals(tag)) {
           return new ActivityWelcomeScreensBindingImpl(component, view);
@@ -653,6 +726,12 @@ public class DataBinderMapperImpl extends DataBinderMapper {
         }
         throw new IllegalArgumentException("The tag for adapter_allservices is invalid. Received: " + tag);
       }
+      case  LAYOUT_ADAPTERBANK: {
+        if ("layout/adapter_bank_0".equals(tag)) {
+          return new AdapterBankBindingImpl(component, view);
+        }
+        throw new IllegalArgumentException("The tag for adapter_bank is invalid. Received: " + tag);
+      }
       case  LAYOUT_ADAPTERBOOKING: {
         if ("layout/adapter_booking_0".equals(tag)) {
           return new AdapterBookingBindingImpl(component, view);
@@ -665,13 +744,6 @@ public class DataBinderMapperImpl extends DataBinderMapper {
         }
         throw new IllegalArgumentException("The tag for adapter_chat is invalid. Received: " + tag);
       }
-    }
-    return null;
-  }
-
-  private final ViewDataBinding internalGetViewDataBinding1(DataBindingComponent component,
-      View view, int internalId, Object tag) {
-    switch(internalId) {
       case  LAYOUT_ADAPTERDETAILPENJUALAN: {
         if ("layout/adapter_detail_penjualan_0".equals(tag)) {
           return new AdapterDetailPenjualanBindingImpl(component, view);
@@ -689,6 +761,12 @@ public class DataBinderMapperImpl extends DataBinderMapper {
           return new AdapterKhususBindingImpl(component, view);
         }
         throw new IllegalArgumentException("The tag for adapter_khusus is invalid. Received: " + tag);
+      }
+      case  LAYOUT_ADAPTERKHUSUSLIST: {
+        if ("layout/adapter_khusus_list_0".equals(tag)) {
+          return new AdapterKhususListBindingImpl(component, view);
+        }
+        throw new IllegalArgumentException("The tag for adapter_khusus_list is invalid. Received: " + tag);
       }
       case  LAYOUT_ADAPTERLAYANANITEM: {
         if ("layout/adapter_layanan_item_0".equals(tag)) {
@@ -774,6 +852,12 @@ public class DataBinderMapperImpl extends DataBinderMapper {
         }
         throw new IllegalArgumentException("The tag for adapter_topservices is invalid. Received: " + tag);
       }
+      case  LAYOUT_ADAPTERULASANLIST: {
+        if ("layout/adapter_ulasan_list_0".equals(tag)) {
+          return new AdapterUlasanListBindingImpl(component, view);
+        }
+        throw new IllegalArgumentException("The tag for adapter_ulasan_list is invalid. Received: " + tag);
+      }
       case  LAYOUT_ADDADDRESSBOTTOMSHEET: {
         if ("layout/add_address_bottomsheet_0".equals(tag)) {
           return new AddAddressBottomsheetBindingImpl(component, view);
@@ -845,6 +929,12 @@ public class DataBinderMapperImpl extends DataBinderMapper {
           return new FragmentOffersBindingImpl(component, view);
         }
         throw new IllegalArgumentException("The tag for fragment_offers is invalid. Received: " + tag);
+      }
+      case  LAYOUT_FRAGMENTOUTLET: {
+        if ("layout/fragment_outlet_0".equals(tag)) {
+          return new FragmentOutletBindingImpl(component, view);
+        }
+        throw new IllegalArgumentException("The tag for fragment_outlet is invalid. Received: " + tag);
       }
       case  LAYOUT_FRAGMENTPENJUALAN: {
         if ("layout/fragment_penjualan_0".equals(tag)) {
@@ -956,10 +1046,11 @@ public class DataBinderMapperImpl extends DataBinderMapper {
   }
 
   private static class InnerLayoutIdLookup {
-    static final HashMap<String, Integer> sKeys = new HashMap<String, Integer>(85);
+    static final HashMap<String, Integer> sKeys = new HashMap<String, Integer>(94);
 
     static {
       sKeys.put("layout/activity_about_0", com.samyotech.laundrymitra.R.layout.activity_about);
+      sKeys.put("layout/activity_add_detail_layanan_item_0", com.samyotech.laundrymitra.R.layout.activity_add_detail_layanan_item);
       sKeys.put("layout/activity_all_services_0", com.samyotech.laundrymitra.R.layout.activity_all_services);
       sKeys.put("layout/activity_booking_confirm_0", com.samyotech.laundrymitra.R.layout.activity_booking_confirm);
       sKeys.put("layout/activity_booking_payment_0", com.samyotech.laundrymitra.R.layout.activity_booking_payment);
@@ -975,11 +1066,13 @@ public class DataBinderMapperImpl extends DataBinderMapper {
       sKeys.put("layout/activity_edit_service_0", com.samyotech.laundrymitra.R.layout.activity_edit_service);
       sKeys.put("layout/activity_forgot_password_0", com.samyotech.laundrymitra.R.layout.activity_forgot_password);
       sKeys.put("layout/activity_intro_0", com.samyotech.laundrymitra.R.layout.activity_intro);
+      sKeys.put("layout/activity_list_khusus_untukmu_0", com.samyotech.laundrymitra.R.layout.activity_list_khusus_untukmu);
       sKeys.put("layout/activity_login_0", com.samyotech.laundrymitra.R.layout.activity_login);
       sKeys.put("layout/activity_manage_0", com.samyotech.laundrymitra.R.layout.activity_manage);
       sKeys.put("layout/activity_manage_profile_0", com.samyotech.laundrymitra.R.layout.activity_manage_profile);
       sKeys.put("layout/activity_manage_profile_address_0", com.samyotech.laundrymitra.R.layout.activity_manage_profile_address);
       sKeys.put("layout/activity_manage_profile_chat_email_0", com.samyotech.laundrymitra.R.layout.activity_manage_profile_chat_email);
+      sKeys.put("layout/activity_manage_profile_mitra_0", com.samyotech.laundrymitra.R.layout.activity_manage_profile_mitra);
       sKeys.put("layout/activity_manage_profile_operasional_0", com.samyotech.laundrymitra.R.layout.activity_manage_profile_operasional);
       sKeys.put("layout/activity_manage_profile_rekening_0", com.samyotech.laundrymitra.R.layout.activity_manage_profile_rekening);
       sKeys.put("layout/activity_manage_promosi_toko_0", com.samyotech.laundrymitra.R.layout.activity_manage_promosi_toko);
@@ -992,6 +1085,7 @@ public class DataBinderMapperImpl extends DataBinderMapper {
       sKeys.put("layout/activity_preview_order_0", com.samyotech.laundrymitra.R.layout.activity_preview_order);
       sKeys.put("layout/activity_pusat_edukasi_0", com.samyotech.laundrymitra.R.layout.activity_pusat_edukasi);
       sKeys.put("layout/activity_register_0", com.samyotech.laundrymitra.R.layout.activity_register);
+      sKeys.put("layout/activity_register_choose_0", com.samyotech.laundrymitra.R.layout.activity_register_choose);
       sKeys.put("layout/activity_register_mitra_0", com.samyotech.laundrymitra.R.layout.activity_register_mitra);
       sKeys.put("layout/activity_schedule_0", com.samyotech.laundrymitra.R.layout.activity_schedule);
       sKeys.put("layout/activity_search_0", com.samyotech.laundrymitra.R.layout.activity_search);
@@ -1003,15 +1097,18 @@ public class DataBinderMapperImpl extends DataBinderMapper {
       sKeys.put("layout/activity_sukses_register_0", com.samyotech.laundrymitra.R.layout.activity_sukses_register);
       sKeys.put("layout/activity_tickets_0", com.samyotech.laundrymitra.R.layout.activity_tickets);
       sKeys.put("layout/activity_top_services_0", com.samyotech.laundrymitra.R.layout.activity_top_services);
+      sKeys.put("layout/activity_ulasan_0", com.samyotech.laundrymitra.R.layout.activity_ulasan);
       sKeys.put("layout/activity_upload_ktp_0", com.samyotech.laundrymitra.R.layout.activity_upload_ktp);
       sKeys.put("layout/activity_welcome_screens_0", com.samyotech.laundrymitra.R.layout.activity_welcome_screens);
       sKeys.put("layout/adapter_address_0", com.samyotech.laundrymitra.R.layout.adapter_address);
       sKeys.put("layout/adapter_allservices_0", com.samyotech.laundrymitra.R.layout.adapter_allservices);
+      sKeys.put("layout/adapter_bank_0", com.samyotech.laundrymitra.R.layout.adapter_bank);
       sKeys.put("layout/adapter_booking_0", com.samyotech.laundrymitra.R.layout.adapter_booking);
       sKeys.put("layout/adapter_chat_0", com.samyotech.laundrymitra.R.layout.adapter_chat);
       sKeys.put("layout/adapter_detail_penjualan_0", com.samyotech.laundrymitra.R.layout.adapter_detail_penjualan);
       sKeys.put("layout/adapter_item_0", com.samyotech.laundrymitra.R.layout.adapter_item);
       sKeys.put("layout/adapter_khusus_0", com.samyotech.laundrymitra.R.layout.adapter_khusus);
+      sKeys.put("layout/adapter_khusus_list_0", com.samyotech.laundrymitra.R.layout.adapter_khusus_list);
       sKeys.put("layout/adapter_layanan_item_0", com.samyotech.laundrymitra.R.layout.adapter_layanan_item);
       sKeys.put("layout/adapter_near_0", com.samyotech.laundrymitra.R.layout.adapter_near);
       sKeys.put("layout/adapter_notification_0", com.samyotech.laundrymitra.R.layout.adapter_notification);
@@ -1026,6 +1123,7 @@ public class DataBinderMapperImpl extends DataBinderMapper {
       sKeys.put("layout/adapter_services_0", com.samyotech.laundrymitra.R.layout.adapter_services);
       sKeys.put("layout/adapter_ticket_0", com.samyotech.laundrymitra.R.layout.adapter_ticket);
       sKeys.put("layout/adapter_topservices_0", com.samyotech.laundrymitra.R.layout.adapter_topservices);
+      sKeys.put("layout/adapter_ulasan_list_0", com.samyotech.laundrymitra.R.layout.adapter_ulasan_list);
       sKeys.put("layout/add_address_bottomsheet_0", com.samyotech.laundrymitra.R.layout.add_address_bottomsheet);
       sKeys.put("layout/dailog_add_ticket_0", com.samyotech.laundrymitra.R.layout.dailog_add_ticket);
       sKeys.put("layout/dailog_cancel_order_0", com.samyotech.laundrymitra.R.layout.dailog_cancel_order);
@@ -1038,6 +1136,7 @@ public class DataBinderMapperImpl extends DataBinderMapper {
       sKeys.put("layout/fragment_near_by_0", com.samyotech.laundrymitra.R.layout.fragment_near_by);
       sKeys.put("layout/fragment_offer_shop_0", com.samyotech.laundrymitra.R.layout.fragment_offer_shop);
       sKeys.put("layout/fragment_offers_0", com.samyotech.laundrymitra.R.layout.fragment_offers);
+      sKeys.put("layout/fragment_outlet_0", com.samyotech.laundrymitra.R.layout.fragment_outlet);
       sKeys.put("layout/fragment_penjualan_0", com.samyotech.laundrymitra.R.layout.fragment_penjualan);
       sKeys.put("layout/fragment_profile_0", com.samyotech.laundrymitra.R.layout.fragment_profile);
       sKeys.put("layout/fragment_services_0", com.samyotech.laundrymitra.R.layout.fragment_services);

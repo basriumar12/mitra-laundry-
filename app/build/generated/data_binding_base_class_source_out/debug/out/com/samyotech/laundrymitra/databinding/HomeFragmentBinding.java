@@ -56,6 +56,9 @@ public abstract class HomeFragmentBinding extends ViewDataBinding {
   public final TextView tvPesananSelesai;
 
   @NonNull
+  public final TextView tvSelengkapnya;
+
+  @NonNull
   public final TextView tvUlasanBaru;
 
   protected HomeFragmentBinding(Object _bindingComponent, View _root, int _localFieldCount,
@@ -63,7 +66,8 @@ public abstract class HomeFragmentBinding extends ViewDataBinding {
       TextView lihatSemuaLaundryTerdekat, RecyclerView rvKhususUntukmu, RecyclerView rvTerlaris,
       TextView tvChatBelumDibaca, TextView tvKosongKhusus, TextView tvKosongTerlaris,
       TextView tvNameHome, TextView tvPendapatanBersihBaru, TextView tvPesanBaru,
-      TextView tvPesananKomplain, TextView tvPesananSelesai, TextView tvUlasanBaru) {
+      TextView tvPesananKomplain, TextView tvPesananSelesai, TextView tvSelengkapnya,
+      TextView tvUlasanBaru) {
     super(_bindingComponent, _root, _localFieldCount);
     this.ivNotification = ivNotification;
     this.ivSearch = ivSearch;
@@ -78,6 +82,7 @@ public abstract class HomeFragmentBinding extends ViewDataBinding {
     this.tvPesanBaru = tvPesanBaru;
     this.tvPesananKomplain = tvPesananKomplain;
     this.tvPesananSelesai = tvPesananSelesai;
+    this.tvSelengkapnya = tvSelengkapnya;
     this.tvUlasanBaru = tvUlasanBaru;
   }
 

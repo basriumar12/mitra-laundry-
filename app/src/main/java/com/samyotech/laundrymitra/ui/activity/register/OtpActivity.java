@@ -89,7 +89,7 @@ public class OtpActivity extends AppCompatActivity implements GoogleApiClient.Co
         tvOtp = findViewById(R.id.otp);
         params = new HashMap<>();
         activasi();
-        resenOtp();
+        //resenOtp();
         cekRuntime();
         startSMSListener();
 
@@ -181,77 +181,85 @@ public class OtpActivity extends AppCompatActivity implements GoogleApiClient.Co
         btn_konfirmasi.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (otpView.getText().toString().isEmpty()) {
-                    ProjectUtils.showToast(getBaseContext(), "Otp tidak bisa kosong");
-                } else
-
-                    progress_circular.setVisibility(View.VISIBLE);
-                Log.e("TAG", " urlpin --->" + otpView.getText().toString());
-                OkHttpClient okHttpClient = new OkHttpClient.Builder()
-                        .authenticator(new Authenticator() {
-                            @Override
-                            public Request authenticate(Route route, Response response) throws IOException {
-                                return response.request().newBuilder()
-                                        .header("Authorization", Credentials.basic(Consts.username, Consts.pass))
-                                        .build();
-                            }
-                        })
-                        .build();
-                final ANRequest request =
-                        AndroidNetworking.get(Consts.API_URL + Consts.OTPSMS + "?id_user=" + userid + "&" + "otp=" + otpSms)
-                                .setOkHttpClient(okHttpClient)
-                                .setTag("test")
-//                        .addQueryParameter("id_user", userid)
-//                        .addQueryParameter("otp", otpSms)
-                                .setPriority(Priority.HIGH)
-                                .build();
-                ProjectUtils.showLog("TAG", " url data --->" + request.getUrl());
-
-                request
-                        .getAsJSONObject(new JSONObjectRequestListener() {
-                            @Override
-                            public void onResponse(JSONObject response) {
-                                ProjectUtils.showLog("TAG", " response body --->" + response.toString());
-                                progress_circular.setVisibility(View.GONE);
-                                try {
-                                    boolean flag = response.getBoolean("status");
-                                    String msg = response.getString("message");
-
-                                    progress_circular.setVisibility(View.GONE);
-                                    if (flag) {
-
-                                        try {
-                                            prefrence.setIntValue("DAFTAR-",1);
-
-                                            Intent in = new Intent(OtpActivity.this, UploadKtpActivity.class);
-                                            startActivity(in);
-                                            String message = response.getJSONObject("message").toString();
-                                            ProjectUtils.showToast(getBaseContext(), msg);
-                                            finish();
-
-                                        } catch (Exception e) {
-                                            e.getMessage();
-                                        }
 
 
-                                    } else {
-                                        progress_circular.setVisibility(View.GONE);
-                                        ProjectUtils.showToast(getBaseContext(), msg);
-                                    }
+                prefrence.setIntValue("DAFTAR-", 1);
+                Intent in = new Intent(OtpActivity.this, UploadKtpActivity.class);
+                startActivity(in);
+                finish();
 
-                                } catch (JSONException e) {
-                                    e.printStackTrace();
-                                }
 
-                            }
-
-                            @Override
-                            public void onError(ANError anError) {
-                                ProjectUtils.pauseProgressDialog();
-                                ProjectUtils.showLog("TAG", " error body --->" + anError.getErrorBody() + " error msg --->" + anError.getMessage());
-                            }
-                        });
-
+//                if (otpView.getText().toString().isEmpty()) {
+//                    ProjectUtils.showToast(getBaseContext(), "Otp tidak bisa kosong");
+//                } else
+//
+//                    progress_circular.setVisibility(View.VISIBLE);
+//                Log.e("TAG", " urlpin --->" + otpView.getText().toString());
+//                OkHttpClient okHttpClient = new OkHttpClient.Builder()
+//                        .authenticator(new Authenticator() {
+//                            @Override
+//                            public Request authenticate(Route route, Response response) throws IOException {
+//                                return response.request().newBuilder()
+//                                        .header("Authorization", Credentials.basic(Consts.username, Consts.pass))
+//                                        .build();
+//                            }
+//                        })
+//                        .build();
+//                final ANRequest request =
+//                        AndroidNetworking.get(Consts.API_URL + Consts.OTPSMS + "?id_user=" + userid + "&" + "otp=" + otpSms)
+//                                .setOkHttpClient(okHttpClient)
+//                                .setTag("test")
+////                        .addQueryParameter("id_user", userid)
+////                        .addQueryParameter("otp", otpSms)
+//                                .setPriority(Priority.HIGH)
+//                                .build();
+//                ProjectUtils.showLog("TAG", " url data --->" + request.getUrl());
+//
+//                request
+//                        .getAsJSONObject(new JSONObjectRequestListener() {
+//                            @Override
+//                            public void onResponse(JSONObject response) {
+//                                ProjectUtils.showLog("TAG", " response body --->" + response.toString());
+//                                progress_circular.setVisibility(View.GONE);
+//                                try {
+//                                    boolean flag = response.getBoolean("status");
+//                                    String msg = response.getString("message");
+//
+//                                    progress_circular.setVisibility(View.GONE);
+//                                    if (flag) {
+//
+//                                        try {
+//                                            prefrence.setIntValue("DAFTAR-",1);
+//
+//                                            Intent in = new Intent(OtpActivity.this, UploadKtpActivity.class);
+//                                            startActivity(in);
+//                                            String message = response.getJSONObject("message").toString();
+//                                            ProjectUtils.showToast(getBaseContext(), msg);
+//                                            finish();
+//
+//                                        } catch (Exception e) {
+//                                            e.getMessage();
+//                                        }
+//
+//
+//                                    } else {
+//                                        progress_circular.setVisibility(View.GONE);
+//                                        ProjectUtils.showToast(getBaseContext(), msg);
+//                                    }
+//
+//                                } catch (JSONException e) {
+//                                    e.printStackTrace();
+//                                }
+//
+//                            }
+//
+//                            @Override
+//                            public void onError(ANError anError) {
+//                                ProjectUtils.pauseProgressDialog();
+//                                ProjectUtils.showLog("TAG", " error body --->" + anError.getErrorBody() + " error msg --->" + anError.getMessage());
+//                            }
+//                        });
+//
             }
         });
 

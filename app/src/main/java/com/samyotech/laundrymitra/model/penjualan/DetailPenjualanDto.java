@@ -71,6 +71,25 @@ public class DetailPenjualanDto {
 	@SerializedName("status")
 	private String status;
 
+	@SerializedName("nama_konsumen")
+	private String namaKonsumen;
+
+	public String getsNo() {
+		return sNo;
+	}
+
+	public void setsNo(String sNo) {
+		this.sNo = sNo;
+	}
+
+	public String getNamaKonsumen() {
+		return namaKonsumen;
+	}
+
+	public void setNamaKonsumen(String namaKonsumen) {
+		this.namaKonsumen = namaKonsumen;
+	}
+
 	public void setPaymentStatus(String paymentStatus){
 		this.paymentStatus = paymentStatus;
 	}

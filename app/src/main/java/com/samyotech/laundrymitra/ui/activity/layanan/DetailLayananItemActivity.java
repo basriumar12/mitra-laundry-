@@ -8,16 +8,19 @@ import android.content.Context;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.Toast;
 
 import com.samyotech.laundrymitra.R;
 import com.samyotech.laundrymitra.databinding.ActivityDetailLayananItemBinding;
 import com.samyotech.laundrymitra.databinding.ActivityEditServiceBinding;
 import com.samyotech.laundrymitra.interfaces.Consts;
+import com.samyotech.laundrymitra.model.UserDTO;
 import com.samyotech.laundrymitra.model.base.BaseResponse;
 import com.samyotech.laundrymitra.model.layanan.LayananItemDto;
 import com.samyotech.laundrymitra.model.layanan.ServiceItemDto;
 import com.samyotech.laundrymitra.network.ApiInterface;
 import com.samyotech.laundrymitra.network.ServiceGenerator;
+import com.samyotech.laundrymitra.preferences.SharedPrefrence;
 
 import java.util.HashMap;
 
@@ -30,20 +33,42 @@ public class DetailLayananItemActivity extends AppCompatActivity {
     ActivityDetailLayananItemBinding binding;
     Context mContext;
     LayananItemDto layananItemDto;
+
+    UserDTO userDTO;
+    private SharedPrefrence prefrence;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         binding = DataBindingUtil.setContentView(this, R.layout.activity_detail_layanan_item);
         mContext = DetailLayananItemActivity.this;
+
+        prefrence = SharedPrefrence.getInstance(this);
+        userDTO = prefrence.getParentUser(Consts.USER_DTO);
         layananItemDto = getIntent().getParcelableExtra("LayananItem");
         binding.des.setText(layananItemDto.getItemName());
         binding.serviceName.setText(layananItemDto.getPrice());
         binding.btnSave.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                updateDataItemLayanan();
+                if (userDTO.getPremium().equals("0")) {
+                    Toast.makeText(DetailLayananItemActivity.this, "Hanya bisa di akses oleh User Premium", Toast.LENGTH_SHORT).show();
+
+                }
+                if (userDTO.getPremium().equals("1")) {
+                    updateDataItemLayanan();
+                }
             }
         });
+
+        binding.back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
+
+
     }
 
     public void updateDataItemLayanan() {
@@ -57,9 +82,9 @@ public class DetailLayananItemActivity extends AppCompatActivity {
                 Consts.pass
         );
         HashMap<String, String> body = new HashMap<String, String>();
-        body.put("item_id",layananItemDto.getItemId());
-        body.put("price",binding.serviceName.getText().toString());
-        body.put("item_name",binding.des.getText().toString());
+        body.put("item_id", layananItemDto.getItemId());
+        body.put("price", binding.serviceName.getText().toString());
+        body.put("item_name", binding.des.getText().toString());
         api.postDataItemLayanan(body).enqueue(new Callback<BaseResponse<LayananItemDto>>() {
             @Override
             public void onResponse(Call<BaseResponse<LayananItemDto>> call, Response<BaseResponse<LayananItemDto>> response) {

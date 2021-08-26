@@ -10,6 +10,8 @@ import android.view.View;
 import com.samyotech.laundrymitra.R;
 import com.samyotech.laundrymitra.databinding.ActivityManageBinding;
 import com.samyotech.laundrymitra.ui.activity.ChangPassword;
+import com.samyotech.laundrymitra.ui.activity.outlet.OutletFragment;
+import com.samyotech.laundrymitra.ui.activity.outlet.OutletImageActivity;
 import com.samyotech.laundrymitra.ui.activity.rekening.ManageProfileRekening;
 
 public class ManageActivity extends AppCompatActivity {
@@ -39,6 +41,13 @@ public class ManageActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(ManageActivity.this, ManageProfile.class));
+            }
+        });
+
+        binding.ctOutletImage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(ManageActivity.this, OutletImageActivity.class));
             }
         });
 
